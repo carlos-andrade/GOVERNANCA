@@ -4,6 +4,27 @@
 
 **Estado:** V1, proposta inicial em revisão. A existência de documentos não significa que políticas foram formalmente ratificadas ou que controlos técnicos estejam ativos.
 
+<!-- GOVERNANCA_STATUS_START -->
+## Barra de status do GOVERNANCA
+
+**Estado atual:** Em execução — integração da barra de status concluída em `main`; adoção universal e automatização ainda pendentes.  
+**Percentual comprovado desta iniciativa:** **80%**  
+`[████████████████░░░░] 80%`
+
+| Fase | Peso | Estado |
+|---|---:|---|
+| **Início** | 20% | Concluído — objetivo, norma e modelo definidos |
+| **Meio** | 60% | Concluído — documentação integrada em `main` e README com painel de estado |
+| **Fim** | 20% | Em curso — validar aplicação operacional, definir e testar atualização automática e concluir a adoção nos repositórios-alvo |
+
+**Próximo marco:** implementar e testar mecanismo que atualize este painel quando o status do projeto mudar.  
+**Bloqueios / limitações:** a atualização automática e a propagação da barra para todos os repositórios ainda não foram demonstradas. Até estarem ativas, a atualização deste README tem de ser feita no mesmo conjunto de alterações que muda o status.  
+**Última atualização deste painel:** 2026-10-12.  
+**Evidências:** [Pull Request #1 integrado](https://github.com/carlos-andrade/GOVERNANCA/pull/1) · [Norma de conclusão](standards/status-e-percentual-de-conclusao.md) · [Modelo de status](templates/projeto/status-do-projeto.md)
+
+> **Regra de atualização imediata:** qualquer mudança de fase, percentual, bloqueio, aprovação, marco ou encerramento deve atualizar este painel no mesmo commit ou numa alteração imediatamente subsequente, antes de a mudança ser comunicada como status atual. Enquanto não houver automação testada, o responsável pela alteração deve atualizar manualmente o README e validar a renderização. Não afirmar que a sincronização automática está ativa sem evidência de implementação e teste.
+<!-- GOVERNANCA_STATUS_END -->
+
 ## Começar por aqui
 
 1. Leia [`CONSTITUICAO.md`](CONSTITUICAO.md) e [`docs/00-fundamentos/modelo-operacional.md`](docs/00-fundamentos/modelo-operacional.md).
