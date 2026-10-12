@@ -53,3 +53,13 @@ Projetos pequenos podem manter um único registo simples. Projetos grandes podem
 - Não usar a percentagem como substituto de testes, auditoria, aprovação, gestão de risco ou aceitação do utilizador.
 - Manter histórico das alterações e identificar quem atualizou/aprovou.
 - A governança central define a regra; cada repositório de projeto mantém o seu valor e evidências.
+
+## Implementação automatizada no GOVERNANCA
+
+No repositório GOVERNANCA, a fonte canónica do painel é `registry/status-do-projeto.json`. O ficheiro `automation/sync_project_status.py` valida os dados e gera o bloco delimitado por `<!-- GOVERNANCA_STATUS_START -->` e `<!-- GOVERNANCA_STATUS_END -->` no `README.md`.
+
+O workflow `.github/workflows/sync-project-status.yml` é acionado por alterações ao registo canónico na branch `main` ou manualmente via `workflow_dispatch`. Antes de escrever, executa os testes automatizados, valida as regras de pontuação e verifica que o README fica sincronizado. Se houver alteração, publica o README num commit do bot. O commit do bot altera apenas o README, não o registo de origem, evitando ciclos de execução.
+
+**Procedimento para mudar o status:** editar `registry/status-do-projeto.json` na branch `main`, atualizar `updated_at`, ajustar os pontos apenas com evidências, indicar próximo marco/bloqueios e anexar evidências verificáveis. Depois, confirmar a execução do workflow e a atualização do README. Uma execução falhada significa que a sincronização não foi confirmada; corrigir a causa antes de comunicar o novo status como publicado.
+
+**Limites:** o mecanismo mantém sincronizado o painel deste repositório. Não altera automaticamente os README de outros repositórios. A adoção noutros projetos exige instalação e teste do mecanismo em cada repositório, com permissões e regras de branch compatíveis.
