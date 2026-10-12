@@ -17,8 +17,8 @@
 | **Meio** | 60/60 | 60% | Concluído |
 | **Fim** | 0/20 | 20% | Pendente |
 
-**Próximo marco:** Executar o workflow no GitHub, confirmar testes verdes e verificar o README atualizado pelo bot.  
-**Bloqueios:** A sincronização automática ainda precisa de uma execução real bem-sucedida para ser considerada validada.  
+**Próximo marco:** Aplicar e testar o mecanismo de sincronização nos restantes repositórios que adotarem a norma GOVERNANCA.  
+**Bloqueios:** A adoção da barra e da sincronização automática nos restantes repositórios ainda não foi executada.  
 **Última atualização do estado:** 2026-10-12  
 **Evidências:** [Pull Request #1 integrado](https://github.com/carlos-andrade/GOVERNANCA/pull/1) · [Norma de percentual](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md) · [Workflow de sincronização](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml) · [Testes automatizados](https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py)
 
