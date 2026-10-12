@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "project": "GOVERNANCA",
+  "status": "Em finalização",
+  "updated_at": "2026-10-12",
+  "phase": "fim",
+  "points": {
+    "inicio": 20,
+    "meio": 60,
+    "fim": 0
+  },
+  "next_milestone": "Executar o workflow no GitHub, confirmar testes verdes e verificar o README atualizado pelo bot.",
+  "blockers": [
+    "A sincronização automática ainda precisa de uma execução real bem-sucedida para ser considerada validada."
+  ],
+  "evidence": [
+    {
+      "label": "Pull Request #1 integrado",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/pull/1"
+    },
+    {
+      "label": "Norma de percentual",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md"
+    },
+    {
+      "label": "Workflow de sincronização",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml"
+    },
+    {
+      "label": "Testes automatizados",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py"
+    }
+  ],
+  "closure_checks": {
+    "acceptance_validated": false,
+    "final_review_approved": false,
+    "delivery_confirmed": false,
+    "knowledge_transfer_done": false,
+    "closure_approved": false
+  }
+}
