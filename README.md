@@ -13,6 +13,7 @@
 5. Siga os gates G0–G6 descritos em [`docs/02-ciclo-de-vida/ciclo-de-vida-e-gates.md`](docs/02-ciclo-de-vida/ciclo-de-vida-e-gates.md).
 6. Registe decisões, alterações, testes, incidentes e evidências.
 7. Antes de produção, utilize [`templates/release/checklist-prontidao.md`](templates/release/checklist-prontidao.md).
+8. Desde o início, publique no README do projeto a barra e o percentual usando [`templates/projeto/status-do-projeto.md`](templates/projeto/status-do-projeto.md), conforme a norma [`standards/status-e-percentual-de-conclusao.md`](standards/status-e-percentual-de-conclusao.md).
 
 ## Estrutura documental
 
@@ -33,7 +34,8 @@
 - `docs/13-comunicacao-e-stakeholders/` — comunicação e escalonamento.
 - `docs/14-metricas-e-melhoria/` — indicadores e revisão.
 - `docs/15-dominios-especializados/` — perfis por tipo de projeto.
-- `templates/` — modelos reutilizáveis e checklists.
+- `templates/` — modelos reutilizáveis e checklists, incluindo o estado percentual de conclusão de cada projeto.
+- `standards/status-e-percentual-de-conclusao.md` — cálculo uniforme, critérios de evidência e estados de conclusão.
 - `standards/` — convenções.
 - `registry/` — índices centrais leves.
 - `automation/` — especificações para controlos automatizáveis.
