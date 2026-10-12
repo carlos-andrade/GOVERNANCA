@@ -7,22 +7,22 @@
 <!-- GOVERNANCA_STATUS_START -->
 ## Barra de status do GOVERNANCA
 
-**Estado atual:** Em execução — integração da barra de status concluída em `main`; adoção universal e automatização ainda pendentes.  
-**Percentual comprovado desta iniciativa:** **80%**  
+**Estado atual:** Em finalização — fase Fim.  
+**Percentual comprovado:** **80%**  
 `[████████████████░░░░] 80%`
 
-| Fase | Peso | Estado |
-|---|---:|---|
-| **Início** | 20% | Concluído — objetivo, norma e modelo definidos |
-| **Meio** | 60% | Concluído — documentação integrada em `main` e README com painel de estado |
-| **Fim** | 20% | Em curso — validar aplicação operacional, definir e testar atualização automática e concluir a adoção nos repositórios-alvo |
+| Fase | Pontos | Peso | Estado |
+|---|---:|---:|---|
+| **Início** | 20/20 | 20% | Concluído |
+| **Meio** | 60/60 | 60% | Concluído |
+| **Fim** | 0/20 | 20% | Pendente |
 
-**Próximo marco:** implementar e testar mecanismo que atualize este painel quando o status do projeto mudar.  
-**Bloqueios / limitações:** a atualização automática e a propagação da barra para todos os repositórios ainda não foram demonstradas. Até estarem ativas, a atualização deste README tem de ser feita no mesmo conjunto de alterações que muda o status.  
-**Última atualização deste painel:** 2026-10-12.  
-**Evidências:** [Pull Request #1 integrado](https://github.com/carlos-andrade/GOVERNANCA/pull/1) · [Norma de conclusão](standards/status-e-percentual-de-conclusao.md) · [Modelo de status](templates/projeto/status-do-projeto.md)
+**Próximo marco:** Executar o workflow no GitHub, confirmar testes verdes e verificar o README atualizado pelo bot.  
+**Bloqueios:** A sincronização automática ainda precisa de uma execução real bem-sucedida para ser considerada validada.  
+**Última atualização do estado:** 2026-10-12  
+**Evidências:** [Pull Request #1 integrado](https://github.com/carlos-andrade/GOVERNANCA/pull/1) · [Norma de percentual](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md) · [Workflow de sincronização](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml) · [Testes automatizados](https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py)
 
-> **Regra de atualização imediata:** qualquer mudança de fase, percentual, bloqueio, aprovação, marco ou encerramento deve atualizar este painel no mesmo commit ou numa alteração imediatamente subsequente, antes de a mudança ser comunicada como status atual. Enquanto não houver automação testada, o responsável pela alteração deve atualizar manualmente o README e validar a renderização. Não afirmar que a sincronização automática está ativa sem evidência de implementação e teste.
+> **Atualização automática:** este painel é gerado a partir de `registry/status-do-projeto.json`. Alterações nesse registo acionam o workflow `Sincronizar barra de status`. O workflow valida o esquema, as pontuações e os critérios de encerramento antes de atualizar este README. Não editar manualmente o painel; alterar a fonte de verdade e rever o resultado do workflow.
 <!-- GOVERNANCA_STATUS_END -->
 
 ## Começar por aqui
