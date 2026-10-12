@@ -52,5 +52,3 @@ jobs:
           git add README.md
           git commit -m "chore(status): sincronizar barra de status"
           git push origin HEAD:main
-
-# trigger-test: 2026-10-12
