@@ -1,5 +1,24 @@
 # Registo de adoção transversal do WATCHDOG
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-WD-REG-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | REGISTO |
+| **Fase** | WATCHDOG — adoção transversal |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 2f59cd7ba75b3f603b045717a468aabfcc3abe3354fdcb0f6572a4657d8c8a64 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `WATCHDOG/registry/adocao-transversal.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../../CONSTITUICAO.md) e [Norma de cabeçalho](../../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 **Atualizado:** 2026-10-13  
 **Estado:** inventário inicial baseado em inspeção dos repositórios públicos consultados; não equivale a integração operacional.  
 **Regra:** um repositório só passa a IMPLEMENTADO após inspeção do workflow, teste positivo, teste de falha, evidência persistida e responsável identificado.
