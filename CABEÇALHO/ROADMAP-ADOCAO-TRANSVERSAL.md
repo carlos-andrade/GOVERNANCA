@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | a8c2f932361249a03b5444238bf302eebe2b93236450b7b1aeaf5f2efb078a00 |
-| **Commit de referência (versão anterior)** | [69ea5236b624ab735a68d4bf8cfa8d82a434938a](https://github.com/carlos-andrade/GOVERNANCA/commit/69ea5236b624ab735a68d4bf8cfa8d82a434938a) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | a8f9054830903dc45392e6e9ed8594a3bcf73068359460fd2d9420a52208be2e |
+| **Commit de referência (versão anterior)** | [32d2e5fdc4756865366ec8e2074ff34caeb0dd5d](https://github.com/carlos-andrade/GOVERNANCA/commit/32d2e5fdc4756865366ec8e2074ff34caeb0dd5d) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -37,7 +37,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 |---|---|---|---|
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
 | 2 | Validar coerência interna da pasta CABEÇALHO | README, norma, modelo, registo, checklist, histórico e YAML sem contradições; hashes verificados | CONCLUÍDA |
-| 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — 57 ficheiros listados; 7 conformes estruturalmente e 50 pendentes |
+| 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — 58 ficheiros listados; 8 conformes estruturalmente e 50 pendentes |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | PENDENTE — aguarda ratificação explícita do padrão e execução em lotes |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
@@ -49,7 +49,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | Data | Evidência/atividade | Resultado |
 |---|---|---|
 | 2026-10-13 | Norma, README, checklist e histórico revistos; exemplo normativo atualizado; SHA-256 recalculado e conferido em sete documentos Markdown | 7/7 hashes canónicos válidos; linhas de controlo presentes; YAML auxiliar não faz parte da contagem de Markdown |
-| 2026-10-13 | Inventário recursivo da branch main publicado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 57 ficheiros Markdown identificados; 7 com campos canónicos e 50 pendentes de normalização individual |
+| 2026-10-13 | Inventário recursivo da branch main publicado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 58 ficheiros Markdown identificados; 8 com campos canónicos e 50 pendentes de normalização individual |
 
 ## Bloqueios e limites
 
