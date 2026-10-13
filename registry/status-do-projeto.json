@@ -9,12 +9,12 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Completar a evidência de observação COTAHIST 2026 e configurar supervisão independente do próprio WATCHDOG; rever e aprovar os limiares por dataset.",
+  "next_milestone": "Confirmar a nova avaliação após inclusão da data de observação COTAHIST e aprovar os limiares provisórios; depois configurar supervisão independente do WATCHDOG.",
   "blockers": [
-    "O manifesto COTAHIST 2026 não declara a última data de observação, mantendo a atualidade como UNKNOWN.",
+    "A avaliação após a atualização do manifesto COTAHIST e da monitorização dos manifestos diários está pendente de conclusão.",
+    "Os limites de atualidade COTAHIST anual (30 dias) e diário (5 dias) são provisórios e carecem de aprovação do proprietário.",
     "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
     "Os alertas do piloto B3 criam issues, mas ainda não têm confirmação de receção nem SLA de escalonamento.",
-    "Os limites de atualidade por dataset carecem de revisão e aprovação pelos respetivos proprietários.",
     "A adoção da norma e da sincronização de status nos restantes repositórios ainda não foi executada."
   ],
   "evidence": [
@@ -89,6 +89,10 @@
     {
       "label": "Issue B3 — atualidade dos dados (COTAHIST UNKNOWN)",
       "url": "https://github.com/carlos-andrade/B3/issues/8"
+    },
+    {
+      "label": "Manifesto COTAHIST anual com data de observação documentada",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/dados/cotahist/manifests/COTAHIST_A2026.json"
     }
   ],
   "closure_checks": {
