@@ -8,7 +8,9 @@
 | **Tipo documental** | NORMA |
 | **Fase** | Validação do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.1 |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | 9878fecace3881e5e3ef185bfc604e1bf9c03e72578d1bb10a562d85eb3b1ef1 |
+| **Commit de referência (versão anterior)** | [f38a30d19400038c0e10108b750500f952fdeacd](https://github.com/carlos-andrade/GOVERNANCA/commit/f38a30d19400038c0e10108b750500f952fdeacd) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -97,6 +99,18 @@ Inventariar documentos, classificar tipo e estado, mapear metadados, inserir o c
 - Secções necessárias presentes.
 - Exceções justificadas e histórico preservado.
 
-## 11. Limites
+## 11. Integridade e rastreabilidade por commit
+
+### SHA-256 canónico
+
+Cada documento Markdown deve apresentar o campo **SHA-256 (conteúdo canónico)**. Para calcular o valor, normalizar o ficheiro para UTF-8 com finais de linha LF e calcular SHA-256 sobre o conteúdo integral, removendo antes do cálculo apenas as duas linhas da tabela de metadados intituladas **SHA-256 (conteúdo canónico)** e **Commit de referência (versão anterior)**. Esta regra evita autorreferência e permite que a atualização dos campos de controlo não altere o hash canónico. Qualquer outra alteração ao documento deve resultar num novo hash.
+
+O SHA-256 aqui definido é um checksum canónico do conteúdo segundo esta regra; não é o hash Git do blob nem substitui a verificação de assinatura ou a confiança na origem.
+
+### Commit de referência
+
+Quando disponível, incluir um link para o commit GitHub que introduziu a versão anterior usada como base para esta atualização. O commit que contém a própria alteração não pode ser incluído no mesmo conteúdo sem criar uma referência circular; por isso, o campo aponta para o commit de referência anterior. Em documentos novos, usar `N/A — documento inicial` até existir um commit anterior. O histórico Git continua a ser a fonte autoritativa para o commit atual.
+
+## 12. Limites
 
 Esta norma continua em estado de proposta. A adoção transversal depende de aprovação formal e validação individual dos repositórios.
