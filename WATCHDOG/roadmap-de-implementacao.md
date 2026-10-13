@@ -66,12 +66,14 @@ Critério de saída: o proprietário deve confirmar a semântica e aprovar cada 
 
 ## Fase 7 — Adoção transversal
 
-**Estado: pendente.**
+**Estado: inventário inicial criado; adoção por repositório pendente.**
 
-- Priorizar repositórios por criticidade e dependências.
-- Aplicar inventário e adaptadores por repositório, sem presumir cobertura.
+- [Registo de adoção transversal](registry/adocao-transversal.md) criado a partir de inspeção dos repositórios prioritários.
+- B3 permanece piloto com aceitação pendente.
+- BLOOMBERG_MAIL já tem WATCHDOG próprio; o supervisor executa testes determinísticos e valida evidência histórica, mas não foi certificado como operação 24×7 independente. Foi corrigido o cancelamento de execução ativa e falta confirmar a execução após a alteração.
+- TURISTURIS tem 30 workflows e requer adaptador específico por fase; não copiar o monitor B3 sem mapear contratos e dependências.
+- Os restantes repositórios estão pendentes de inspeção e aceitação individual.
 - Exigir workflow aprovado, evidência e responsável antes de marcar integração como operacional.
-- Atualizar a barra de status central apenas com evidências verificadas.
 
 ## Critérios de encerramento
 
