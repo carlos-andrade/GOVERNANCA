@@ -9,8 +9,8 @@
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.1.1 |
-| **SHA-256 (conteúdo canónico)** | 347668d866c7c1153bff80a3f6f3987a8b36149638d0b0cbfaa381d2571296df |
-| **Commit de referência (versão anterior)** | [32d2e5fdc4756865366ec8e2074ff34caeb0dd5d](https://github.com/carlos-andrade/GOVERNANCA/commit/32d2e5fdc4756865366ec8e2074ff34caeb0dd5d) |
+| **SHA-256 (conteúdo canónico)** | f44249821622351d4f80f6280702616ae8b5437080e555886506e3681cc2a72e |
+| **Commit de referência (versão anterior)** | [86f1bb90caea152a7d18af50e5f83e0ee305588a](https://github.com/carlos-andrade/GOVERNANCA/commit/86f1bb90caea152a7d18af50e5f83e0ee305588a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -50,6 +50,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 |---|---|---|
 | 2026-10-13 | Auditoria da pasta CABEÇALHO | Hash canónico verificado para os 10 documentos Markdown da pasta CABEÇALHO; inventário reconciliado e hashes conferidos após publicação |
 | 2026-10-13 | Inventário recursivo da branch main publicado e reconciliado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 60 ficheiros Markdown: 10 com campos canónicos e 50 pendentes; contagem do README alinhada |
+| 2026-10-13 | Ratificação da Norma v1.0.3 e aplicação L1 | Gate 8 concluído; cabeçalhos de Constituição e README aplicados; inventário atualizado para 61 ficheiros, 13 canónicos e 48 pendentes | [Registo de aprovação](REGISTO-APROVACAO-NORMA-1.0.3.md), [issue #2](https://github.com/carlos-andrade/GOVERNANCA/issues/2), commits `b87b0857` e `ce33acdf` |
 | 2026-10-13 | Classificação não destrutiva dos 50 documentos pendentes registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md); plano de lotes corrigido para 24 documentos centrais e 26 WATCHDOG | Metadados legados e riscos de preservação identificados; nenhuma alteração retroativa aplicada |
 
 ## Bloqueios e limites
@@ -78,3 +79,4 @@ Fase 8 concluída. L1 publicado: cabeçalhos canónicos adicionados a `CONSTITUI
 | 1.0.8 | 2026-10-13 | Registo da verificação independente de quatro hashes e isolamento do hash do inventário como pendência | Cálculo SHA-256 canónico dos documentos publicados |
 | 1.0.9 | 2026-10-13 | Fecho da verificação canónica dos dez documentos Markdown da pasta CABEÇALHO | Inventário v1.0.3 e hashes recalculados/conferidos |
 | 1.1.0 | 2026-10-13 | Conclusão da Fase 2 e explicitação do único gate imediato: ratificação formal da norma | Verificação canónica e regra de autorização |
+| 1.1.1 | 2026-10-13 | Ratificação formal da Norma v1.0.3, conclusão da Fase 8 e início da normalização L1; inventário reconciliado | Registo de aprovação, issue #2 e commits L1 |
