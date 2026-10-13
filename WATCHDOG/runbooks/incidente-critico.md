@@ -1,5 +1,24 @@
 # Runbook — incidente crítico
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-WD-RUN-CRIT-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | RUNBOOK |
+| **Fase** | WATCHDOG — incidente crítico |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 77923a7bd704edacdffa3504e99da78f36974ac3c4f7e07b2f58ec1f51f53f32 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `WATCHDOG/runbooks/incidente-critico.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../../CONSTITUICAO.md) e [Norma de cabeçalho](../../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 1. Confirmar o alerta por uma segunda fonte quando for seguro fazê-lo.
 2. Identificar sistema, proprietário, impacto, alcance e início provável.
 3. Acionar responsável primário e suplente pelo canal aprovado.
