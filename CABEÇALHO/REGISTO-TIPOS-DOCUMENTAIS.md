@@ -9,8 +9,8 @@
 | **Fase** | Validação do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
 | **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 529efd9b009dbdd0a08f9b5a2f8520227bbde384b84ba449589893fc0ea56346 |
-| **Commit de referência (versão anterior)** | [c6eedc5d0aef7fd1ca4f4cfb7fcd195018379645](https://github.com/carlos-andrade/GOVERNANCA/commit/c6eedc5d0aef7fd1ca4f4cfb7fcd195018379645) |
+| **SHA-256 (conteúdo canónico)** | 90d242e204022a4e61265f547afed7d508779cf7d7f2d4fdaef3ba0f0275e919 |
+| **Commit de referência (versão anterior)** | [414a12843bb528ba9eedfe2322772d71f3e5c597](https://github.com/carlos-andrade/GOVERNANCA/commit/414a12843bb528ba9eedfe2322772d71f3e5c597) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
