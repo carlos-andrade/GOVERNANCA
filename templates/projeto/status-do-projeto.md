@@ -1,5 +1,24 @@
 # Estado e percentual de conclusão do projeto
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-TPL-STATUS-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | TEMPLATE |
+| **Fase** | Templates de projeto |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 9daa1d89f8a0f60600bef5424533f06e0cc79b44fe5b0bea8c927fd609a5df9e |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `templates/projeto/status-do-projeto.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 > Copiar para o README ou registo principal do projeto e atualizar com evidências.
 
 **Projeto:** [nome]  
