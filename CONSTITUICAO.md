@@ -57,6 +57,14 @@ Registar regra afetada, motivo, risco, controlos compensatórios, aprovador, val
 
 Estados controlados: `PROPOSTO`, `EM_CURSO`, `BLOQUEADO`, `EM_REVISAO`, `APROVADO`, `REJEITADO`, `CONCLUIDO`, `DEPRECADO`. Nunca declarar teste, publicação, execução ou controlo ativo sem evidência.
 
-## 8. Revisão
+## 8. Monitorização transversal — WATCHDOG
+
+Os projetos que adotem a GOVERNANCA devem declarar como os seus sistemas, dados, processos e controlos serão monitorizados. O WATCHDOG é o padrão transversal para inventário, critérios, evidências, classificação de estados, alertas, escalonamento e verificação de recuperação. A monitorização deve ser proporcional ao risco e respeitar segurança, privacidade, obrigações legais e contratuais.
+
+A ausência de dados ou de execução nunca equivale a sucesso. Os controlos devem distinguir `PASS`, `WARN`, `FAIL` e `UNKNOWN`. A indisponibilidade do próprio monitor deve ser detetável por mecanismo independente nos âmbitos críticos. Remediação automática fica desativada por defeito e exige autorização, limites, rollback e auditoria.
+
+O padrão, os registos e os testes estão em [`WATCHDOG/`](WATCHDOG/README.md). A existência desta estrutura não prova monitorização universal ativa; cada integração deve ser implementada, testada e aceite com evidência.
+
+## 9. Revisão
 
 Rever anualmente e perante alterações materiais. Até aprovação formal, esta versão é uma proposta de base e não uma política corporativa ratificada.
