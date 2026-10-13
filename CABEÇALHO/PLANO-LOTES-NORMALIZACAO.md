@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO_EXECUCAO |
 | **Fase** | Preparação da normalização |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 3ad85dc2f991dbaf3cdfddcf39f8a6c8d4b5f4c34e12a7cf4e382874daa80216 |
-| **Commit de referência (versão anterior)** | N/A — documento inicial |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 4c6b39490756f4d0fa180565f266ae9bbcc7b612b1b8d8cb89405f1feb7dd311 |
+| **Commit de referência (versão anterior)** | [7be3b4162495922ce12f3c4f1c02813618b57489](https://github.com/carlos-andrade/GOVERNANCA/commit/7be3b4162495922ce12f3c4f1c02813618b57489) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -57,10 +57,11 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 
 **Estado:** preparação planeada; normalização bloqueada até aprovação formal da Norma 1.0.3.
 
-**Próxima ação permitida:** concluir a classificação não destrutiva dos 50 ficheiros e corrigir inconsistências factuais nos documentos de controlo. Após aprovação, executar L1 e validar antes de avançar.
+**Classificação não destrutiva:** concluída e registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **Próxima ação:** após aprovação formal da Norma 1.0.3, executar L1 (`CONSTITUICAO.md` e `README.md`) e validar cada alteração antes de avançar.
 
 ## Histórico
 
 | Versão | Data | Alteração |
 |---|---|---|
 | 1.0.0 | 2026-10-13 | Plano inicial de lotes e gates |
+| 1.0.1 | 2026-10-13 | Contagem dos lotes corrigida e classificação não destrutiva concluída | CABEÇALHO/CLASSIFICACAO-PRE-NORMALIZACAO.md |
