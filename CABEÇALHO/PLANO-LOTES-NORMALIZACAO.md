@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO_EXECUCAO |
 | **Fase** | Preparação da normalização |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.6 |
-| **SHA-256 (conteúdo canónico)** | 0f3c40124b6af613bbb92ac9d955b136a5b53221951f6ce86175607c972b9341 |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | 9e7408909e8ad6c96b3c11bf08a219b9154d7127fefed96f12aac4bd9d8e01c6 |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/b97fa1b4164270b782c1bb04e7023406335b797a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -55,9 +55,9 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 
 ## Estado e próxima ação
 
-**Estado:** gate de aprovação satisfeito; L1–L5 concluídos. Inventário atual: 61 ficheiros Markdown, 35 com campos canónicos e 26 pendentes.
+**Estado:** gate de aprovação satisfeito; L1–L6 concluídos. Inventário atual: 61 ficheiros Markdown, 51 com campos canónicos e 10 pendentes.
 
-**Classificação não destrutiva:** registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **L1:** concluído; GOV-001, versão e estado da Constituição preservados, assim como os marcadores automáticos do README. **Próxima ação:** iniciar L6 após reconciliar os caminhos com o inventário.
+**Classificação não destrutiva:** registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **L1:** concluído; GOV-001, versão e estado da Constituição preservados, assim como os marcadores automáticos do README. **Próxima ação:** iniciar L7 após reconciliar os caminhos com o inventário.
 
 ## Histórico
 
@@ -71,3 +71,4 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 | 1.0.4 | 2026-10-13 | L3 concluído nos cinco documentos previstos; 36 documentos permanecem pendentes | Inventário v1.0.6 e commits L3 |
 | 1.0.5 | 2026-10-13 | L4 concluído nos seis documentos previstos; 30 documentos permanecem pendentes | Inventário v1.0.7 e commits L4 |
 | 1.0.6 | 2026-10-14 | L5 concluído nos quatro documentos previstos; 26 documentos permanecem pendentes | Inventário v1.0.8 e commits L5 |
+| 1.0.7 | 2026-10-14 | L6 concluído nos 16 documentos WATCHDOG previstos; 10 documentos permanecem pendentes | Inventário v1.0.9 e commits L6 |
