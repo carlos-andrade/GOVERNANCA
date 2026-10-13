@@ -39,12 +39,12 @@ Critério de saída: o proprietário deve confirmar a semântica e aprovar cada 
 
 ## Fase 4 — Alertas operacionais e resiliência
 
-**Estado: pendente.**
+**Estado: procedimento documentado; implementação e aceitação operacional pendentes.**
 
-- Definir proprietário primário e suplente por controlo.
-- Implementar confirmação de receção, SLA, escalonamento e canal alternativo.
-- Deduplicar alertas e documentar ciclo de resolução.
-- Validar indisponibilidade de credenciais, API, quota e canal de alerta.
+- Runbook de [operação de alertas, confirmação e SLA proposto](runbooks/operacao-de-alertas-e-sla.md) criado.
+- O runbook define severidades, tempos provisórios, ACK, escalonamento, deduplicação e critérios de fecho.
+- Falta aprovar os tempos, nomear responsáveis primário/suplente, configurar canais reais e comprovar entrega, ausência de ACK, escalonamento e recuperação.
+- Issue #7 no piloto B3 contém execuções desfavoráveis que exigem triagem individual; não deve ser encerrada apenas por existir um relatório.
 
 ## Fase 5 — Supervisão independente
 
