@@ -1,5 +1,24 @@
 # Taxonomia e glossário
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-FOU-TAX-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | TAXONOMIA |
+| **Fase** | Fundamentos |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 34916fc40111a4bea86339b46cfe8aeffa9c5d45568d08620d0b01061882c9b9 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-13 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `docs/00-fundamentos/taxonomia-e-glossario.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../../CONSTITUICAO.md) e [Norma de cabeçalho](../../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 | Termo | Definição operacional |
 |---|---|
 | Portefólio | Iniciativas avaliadas em conjunto quanto a valor, risco, capacidade e dependências. |
