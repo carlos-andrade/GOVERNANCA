@@ -8,8 +8,8 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | bb4880bd9bb07ecabc62b6fa352d7f6186ff3af7fbcc8d517ea0ec8264c60fb8 |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | c8387c5e0449c596836b150624e97f336501e7486a3ba693737f0039a4def32f |
 | **Commit de referência (versão anterior)** | [efa0607254de03cb73f45e36a5a0df089ddb131f](https://github.com/carlos-andrade/GOVERNANCA/commit/efa0607254de03cb73f45e36a5a0df089ddb131f) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -27,7 +27,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 - Fonte: árvore Git recursiva do repositório `main`, inspecionada em 2026-10-13.
 - Total identificado após inclusão deste inventário e dos dois documentos de controlo criados nesta fase: **60 ficheiros Markdown**.
 - Critério de conformidade inicial: título Markdown, tabela de metadados `Campo | Valor`, linha SHA-256 canónico e linha de commit de referência.
-- Os documentos com campos canónicos foram também verificados quanto à presença dos campos; os hashes canónicos dos documentos da pasta `CABEÇALHO` devem ser recalculados após esta atualização.
+- Os documentos com campos canónicos foram verificados quanto à presença dos campos; os hashes canónicos dos 10 documentos Markdown da pasta `CABEÇALHO` foram recalculados ou conferidos nesta revisão.
 - A classificação é estrutural, não uma aprovação substantiva do conteúdo.
 - Ficheiros de modelo, como `CABEÇALHO/MODELO-DOCUMENTO.md`, podem conter marcadores de preenchimento; a conformidade do modelo não torna automaticamente conformes os documentos criados a partir dele.
 
@@ -107,7 +107,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 ## Achados e limitações
 
-1. Os sete documentos originais da pasta `CABEÇALHO`, anteriores à criação deste inventário, contêm os campos SHA-256 e commit de referência; os seus hashes canónicos foram recalculados e validados. Os três documentos de controlo mais recentes também contêm os campos, mas devem ser verificados individualmente após a reconciliação.
+1. Os 10 documentos Markdown da pasta `CABEÇALHO` contêm os campos SHA-256 e commit de referência. Os hashes canónicos foram recalculados ou conferidos nesta revisão; a validação estrutural não constitui aprovação substantiva.
 2. Os restantes 50 ficheiros não têm o conjunto de campos canónicos. Alguns contêm metadados antigos em texto corrido ou tabelas temáticas; esses elementos não equivalem ao cabeçalho normativo.
 3. `CONSTITUICAO.md` contém metadados em formato anterior e requer tratamento específico por ser documento de autoridade superior.
 4. Os documentos WATCHDOG incluem cartas, políticas, runbooks, documentação operacional e modelos; devem ser normalizados preservando o conteúdo técnico e os estados reais.
@@ -116,7 +116,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 ## Próxima ação
 
-Rever e aprovar formalmente a norma e os critérios de normalização; depois aplicar as alterações em lotes controlados, verificar os hashes, confirmar os commits de referência e atualizar este inventário com evidências.
+Aguardar aprovação formal explícita da versão exata da norma. Só após registo verificável dessa aprovação iniciar os lotes controlados, preservando o conteúdo e validando cada diff, hash e commit de referência.
 
 ## Histórico de alterações
 
@@ -124,3 +124,4 @@ Rever e aprovar formalmente a norma e os critérios de normalização; depois ap
 |---|---|---|---|
 | 1.0.1 | 2026-10-13 | Ajuste do inventário para incluir o próprio documento; total atualizado para 58 ficheiros | Árvore Git da branch `main` e histórico Git |
 | 1.0.2 | 2026-10-13 | Inclusão do plano de lotes e da classificação; total reconciliado para 60 ficheiros | Árvore Git da branch `main` |
+| 1.0.3 | 2026-10-13 | Recalculo do SHA-256 canónico e atualização do estado de verificação dos dez documentos da pasta CABEÇALHO | Auditoria canónica dos ficheiros publicados |
