@@ -8,9 +8,9 @@
 | **Tipo documental** | NORMA |
 | **Fase** | Validação do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 9878fecace3881e5e3ef185bfc604e1bf9c03e72578d1bb10a562d85eb3b1ef1 |
-| **Commit de referência (versão anterior)** | [f38a30d19400038c0e10108b750500f952fdeacd](https://github.com/carlos-andrade/GOVERNANCA/commit/f38a30d19400038c0e10108b750500f952fdeacd) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | ec119c373e9b17daed65b21c47da7261d5d3bb821ccf52be7e0c1528c563f50d |
+| **Commit de referência (versão anterior)** | [ce8ef455953b5c9291067d0f49cbc9ed137b215a](https://github.com/carlos-andrade/GOVERNANCA/commit/ce8ef455953b5c9291067d0f49cbc9ed137b215a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -44,6 +44,8 @@ Exemplo canónico:
 | **Fase** | FASE_XX |
 | **Estado** | RASCUNHO |
 | **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | CALCULAR_APÓS_PREENCHER |
+| **Commit de referência (versão anterior)** | N/A — documento inicial ou [SHA/URL do commit anterior] |
 | **Data de criação** | AAAA-MM-DD |
 | **Data de atualização** | AAAA-MM-DD |
 | **Responsável** | Papel ou responsável |
@@ -96,6 +98,7 @@ Inventariar documentos, classificar tipo e estado, mapear metadados, inserir o c
 - Estado, versão e datas corretos.
 - Responsável, origem e autoridade identificáveis.
 - Referências verificáveis.
+- Campos SHA-256 canónico e commit de referência presentes; hash recalculado conforme a secção 11.
 - Secções necessárias presentes.
 - Exceções justificadas e histórico preservado.
 
@@ -105,7 +108,7 @@ Inventariar documentos, classificar tipo e estado, mapear metadados, inserir o c
 
 Cada documento Markdown deve apresentar o campo **SHA-256 (conteúdo canónico)**. Para calcular o valor, normalizar o ficheiro para UTF-8 com finais de linha LF e calcular SHA-256 sobre o conteúdo integral, removendo antes do cálculo apenas as duas linhas da tabela de metadados intituladas **SHA-256 (conteúdo canónico)** e **Commit de referência (versão anterior)**. Esta regra evita autorreferência e permite que a atualização dos campos de controlo não altere o hash canónico. Qualquer outra alteração ao documento deve resultar num novo hash.
 
-O SHA-256 aqui definido é um checksum canónico do conteúdo segundo esta regra; não é o hash Git do blob nem substitui a verificação de assinatura ou a confiança na origem.
+O SHA-256 aqui definido é um checksum canónico do conteúdo segundo esta regra; não é o hash Git do blob nem substitui a verificação de assinatura ou a confiança na origem. A implementação de cálculo deve normalizar para UTF-8/LF antes de excluir as duas linhas de controlo; se o ficheiro tiver BOM, este deve ser removido antes do cálculo.
 
 ### Commit de referência
 
