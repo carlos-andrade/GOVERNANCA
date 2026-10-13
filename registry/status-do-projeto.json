@@ -9,7 +9,7 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Obter aprovação dos limiares provisórios por dataset e configurar supervisão independente do próprio WATCHDOG; depois expandir o piloto aos restantes repositórios.",
+  "next_milestone": "Configurar as duas secrets de heartbeat com serviço externo, validar ausência de heartbeat e obter aprovação dos limiares de atualidade por dataset.",
   "blockers": [
     "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários.",
     "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
@@ -96,6 +96,18 @@
     {
       "label": "Relatório final de atualidade B3 — 8 PASS, 0 STALE, 0 UNKNOWN",
       "url": "https://github.com/carlos-andrade/B3/actions/runs/38387593511"
+    },
+    {
+      "label": "Guia de ativação do heartbeat externo B3",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/WATCHDOG/heartbeat-supervisor-externo.md"
+    },
+    {
+      "label": "Workflow B3 com heartbeat externo opcional",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/b3-monitor-execucoes-v1.yml"
+    },
+    {
+      "label": "Workflow de atualidade com heartbeat externo opcional",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-data-freshness.yml"
     }
   ],
   "closure_checks": {
