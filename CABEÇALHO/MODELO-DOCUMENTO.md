@@ -1,47 +1,31 @@
----
-projeto: "NOME_DO_PROJETO"
-repositorio: "https://github.com/OWNER/REPOSITORY"
-tipo_documento: "RELATORIO"
-fase: "FASE_XX ou N/A — justificação"
-id_documento: "PREFIXO-REL-001"
-titulo: "Título do documento"
-status: "RASCUNHO"
-versao: "1.0.0"
-data_criacao: "AAAA-MM-DD"
-data_atualizacao: "AAAA-MM-DD"
-responsavel: "Papel ou responsável"
-aprovador: "Pendente"
-data_aprovacao: "N/A — ainda não aprovado"
-vigencia: "N/A — ainda não aprovado"
-proxima_revisao: "AAAA-MM-DD ou N/A — justificação"
-origem:
-  tipo: "DOCUMENTO"
-  referencia: "URL ou identificador"
-autoridade_documental:
-  superior: "Caminho/URL da norma superior"
-  nivel: "OPERACIONAL"
-cadeia_autoridade:
-  - "PROMPTS"
-  - "CARTAS"
-  - "LAYOUT ÚNICO"
-  - "CÓDIGO"
-rastreabilidade:
-  requisitos: []
-  decisoes: []
-  issues: []
-  commits: []
-  testes: []
-  evidencias: []
-escopo: "Definir âmbito e exclusões"
-objetivo: "Definir o objetivo"
-dependencias: []
----
-
 # Título do documento
+
+| Campo | Valor |
+|---|---|
+| **ID** | PREFIXO-TIPO-001 |
+| **Projeto** | NOME_DO_PROJETO |
+| **Repositório** | [OWNER/REPOSITORY](https://github.com/OWNER/REPOSITORY) |
+| **Tipo documental** | RELATORIO |
+| **Fase** | FASE_XX ou N/A — justificação |
+| **Estado** | RASCUNHO |
+| **Versão** | 1.0.0 |
+| **Data de criação** | AAAA-MM-DD |
+| **Data de atualização** | AAAA-MM-DD |
+| **Responsável** | Papel ou responsável |
+| **Aprovador** | Pendente |
+| **Origem** | Tipo e referência verificável |
+| **Autoridade superior** | Caminho ou URL da norma superior |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Requisitos, decisões, issues, commits, testes e evidências |
+| **Escopo** | Âmbito e exclusões |
+| **Objetivo** | Resultado pretendido |
+| **Dependências** | Lista ou N/A — justificação |
+
+> **Instrução:** substituir os valores de exemplo antes de publicar. Não declarar o estado `APROVADO` sem evidência verificável.
 
 ## Contexto Histórico
 
-Registar a origem, as decisões anteriores e a razão da criação ou revisão.
+Registar a origem, decisões anteriores e razão da criação ou revisão.
 
 ## Estado
 
