@@ -1,4 +1,8 @@
-# Copiar este bloco para o início do documento e substituir os valores.
+# MODELO AUXILIAR DE METADADOS YAML
+# O cabeçalho visível e canónico dos ficheiros Markdown é a tabela Markdown
+# definida em MODELO-DOCUMENTO.md. Usar este YAML apenas para automação,
+# catalogação ou integração que o exija. Não o usar como substituto do
+# cabeçalho Markdown renderizado pelo GitHub.
 # Não declarar APROVADO sem aprovação verificável.
 projeto: "NOME_DO_PROJETO"
 repositorio: "https://github.com/OWNER/REPOSITORY"
