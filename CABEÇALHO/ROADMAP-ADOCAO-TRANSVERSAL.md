@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | ae6d445f78485e24854a2c85d68a37de393b293b0c08b5590c0d03310e59251e |
-| **Commit de referência (versão anterior)** | [3647a431bfaa873b5d6ea5d400f0f442d0b609a3](https://github.com/carlos-andrade/GOVERNANCA/commit/3647a431bfaa873b5d6ea5d400f0f442d0b609a3) |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | a8c2f932361249a03b5444238bf302eebe2b93236450b7b1aeaf5f2efb078a00 |
+| **Commit de referência (versão anterior)** | [69ea5236b624ab735a68d4bf8cfa8d82a434938a](https://github.com/carlos-andrade/GOVERNANCA/commit/69ea5236b624ab735a68d4bf8cfa8d82a434938a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -37,8 +37,8 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 |---|---|---|---|
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
 | 2 | Validar coerência interna da pasta CABEÇALHO | README, norma, modelo, registo, checklist, histórico e YAML sem contradições; hashes verificados | CONCLUÍDA |
-| 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | PENDENTE |
-| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | PENDENTE |
+| 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — 57 ficheiros listados; 7 conformes estruturalmente e 50 pendentes |
+| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | PENDENTE — aguarda ratificação explícita do padrão e execução em lotes |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
 | 7 | Validar adoção transversal | Relatório de conformidade por repositório, pendências e exceções | PENDENTE |
@@ -49,17 +49,18 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | Data | Evidência/atividade | Resultado |
 |---|---|---|
 | 2026-10-13 | Norma, README, checklist e histórico revistos; exemplo normativo atualizado; SHA-256 recalculado e conferido em sete documentos Markdown | 7/7 hashes canónicos válidos; linhas de controlo presentes; YAML auxiliar não faz parte da contagem de Markdown |
+| 2026-10-13 | Inventário recursivo da branch main publicado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 57 ficheiros Markdown identificados; 7 com campos canónicos e 50 pendentes de normalização individual |
 
 ## Bloqueios e limites
 
-- Não foi concluído um inventário integral de todos os documentos Markdown do repositório nem dos repositórios associados.
+- O inventário do repositório GOVERNANCA foi concluído; falta iniciar a normalização dos 50 documentos pendentes e inventariar os outros repositórios abrangidos.
 - Não se deve inferir conformidade de um documento apenas pela existência de um cabeçalho.
 - A norma permanece proposta até aprovação formal.
 - A normalização deve ser feita em lotes verificáveis, sem alterações em massa não auditadas.
 
 ## Próxima ação
 
-Concluir a validação pós-publicação dos documentos da pasta CABEÇALHO; depois inventariar os ficheiros Markdown de GOVERNANCA e registar os resultados antes de alterar outros documentos.
+Obter ratificação explícita da norma e iniciar a normalização retroativa em lotes auditáveis, começando pelos documentos de governança de GOVERNANCA; preservar o corpo original e registar exceções.
 
 ## Histórico de alterações
 
@@ -67,3 +68,4 @@ Concluir a validação pós-publicação dos documentos da pasta CABEÇALHO; dep
 |---|---|---|---|
 | 1.0.0 | 2026-10-13 | Criação do roadmap de validação e adoção transversal | Histórico Git |
 | 1.0.1 | 2026-10-13 | Registo da validação pós-publicação de sete documentos Markdown e conclusão da revisão interna da pasta CABEÇALHO | Histórico Git |
+| 1.0.2 | 2026-10-13 | Inventário dos 57 ficheiros Markdown do repositório; identificados 7 conformes estruturalmente e 50 pendentes de normalização | CABEÇALHO/INVENTARIO-DOCUMENTAL.md |
