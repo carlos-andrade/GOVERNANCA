@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | Validação do padrão |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.2.0 |
-| **SHA-256 (conteúdo canónico)** | e8e9d93d327de9a602b3d3e502f47c861d774784ca4d5812eabb76daf109777c |
+| **Versão** | 1.3.0 |
+| **SHA-256 (conteúdo canónico)** | fd91aa19146898514fc247f309b28493f6479caf7bf4b0fa3edab9ec4d5f439d |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/5d552b1d6217ccbe7a3fe24871d7e4a5195fa122) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -55,7 +55,7 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 
 ## Estado de validação
 
-O formato Markdown nativo foi aprovado formalmente na Norma v1.0.3. Após a aplicação do L1, o inventário identifica 61 ficheiros Markdown: 35 com campos canónicos presentes e 26 pendentes de normalização individual. A aprovação da norma autoriza a execução controlada, mas não constitui aprovação substantiva de cada documento.
+O formato Markdown nativo foi aprovado formalmente na Norma v1.0.3. Após a aplicação do L1, o inventário identifica 61 ficheiros Markdown: 51 com campos canónicos presentes e 10 pendentes de normalização individual. A aprovação da norma autoriza a execução controlada, mas não constitui aprovação substantiva de cada documento.
 
 ## Roadmap de adoção
 
