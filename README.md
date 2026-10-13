@@ -1,5 +1,24 @@
 # GOVERNANCA — Sistema Mestre de Governança e Orquestração
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-README-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | README |
+| **Fase** | Entrada e orientação do repositório |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 92f3c765f899b62312c426c62d4bb3a11536a4c7560ba3fd1bd9eac4db0bc0f9 |
+| **Commit de referência (versão anterior)** | [62a2354c6372417a36c4df256fff267e691d8495](https://github.com/carlos-andrade/GOVERNANCA/commit/62a2354c6372417a36c4df256fff267e691d8495) |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-13 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal do README |
+| **Autoridade superior** | [CONSTITUICAO.md](CONSTITUICAO.md) e [Norma de cabeçalho](CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
+
 > Repositório-mestre para definir como projetos são propostos, priorizados, desenhados, executados, controlados, auditados e encerrados.
 
 **Estado:** V1, proposta inicial em revisão. A existência de documentos não significa que políticas foram formalmente ratificadas ou que controlos técnicos estejam ativos.
