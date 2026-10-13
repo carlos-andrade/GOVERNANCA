@@ -27,6 +27,8 @@
 
 ## Começar por aqui
 
+**Monitorização transversal obrigatória:** consulte o [WATCHDOG](WATCHDOG/README.md), o [registo de sistemas monitorizados](WATCHDOG/registry/sistemas-monitorizados.json) e o [workflow de validação](.github/workflows/watchdog-validation.yml). O MVP valida configurações e ficheiros locais; integrações externas e monitorização contínua ainda exigem implementação e testes próprios.
+
 1. Leia [`CONSTITUICAO.md`](CONSTITUICAO.md) e [`docs/00-fundamentos/modelo-operacional.md`](docs/00-fundamentos/modelo-operacional.md).
 2. Registe a iniciativa a partir de [`templates/projeto/charter.md`](templates/projeto/charter.md).
 3. Classifique risco com [`templates/avaliacao/triagem-risco.md`](templates/avaliacao/triagem-risco.md).
@@ -38,7 +40,8 @@
 
 ## Estrutura documental
 
-- `CONSTITUICAO.md` — princípios e autoridade.
+- `CONSTITUICAO.md` — princípios e autoridade, incluindo a norma transversal WATCHDOG.
+- `WATCHDOG/` — política, arquitetura, contratos, inventário, motor de validação, adaptadores, runbooks e testes de monitorização.
 - `docs/00-fundamentos/` — modelo operacional, taxonomia e adaptação proporcional.
 - `docs/01-governanca/` — papéis, decisões, exceções e estados documentais.
 - `docs/02-ciclo-de-vida/` — gates, requisitos e escopo.
@@ -60,6 +63,7 @@
 - `standards/` — convenções.
 - `registry/` — índices centrais leves.
 - `automation/` — especificações para controlos automatizáveis.
+- `.github/workflows/watchdog-validation.yml` — validação automatizada do motor WATCHDOG e dos registos locais.
 - `examples/` — exemplos não normativos.
 
 ## Regras fundamentais
@@ -73,4 +77,4 @@
 
 ## Limitações da V1
 
-Não é uma certificação, parecer jurídico, implementação automática de conformidade, proteção de branch nem pipeline CI/CD ativo. Configurações técnicas precisam de ser implementadas e testadas separadamente. O documento de apoio fornecido sobre modelos de governança de dados é referenciado na política em `docs/05-dados-e-ia/governanca-de-dados.md`.
+Não é uma certificação, parecer jurídico, implementação automática de conformidade ou proteção de branch. Os workflows existentes validam os respetivos artefactos quando acionados, mas não substituem monitorização independente 24×7. O WATCHDOG está em fase MVP: verificações locais e testes automatizados estão definidos; adaptadores externos, alertas operacionais, persistência protegida de evidências e supervisão independente ainda precisam de ser implementados e testados. O documento de apoio fornecido sobre modelos de governança de dados é referenciado na política em `docs/05-dados-e-ia/governanca-de-dados.md`.
