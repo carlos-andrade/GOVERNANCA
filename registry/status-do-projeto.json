@@ -2,16 +2,17 @@
   "schema_version": 1,
   "project": "GOVERNANCA",
   "status": "Em finalização",
-  "updated_at": "2026-10-12",
+  "updated_at": "2026-10-13",
   "phase": "fim",
   "points": {
     "inicio": 20,
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Aplicar e testar o mecanismo de sincronização nos restantes repositórios que adotarem a norma GOVERNANCA.",
+  "next_milestone": "Executar e validar o workflow WATCHDOG; depois implementar supervisão independente, alertas e adaptadores para os primeiros sistemas externos.",
   "blockers": [
-    "A adoção da barra e da sincronização automática nos restantes repositórios ainda não foi executada."
+    "O WATCHDOG ainda não dispõe de adaptadores externos, alertas operacionais ou supervisão independente 24×7.",
+    "A adoção da barra de status e da sincronização automática nos restantes repositórios ainda não foi executada."
   ],
   "evidence": [
     {
@@ -29,6 +30,14 @@
     {
       "label": "Testes automatizados",
       "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py"
+    },
+    {
+      "label": "WATCHDOG — arquitetura, normas e motor MVP",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/tree/main/WATCHDOG"
+    },
+    {
+      "label": "Workflow de validação WATCHDOG",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/watchdog-validation.yml"
     }
   ],
   "closure_checks": {
