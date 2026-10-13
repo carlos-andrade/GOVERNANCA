@@ -4,6 +4,8 @@
 # catalogação ou integração que o exija. Não o usar como substituto do
 # cabeçalho Markdown renderizado pelo GitHub.
 # Não declarar APROVADO sem aprovação verificável.
+# SHA-256: calcular sobre o ficheiro UTF-8/LF excluindo as linhas de SHA-256 e commit.
+# O commit de referência aponta para a versão anterior; não é o commit que contém esta alteração.
 projeto: "NOME_DO_PROJETO"
 repositorio: "https://github.com/OWNER/REPOSITORY"
 tipo_documento: "NORMA | CARTA | PROMPT | ESPECIFICACAO | PLANO | RELATORIO | PROCEDIMENTO | REGISTO | CODIGO | TESTE"
@@ -12,6 +14,8 @@ id_documento: "PREFIXO-TIPO-001"
 titulo: "Título documental"
 status: "RASCUNHO"
 versao: "1.0.0"
+sha256_conteudo_canonico: "78dac092b74e0b1f68331e5e5c13cb16fd523735284c3654ffb660070952efaa"
+commit_referencia_anterior: "N/A — documento inicial ou SHA/URL do commit anterior"
 data_criacao: "AAAA-MM-DD"
 data_atualizacao: "AAAA-MM-DD"
 responsavel: "Papel ou responsável"
