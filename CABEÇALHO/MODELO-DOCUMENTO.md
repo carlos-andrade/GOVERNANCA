@@ -9,6 +9,8 @@
 | **Fase** | FASE_XX ou N/A — justificação |
 | **Estado** | RASCUNHO |
 | **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 08a335134ca5909da1eb0e78b0739d31fce7fceefbfc1783301e639d90b82b14 |
+| **Commit de referência (versão anterior)** | N/A — documento inicial ou link para commit anterior |
 | **Data de criação** | AAAA-MM-DD |
 | **Data de atualização** | AAAA-MM-DD |
 | **Responsável** | Papel ou responsável |
@@ -21,7 +23,7 @@
 | **Objetivo** | Resultado pretendido |
 | **Dependências** | Lista ou N/A — justificação |
 
-> **Instrução:** substituir os valores de exemplo antes de publicar. Não declarar o estado `APROVADO` sem evidência verificável.
+> **Instrução:** substituir os valores de exemplo antes de publicar. Não declarar o estado `APROVADO` sem evidência verificável. Recalcular o SHA-256 canónico conforme a norma e, se existir, preencher o link para o commit anterior de referência.
 
 ## Contexto Histórico
 
