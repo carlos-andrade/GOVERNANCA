@@ -180,6 +180,14 @@
     {
       "label": "B3 COTAHIST — FASE01 2015 recuperada após correção de persistência",
       "url": "https://github.com/carlos-andrade/B3/actions/runs/38392006654"
+    },
+    {
+      "label": "B3 WATCHDOG — monitor de execuções com paginação integral da janela móvel",
+      "url": "https://github.com/carlos-andrade/B3/commit/d3c5c620b8e653630815a0dd57782b1c95ecf8eb"
+    },
+    {
+      "label": "B3 WATCHDOG — README atualizado com paginação, UNKNOWN e evidência BDI correta",
+      "url": "https://github.com/carlos-andrade/B3/commit/868f3ef2457efd57875aa42eebedf4f33adbb3c8"
     }
   ],
   "closure_checks": {
