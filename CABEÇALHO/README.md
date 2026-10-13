@@ -7,14 +7,14 @@
 | **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Tipo documental** | README |
 | **Fase** | Validação do padrão |
-| **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.6 |
-| **SHA-256 (conteúdo canónico)** | 5fceb2690ac75122852cb00c9485037532b869a806d41bf39d527755f9ee6d44 |
-| **Commit de referência (versão anterior)** | [6f74c89881696609cd01d3c848a31fc131361c29](https://github.com/carlos-andrade/GOVERNANCA/commit/6f74c89881696609cd01d3c848a31fc131361c29) |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | 9b3ec620e0b64da0c7ccf7c005196b8cb67079b91f457cb2cf79a78b70b0f51e |
+| **Commit de referência (versão anterior)** | [c4bbdf806c8db47788971717a597764ee1ba5b74](https://github.com/carlos-andrade/GOVERNANCA/commit/c4bbdf806c8db47788971717a597764ee1ba5b74) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
-| **Aprovador** | Pendente de aprovação formal |
+| **Aprovador** | Pendente de aprovação formal deste documento |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
@@ -34,7 +34,8 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 - [REGISTO-TIPOS-DOCUMENTAIS.md](REGISTO-TIPOS-DOCUMENTAIS.md) — tipos documentais.
 - [CHECKLIST-VALIDACAO.md](CHECKLIST-VALIDACAO.md) — checklist de validação.
 - [HISTORICO.md](HISTORICO.md) — histórico de alterações.
-- [INVENTARIO-DOCUMENTAL.md](INVENTARIO-DOCUMENTAL.md) — inventário dos 60 ficheiros Markdown e estado estrutural do cabeçalho.
+- [INVENTARIO-DOCUMENTAL.md](INVENTARIO-DOCUMENTAL.md) — inventário dos 61 ficheiros Markdown e estado estrutural do cabeçalho.
+- [REGISTO-APROVACAO-NORMA-1.0.3.md](REGISTO-APROVACAO-NORMA-1.0.3.md) — evidência da ratificação formal da norma.
 - [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md) — classificação não destrutiva dos 50 documentos pendentes.
 - [PLANO-LOTES-NORMALIZACAO.md](PLANO-LOTES-NORMALIZACAO.md) — lotes, gates e critérios de execução.
 - [ROADMAP-ADOCAO-TRANSVERSAL.md](ROADMAP-ADOCAO-TRANSVERSAL.md) — fases e critérios de adoção.
@@ -54,7 +55,7 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 
 ## Estado de validação
 
-O formato foi ajustado para Markdown nativo. O inventário atual identifica 60 ficheiros Markdown: 10 com campos canónicos presentes e 50 pendentes de normalização individual. A ratificação e a aplicação retroativa dependem de auditoria e aprovação explícita; a existência desta pasta não constitui, por si só, aprovação.
+O formato Markdown nativo foi aprovado formalmente na Norma v1.0.3. Após a aplicação do L1, o inventário identifica 61 ficheiros Markdown: 13 com campos canónicos presentes e 48 pendentes de normalização individual. A aprovação da norma autoriza a execução controlada, mas não constitui aprovação substantiva de cada documento.
 
 ## Roadmap de adoção
 
