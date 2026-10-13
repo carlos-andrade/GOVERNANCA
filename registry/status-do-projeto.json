@@ -11,10 +11,10 @@
   },
   "next_milestone": "Ativar supervisão externa: configurar as duas URLs de heartbeat como secrets no repositório B3, testar a deteção de ausência de heartbeat e obter aprovação formal dos limiares provisórios.",
   "blockers": [
-    "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários. Matriz de decisão preparada; aprovação humana ainda não registada.",
-    "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
-    "Os alertas do piloto B3 criam issues, mas ainda não têm confirmação de receção nem SLA de escalonamento.",
-    "A adoção da norma e da sincronização de status nos restantes repositórios ainda não foi executada."
+    "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários. Matriz de decisão preparada; aprovação humana ainda não registada",
+    "A supervisão externa independente do próprio WATCHDOG ainda não está configurada",
+    "O runbook de alertas está documentado, mas os responsáveis, os canais reais, a confirmação de receção e o SLA ainda não foram aprovados/testados; a issue #7 exige triagem das execuções desfavoráveis",
+    "A adoção da norma e da sincronização de status nos restantes repositórios ainda não foi executada"
   ],
   "evidence": [
     {
@@ -132,6 +132,14 @@
     {
       "label": "WATCHDOG B3 — matriz de revisão e aprovação dos oito limiares",
       "url": "https://github.com/carlos-andrade/B3/blob/main/WATCHDOG/limiares-provisorios-revisao.md"
+    },
+    {
+      "label": "WATCHDOG — runbook de operação de alertas, ACK e SLA proposto",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/WATCHDOG/runbooks/operacao-de-alertas-e-sla.md"
+    },
+    {
+      "label": "B3 WATCHDOG — correção para reavaliar COTAHIST diário e falhar em UNKNOWN",
+      "url": "https://github.com/carlos-andrade/B3/commit/466b3271455425c3927bbeda78e0e98609fb2e84"
     }
   ],
   "closure_checks": {
