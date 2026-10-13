@@ -9,10 +9,10 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Executar e validar o workflow WATCHDOG; depois implementar supervisão independente, alertas e adaptadores para os primeiros sistemas externos.",
+  "next_milestone": "Concluir a validação do piloto B3 e especificar a supervisão independente, alertas e adaptadores externos do WATCHDOG central.",
   "blockers": [
-    "O WATCHDOG ainda não dispõe de adaptadores externos, alertas operacionais ou supervisão independente 24×7.",
-    "A adoção da barra de status e da sincronização automática nos restantes repositórios ainda não foi executada."
+    "O WATCHDOG ainda não dispõe de adaptadores externos, alertas operacionais ou supervisão independente 24×7",
+    "A adoção da norma e da sincronização de status nos restantes repositórios, além do piloto B3, ainda não foi executada"
   ],
   "evidence": [
     {
@@ -38,6 +38,14 @@
     {
       "label": "Workflow de validação WATCHDOG",
       "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/watchdog-validation.yml"
+    },
+    {
+      "label": "Piloto WATCHDOG no repositório B3",
+      "url": "https://github.com/carlos-andrade/B3/tree/main/WATCHDOG"
+    },
+    {
+      "label": "Validação do piloto WATCHDOG B3",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-b3-validation.yml"
     }
   ],
   "closure_checks": {
