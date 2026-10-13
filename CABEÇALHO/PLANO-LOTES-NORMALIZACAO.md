@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO_EXECUCAO |
 | **Fase** | Preparação da normalização |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 122450589f03ba7a7710c87d1858a9085b6fcbfe28855a16e0cfd77824ee23bb |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | 58d90b628b70dbf56d6074ce7cacee10162b3d2e80e0e2602f7a616b281b722b |
 | **Commit de referência (versão anterior)** | [7be3b4162495922ce12f3c4f1c02813618b57489](https://github.com/carlos-andrade/GOVERNANCA/commit/7be3b4162495922ce12f3c4f1c02813618b57489) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -20,7 +20,7 @@
 
 ## Objetivo
 
-Preparar a normalização dos 48 ficheiros Markdown ainda pendentes no [inventário documental](INVENTARIO-DOCUMENTAL.md), com lotes pequenos e critérios verificáveis. Este plano não ratifica a norma nem autoriza alterações retroativas.
+Preparar a normalização dos 41 ficheiros Markdown ainda pendentes no [inventário documental](INVENTARIO-DOCUMENTAL.md), com lotes pequenos e critérios verificáveis. Este plano não ratifica a norma nem autoriza alterações retroativas.
 
 ## Gate de autorização
 
@@ -55,7 +55,7 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 
 ## Estado e próxima ação
 
-**Estado:** gate de aprovação satisfeito; L1 concluído. Inventário atual: 61 ficheiros Markdown, 13 com campos canónicos e 48 pendentes.
+**Estado:** gate de aprovação satisfeito; L1 e L2 concluídos. Inventário atual: 61 ficheiros Markdown, 20 com campos canónicos e 41 pendentes.
 
 **Classificação não destrutiva:** registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **L1:** concluído; GOV-001, versão e estado da Constituição preservados, assim como os marcadores automáticos do README. **Próxima ação:** iniciar L2 após reconciliar os caminhos com o inventário.
 
@@ -67,3 +67,4 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 | 1.0.1 | 2026-10-13 | Contagem dos lotes corrigida e classificação não destrutiva concluída | CABEÇALHO/CLASSIFICACAO-PRE-NORMALIZACAO.md |
 
 | 1.0.2 | 2026-10-13 | Aprovação formal satisfeita e L1 concluído; 48 documentos permanecem pendentes | Registo de aprovação, commits L1 e inventário v1.0.4 |
+| 1.0.3 | 2026-10-13 | L2 concluído nos sete documentos previstos; 41 documentos permanecem pendentes | Inventário v1.0.5 e commits L2 |
