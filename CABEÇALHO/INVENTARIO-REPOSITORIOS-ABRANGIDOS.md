@@ -9,7 +9,7 @@
 | **Fase** | Fase 5 — inventário transversal de repositórios |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 6b11c39b85ac8a5663a82bb14f20943ae6db5cd3ae907043ec0482b95444a13a |
+| **SHA-256 (conteúdo canónico)** | 6621afa092989464071359df38ec30a4008351af40e870f5cef0b357da6a2c84 |
 | **Commit de referência (versão anterior)** | N/A — documento criado nesta execução |
 | **Data de criação** | 2026-10-14 |
 | **Data de atualização** | 2026-10-14 |
@@ -29,7 +29,7 @@ A prioridade é operacional e provisória, não uma aprovação de escopo. A ado
 | Repositório | Prioridade inicial | Existência no GitHub | Responsável de referência | Estado de adoção | Próxima ação |
 |---|---|---|---|---|---|
 | [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) | P0 — norma central | Confirmada; branch `main` | Proprietário do repositório | Norma aprovada; 62 ficheiros Markdown inventariados após inclusão deste registo | Executar auditoria final e manter controlos sincronizados |
-| [STOCKS](https://github.com/carlos-andrade/STOCKS) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 32 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [STOCKS](https://github.com/carlos-andrade/STOCKS) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — 32/32 ficheiros Markdown sem cabeçalho canónico | Preparar lote de normalização STOCKS após concluir a linha de base dos restantes P1 |
 | [DECIO-BAZIN](https://github.com/carlos-andrade/DECIO-BAZIN) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 18 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
 | [B3](https://github.com/carlos-andrade/B3) | P1 — dados e mercado | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 272 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
 | [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | P1 — ingestão de dados | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 123 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
@@ -58,6 +58,6 @@ A prioridade é operacional e provisória, não uma aprovação de escopo. A ado
 ## Próxima sequência
 
 1. Linha de base inicial concluída para 14 repositórios acessíveis: árvore recursiva e README principal inspecionados; os 14 READMEs consultados não contêm o cabeçalho canónico. Os números de Markdown são contagens de ficheiros, não declarações de conformidade individual.
-2. Auditar individualmente os ficheiros Markdown dos repositórios P1, começando por STOCKS, DECIO-BAZIN e B3, antes de alterar ficheiros.
+2. STOCKS auditado individualmente: 32/32 ficheiros Markdown sem cabeçalho canónico. Continuar a auditoria individual dos restantes P1, começando por DECIO-BAZIN e B3, antes de alterar ficheiros.
 3. Registar resultados e exceções por caminho; só depois planear lotes de normalização por repositório.
 4. Auditar os candidatos P2 após a primeira ronda P1. O repositório BRICKMASTER-CLAUDE permanece fora da contagem confirmada até resolução do 404.
