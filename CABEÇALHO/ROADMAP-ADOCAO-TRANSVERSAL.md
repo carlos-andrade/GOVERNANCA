@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.6 |
-| **SHA-256 (conteúdo canónico)** | 2682fcff4137e62c6213da7e52ce8b3ed06c2c9a35f5648e182d42541275c434 |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | 093b2fbc6b78b0f73f0514d01f7c926c8166c83fd658c889a1b0d9086e7a4ba4 |
 | **Commit de referência (versão anterior)** | [32d2e5fdc4756865366ec8e2074ff34caeb0dd5d](https://github.com/carlos-andrade/GOVERNANCA/commit/32d2e5fdc4756865366ec8e2074ff34caeb0dd5d) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -36,8 +36,8 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | Fase | Trabalho | Critério de conclusão | Estado |
 |---|---|---|---|
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
-| 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
-| 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | AUDITADA — 60 ficheiros identificados na árvore atual; o inventário-base ainda lista 58 e requer atualização incremental |
+| 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com campos canónicos; 3 hashes recentes ainda exigem verificação independente; YAML auxiliar excluído da contagem | EM VALIDAÇÃO |
+| 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | BLOQUEADA — aguarda ratificação explícita do padrão |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
@@ -48,8 +48,8 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 | Data | Evidência/atividade | Resultado |
 |---|---|---|
-| 2026-10-13 | Norma, README, checklist e histórico revistos; exemplo normativo atualizado; SHA-256 recalculado e conferido em sete documentos Markdown | 10/10 hashes canónicos válidos; linhas de controlo presentes; YAML auxiliar não faz parte da contagem de Markdown |
-| 2026-10-13 | Inventário recursivo da branch main publicado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 60 ficheiros Markdown identificados; 10 com campos canónicos e 50 pendentes; inventário-base de 58 ficheiros precisa de reconciliação |
+| 2026-10-13 | Auditoria da pasta CABEÇALHO | 7 documentos originais tinham verificação registada; hashes dos 3 documentos de controlo mais recentes ficam sujeitos a recalculo independente |
+| 2026-10-13 | Inventário recursivo da branch main publicado e reconciliado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 60 ficheiros Markdown: 10 com campos canónicos e 50 pendentes; contagem do README alinhada |
 | 2026-10-13 | Classificação não destrutiva dos 50 documentos pendentes registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md); plano de lotes corrigido para 24 documentos centrais e 26 WATCHDOG | Metadados legados e riscos de preservação identificados; nenhuma alteração retroativa aplicada |
 
 ## Bloqueios e limites
@@ -61,7 +61,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 ## Próxima ação
 
-Primeiro reconciliar o inventário-base de 58 para 60 ficheiros e atualizar o README de CABEÇALHO. Depois, obter ratificação explícita da norma; após registo verificável da aprovação, iniciar L1 com `CONSTITUICAO.md` e `README.md`, validando cada diff e hash.
+Verificar e corrigir os hashes canónicos dos documentos de controlo recentes e alinhar o roadmap com o inventário reconciliado. Em paralelo, aguardar ratificação explícita da versão 1.0.3 da norma. Só após evidência verificável da aprovação iniciar L1 com `CONSTITUICAO.md` e `README.md`, validando cada diff e hash.
 
 ## Histórico de alterações
 
@@ -74,3 +74,4 @@ Primeiro reconciliar o inventário-base de 58 para 60 ficheiros e atualizar o RE
 | 1.0.4 | 2026-10-13 | Registo da classificação não destrutiva dos 50 documentos e correção da contagem dos lotes | CABEÇALHO/CLASSIFICACAO-PRE-NORMALIZACAO.md |
 | 1.0.5 | 2026-10-13 | Atualização da contagem documental após publicação do plano e do relatório de classificação | Árvore Git da branch main |
 | 1.0.6 | 2026-10-13 | Identificação explícita da reconciliação pendente entre a árvore atual e o inventário-base | Histórico Git |
+| 1.0.7 | 2026-10-13 | Reconciliação para 60 documentos e correção do estado de verificação dos hashes recentes | Inventário documental e auditoria da pasta CABEÇALHO |
