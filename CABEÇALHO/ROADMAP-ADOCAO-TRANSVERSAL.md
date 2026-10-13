@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.1.1 |
-| **SHA-256 (conteúdo canónico)** | f44249821622351d4f80f6280702616ae8b5437080e555886506e3681cc2a72e |
-| **Commit de referência (versão anterior)** | [86f1bb90caea152a7d18af50e5f83e0ee305588a](https://github.com/carlos-andrade/GOVERNANCA/commit/86f1bb90caea152a7d18af50e5f83e0ee305588a) |
+| **Versão** | 1.1.2 |
+| **SHA-256 (conteúdo canónico)** | 587b123d6bad7db2b1ab4f8a3e25407e770848d316099ea1a167edda6d62d796 |
+| **Commit de referência (versão anterior)** | [10139cb47416eec612b5057aefed8e097931058b](https://github.com/carlos-andrade/GOVERNANCA/commit/10139cb47416eec612b5057aefed8e097931058b) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -38,7 +38,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
 | 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
-| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | EM_EXECUÇÃO — L1 aplicado; reconciliar documentação de controlo antes de L2 |
+| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | EM_EXECUÇÃO — L1 e L2 aplicados; L3 é o próximo lote |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
 | 7 | Validar adoção transversal | Relatório de conformidade por repositório, pendências e exceções | PENDENTE |
@@ -51,6 +51,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | 2026-10-13 | Auditoria da pasta CABEÇALHO | Hash canónico verificado para os 10 documentos Markdown da pasta CABEÇALHO; inventário reconciliado e hashes conferidos após publicação |
 | 2026-10-13 | Inventário recursivo da branch main publicado e reconciliado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 60 ficheiros Markdown: 10 com campos canónicos e 50 pendentes; contagem do README alinhada |
 | 2026-10-13 | Ratificação da Norma v1.0.3 e aplicação L1 | Gate 8 concluído; cabeçalhos de Constituição e README aplicados; inventário atualizado para 61 ficheiros, 13 canónicos e 48 pendentes | [Registo de aprovação](REGISTO-APROVACAO-NORMA-1.0.3.md), [issue #2](https://github.com/carlos-andrade/GOVERNANCA/issues/2), commits `b87b0857` e `ce33acdf` |
+| 2026-10-13 | Aplicação L2 | Sete documentos de fundamentos e governança normalizados; inventário atualizado para 20 canónicos e 41 pendentes | Inventário v1.0.5 e commits L2 |
 | 2026-10-13 | Classificação não destrutiva dos 50 documentos pendentes registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md); plano de lotes corrigido para 24 documentos centrais e 26 WATCHDOG | Metadados legados e riscos de preservação identificados; nenhuma alteração retroativa aplicada |
 
 ## Bloqueios e limites
@@ -62,7 +63,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 ## Próxima ação
 
-Fase 8 concluída. L1 publicado: cabeçalhos canónicos adicionados a `CONSTITUICAO.md` e `README.md`, preservando GOV-001, a versão e o estado de proposta da Constituição e os marcadores automáticos do README. Próxima ação: reconciliar inventário, README da pasta CABEÇALHO e plano de lotes antes de iniciar L2.
+Fases 8 e L1 concluídos. L2 aplicado a sete documentos de fundamentos e governança. Inventário reconciliado: 61 ficheiros Markdown, 20 com campos canónicos e 41 pendentes. Próxima ação: validar o lote publicado e iniciar L3 após atualizar o plano de lotes.
 
 ## Histórico de alterações
 
@@ -80,3 +81,4 @@ Fase 8 concluída. L1 publicado: cabeçalhos canónicos adicionados a `CONSTITUI
 | 1.0.9 | 2026-10-13 | Fecho da verificação canónica dos dez documentos Markdown da pasta CABEÇALHO | Inventário v1.0.3 e hashes recalculados/conferidos |
 | 1.1.0 | 2026-10-13 | Conclusão da Fase 2 e explicitação do único gate imediato: ratificação formal da norma | Verificação canónica e regra de autorização |
 | 1.1.1 | 2026-10-13 | Ratificação formal da Norma v1.0.3, conclusão da Fase 8 e início da normalização L1; inventário reconciliado | Registo de aprovação, issue #2 e commits L1 |
+| 1.1.2 | 2026-10-13 | L2 aplicado a sete documentos; inventário atualizado para 61 documentos, 20 canónicos e 41 pendentes | Commits L2 e inventário v1.0.5 |
