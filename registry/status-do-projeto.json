@@ -9,11 +9,13 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Rever e calibrar o primeiro relatório de atualidade dos dados BCB/BDI/COTAHIST; depois configurar supervisão independente e confirmação/escalonamento de alertas.",
+  "next_milestone": "Confirmar a atualidade do BDI e completar a data de observação COTAHIST; depois calibrar os limiares e configurar supervisão independente do WATCHDOG.",
   "blockers": [
+    "O monitor de atualidade identificou B3 BDI DailyAverageStocks com observação de 2026-09-22, 21 dias de idade face ao limite configurado de 5 dias; requer validação e atualização da fonte/dataset.",
+    "O manifesto COTAHIST 2026 não declara a última data de observação, mantendo a atualidade como UNKNOWN.",
     "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
     "Os alertas do piloto B3 criam issues, mas ainda não têm confirmação de receção nem SLA de escalonamento.",
-    "O avaliador de atualidade precisa de revisão dos estados reais e calibração dos limites por dataset.",
+    "Os limites de atualidade por dataset carecem de revisão e aprovação pelos respetivos proprietários.",
     "A adoção da norma e da sincronização de status nos restantes repositórios ainda não foi executada."
   ],
   "evidence": [
@@ -60,6 +62,18 @@
     {
       "label": "Issue de alerta WATCHDOG B3",
       "url": "https://github.com/carlos-andrade/B3/issues/7"
+    },
+    {
+      "label": "Primeira avaliação de atualidade B3 — 5 PASS, 1 STALE, 1 UNKNOWN",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38386633810"
+    },
+    {
+      "label": "Issue B3 — atualidade dos dados",
+      "url": "https://github.com/carlos-andrade/B3/issues/8"
+    },
+    {
+      "label": "Roadmap WATCHDOG atualizado",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/WATCHDOG/roadmap-de-implementacao.md"
     }
   ],
   "closure_checks": {
