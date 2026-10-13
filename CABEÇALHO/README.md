@@ -8,9 +8,9 @@
 | **Tipo documental** | README |
 | **Fase** | Validação do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | a7bc93a3975db513e7750554d61bfe7aff2dd052c45f61599ef41522d95af956 |
-| **Commit de referência (versão anterior)** | [e5fb56bc923497f3dd497defdd99c62726a610d4](https://github.com/carlos-andrade/GOVERNANCA/commit/e5fb56bc923497f3dd497defdd99c62726a610d4) |
+| **Versão** | 1.0.4 |
+| **SHA-256 (conteúdo canónico)** | 77a91f04b46711954fd5d47c2fa0e5782e315f607002cd969dcebe4eb47c705a |
+| **Commit de referência (versão anterior)** | [9b2b4a59c0df8555aba61585d5316b2b26249d60](https://github.com/carlos-andrade/GOVERNANCA/commit/9b2b4a59c0df8555aba61585d5316b2b26249d60) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -34,6 +34,8 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 - [REGISTO-TIPOS-DOCUMENTAIS.md](REGISTO-TIPOS-DOCUMENTAIS.md) — tipos documentais.
 - [CHECKLIST-VALIDACAO.md](CHECKLIST-VALIDACAO.md) — checklist de validação.
 - [HISTORICO.md](HISTORICO.md) — histórico de alterações.
+- [INVENTARIO-DOCUMENTAL.md](INVENTARIO-DOCUMENTAL.md) — inventário dos 57 ficheiros Markdown e estado estrutural do cabeçalho.
+- [ROADMAP-ADOCAO-TRANSVERSAL.md](ROADMAP-ADOCAO-TRANSVERSAL.md) — fases e critérios de adoção.
 
 ## Cadeia de autoridade
 
@@ -50,7 +52,7 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 
 ## Estado de validação
 
-O formato foi ajustado para Markdown nativo e os documentos de governação do padrão estão em revisão de consistência. A ratificação e a aplicação retroativa dependem de auditoria e aprovação explícita; a existência desta pasta não constitui, por si só, aprovação.
+O formato foi ajustado para Markdown nativo. O inventário inicial identificou 57 ficheiros Markdown: 7 com campos canónicos presentes e 50 pendentes de normalização individual. A ratificação e a aplicação retroativa dependem de auditoria e aprovação explícita; a existência desta pasta não constitui, por si só, aprovação.
 
 ## Roadmap de adoção
 
