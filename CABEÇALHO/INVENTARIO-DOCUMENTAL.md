@@ -9,7 +9,7 @@
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.1.1 |
-| **SHA-256 (conteúdo canónico)** | d981cde258ad0dff62ccc6b90e8c8d258a0106c9bc487a64e724e3ccbe4b3ede |
+| **SHA-256 (conteúdo canónico)** | c891849a9971013f6a279711c3cda3b4e0444c3a945a0f9bc1f426279593ab37 |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/b97fa1b4164270b782c1bb04e7023406335b797a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -118,7 +118,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 ## Próxima ação
 
-L1–L7 publicados; hashes canónicos dos 10 documentos WATCHDOG L7 verificados após publicação. Próxima ação: auditoria transversal final e reconciliação da adoção.
+L1–L7 publicados; hashes canónicos dos 10 documentos WATCHDOG L7 verificados após publicação. Fase 5 iniciada: inventário de repositórios criado e linha de base inicial recolhida para 14 repositórios.
 
 ## Histórico de alterações
 
@@ -144,3 +144,6 @@ L1–L7 publicados; hashes canónicos dos 10 documentos WATCHDOG L7 verificados 
 
 
 | 1.1.0 | 2026-10-14 | L7 aplicado aos dez documentos WATCHDOG restantes; cobertura estrutural do cabeçalho canónico atingiu 61/61 (100%) | Dez commits L7 e validação SHA-256 pós-publicação |
+
+
+| 1.1.1 | 2026-10-14 | Inventário transversal de repositórios adicionado; total atualizado para 62 documentos Markdown, todos com cabeçalho canónico | CABEÇALHO/INVENTARIO-REPOSITORIOS-ABRANGIDOS.md e validação SHA-256 |
