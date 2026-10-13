@@ -9,7 +9,7 @@
 | **Fase** | Preparação da normalização |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 8198058c41613a9d4f170735ed87fcb46ab1b00f9fd3ef6dd7e85f3ccc985ed5 |
+| **SHA-256 (conteúdo canónico)** | 3ad85dc2f991dbaf3cdfddcf39f8a6c8d4b5f4c34e12a7cf4e382874daa80216 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -33,14 +33,14 @@ Até esse gate ser satisfeito, são permitidos planeamento, classificação e au
 | Lote | Âmbito | Ficheiros previstos | Regra especial |
 |---|---|---:|---|
 | L1 | Constituição e entrada do repositório | 2 | Tratar `CONSTITUICAO.md` como autoridade superior; preservar metadados históricos do `README.md` |
-| L2 | Fundamentos e governança | 8 | Preservar significado normativo e decisões existentes |
+| L2 | Fundamentos e governança | 7 | Preservar significado normativo e decisões existentes |
 | L3 | Ciclo de vida, portefólio e engenharia | 5 | Preservar requisitos, arquitetura e histórico |
 | L4 | Dados, IA, segurança e privacidade | 6 | Não inventar requisitos ou aprovações |
 | L5 | Operações, standards e templates | 4 | Preservar procedimentos e critérios existentes |
-| L6 | WATCHDOG — arquitetura, normas e operação | 15 | Preservar contratos técnicos, políticas e runbooks |
+| L6 | WATCHDOG — arquitetura, normas e operação | 16 | Preservar contratos técnicos, políticas e runbooks |
 | L7 | WATCHDOG — adaptadores, relatórios e testes | 10 | Preservar exemplos e estrutura operacional |
 
-Os totais são uma proposta de agrupamento. Antes de cada lote, reconciliar os caminhos com o inventário atual; se houver divergência, corrigir o plano antes de editar.
+Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, totalizando 50 pendentes. Os totais são uma proposta de agrupamento. Antes de cada lote, reconciliar os caminhos com o inventário atual; se houver divergência, corrigir o plano antes de editar.
 
 ## Procedimento e aceitação
 
