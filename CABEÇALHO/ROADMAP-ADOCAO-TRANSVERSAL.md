@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.1.8 |
-| **SHA-256 (conteúdo canónico)** | 778e18b86da0a5972fdcf31a25bf1902b0f7ba81980446ac427fd988d50b019f |
+| **Versão** | 1.1.9 |
+| **SHA-256 (conteúdo canónico)** | 80676a16f608c2d42da59b877f6ad2ea203fcdd64e273f7bcdb6131f3ef2ad24 |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/c27f591c6c846de076c34b8451cf0dbc52bacc13) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -38,7 +38,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
 | 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
-| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | CONCLUÍDA — L1–L7 aplicados; 61/61 documentos com cabeçalho canónico |
+| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | CONCLUÍDA — L1–L7 aplicados; 62/62 documentos com cabeçalho canónico |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | EM_EXECUÇÃO — inventário inicial criado; 14 repositórios acessíveis com linha de base de README e árvore; 1 repositório com 404 por confirmar |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
 | 7 | Validar adoção transversal | Relatório de conformidade por repositório, pendências e exceções | PENDENTE |
@@ -90,3 +90,5 @@ Fases 4 e 8 concluídas. L1–L7 aplicados e verificados; inventário reconcilia
 | 2026-10-14 | Aplicação L7 e reconciliação final | Os dez documentos WATCHDOG restantes foram normalizados; cobertura estrutural do repositório GOVERNANCA: 61/61 (100%) | Inventário v1.1.0, validação SHA-256 pós-publicação e commits L7 |
 
 | 2026-10-14 | Início da Fase 5 | Inventário inicial criado para 15 repositórios confirmados e um candidato com 404; árvore e README principal analisados em 14 repositórios | CABEÇALHO/INVENTARIO-REPOSITORIOS-ABRANGIDOS.md e consultas GitHub de metadados/árvore |
+
+| 2026-10-14 | Reconciliado o inventário após criação do inventário transversal | 62 ficheiros Markdown no GOVERNANCA; 62 com cabeçalho canónico; Fase 5 em execução | Inventário documental v1.1.1 e inventário de repositórios |
