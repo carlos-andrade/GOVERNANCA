@@ -31,9 +31,9 @@ Limites: os artefactos não são armazenamento imutável; issues não confirmam 
 - UNKNOWN quando a data de observação não existe; a data de ingestão não é usada como substituto.
 - Workflow agendado, testes, relatório JSON/Markdown, artefacto de 30 dias e issue de alerta para datasets fora do limite.
 
-Primeiro resultado real (2026-10-13): 5 PASS, 1 STALE, 1 UNKNOWN. O manifesto BDI DailyAverageStocks mais recente no repositório tem data de observação 2026-09-22, 21 dias antes da avaliação e acima do limite configurado de 5 dias. O manifesto COTAHIST 2026 não declara a data da última observação, por isso ficou UNKNOWN; a data de aquisição não foi usada como substituto. Os cinco controlos BCB SGS passaram nos limites configurados.
+Primeira avaliação real (2026-10-13): 5 PASS, 1 STALE, 1 UNKNOWN. O monitor detetou BDI DailyAverageStocks em 2026-09-22, com 21 dias de idade, e abriu uma issue. O pipeline de captura foi corrigido para procurar a última data disponível até sete dias para trás, validar a resposta antes de gravar, preservar SHA-256 e não sobrescrever divergências. A captura encontrou dados BDI de 2026-10-09 e a reavaliação posterior resultou em **6 PASS, 0 STALE, 1 UNKNOWN**. Os cinco controlos BCB SGS e o BDI ficaram dentro dos limites configurados. O manifesto COTAHIST 2026 continua sem declarar a data da última observação e permanece UNKNOWN.
 
-Critério de saída: o proprietário deve confirmar a semântica e calibrar cada limite, verificar a origem e atualidade do BDI, preencher a lacuna de data de observação do COTAHIST e comprovar recuperação após atualização.
+Critério de saída: o proprietário deve confirmar a semântica e aprovar cada limite, preencher a lacuna de data de observação do COTAHIST e comprovar recuperação após atualização. A issue de atualidade permanece aberta para acompanhamento da lacuna UNKNOWN.
 
 ## Fase 4 — Alertas operacionais e resiliência
 
