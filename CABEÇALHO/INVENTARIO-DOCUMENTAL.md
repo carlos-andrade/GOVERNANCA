@@ -8,8 +8,8 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.8 |
-| **SHA-256 (conteúdo canónico)** | 3796664895bf3d11eb716086a2879d0f36e81fdf7847ae53c8d4f6ddef99a913 |
+| **Versão** | 1.0.9 |
+| **SHA-256 (conteúdo canónico)** | 0e3fe4bb2f74ab5ed082e9cc935afd98d712c0d12de424712db7782ab307f9b6 |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/b97fa1b4164270b782c1bb04e7023406335b797a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -36,9 +36,9 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 | Resultado | Quantidade |
 |---|---:|
 | Ficheiros Markdown inventariados | 61 |
-| Com campos canónicos presentes | 35 |
-| A normalizar ou avaliar individualmente | 26 |
-| Cobertura estrutural do padrão | 57,4% |
+| Com campos canónicos presentes | 51 |
+| A normalizar ou avaliar individualmente | 10 |
+| Cobertura estrutural do padrão | 83,6% |
 
 ## Inventário completo
 
@@ -57,29 +57,29 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 | `CABEÇALHO/CLASSIFICACAO-PRE-NORMALIZACAO.md` | CONFORME — campos canónicos presentes |
 | `CONSTITUICAO.md` | CABEÇALHO APLICADO — GOV-001 e estado de proposta preservados |
 | `README.md` | CABEÇALHO APLICADO — marcadores de automação preservados |
-| `WATCHDOG/CARTA-WATCHDOG.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/README.md` | PENDENTE — normalização necessária |
+| `WATCHDOG/CARTA-WATCHDOG.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/README.md` | CABEÇALHO APLICADO — corpo preservado |
 | `WATCHDOG/adapters/aplicacoes/README.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/adapters/dados/README.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/adapters/github-actions/README.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/adapters/infraestrutura/README.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/adapters/processos/README.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/arquitetura/arquitetura-geral.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/arquitetura/modelo-de-execucao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/arquitetura/modelo-de-integracao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/docs/configuracao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/docs/instalacao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/docs/operacao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/normas/classificacao-de-estados.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/normas/evidencias-e-auditoria.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/normas/politica-de-monitorizacao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/normas/recuperacao-e-remediacao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/normas/seguranca-e-privacidade.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/normas/severidade-e-escalonamento.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/registry/adocao-transversal.md` | PENDENTE — normalização necessária |
+| `WATCHDOG/arquitetura/arquitetura-geral.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/arquitetura/modelo-de-execucao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/arquitetura/modelo-de-integracao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/docs/configuracao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/docs/instalacao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/docs/operacao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/normas/classificacao-de-estados.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/normas/evidencias-e-auditoria.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/normas/politica-de-monitorizacao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/normas/recuperacao-e-remediacao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/normas/seguranca-e-privacidade.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/normas/severidade-e-escalonamento.md` | CABEÇALHO APLICADO — corpo preservado |
+| `WATCHDOG/registry/adocao-transversal.md` | CABEÇALHO APLICADO — corpo preservado |
 | `WATCHDOG/reports/exemplos/README.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/reports/modelos/relatorio-de-execucao.md` | PENDENTE — normalização necessária |
-| `WATCHDOG/roadmap-de-implementacao.md` | PENDENTE — normalização necessária |
+| `WATCHDOG/roadmap-de-implementacao.md` | CABEÇALHO APLICADO — corpo preservado |
 | `WATCHDOG/runbooks/incidente-critico.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/runbooks/operacao-de-alertas-e-sla.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/tests/README.md` | PENDENTE — normalização necessária |
@@ -117,7 +117,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 ## Próxima ação
 
-L1–L5 publicados; hashes canónicos dos quatro documentos L5 verificados após publicação. Próxima ação: reconciliar os documentos de controlo e preparar L6.
+L1–L6 publicados; hashes canónicos dos 16 documentos WATCHDOG L6 verificados após publicação. Próxima ação: reconciliar os documentos de controlo e preparar L7.
 
 ## Histórico de alterações
 
@@ -137,3 +137,6 @@ L1–L5 publicados; hashes canónicos dos quatro documentos L5 verificados após
 
 
 | 1.0.8 | 2026-10-14 | L5 aplicado a quatro documentos de operações, standards e templates; inventário reconciliado para 61 ficheiros, 35 com campos canónicos e 26 pendentes | Quatro commits L5 e validação SHA-256 canónica |
+
+
+| 1.0.9 | 2026-10-14 | L6 aplicado a 16 documentos WATCHDOG de carta, arquitetura, normas, documentação e operação; inventário reconciliado para 51 canónicos e 10 pendentes | 16 commits L6 e validação SHA-256 pós-publicação |
