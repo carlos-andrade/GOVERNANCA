@@ -148,6 +148,34 @@
     {
       "label": "BLOOMBERG_MAIL — supervisor WATCHDOG sem cancelamento da execução ativa",
       "url": "https://github.com/carlos-andrade/BLOOMBERG_MAIL/commit/a67c3a71661e5e0643d8dd61894ffbfb06c1eaa4"
+    },
+    {
+      "label": "B3 WATCHDOG — gate único de aceitação final do piloto",
+      "url": "https://github.com/carlos-andrade/B3/issues/9"
+    },
+    {
+      "label": "B3 COTAHIST — FASE02 2015 recuperada após conflito de publicação",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391766652"
+    },
+    {
+      "label": "B3 COTAHIST — FASE03 2015 recuperada após conflito de publicação",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391639534"
+    },
+    {
+      "label": "B3 COTAHIST — FASE09 2014 recuperada após conflito de publicação",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391778953"
+    },
+    {
+      "label": "B3 COTAHIST — FASE10 2014 recuperada após conflito de publicação",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391772384"
+    },
+    {
+      "label": "B3 COTAHIST — FASE11 2014 recuperada após conflito de publicação",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391659783"
+    },
+    {
+      "label": "BLOOMBERG_MAIL — validação do supervisor WATCHDOG após ajuste de concorrência",
+      "url": "https://github.com/carlos-andrade/BLOOMBERG_MAIL/actions/runs/38391557718"
     }
   ],
   "closure_checks": {
