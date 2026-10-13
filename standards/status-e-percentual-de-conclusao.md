@@ -1,5 +1,24 @@
 # Norma — Barra de estado e percentual de conclusão
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-STD-STATUS-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | NORMA |
+| **Fase** | Standards e métricas de projeto |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 8355fa901e65d87b5ed36e7a4d657a7d012dee479acae325c8c7b9207d77e2a0 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `standards/status-e-percentual-de-conclusao.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 ## Objetivo
 Todo projeto deve expor, desde a sua abertura até ao encerramento, uma barra de estado e um percentual de conclusão calculados por evidências verificáveis. A regra aplica-se a projetos de software, dados, conteúdo, infraestrutura, investigação, operações e projetos híbridos.
 
