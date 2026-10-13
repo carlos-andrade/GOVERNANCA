@@ -1,5 +1,24 @@
 # Modelo operacional
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-FOU-MOD-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | MODELO_OPERACIONAL |
+| **Fase** | Fundamentos |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 0f60c7b96ed8a60c811bb4ee8ef656b3d77e172f6bfcd2cfd1e40db04d9369d8 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-13 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `docs/00-fundamentos/modelo-operacional.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../../CONSTITUICAO.md) e [Norma de cabeçalho](../../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 ## Padrão de governança
 
 Usar governança federada: princípios, níveis de risco, taxonomia, gates e formatos comuns no núcleo; execução autónoma pelos domínios dentro desses limites. Data Mesh é opção para domínios de dados maduros, não uma meta universal.
