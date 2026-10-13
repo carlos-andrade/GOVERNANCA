@@ -9,8 +9,8 @@
 | **Fase** | FASE_XX ou N/A — justificação |
 | **Estado** | RASCUNHO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 08a335134ca5909da1eb0e78b0739d31fce7fceefbfc1783301e639d90b82b14 |
-| **Commit de referência (versão anterior)** | [b260f716306e6c658d955f58b34ccc3474da2e54](https://github.com/carlos-andrade/GOVERNANCA/commit/b260f716306e6c658d955f58b34ccc3474da2e54) |
+| **SHA-256 (conteúdo canónico)** | 9ab9e919cd6e442acab6ecc5be5d968d0fc0f9d5b99a2b7187092f77091f133f |
+| **Commit de referência (versão anterior)** | [fdfc1cadc2225971f3d06ad4551bcf1d2efe1f8b](https://github.com/carlos-andrade/GOVERNANCA/commit/fdfc1cadc2225971f3d06ad4551bcf1d2efe1f8b) |
 | **Data de criação** | AAAA-MM-DD |
 | **Data de atualização** | AAAA-MM-DD |
 | **Responsável** | Papel ou responsável |
