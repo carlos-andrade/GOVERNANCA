@@ -8,9 +8,9 @@
 | **Tipo documental** | README |
 | **Fase** | Validação do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 7a7966e8801ead7dd1e1f3c5b1fb670c65317ced7dadb2c71c2db9300cc1f49d |
-| **Commit de referência (versão anterior)** | [d973fa7718f5b723c9121e46c45151d13e4a658e](https://github.com/carlos-andrade/GOVERNANCA/commit/d973fa7718f5b723c9121e46c45151d13e4a658e) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | a7bc93a3975db513e7750554d61bfe7aff2dd052c45f61599ef41522d95af956 |
+| **Commit de referência (versão anterior)** | [e5fb56bc923497f3dd497defdd99c62726a610d4](https://github.com/carlos-andrade/GOVERNANCA/commit/e5fb56bc923497f3dd497defdd99c62726a610d4) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -50,4 +50,8 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 
 ## Estado de validação
 
-O formato foi ajustado para Markdown nativo. A ratificação e a aplicação retroativa dependem de auditoria e aprovação explícita; a existência desta pasta não constitui, por si só, aprovação.
+O formato foi ajustado para Markdown nativo e os documentos de governação do padrão estão em revisão de consistência. A ratificação e a aplicação retroativa dependem de auditoria e aprovação explícita; a existência desta pasta não constitui, por si só, aprovação.
+
+## Roadmap de adoção
+
+Consultar [ROADMAP-ADOCAO-TRANSVERSAL.md](ROADMAP-ADOCAO-TRANSVERSAL.md) para fases, critérios de conclusão, evidências e pendências da adoção nos repositórios. A conformidade só é declarada após inventário, verificação e registo por repositório.
