@@ -5,6 +5,8 @@
 
 ## Começar por aqui
 
+Consulte também o [roadmap de implementação e critérios de encerramento](roadmap-de-implementacao.md) para distinguir o MVP validado das fases pendentes.
+
 1. Leia a [Carta WATCHDOG](CARTA-WATCHDOG.md) e a [política de monitorização](normas/politica-de-monitorizacao.md).
 2. Registe os sistemas em [registry/sistemas-monitorizados.json](registry/sistemas-monitorizados.json).
 3. Declare os controlos aplicáveis em [registry/controlos-obrigatorios.json](registry/controlos-obrigatorios.json).
