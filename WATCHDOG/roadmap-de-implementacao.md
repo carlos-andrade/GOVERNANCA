@@ -44,6 +44,7 @@ Critério de saída: o proprietário deve confirmar a semântica e aprovar cada 
 - Runbook de [operação de alertas, confirmação e SLA proposto](runbooks/operacao-de-alertas-e-sla.md) criado.
 - O runbook define severidades, tempos provisórios, ACK, escalonamento, deduplicação e critérios de fecho.
 - Falta aprovar os tempos, nomear responsáveis primário/suplente, configurar canais reais e comprovar entrega, ausência de ACK, escalonamento e recuperação.
+- Foi criado o [gate único de aceitação final do piloto B3 — issue #9](https://github.com/carlos-andrade/B3/issues/9), atribuído ao proprietário, reunindo decisões humanas e testes externos necessários.
 - Issue #7 no piloto B3 contém execuções desfavoráveis que exigem triagem individual; não deve ser encerrada apenas por existir um relatório.
 
 ## Fase 5 — Supervisão independente
