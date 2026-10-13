@@ -6,16 +6,16 @@
 | **Projeto** | GOVERNANÇA |
 | **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Tipo documental** | NORMA |
-| **Fase** | Validação do padrão |
-| **Estado** | PROPOSTA PARA VALIDAÇÃO |
+| **Fase** | Aplicação e adoção transversal |
+| **Estado** | APROVADO |
 | **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | ec119c373e9b17daed65b21c47da7261d5d3bb821ccf52be7e0c1528c563f50d |
+| **SHA-256 (conteúdo canónico)** | d9993f16c60d7cab9f88bd3f3df54724a20d330482d3191ef8f6a1a6b06ee242 |
 | **Commit de referência (versão anterior)** | [ce8ef455953b5c9291067d0f49cbc9ed137b215a](https://github.com/carlos-andrade/GOVERNANCA/commit/ce8ef455953b5c9291067d0f49cbc9ed137b215a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
-| **Aprovador** | Pendente de aprovação formal |
-| **Origem** | Convenção documental já utilizada nos projetos |
+| **Aprovador** | Carlos Andrade — proprietário do repositório GOVERNANCA |
+| **Origem** | Convenção documental já utilizada nos projetos; aprovação formal registada em CABEÇALHO/REGISTO-APROVACAO-NORMA-1.0.3.md |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e políticas da GOVERNANCA |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
@@ -116,4 +116,4 @@ Quando disponível, incluir um link para o commit GitHub que introduziu a versã
 
 ## 12. Limites
 
-Esta norma continua em estado de proposta. A adoção transversal depende de aprovação formal e validação individual dos repositórios.
+A versão 1.0.3 foi formalmente aprovada em 2026-10-13 pelo proprietário do repositório GOVERNANCA, Carlos Andrade. A evidência está registada em [REGISTO-APROVACAO-NORMA-1.0.3.md](REGISTO-APROVACAO-NORMA-1.0.3.md) e na [issue #2](https://github.com/carlos-andrade/GOVERNANCA/issues/2). A aplicação retroativa continua sujeita a validação individual, preservação do conteúdo, diffs verificáveis e controlo de integridade.
