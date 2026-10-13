@@ -9,7 +9,7 @@
 | **Fase** | Validação do padrão |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.5.0 |
-| **SHA-256 (conteúdo canónico)** | 96d1886492f15a22b9f0b49ca648d2e29dabaafed7c52fb61b580636f4a4d799 |
+| **SHA-256 (conteúdo canónico)** | d78bedb2f5ea3b04e51ce0ff5b4a2c896d88fa1a79f23e71f2a5003634d380b8 |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/5d552b1d6217ccbe7a3fe24871d7e4a5195fa122) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -34,7 +34,8 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 - [REGISTO-TIPOS-DOCUMENTAIS.md](REGISTO-TIPOS-DOCUMENTAIS.md) — tipos documentais.
 - [CHECKLIST-VALIDACAO.md](CHECKLIST-VALIDACAO.md) — checklist de validação.
 - [HISTORICO.md](HISTORICO.md) — histórico de alterações.
-- [INVENTARIO-DOCUMENTAL.md](INVENTARIO-DOCUMENTAL.md) — inventário dos 61 ficheiros Markdown e estado estrutural do cabeçalho.
+- [INVENTARIO-DOCUMENTAL.md](INVENTARIO-DOCUMENTAL.md) — inventário dos 62 ficheiros Markdown e estado estrutural do cabeçalho.
+- [INVENTARIO-REPOSITORIOS-ABRANGIDOS.md](INVENTARIO-REPOSITORIOS-ABRANGIDOS.md) — inventário inicial dos repositórios candidatos à adoção transversal.
 - [REGISTO-APROVACAO-NORMA-1.0.3.md](REGISTO-APROVACAO-NORMA-1.0.3.md) — evidência da ratificação formal da norma.
 - [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md) — classificação não destrutiva dos 50 documentos pendentes.
 - [PLANO-LOTES-NORMALIZACAO.md](PLANO-LOTES-NORMALIZACAO.md) — lotes, gates e critérios de execução.
