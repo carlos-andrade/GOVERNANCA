@@ -9,7 +9,7 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Configurar as duas secrets de heartbeat com serviço externo, validar ausência de heartbeat e obter aprovação dos limiares de atualidade por dataset.",
+  "next_milestone": "Ativar supervisão externa: configurar as duas URLs de heartbeat como secrets no repositório B3, testar a deteção de ausência de heartbeat e obter aprovação formal dos limiares provisórios.",
   "blockers": [
     "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários.",
     "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
@@ -116,6 +116,18 @@
     {
       "label": "Validação B3 dos hooks de heartbeat e inventários",
       "url": "https://github.com/carlos-andrade/B3/actions/runs/38387959995"
+    },
+    {
+      "label": "Validação WATCHDOG B3 — inventários e workflows aprovados",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38388720827"
+    },
+    {
+      "label": "Monitor independente B3 — execução e artefacto publicados",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38388728634"
+    },
+    {
+      "label": "Issue B3 — 8 controlos PASS; aprovação dos limiares pendente",
+      "url": "https://github.com/carlos-andrade/B3/issues/8"
     }
   ],
   "closure_checks": {
