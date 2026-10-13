@@ -1,6 +1,23 @@
 # Constituição do Sistema de Governança
 
-**ID:** GOV-001 | **Versão:** 1.0.0 | **Estado:** proposta para revisão | **Revisão:** anual ou após mudança material
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | CONSTITUICAO |
+| **Fase** | Governação fundacional |
+| **Estado** | PROPOSTA PARA REVISÃO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 2721284d45ebe45da220d89d9c2faad279e45116ffb0f4bc5f3ff89f62492b0d |
+| **Commit de referência (versão anterior)** | [62a2354c6372417a36c4df256fff267e691d8495](https://github.com/carlos-andrade/GOVERNANCA/commit/62a2354c6372417a36c4df256fff267e691d8495) |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-13 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal da Constituição |
+| **Autoridade superior** | Lei aplicável, contratos vinculativos e políticas formalmente aprovadas; ver secção 3 |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 
 ## 1. Finalidade
 
