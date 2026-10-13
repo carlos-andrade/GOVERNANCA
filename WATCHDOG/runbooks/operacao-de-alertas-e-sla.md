@@ -1,5 +1,24 @@
 # Operação de alertas WATCHDOG — confirmação, SLA e escalonamento
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-WD-RUN-ALERT-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | RUNBOOK |
+| **Fase** | WATCHDOG — alertas e SLA |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 5b38c23d743b1254707c812e63e6d6a5b5bac8e2dacb95f5539afdc3f7cd230d |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `WATCHDOG/runbooks/operacao-de-alertas-e-sla.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../../CONSTITUICAO.md) e [Norma de cabeçalho](../../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 **Estado:** procedimento preparado para adoção; tempos abaixo são propostas provisórias e não constituem SLA aprovado.  
 **Âmbito inicial:** piloto WATCHDOG do repositório `carlos-andrade/B3` e futura adoção transversal.
 
