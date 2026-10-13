@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | a06196595270793919c402f4c6a0b093a81b78927d53fbde4364313c1b1d0704 |
-| **Commit de referência (versão anterior)** | N/A — documento inicial |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | ae6d445f78485e24854a2c85d68a37de393b293b0c08b5590c0d03310e59251e |
+| **Commit de referência (versão anterior)** | [3647a431bfaa873b5d6ea5d400f0f442d0b609a3](https://github.com/carlos-andrade/GOVERNANCA/commit/3647a431bfaa873b5d6ea5d400f0f442d0b609a3) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -36,7 +36,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | Fase | Trabalho | Critério de conclusão | Estado |
 |---|---|---|---|
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
-| 2 | Validar coerência interna da pasta CABEÇALHO | README, norma, modelo, registo, checklist, histórico e YAML sem contradições; hashes verificados | EM_EXECUÇÃO |
+| 2 | Validar coerência interna da pasta CABEÇALHO | README, norma, modelo, registo, checklist, histórico e YAML sem contradições; hashes verificados | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | PENDENTE |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | PENDENTE |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
@@ -48,7 +48,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 | Data | Evidência/atividade | Resultado |
 |---|---|---|
-| 2026-10-13 | Norma, README, checklist e histórico revistos para coerência do SHA-256 e commit de referência; exemplo normativo atualizado | Publicações efetuadas; verificação pós-publicação pendente |
+| 2026-10-13 | Norma, README, checklist e histórico revistos; exemplo normativo atualizado; SHA-256 recalculado e conferido em sete documentos Markdown | 7/7 hashes canónicos válidos; linhas de controlo presentes; YAML auxiliar não faz parte da contagem de Markdown |
 
 ## Bloqueios e limites
 
@@ -66,3 +66,4 @@ Concluir a validação pós-publicação dos documentos da pasta CABEÇALHO; dep
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-13 | Criação do roadmap de validação e adoção transversal | Histórico Git |
+| 1.0.1 | 2026-10-13 | Registo da validação pós-publicação de sete documentos Markdown e conclusão da revisão interna da pasta CABEÇALHO | Histórico Git |
