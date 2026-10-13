@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO_EXECUCAO |
 | **Fase** | Preparação da normalização |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 4c6b39490756f4d0fa180565f266ae9bbcc7b612b1b8d8cb89405f1feb7dd311 |
-| **Commit de referência (versão anterior)** | [7be3b4162495922ce12f3c4f1c02813618b57489](https://github.com/carlos-andrade/GOVERNANCA/commit/7be3b4162495922ce12f3c4f1c02813618b57489) |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | 2572c4b7c2ca9c4febc4f2f585597b863582e04fb64d84004b5bbe183b652f74 |
+| **Commit de referência (versão anterior)** | [b90f8ee88663fff8ee5476593b5bad12d2f6cd4f](https://github.com/carlos-andrade/GOVERNANCA/commit/b90f8ee88663fff8ee5476593b5bad12d2f6cd4f) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -20,13 +20,13 @@
 
 ## Objetivo
 
-Preparar a normalização dos 50 ficheiros Markdown pendentes no [inventário documental](INVENTARIO-DOCUMENTAL.md), com lotes pequenos e critérios verificáveis. Este plano não ratifica a norma nem autoriza alterações retroativas.
+Preparar a normalização dos 48 ficheiros Markdown ainda pendentes no [inventário documental](INVENTARIO-DOCUMENTAL.md), com lotes pequenos e critérios verificáveis. Este plano não ratifica a norma nem autoriza alterações retroativas.
 
 ## Gate de autorização
 
-A Norma de Cabeçalho Documental Padrão, versão 1.0.3, permanece **PROPOSTA PARA VALIDAÇÃO**. A normalização retroativa só começa após aprovação formal explícita da versão exata, com aprovador autorizado e evidência verificável. “SIGA” é tratado como continuidade do trabalho preparatório, não como substituto do registo de aprovação exigido pela própria norma.
+A Norma de Cabeçalho Documental Padrão, versão 1.0.3, foi formalmente aprovada pelo proprietário em 2026-10-13. A evidência está no [registo de aprovação](REGISTO-APROVACAO-NORMA-1.0.3.md) e na [issue #2](https://github.com/carlos-andrade/GOVERNANCA/issues/2). O gate está satisfeito; a normalização prossegue por lotes com validação individual.
 
-Até esse gate ser satisfeito, são permitidos planeamento, classificação e auditoria não destrutiva. Não são permitidos reescrever cabeçalhos dos 50 documentos, alterar estados substantivos, inventar IDs históricos ou declarar conformidade.
+L1 foi aplicado a `CONSTITUICAO.md` e `README.md`. Os 48 documentos restantes serão tratados por lotes. Não alterar estados substantivos, inventar IDs históricos ou declarar conformidade sem evidência.
 
 ## Lotes propostos
 
@@ -55,9 +55,9 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 
 ## Estado e próxima ação
 
-**Estado:** preparação planeada; normalização bloqueada até aprovação formal da Norma 1.0.3.
+**Estado:** gate de aprovação satisfeito; L1 concluído. Inventário atual: 61 ficheiros Markdown, 13 com campos canónicos e 48 pendentes.
 
-**Classificação não destrutiva:** concluída e registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **Próxima ação:** após aprovação formal da Norma 1.0.3, executar L1 (`CONSTITUICAO.md` e `README.md`) e validar cada alteração antes de avançar.
+**Classificação não destrutiva:** registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **L1:** concluído; GOV-001, versão e estado da Constituição preservados, assim como os marcadores automáticos do README. **Próxima ação:** iniciar L2 após reconciliar os caminhos com o inventário.
 
 ## Histórico
 
