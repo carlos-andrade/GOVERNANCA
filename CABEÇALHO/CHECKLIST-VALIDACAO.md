@@ -8,9 +8,9 @@
 | **Tipo documental** | CHECKLIST |
 | **Fase** | Validação do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | d6436dfdea653433620b39750bca89b3c30b51c24dcf6bf9c3189bbfc81aae79 |
-| **Commit de referência (versão anterior)** | [0d0fbfbe5abde6f2fbe0ea98d708a76381621765](https://github.com/carlos-andrade/GOVERNANCA/commit/0d0fbfbe5abde6f2fbe0ea98d708a76381621765) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | fd5e814e2e294bc1200641caf5f3f24a279cb3596f8a72b9c919ad987210f93c |
+| **Commit de referência (versão anterior)** | [9e7dbc688fc91d9ef0ea8044efe9b1b57b263135](https://github.com/carlos-andrade/GOVERNANCA/commit/9e7dbc688fc91d9ef0ea8044efe9b1b57b263135) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -20,7 +20,9 @@ Aplicar esta lista a cada documento novo ou normalizado.
 
 ## Sintaxe e apresentação no GitHub
 
-- [ ] SHA-256 canónico recalculado segundo a norma e correspondente ao conteúdo atual.
+- [ ] Existem as duas linhas de controlo: SHA-256 canónico e commit de referência.
+- [ ] SHA-256 canónico recalculado segundo a norma, após normalização UTF-8/LF e exclusão apenas das duas linhas de controlo.
+- [ ] O hash canónico não é confundido com o Git blob SHA.
 - [ ] Commit de referência aponta para um commit anterior real, quando disponível.
 
 - [ ] O ficheiro Markdown começa com um título `#` claro.
