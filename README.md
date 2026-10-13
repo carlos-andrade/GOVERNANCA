@@ -17,10 +17,10 @@
 | **Meio** | 60/60 | 60% | Concluído |
 | **Fim** | 0/20 | 20% | Pendente |
 
-**Próximo marco:** Aplicar e testar o mecanismo de sincronização nos restantes repositórios que adotarem a norma GOVERNANCA.  
-**Bloqueios:** A adoção da barra e da sincronização automática nos restantes repositórios ainda não foi executada.  
-**Última atualização do estado:** 2026-10-12  
-**Evidências:** [Pull Request #1 integrado](https://github.com/carlos-andrade/GOVERNANCA/pull/1) · [Norma de percentual](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md) · [Workflow de sincronização](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml) · [Testes automatizados](https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py)
+**Próximo marco:** Executar e validar o workflow WATCHDOG; depois implementar supervisão independente, alertas e adaptadores para os primeiros sistemas externos.  
+**Bloqueios:** O WATCHDOG ainda não dispõe de adaptadores externos, alertas operacionais ou supervisão independente 24×7.; A adoção da barra de status e da sincronização automática nos restantes repositórios ainda não foi executada.  
+**Última atualização do estado:** 2026-10-13  
+**Evidências:** [Pull Request #1 integrado](https://github.com/carlos-andrade/GOVERNANCA/pull/1) · [Norma de percentual](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md) · [Workflow de sincronização](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml) · [Testes automatizados](https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py) · [WATCHDOG — arquitetura, normas e motor MVP](https://github.com/carlos-andrade/GOVERNANCA/tree/main/WATCHDOG) · [Workflow de validação WATCHDOG](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/watchdog-validation.yml)
 
 > **Atualização automática:** este painel é gerado a partir de `registry/status-do-projeto.json`. Alterações nesse registo acionam o workflow `Sincronizar barra de status`. O workflow valida o esquema, as pontuações e os critérios de encerramento antes de atualizar este README. Não editar manualmente o painel; alterar a fonte de verdade e rever o resultado do workflow.
 <!-- GOVERNANCA_STATUS_END -->
