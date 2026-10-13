@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | Validação do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.5 |
-| **SHA-256 (conteúdo canónico)** | cea7a721befe5fb2506caff6d572c1a1e57753babef92691b413675d64d3be2d |
+| **Versão** | 1.0.6 |
+| **SHA-256 (conteúdo canónico)** | 5fceb2690ac75122852cb00c9485037532b869a806d41bf39d527755f9ee6d44 |
 | **Commit de referência (versão anterior)** | [6f74c89881696609cd01d3c848a31fc131361c29](https://github.com/carlos-andrade/GOVERNANCA/commit/6f74c89881696609cd01d3c848a31fc131361c29) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -34,7 +34,9 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 - [REGISTO-TIPOS-DOCUMENTAIS.md](REGISTO-TIPOS-DOCUMENTAIS.md) — tipos documentais.
 - [CHECKLIST-VALIDACAO.md](CHECKLIST-VALIDACAO.md) — checklist de validação.
 - [HISTORICO.md](HISTORICO.md) — histórico de alterações.
-- [INVENTARIO-DOCUMENTAL.md](INVENTARIO-DOCUMENTAL.md) — inventário dos 57 ficheiros Markdown e estado estrutural do cabeçalho.
+- [INVENTARIO-DOCUMENTAL.md](INVENTARIO-DOCUMENTAL.md) — inventário dos 60 ficheiros Markdown e estado estrutural do cabeçalho.
+- [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md) — classificação não destrutiva dos 50 documentos pendentes.
+- [PLANO-LOTES-NORMALIZACAO.md](PLANO-LOTES-NORMALIZACAO.md) — lotes, gates e critérios de execução.
 - [ROADMAP-ADOCAO-TRANSVERSAL.md](ROADMAP-ADOCAO-TRANSVERSAL.md) — fases e critérios de adoção.
 
 ## Cadeia de autoridade
@@ -52,7 +54,7 @@ O cabeçalho inclui também um **SHA-256 canónico** para verificação de integ
 
 ## Estado de validação
 
-O formato foi ajustado para Markdown nativo. O inventário inicial identificou 58 ficheiros Markdown: 8 com campos canónicos presentes e 50 pendentes de normalização individual. A ratificação e a aplicação retroativa dependem de auditoria e aprovação explícita; a existência desta pasta não constitui, por si só, aprovação.
+O formato foi ajustado para Markdown nativo. O inventário atual identifica 60 ficheiros Markdown: 10 com campos canónicos presentes e 50 pendentes de normalização individual. A ratificação e a aplicação retroativa dependem de auditoria e aprovação explícita; a existência desta pasta não constitui, por si só, aprovação.
 
 ## Roadmap de adoção
 
