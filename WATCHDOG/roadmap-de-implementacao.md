@@ -31,9 +31,9 @@ Limites: os artefactos não são armazenamento imutável; issues não confirmam 
 - UNKNOWN quando a data de observação não existe; a data de ingestão não é usada como substituto.
 - Workflow agendado, testes, relatório JSON/Markdown, artefacto de 30 dias e issue de alerta para datasets fora do limite.
 
-Primeira avaliação real (2026-10-13): 5 PASS, 1 STALE, 1 UNKNOWN. O monitor detetou BDI DailyAverageStocks em 2026-09-22, com 21 dias de idade, e abriu uma issue. O pipeline de captura foi corrigido para procurar a última data disponível até sete dias para trás, validar a resposta antes de gravar, preservar SHA-256 e não sobrescrever divergências. A captura encontrou dados BDI de 2026-10-09 e a reavaliação posterior resultou em **6 PASS, 0 STALE, 1 UNKNOWN**. Os cinco controlos BCB SGS e o BDI ficaram dentro dos limites configurados. O manifesto COTAHIST 2026 continua sem declarar a data da última observação e permanece UNKNOWN.
+Primeira avaliação real (2026-10-13): 5 PASS, 1 STALE, 1 UNKNOWN. O monitor detetou BDI DailyAverageStocks em 2026-09-22, com 21 dias de idade, e abriu uma issue. O pipeline de captura foi corrigido para procurar a última data disponível até sete dias para trás, validar a resposta antes de gravar, preservar SHA-256 e não sobrescrever divergências. A captura encontrou dados BDI de 2026-10-09. A data de observação COTAHIST anual foi documentada com proveniência para o manifesto de qualidade NORMALIZED, e o catálogo passou a monitorizar também os manifestos COTAHIST diários. A reavaliação posterior resultou em **8 PASS, 0 STALE, 0 UNKNOWN**. Os oito controlos ficaram dentro dos limites configurados, mas os limiares estão marcados como PROVISIONAL e ainda carecem de aprovação pelos proprietários.
 
-Critério de saída: o proprietário deve confirmar a semântica e aprovar cada limite, preencher a lacuna de data de observação do COTAHIST e comprovar recuperação após atualização. A issue de atualidade permanece aberta para acompanhamento da lacuna UNKNOWN.
+Critério de saída: o proprietário deve confirmar a semântica e aprovar cada limite, e a recuperação deve ser comprovada após atualizações futuras. A issue de atualidade permanece aberta para revisão humana, embora a última execução não tenha encontrado STALE ou UNKNOWN.
 
 ## Fase 4 — Alertas operacionais e resiliência
 
