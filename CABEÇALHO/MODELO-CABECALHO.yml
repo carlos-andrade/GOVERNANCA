@@ -1,0 +1,38 @@
+# Copiar este bloco para o início do documento e substituir os valores.
+# Não declarar APROVADO sem aprovação verificável.
+projeto: "NOME_DO_PROJETO"
+repositorio: "https://github.com/OWNER/REPOSITORY"
+tipo_documento: "NORMA | CARTA | PROMPT | ESPECIFICACAO | PLANO | RELATORIO | PROCEDIMENTO | REGISTO | CODIGO | TESTE"
+fase: "FASE_XX ou N/A — justificação"
+id_documento: "PREFIXO-TIPO-001"
+titulo: "Título documental"
+status: "RASCUNHO"
+versao: "1.0.0"
+data_criacao: "AAAA-MM-DD"
+data_atualizacao: "AAAA-MM-DD"
+responsavel: "Papel ou responsável"
+aprovador: "Pendente" # Obrigatório e identificado quando status=APROVADO
+data_aprovacao: "N/A — ainda não aprovado"
+vigencia: "N/A — ainda não aprovado"
+proxima_revisao: "AAAA-MM-DD ou N/A — justificação"
+origem:
+  tipo: "DECISAO | REQUISITO | DOCUMENTO | ISSUE | COMMIT | OUTRA"
+  referencia: "URL ou identificador verificável"
+autoridade_documental:
+  superior: "Caminho/URL da norma superior"
+  nivel: "NORMATIVO | OPERACIONAL | TECNICO | INFORMATIVO"
+cadeia_autoridade:
+  - "PROMPTS"
+  - "CARTAS"
+  - "LAYOUT ÚNICO"
+  - "CÓDIGO"
+rastreabilidade:
+  requisitos: []
+  decisoes: []
+  issues: []
+  commits: []
+  testes: []
+  evidencias: []
+escopo: "Âmbito e exclusões"
+objetivo: "Resultado que o documento pretende estabelecer"
+dependencias: []
