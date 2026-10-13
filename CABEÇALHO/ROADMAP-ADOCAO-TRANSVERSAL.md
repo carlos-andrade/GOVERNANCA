@@ -8,11 +8,11 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.1.4 |
-| **SHA-256 (conteúdo canónico)** | f88a935b0ebf662e4f320a2b98d2a70676797f32b29bd12142a65c33c11aba85 |
-| **Commit de referência (versão anterior)** | [c27f591c6c846de076c34b8451cf0dbc52bacc13](https://github.com/carlos-andrade/GOVERNANCA/commit/c27f591c6c846de076c34b8451cf0dbc52bacc13) |
+| **Versão** | 1.1.5 |
+| **SHA-256 (conteúdo canónico)** | 551d604ce31dd413a453a1be833d3492aeed934bd13ef992efc3fdbf23a932fe |
+| **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/c27f591c6c846de076c34b8451cf0dbc52bacc13) |
 | **Data de criação** | 2026-10-13 |
-| **Data de atualização** | 2026-10-13 |
+| **Data de atualização** | 2026-10-14 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
 | **Aprovador** | Pendente de aprovação formal |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](NORMA-CABECALHO-PADRAO.md) |
@@ -38,7 +38,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
 | 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
-| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | EM_EXECUÇÃO — L1–L4 aplicados; L5 é o próximo lote |
+| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | EM_EXECUÇÃO — L1–L5 aplicados; L6 é o próximo lote |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
 | 7 | Validar adoção transversal | Relatório de conformidade por repositório, pendências e exceções | PENDENTE |
@@ -84,3 +84,5 @@ Fases 8 e L1 concluídos. L2 aplicado a sete documentos; L3 a cinco documentos; 
 | 1.1.0 | 2026-10-13 | Conclusão da Fase 2 e explicitação do único gate imediato: ratificação formal da norma | Verificação canónica e regra de autorização |
 | 1.1.1 | 2026-10-13 | Ratificação formal da Norma v1.0.3, conclusão da Fase 8 e início da normalização L1; inventário reconciliado | Registo de aprovação, issue #2 e commits L1 |
 | 1.1.2 | 2026-10-13 | L2 aplicado a sete documentos; inventário atualizado para 61 documentos, 20 canónicos e 41 pendentes | Commits L2 e inventário v1.0.5 |
+
+| 2026-10-14 | Aplicação L5 | Quatro documentos de operações, standards e templates normalizados; inventário reconciliado para 35 canónicos e 26 pendentes | Inventário v1.0.8 e validação SHA-256 pós-publicação |
