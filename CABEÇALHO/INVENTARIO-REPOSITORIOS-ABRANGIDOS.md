@@ -9,7 +9,7 @@
 | **Fase** | Fase 5 — inventário transversal de repositórios |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 817ae4cd3129df85641c9f39758fb788f996f50287b1590b9fe29abcdda859b9 |
+| **SHA-256 (conteúdo canónico)** | 6b11c39b85ac8a5663a82bb14f20943ae6db5cd3ae907043ec0482b95444a13a |
 | **Commit de referência (versão anterior)** | N/A — documento criado nesta execução |
 | **Data de criação** | 2026-10-14 |
 | **Data de atualização** | 2026-10-14 |
@@ -29,20 +29,20 @@ A prioridade é operacional e provisória, não uma aprovação de escopo. A ado
 | Repositório | Prioridade inicial | Existência no GitHub | Responsável de referência | Estado de adoção | Próxima ação |
 |---|---|---|---|---|---|
 | [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) | P0 — norma central | Confirmada; branch `main` | Proprietário do repositório | Norma aprovada; 62 ficheiros Markdown inventariados após inclusão deste registo | Executar auditoria final e manter controlos sincronizados |
-| [STOCKS](https://github.com/carlos-andrade/STOCKS) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inventariar Markdown e identificar controlos locais |
-| [DECIO-BAZIN](https://github.com/carlos-andrade/DECIO-BAZIN) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar estrutura, README e documentação normativa |
-| [B3](https://github.com/carlos-andrade/B3) | P1 — dados e mercado | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar documentação e pipelines de dados |
-| [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | P1 — ingestão de dados | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar workflows, documentação e evidências operacionais |
-| [TURISTURIS](https://github.com/carlos-andrade/TURISTURIS) | P1 — dados e publicação | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar normas de captura, estrutura e publicação |
-| [XFI](https://github.com/carlos-andrade/XFI) | P1 — infraestrutura e operações | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar documentação de infraestrutura e monitorização |
-| [PROMPT_CHATGPT_CLAUDE](https://github.com/carlos-andrade/PROMPT_CHATGPT_CLAUDE) | P1 — cadeia de prompts | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Comparar regras de prompts e autoridade documental |
-| [BRICKMASTER_GERAL](https://github.com/carlos-andrade/BRICKMASTER_GERAL) | P1 — estratégia de trading | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar especificações, versões e evidências de testes |
-| [FVG-ATLAS](https://github.com/carlos-andrade/FVG-ATLAS) | P1 — engenharia de dados de mercado | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar documentação técnica e rastreabilidade |
-| [BITCOIN](https://github.com/carlos-andrade/BITCOIN) | P2 — projeto técnico | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inventariar Markdown e classificar risco |
-| [PROJETO-COM-RASPBERRY](https://github.com/carlos-andrade/PROJETO-COM-RASPBERRY) | P2 — projeto técnico | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inventariar Markdown e documentação de operação |
-| [CURSO_GITHUB](https://github.com/carlos-andrade/CURSO_GITHUB) | P2 — formação | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar materiais, modelos e status de conclusão |
-| [KDP](https://github.com/carlos-andrade/KDP) | P2 — publicação editorial | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar guias, templates e metadados editoriais |
-| [O-ULTIMO-CIGARRO](https://github.com/carlos-andrade/O-ULTIMO-CIGARRO) | P2 — conteúdo editorial | Confirmada; branch `main` | Proprietário do repositório | PENDENTE DE INSPEÇÃO | Inspecionar estrutura editorial e modelos de capítulo |
+| [STOCKS](https://github.com/carlos-andrade/STOCKS) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 32 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [DECIO-BAZIN](https://github.com/carlos-andrade/DECIO-BAZIN) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 18 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [B3](https://github.com/carlos-andrade/B3) | P1 — dados e mercado | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 272 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | P1 — ingestão de dados | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 123 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [TURISTURIS](https://github.com/carlos-andrade/TURISTURIS) | P1 — dados e publicação | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 660 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [XFI](https://github.com/carlos-andrade/XFI) | P1 — infraestrutura e operações | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 45 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [PROMPT_CHATGPT_CLAUDE](https://github.com/carlos-andrade/PROMPT_CHATGPT_CLAUDE) | P1 — cadeia de prompts | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 23 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [BRICKMASTER_GERAL](https://github.com/carlos-andrade/BRICKMASTER_GERAL) | P1 — estratégia de trading | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 41 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [FVG-ATLAS](https://github.com/carlos-andrade/FVG-ATLAS) | P1 — engenharia de dados de mercado | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 147 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [BITCOIN](https://github.com/carlos-andrade/BITCOIN) | P2 — projeto técnico | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 3 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [PROJETO-COM-RASPBERRY](https://github.com/carlos-andrade/PROJETO-COM-RASPBERRY) | P2 — projeto técnico | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 8 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [CURSO_GITHUB](https://github.com/carlos-andrade/CURSO_GITHUB) | P2 — formação | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 68 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [KDP](https://github.com/carlos-andrade/KDP) | P2 — publicação editorial | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 6 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [O-ULTIMO-CIGARRO](https://github.com/carlos-andrade/O-ULTIMO-CIGARRO) | P2 — conteúdo editorial | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 122 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
 | [BRICKMASTER-CLAUDE](https://github.com/carlos-andrade/BRICKMASTER-CLAUDE) | A confirmar | Não confirmado; GitHub devolveu 404 para consulta de metadados | Proprietário do repositório | BLOQUEADO — existência/acesso não confirmados | Confirmar URL ou nome correto antes de incluir no escopo |
 
 ## Critérios de inspeção por repositório
@@ -57,7 +57,7 @@ A prioridade é operacional e provisória, não uma aprovação de escopo. A ado
 
 ## Próxima sequência
 
-1. Inspecionar os repositórios P1, começando por STOCKS, DECIO-BAZIN, B3, BLOOMBERG_MAIL, TURISTURIS, XFI, PROMPT_CHATGPT_CLAUDE, BRICKMASTER_GERAL e FVG-ATLAS.
-2. Para cada repositório, produzir uma linha de base antes de alterar ficheiros.
-3. Registar resultados e exceções; só depois planear lotes de normalização por repositório.
-4. Rever os candidatos P2 após a primeira ronda P1.
+1. Linha de base inicial concluída para 14 repositórios acessíveis: árvore recursiva e README principal inspecionados; os 14 READMEs consultados não contêm o cabeçalho canónico. Os números de Markdown são contagens de ficheiros, não declarações de conformidade individual.
+2. Auditar individualmente os ficheiros Markdown dos repositórios P1, começando por STOCKS, DECIO-BAZIN e B3, antes de alterar ficheiros.
+3. Registar resultados e exceções por caminho; só depois planear lotes de normalização por repositório.
+4. Auditar os candidatos P2 após a primeira ronda P1. O repositório BRICKMASTER-CLAUDE permanece fora da contagem confirmada até resolução do 404.
