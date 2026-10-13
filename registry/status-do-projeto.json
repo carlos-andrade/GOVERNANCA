@@ -11,7 +11,7 @@
   },
   "next_milestone": "Ativar supervisão externa: configurar as duas URLs de heartbeat como secrets no repositório B3, testar a deteção de ausência de heartbeat e obter aprovação formal dos limiares provisórios.",
   "blockers": [
-    "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários.",
+    "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários. Matriz de decisão preparada; aprovação humana ainda não registada.",
     "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
     "Os alertas do piloto B3 criam issues, mas ainda não têm confirmação de receção nem SLA de escalonamento.",
     "A adoção da norma e da sincronização de status nos restantes repositórios ainda não foi executada."
@@ -128,6 +128,10 @@
     {
       "label": "Issue B3 — 8 controlos PASS; aprovação dos limiares pendente",
       "url": "https://github.com/carlos-andrade/B3/issues/8"
+    },
+    {
+      "label": "WATCHDOG B3 — matriz de revisão e aprovação dos oito limiares",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/WATCHDOG/limiares-provisorios-revisao.md"
     }
   ],
   "closure_checks": {
