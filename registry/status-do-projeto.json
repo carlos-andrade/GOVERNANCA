@@ -9,12 +9,13 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Ativar supervisão externa: configurar as duas URLs de heartbeat como secrets no repositório B3, testar a deteção de ausência de heartbeat e obter aprovação formal dos limiares provisórios.",
+  "next_milestone": "Concluir a correção transversal de publicação concorrente no piloto B3, validar a redução das falhas REC-001/auditoria e depois executar a aceitação externa (heartbeat, limiares e SLA).",
   "blockers": [
     "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários. Matriz de decisão preparada; aprovação humana ainda não registada",
-    "A supervisão externa independente do próprio WATCHDOG ainda não está configurada",
+    "A supervisão externa independente ainda não está configurada; após estabilizar a publicação, faltam secrets, teste de ausência de heartbeat e recuperação",
     "O runbook de alertas está documentado, mas os responsáveis, os canais reais, a confirmação de receção e o SLA ainda não foram aprovados/testados; a issue #7 exige triagem das execuções desfavoráveis",
-    "A adoção transversal tem inventário inicial; faltam inspeção, integração e aceitação por repositório"
+    "A adoção transversal tem inventário inicial; faltam inspeção, integração e aceitação por repositório",
+    "O monitor identificou falhas históricas de publicação concorrente (REC-001 e auditoria); a correção transversal de 42 workflows está em execução e ainda não foi confirmada no main."
   ],
   "evidence": [
     {
