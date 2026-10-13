@@ -24,14 +24,16 @@ Limites: os artefactos não são armazenamento imutável; issues não confirmam 
 
 ## Fase 3 — Atualidade de dados
 
-**Estado: implementação inicial; primeira execução e calibração pendentes de revisão.**
+**Estado: implementação inicial e primeira execução concluídas; calibração por proprietário pendente.**
 
 - Catálogo explícito para BCB SGS 432, 11, 12, 1 e 433, B3 BDI DailyAverageStocks e manifesto COTAHIST 2026.
 - Avaliação da idade baseada em data de observação declarada.
 - UNKNOWN quando a data de observação não existe; a data de ingestão não é usada como substituto.
 - Workflow agendado, testes, relatório JSON/Markdown, artefacto de 30 dias e issue de alerta para datasets fora do limite.
 
-Critério de saída: rever cada resultado, confirmar fonte/semântica, calibrar limites por periodicidade e comprovar recuperação após atualização.
+Primeiro resultado real (2026-10-13): 5 PASS, 1 STALE, 1 UNKNOWN. O manifesto BDI DailyAverageStocks mais recente no repositório tem data de observação 2026-09-22, 21 dias antes da avaliação e acima do limite configurado de 5 dias. O manifesto COTAHIST 2026 não declara a data da última observação, por isso ficou UNKNOWN; a data de aquisição não foi usada como substituto. Os cinco controlos BCB SGS passaram nos limites configurados.
+
+Critério de saída: o proprietário deve confirmar a semântica e calibrar cada limite, verificar a origem e atualidade do BDI, preencher a lacuna de data de observação do COTAHIST e comprovar recuperação após atualização.
 
 ## Fase 4 — Alertas operacionais e resiliência
 
