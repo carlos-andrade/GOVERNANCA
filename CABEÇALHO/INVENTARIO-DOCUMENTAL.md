@@ -9,7 +9,7 @@
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.1.1 |
-| **SHA-256 (conteúdo canónico)** | d0178e556977c93b6e5a1847c8c2040575e8efdd19ca825c4773c9d6b888cd97 |
+| **SHA-256 (conteúdo canónico)** | f006f97bf258bf8d5af4ebdb341734940f5a70456124ae70e6d38b1f1c0285dd |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/b97fa1b4164270b782c1bb04e7023406335b797a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -53,6 +53,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 | `CABEÇALHO/REGISTO-APROVACAO-NORMA-1.0.3.md` | CONFORME — campos canónicos presentes |
 | `CABEÇALHO/ROADMAP-ADOCAO-TRANSVERSAL.md` | CONFORME — campos canónicos presentes |
 | `CABEÇALHO/INVENTARIO-DOCUMENTAL.md` | CONFORME — campos canónicos presentes (este inventário) |
+| `CABEÇALHO/INVENTARIO-REPOSITORIOS-ABRANGIDOS.md` | CONFORME — inventário transversal da Fase 5 |
 | `CABEÇALHO/PLANO-LOTES-NORMALIZACAO.md` | CONFORME — campos canónicos presentes |
 | `CABEÇALHO/CLASSIFICACAO-PRE-NORMALIZACAO.md` | CONFORME — campos canónicos presentes |
 | `CONSTITUICAO.md` | CABEÇALHO APLICADO — GOV-001 e estado de proposta preservados |
