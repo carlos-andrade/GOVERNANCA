@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO_EXECUCAO |
 | **Fase** | Preparação da normalização |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.8 |
-| **SHA-256 (conteúdo canónico)** | 66f75a30cdac86944e34364e382502a2892ee9f720ed69a45591a4c05ca5d7e2 |
+| **Versão** | 1.0.9 |
+| **SHA-256 (conteúdo canónico)** | 2cdc2b89dfccb55a9c3e79151bbe5d49ddbb2d751c5d8d82a0b1b5996df1c67a |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/b97fa1b4164270b782c1bb04e7023406335b797a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -55,9 +55,9 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 
 ## Estado e próxima ação
 
-**Estado:** gate de aprovação satisfeito; L1–L7 concluídos. Inventário atual: 61 ficheiros Markdown, 61 com campos canónicos e 0 pendentes.
+**Estado:** gate de aprovação satisfeito; L1–L7 concluídos. Inventário atual: 62 ficheiros Markdown, 62 com campos canónicos e 0 pendentes.
 
-**Classificação não destrutiva:** registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **L1:** concluído; GOV-001, versão e estado da Constituição preservados, assim como os marcadores automáticos do README. **Próxima ação:** iniciar a auditoria transversal final e a Fase 5 do roadmap — inventariar os repositórios de projetos abrangidos.
+**Classificação não destrutiva:** registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **L1:** concluído; GOV-001, versão e estado da Constituição preservados, assim como os marcadores automáticos do README. **Próxima ação:** concluir a Fase 5 com auditoria individual dos ficheiros Markdown dos repositórios P1; depois iniciar a Fase 6 por repositório.
 
 ## Histórico
 
@@ -73,3 +73,5 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 | 1.0.6 | 2026-10-14 | L5 concluído nos quatro documentos previstos; 26 documentos permanecem pendentes | Inventário v1.0.8 e commits L5 |
 | 1.0.7 | 2026-10-14 | L6 concluído nos 16 documentos WATCHDOG previstos; 10 documentos permanecem pendentes | Inventário v1.0.9 e commits L6 |
 | 1.0.8 | 2026-10-14 | L7 concluído nos dez documentos WATCHDOG restantes; 61/61 documentos com cabeçalho canónico | Inventário v1.1.0 e commits L7 |
+
+| 1.0.9 | 2026-10-14 | Fase 5 iniciada; inventário transversal com 15 repositórios confirmados e um candidato com acesso não confirmado; linha de base inicial de 14 repositórios | CABEÇALHO/INVENTARIO-REPOSITORIOS-ABRANGIDOS.md |
