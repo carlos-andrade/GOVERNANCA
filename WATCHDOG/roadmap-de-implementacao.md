@@ -15,7 +15,7 @@
 
 **Estado: implementada; testes de ponta a ponta concluídos para evidências e alertas GitHub.**
 
-- Monitor B3 a cada 15 minutos e análise das últimas 24 horas, com paginação da API até ultrapassar o corte temporal (corrigida a limitação anterior de apenas 100 execuções).
+- Monitor B3 a cada 15 minutos e análise das últimas 24 horas, com paginação da API até ultrapassar o corte temporal (corrigida a limitação anterior de apenas 100 execuções). O relatório agora inclui contagem total e agrupamento de falhas por workflow; a avaliação de 2026-10-13 identificou concorrência de publicação como causa dominante em REC-001 e na auditoria. A correção transversal está em execução e ainda não foi confirmada no main.
 - Relatórios JSON/Markdown publicados como artefactos com retenção configurada de 30 dias.
 - Issue de alerta criada/atualizada quando são detetadas execuções desfavoráveis.
 - Validação do inventário e da configuração do monitor em GitHub Actions.
