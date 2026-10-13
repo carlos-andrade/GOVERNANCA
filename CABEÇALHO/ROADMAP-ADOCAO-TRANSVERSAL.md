@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.8 |
-| **SHA-256 (conteúdo canónico)** | 7af76895dd966c83cfc53ecf0fe04bec4bd08aee21889fa5128c1daac2da5b51 |
+| **Versão** | 1.0.9 |
+| **SHA-256 (conteúdo canónico)** | 36809a5529a707cf62373bfafe3256180122d60661827195f6b9efee3db74786 |
 | **Commit de referência (versão anterior)** | [32d2e5fdc4756865366ec8e2074ff34caeb0dd5d](https://github.com/carlos-andrade/GOVERNANCA/commit/32d2e5fdc4756865366ec8e2074ff34caeb0dd5d) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -36,7 +36,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | Fase | Trabalho | Critério de conclusão | Estado |
 |---|---|---|---|
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
-| 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com campos canónicos; hash do inventário ainda pendente de verificação independente; YAML auxiliar excluído da contagem | EM VALIDAÇÃO |
+| 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | EM VALIDAÇÃO |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | BLOQUEADA — aguarda ratificação explícita do padrão |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
@@ -48,7 +48,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 | Data | Evidência/atividade | Resultado |
 |---|---|---|
-| 2026-10-13 | Auditoria da pasta CABEÇALHO | Hash canónico verificado nesta execução para README, plano de lotes, classificação e roadmap; hash do inventário ainda pendente de verificação independente |
+| 2026-10-13 | Auditoria da pasta CABEÇALHO | Hash canónico verificado para os 10 documentos Markdown da pasta CABEÇALHO; inventário reconciliado e hashes conferidos após publicação |
 | 2026-10-13 | Inventário recursivo da branch main publicado e reconciliado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 60 ficheiros Markdown: 10 com campos canónicos e 50 pendentes; contagem do README alinhada |
 | 2026-10-13 | Classificação não destrutiva dos 50 documentos pendentes registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md); plano de lotes corrigido para 24 documentos centrais e 26 WATCHDOG | Metadados legados e riscos de preservação identificados; nenhuma alteração retroativa aplicada |
 
@@ -76,3 +76,4 @@ Verificar e corrigir os hashes canónicos dos documentos de controlo recentes e 
 | 1.0.6 | 2026-10-13 | Identificação explícita da reconciliação pendente entre a árvore atual e o inventário-base | Histórico Git |
 | 1.0.7 | 2026-10-13 | Reconciliação para 60 documentos e correção do estado de verificação dos hashes recentes | Inventário documental e auditoria da pasta CABEÇALHO |
 | 1.0.8 | 2026-10-13 | Registo da verificação independente de quatro hashes e isolamento do hash do inventário como pendência | Cálculo SHA-256 canónico dos documentos publicados |
+| 1.0.9 | 2026-10-13 | Fecho da verificação canónica dos dez documentos Markdown da pasta CABEÇALHO | Inventário v1.0.3 e hashes recalculados/conferidos |
