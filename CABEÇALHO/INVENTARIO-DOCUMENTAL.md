@@ -8,8 +8,8 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 1cb09a698bd3b6db3d4539d8c0e1796c5cd9ab091f1bb38192aa0e7e1b8e6a31 |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | bb4880bd9bb07ecabc62b6fa352d7f6186ff3af7fbcc8d517ea0ec8264c60fb8 |
 | **Commit de referência (versão anterior)** | [efa0607254de03cb73f45e36a5a0df089ddb131f](https://github.com/carlos-andrade/GOVERNANCA/commit/efa0607254de03cb73f45e36a5a0df089ddb131f) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -25,9 +25,9 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 ## Método
 
 - Fonte: árvore Git recursiva do repositório `main`, inspecionada em 2026-10-13.
-- Total identificado após inclusão deste inventário: **58 ficheiros Markdown**.
+- Total identificado após inclusão deste inventário e dos dois documentos de controlo criados nesta fase: **60 ficheiros Markdown**.
 - Critério de conformidade inicial: título Markdown, tabela de metadados `Campo | Valor`, linha SHA-256 canónico e linha de commit de referência.
-- Os ficheiros classificados como conformes foram também verificados quanto à presença dos campos; os sete hashes canónicos da pasta `CABEÇALHO` foram recalculados e coincidiram com os valores declarados.
+- Os documentos com campos canónicos foram também verificados quanto à presença dos campos; os hashes canónicos dos documentos da pasta `CABEÇALHO` devem ser recalculados após esta atualização.
 - A classificação é estrutural, não uma aprovação substantiva do conteúdo.
 - Ficheiros de modelo, como `CABEÇALHO/MODELO-DOCUMENTO.md`, podem conter marcadores de preenchimento; a conformidade do modelo não torna automaticamente conformes os documentos criados a partir dele.
 
@@ -35,10 +35,10 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 | Resultado | Quantidade |
 |---|---:|
-| Ficheiros Markdown inventariados | 58 |
-| Com campos canónicos presentes | 8 |
+| Ficheiros Markdown inventariados | 60 |
+| Com campos canónicos presentes | 10 |
 | A normalizar ou avaliar individualmente | 50 |
-| Cobertura estrutural do padrão | 13,8% |
+| Cobertura estrutural do padrão | 16,7% |
 
 ## Inventário completo
 
@@ -52,6 +52,8 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 | `CABEÇALHO/REGISTO-TIPOS-DOCUMENTAIS.md` | CONFORME — campos canónicos presentes |
 | `CABEÇALHO/ROADMAP-ADOCAO-TRANSVERSAL.md` | CONFORME — campos canónicos presentes |
 | `CABEÇALHO/INVENTARIO-DOCUMENTAL.md` | CONFORME — campos canónicos presentes (este inventário) |
+| `CABEÇALHO/PLANO-LOTES-NORMALIZACAO.md` | CONFORME — campos canónicos presentes |
+| `CABEÇALHO/CLASSIFICACAO-PRE-NORMALIZACAO.md` | CONFORME — campos canónicos presentes |
 | `CONSTITUICAO.md` | PENDENTE — normalização necessária |
 | `README.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/CARTA-WATCHDOG.md` | PENDENTE — normalização necessária |
@@ -105,7 +107,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 ## Achados e limitações
 
-1. Os sete documentos originais da pasta `CABEÇALHO`, anteriores à criação deste inventário, contêm os campos SHA-256 e commit de referência; os seus hashes canónicos foram recalculados e validados. Este inventário também contém os dois campos e é verificado separadamente.
+1. Os sete documentos originais da pasta `CABEÇALHO`, anteriores à criação deste inventário, contêm os campos SHA-256 e commit de referência; os seus hashes canónicos foram recalculados e validados. Os três documentos de controlo mais recentes também contêm os campos, mas devem ser verificados individualmente após a reconciliação.
 2. Os restantes 50 ficheiros não têm o conjunto de campos canónicos. Alguns contêm metadados antigos em texto corrido ou tabelas temáticas; esses elementos não equivalem ao cabeçalho normativo.
 3. `CONSTITUICAO.md` contém metadados em formato anterior e requer tratamento específico por ser documento de autoridade superior.
 4. Os documentos WATCHDOG incluem cartas, políticas, runbooks, documentação operacional e modelos; devem ser normalizados preservando o conteúdo técnico e os estados reais.
@@ -121,3 +123,4 @@ Rever e aprovar formalmente a norma e os critérios de normalização; depois ap
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.1 | 2026-10-13 | Ajuste do inventário para incluir o próprio documento; total atualizado para 58 ficheiros | Árvore Git da branch `main` e histórico Git |
+| 1.0.2 | 2026-10-13 | Inclusão do plano de lotes e da classificação; total reconciliado para 60 ficheiros | Árvore Git da branch `main` |
