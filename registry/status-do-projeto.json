@@ -9,10 +9,12 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Concluir a validação do piloto B3 e especificar a supervisão independente, alertas e adaptadores externos do WATCHDOG central.",
+  "next_milestone": "Rever e calibrar o primeiro relatório de atualidade dos dados BCB/BDI/COTAHIST; depois configurar supervisão independente e confirmação/escalonamento de alertas.",
   "blockers": [
-    "O WATCHDOG ainda não dispõe de adaptadores externos, alertas operacionais ou supervisão independente 24×7",
-    "A adoção da norma e da sincronização de status nos restantes repositórios, além do piloto B3, ainda não foi executada"
+    "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
+    "Os alertas do piloto B3 criam issues, mas ainda não têm confirmação de receção nem SLA de escalonamento.",
+    "O avaliador de atualidade precisa de revisão dos estados reais e calibração dos limites por dataset.",
+    "A adoção da norma e da sincronização de status nos restantes repositórios ainda não foi executada."
   ],
   "evidence": [
     {
@@ -46,6 +48,18 @@
     {
       "label": "Validação do piloto WATCHDOG B3",
       "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-b3-validation.yml"
+    },
+    {
+      "label": "Monitor B3 — evidência JSON/Markdown e alerta rastreável",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38386363791"
+    },
+    {
+      "label": "WATCHDOG B3 — monitorização da atualidade dos dados",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-data-freshness.yml"
+    },
+    {
+      "label": "Issue de alerta WATCHDOG B3",
+      "url": "https://github.com/carlos-andrade/B3/issues/7"
     }
   ],
   "closure_checks": {
