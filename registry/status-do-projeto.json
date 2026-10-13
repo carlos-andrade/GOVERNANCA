@@ -162,7 +162,7 @@
       "url": "https://github.com/carlos-andrade/B3/actions/runs/38391639534"
     },
     {
-      "label": "B3 COTAHIST — FASE09 2014 recuperada após conflito de publicação",
+      "label": "B3 COTAHIST — FASE09 2014 revalidada e liberada para FASE10",
       "url": "https://github.com/carlos-andrade/B3/actions/runs/38391778953"
     },
     {
@@ -170,12 +170,16 @@
       "url": "https://github.com/carlos-andrade/B3/actions/runs/38391772384"
     },
     {
-      "label": "B3 COTAHIST — FASE11 2014 recuperada após conflito de publicação",
+      "label": "B3 COTAHIST — FASE11 2014 certificada após atualização do gate",
       "url": "https://github.com/carlos-andrade/B3/actions/runs/38391659783"
     },
     {
       "label": "BLOOMBERG_MAIL — validação do supervisor WATCHDOG após ajuste de concorrência",
       "url": "https://github.com/carlos-andrade/BLOOMBERG_MAIL/actions/runs/38391557718"
+    },
+    {
+      "label": "B3 COTAHIST — FASE01 2015 recuperada após correção de persistência",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38392006654"
     }
   ],
   "closure_checks": {
