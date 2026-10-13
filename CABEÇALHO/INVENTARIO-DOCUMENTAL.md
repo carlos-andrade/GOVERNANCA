@@ -8,9 +8,9 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | 814426dd86e92240461ba98cf79f650afbd2d5344e33d3e8974a2c25915da811 |
-| **Commit de referência (versão anterior)** | [86f1bb90caea152a7d18af50e5f83e0ee305588a](https://github.com/carlos-andrade/GOVERNANCA/commit/86f1bb90caea152a7d18af50e5f83e0ee305588a) |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | 608b9ff32bdf705ccd3097773da93177e32a830ba9dc12ded3d6ea4965824abf |
+| **Commit de referência (versão anterior)** | [81596ce47122d8eae6d998365ff574cb330e8628](https://github.com/carlos-andrade/GOVERNANCA/commit/81596ce47122d8eae6d998365ff574cb330e8628) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -25,7 +25,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 ## Método
 
 - Fonte: árvore Git recursiva do repositório `main`, inspecionada em 2026-10-13.
-- Total identificado após inclusão do registo de aprovação e aplicação do L1: **61 ficheiros Markdown**.
+- Total identificado após inclusão do registo de aprovação e aplicação do L1 e L2: **61 ficheiros Markdown**.
 - Critério de conformidade inicial: título Markdown, tabela de metadados `Campo | Valor`, linha SHA-256 canónico e linha de commit de referência.
 - Os documentos com campos canónicos foram verificados quanto à presença dos campos; os hashes canónicos dos 11 documentos Markdown da pasta `CABEÇALHO` foram recalculados ou conferidos nesta revisão.
 - A classificação é estrutural, não uma aprovação substantiva do conteúdo.
@@ -36,9 +36,9 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 | Resultado | Quantidade |
 |---|---:|
 | Ficheiros Markdown inventariados | 61 |
-| Com campos canónicos presentes | 13 |
-| A normalizar ou avaliar individualmente | 48 |
-| Cobertura estrutural do padrão | 21,3% |
+| Com campos canónicos presentes | 20 |
+| A normalizar ou avaliar individualmente | 41 |
+| Cobertura estrutural do padrão | 32,8% |
 
 ## Inventário completo
 
@@ -83,13 +83,13 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 | `WATCHDOG/runbooks/incidente-critico.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/runbooks/operacao-de-alertas-e-sla.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/tests/README.md` | PENDENTE — normalização necessária |
-| `docs/00-fundamentos/modelo-operacional.md` | PENDENTE — normalização necessária |
-| `docs/00-fundamentos/principios-de-adaptacao.md` | PENDENTE — normalização necessária |
-| `docs/00-fundamentos/taxonomia-e-glossario.md` | PENDENTE — normalização necessária |
-| `docs/01-governanca/papeis-e-responsabilidades.md` | PENDENTE — normalização necessária |
-| `docs/01-governanca/politica-de-conformidade-documental.md` | PENDENTE — normalização necessária |
-| `docs/01-governanca/politica-de-decisoes.md` | PENDENTE — normalização necessária |
-| `docs/01-governanca/politica-de-excecoes.md` | PENDENTE — normalização necessária |
+| `docs/00-fundamentos/modelo-operacional.md` | CABEÇALHO APLICADO — corpo preservado |
+| `docs/00-fundamentos/principios-de-adaptacao.md` | CABEÇALHO APLICADO — corpo preservado |
+| `docs/00-fundamentos/taxonomia-e-glossario.md` | CABEÇALHO APLICADO — corpo preservado |
+| `docs/01-governanca/papeis-e-responsabilidades.md` | CABEÇALHO APLICADO — corpo preservado |
+| `docs/01-governanca/politica-de-conformidade-documental.md` | CABEÇALHO APLICADO — corpo preservado |
+| `docs/01-governanca/politica-de-decisoes.md` | CABEÇALHO APLICADO — corpo preservado |
+| `docs/01-governanca/politica-de-excecoes.md` | CABEÇALHO APLICADO — corpo preservado |
 | `docs/02-ciclo-de-vida/ciclo-de-vida-e-gates.md` | PENDENTE — normalização necessária |
 | `docs/02-ciclo-de-vida/gestao-de-requisitos-e-escopo.md` | PENDENTE — normalização necessária |
 | `docs/03-portfolio-e-estrategia/priorizacao-de-portfolio.md` | PENDENTE — normalização necessária |
@@ -109,15 +109,15 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 ## Achados e limitações
 
 1. Os 11 documentos Markdown de controlo da pasta `CABEÇALHO` contêm os campos SHA-256 e commit de referência. Os hashes canónicos foram recalculados ou conferidos nesta revisão; a validação estrutural não constitui aprovação substantiva.
-2. Os restantes 48 ficheiros não têm o conjunto de campos canónicos. Alguns contêm metadados antigos em texto corrido ou tabelas temáticas; esses elementos não equivalem ao cabeçalho normativo.
+2. Os restantes 41 ficheiros não têm o conjunto de campos canónicos. Alguns contêm metadados antigos em texto corrido ou tabelas temáticas; esses elementos não equivalem ao cabeçalho normativo.
 3. `CONSTITUICAO.md` recebeu o cabeçalho canónico; o ID GOV-001, a versão 1.0.0 e o estado de proposta para revisão foram preservados.
 4. Os documentos WATCHDOG incluem cartas, políticas, runbooks, documentação operacional e modelos; devem ser normalizados preservando o conteúdo técnico e os estados reais.
-5. O L1 foi aplicado a `CONSTITUICAO.md` e `README.md`; os 48 documentos ainda pendentes não foram alterados. A alteração retroativa deverá preservar o corpo original, usar `N/A — justificação` quando os dados históricos não possam ser comprovados e manter os IDs existentes.
+5. L1 foi aplicado a `CONSTITUICAO.md` e `README.md`; L2 aplicou cabeçalhos a sete documentos de fundamentos e governança. Os 41 documentos restantes não foram alterados. A alteração retroativa deverá preservar o corpo original, usar `N/A — justificação` quando os dados históricos não possam ser comprovados e manter os IDs existentes.
 6. A Norma de Cabeçalho v1.0.3 foi formalmente aprovada pelo proprietário em 2026-10-13; esta aprovação não ratifica automaticamente outros documentos nem certifica conformidade substantiva.
 
 ## Próxima ação
 
-L1 publicado. Próxima ação: executar L2 em lote controlado, reconciliando os caminhos com o inventário e validando individualmente cada diff, hash e commit de referência.
+L1 e L2 publicados e hashes verificados. Próxima ação: reconciliar os documentos de controlo e preparar L3, validando individualmente cada diff, hash e commit de referência.
 
 ## Histórico de alterações
 
@@ -128,3 +128,5 @@ L1 publicado. Próxima ação: executar L2 em lote controlado, reconciliando os 
 | 1.0.3 | 2026-10-13 | Recalculo do SHA-256 canónico e atualização do estado de verificação dos dez documentos da pasta CABEÇALHO | Auditoria canónica dos ficheiros publicados |
 
 | 1.0.4 | 2026-10-13 | Aprovação formal registada e L1 aplicado; inventário reconciliado para 61 ficheiros, 13 com campos canónicos e 48 pendentes | Norma aprovada, registo de aprovação e commits L1 |
+
+| 1.0.5 | 2026-10-13 | L2 aplicado a sete documentos; inventário reconciliado para 61 ficheiros, 20 com campos canónicos e 41 pendentes | Sete commits L2 e validação SHA-256 canónica |
