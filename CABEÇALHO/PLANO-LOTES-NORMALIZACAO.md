@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO_EXECUCAO |
 | **Fase** | Preparação da normalização |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | 58d90b628b70dbf56d6074ce7cacee10162b3d2e80e0e2602f7a616b281b722b |
-| **Commit de referência (versão anterior)** | [7be3b4162495922ce12f3c4f1c02813618b57489](https://github.com/carlos-andrade/GOVERNANCA/commit/7be3b4162495922ce12f3c4f1c02813618b57489) |
+| **Versão** | 1.0.4 |
+| **SHA-256 (conteúdo canónico)** | 3305cf863fcb738c1d8bde3ffa939290617c5d0ebadca9431b61850262b242c3 |
+| **Commit de referência (versão anterior)** | [bffa27bbcfe78b34062a3f897a1968899ece1365](https://github.com/carlos-andrade/GOVERNANCA/commit/bffa27bbcfe78b34062a3f897a1968899ece1365) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -20,7 +20,7 @@
 
 ## Objetivo
 
-Preparar a normalização dos 41 ficheiros Markdown ainda pendentes no [inventário documental](INVENTARIO-DOCUMENTAL.md), com lotes pequenos e critérios verificáveis. Este plano não ratifica a norma nem autoriza alterações retroativas.
+Preparar a normalização dos 36 ficheiros Markdown ainda pendentes no [inventário documental](INVENTARIO-DOCUMENTAL.md), com lotes pequenos e critérios verificáveis. Este plano não ratifica a norma nem autoriza alterações retroativas.
 
 ## Gate de autorização
 
@@ -55,7 +55,7 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 
 ## Estado e próxima ação
 
-**Estado:** gate de aprovação satisfeito; L1 e L2 concluídos. Inventário atual: 61 ficheiros Markdown, 20 com campos canónicos e 41 pendentes.
+**Estado:** gate de aprovação satisfeito; L1, L2 e L3 concluídos. Inventário atual: 61 ficheiros Markdown, 25 com campos canónicos e 36 pendentes.
 
 **Classificação não destrutiva:** registada em [CLASSIFICACAO-PRE-NORMALIZACAO.md](CLASSIFICACAO-PRE-NORMALIZACAO.md). **L1:** concluído; GOV-001, versão e estado da Constituição preservados, assim como os marcadores automáticos do README. **Próxima ação:** iniciar L2 após reconciliar os caminhos com o inventário.
 
@@ -68,3 +68,4 @@ Os totais corrigidos refletem 24 documentos centrais e 26 documentos WATCHDOG, t
 
 | 1.0.2 | 2026-10-13 | Aprovação formal satisfeita e L1 concluído; 48 documentos permanecem pendentes | Registo de aprovação, commits L1 e inventário v1.0.4 |
 | 1.0.3 | 2026-10-13 | L2 concluído nos sete documentos previstos; 41 documentos permanecem pendentes | Inventário v1.0.5 e commits L2 |
+| 1.0.4 | 2026-10-13 | L3 concluído nos cinco documentos previstos; 36 documentos permanecem pendentes | Inventário v1.0.6 e commits L3 |
