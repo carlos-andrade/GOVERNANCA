@@ -1,5 +1,24 @@
 # Roadmap de implementação do WATCHDOG
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-WD-ROADMAP-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | ROADMAP |
+| **Fase** | WATCHDOG — implementação |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 2a5f3c53a20d7cec74e494e658a85c12980880fdd6748f2396998599ba0e7842 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `WATCHDOG/roadmap-de-implementacao.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 **Atualizado:** 2026-10-13  
 **Estado global:** MVP central validado; piloto B3 em expansão, ainda não certificado para operação universal 24×7.
 
