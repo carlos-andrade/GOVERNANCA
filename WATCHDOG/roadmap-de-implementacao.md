@@ -33,6 +33,8 @@ Limites: os artefactos não são armazenamento imutável; issues não confirmam 
 
 Primeira avaliação real (2026-10-13): 5 PASS, 1 STALE, 1 UNKNOWN. O monitor detetou BDI DailyAverageStocks em 2026-09-22, com 21 dias de idade, e abriu uma issue. O pipeline de captura foi corrigido para procurar a última data disponível até sete dias para trás, validar a resposta antes de gravar, preservar SHA-256 e não sobrescrever divergências. A captura encontrou dados BDI de 2026-10-09. A data de observação COTAHIST anual foi documentada com proveniência para o manifesto de qualidade NORMALIZED, e o catálogo passou a monitorizar também os manifestos COTAHIST diários. A reavaliação posterior resultou em **8 PASS, 0 STALE, 0 UNKNOWN**. Os oito controlos ficaram dentro dos limites configurados, mas os limiares estão marcados como PROVISIONAL e ainda carecem de aprovação pelos proprietários.
 
+Foi criada uma [matriz de revisão e aprovação dos limiares](https://github.com/carlos-andrade/B3/blob/main/WATCHDOG/limiares-provisorios-revisao.md), com os oito controlos, perguntas de decisão e campos para registar proprietário, decisão, valor e justificação. A matriz não altera os limiares nem representa aprovação.
+
 Critério de saída: o proprietário deve confirmar a semântica e aprovar cada limite, e a recuperação deve ser comprovada após atualizações futuras. A issue de atualidade permanece aberta para revisão humana, embora a última execução não tenha encontrado STALE ou UNKNOWN.
 
 ## Fase 4 — Alertas operacionais e resiliência
