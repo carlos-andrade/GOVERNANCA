@@ -1,5 +1,24 @@
 # Arquitetura geral
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-WD-ARQ-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | ARQUITETURA |
+| **Fase** | WATCHDOG — arquitetura |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | a763e45569cc5bb2105c99a72e74a5babf04a5f17020ac3c973948d0c385e2c4 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `WATCHDOG/arquitetura/arquitetura-geral.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../../CONSTITUICAO.md) e [Norma de cabeçalho](../../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 ## Camadas
 
 1. **Política e catálogo:** requisitos, critérios, responsáveis e severidade.
