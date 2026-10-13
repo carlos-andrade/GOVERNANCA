@@ -1,5 +1,24 @@
 # WATCHDOG — Monitorização transversal da GOVERNANCA
 
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-WD-README-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | README |
+| **Fase** | WATCHDOG — visão geral |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.0 |
+| **SHA-256 (conteúdo canónico)** | 53f8c0ad23eb532949ef5347cbf52411888b25c71b49c67385b9340b76b59519 |
+| **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
+| **Data de criação** | N/A — data histórica de criação não verificada |
+| **Data de atualização** | 2026-10-14 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Origem** | Conteúdo existente em `WATCHDOG/README.md`; corpo substantivo preservado |
+| **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+
 **Estado:** MVP normativo e validador local em implementação; monitorização externa ainda não configurada.  
 **Objetivo:** tornar verificável a cobertura e a eficácia dos controlos de sistemas, dados, processos e organizações que adotem a GOVERNANCA.
 
