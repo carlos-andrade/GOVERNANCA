@@ -8,9 +8,9 @@
 | **Tipo documental** | HISTORICO |
 | **Fase** | Manutenção do padrão |
 | **Estado** | PROPOSTA PARA VALIDAÇÃO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 40f7d66c87d208c68d360d65d017ac06319cc1da6c4aa63b290677627475e22f |
-| **Commit de referência (versão anterior)** | [7c5af6f64df95ed2f541c502b8b24fd3fc5fe4ed](https://github.com/carlos-andrade/GOVERNANCA/commit/7c5af6f64df95ed2f541c502b8b24fd3fc5fe4ed) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | d09b71418fba072eb2e37bc9c4e5c60c43902832c6da2437f485750d4d4715b3 |
+| **Commit de referência (versão anterior)** | [05b45e1aaa96e484af42a4d550eabe0936df6666](https://github.com/carlos-andrade/GOVERNANCA/commit/05b45e1aaa96e484af42a4d550eabe0936df6666) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Autoridade superior** | [Norma de cabeçalho](NORMA-CABECALHO-PADRAO.md) |
@@ -21,7 +21,8 @@
 |---|---|---|---|---|
 | 2026-10-13 | 1.0.0 | Criação da pasta CABEÇALHO, norma, modelo YAML, modelo documental, registo de tipos e checklist. | Proposta para validação | Histórico Git do repositório GOVERNANCA |
 | 2026-10-13 | 1.0.1 | Markdown nativo do GitHub definido como cabeçalho visual canónico; YAML passa a auxiliar e opcional. | Proposta para validação | Histórico Git |
-| 2026-10-13 | 1.0.2 | Acrescentados SHA-256 canónico e commit de referência ao cabeçalho, com regras de cálculo e rastreabilidade. | Proposta para validação | Commit desta revisão |
+| 2026-10-13 | 1.0.2 | Acrescentados SHA-256 canónico e commit de referência ao cabeçalho, com regras de cálculo e rastreabilidade. | Proposta para validação | Histórico Git |
+| 2026-10-13 | 1.0.3 | Auditoria de consistência: exemplo normativo passa a incluir os campos de integridade, checklist reforçada e roadmap de adoção transversal documentado. | Proposta para validação | Histórico Git do repositório GOVERNANCA |
 
 ## Regra de manutenção
 
