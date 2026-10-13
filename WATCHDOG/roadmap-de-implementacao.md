@@ -15,7 +15,7 @@
 
 **Estado: implementada; testes de ponta a ponta concluídos para evidências e alertas GitHub.**
 
-- Monitor B3 a cada 15 minutos e análise das últimas 24 horas.
+- Monitor B3 a cada 15 minutos e análise das últimas 24 horas, com paginação da API até ultrapassar o corte temporal (corrigida a limitação anterior de apenas 100 execuções).
 - Relatórios JSON/Markdown publicados como artefactos com retenção configurada de 30 dias.
 - Issue de alerta criada/atualizada quando são detetadas execuções desfavoráveis.
 - Validação do inventário e da configuração do monitor em GitHub Actions.
