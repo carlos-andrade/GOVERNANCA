@@ -1,10 +1,19 @@
 # Registo de tipos documentais
 
-**ID:** GOV-CAB-REG-001  
-**Versão:** 1.0.0  
-**Estado:** PROPOSTA PARA VALIDAÇÃO  
-**Data de criação:** 2026-10-13  
-**Autoridade superior:** [Norma de cabeçalho](NORMA-CABECALHO-PADRAO.md)
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-CAB-REG-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | REGISTO |
+| **Fase** | Validação do padrão |
+| **Estado** | PROPOSTA PARA VALIDAÇÃO |
+| **Versão** | 1.0.1 |
+| **Data de criação** | 2026-10-13 |
+| **Data de atualização** | 2026-10-13 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Autoridade superior** | [Norma de cabeçalho](NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
 ## Tipos documentais
 
@@ -26,13 +35,13 @@
 | EVIDENCIA | Artefacto que comprova execução ou decisão | EVD |
 | DECISAO | Decisão formal, incluindo ADR quando aplicável | DEC |
 
-Os prefixos são sugestões de identificação; se um projeto já tiver convenção aprovada, manter a convenção existente e documentar o mapeamento. Não alterar IDs históricos apenas para uniformizar nomenclatura.
+Os prefixos são sugestões. Se um projeto já tiver convenção aprovada, manter a convenção existente e documentar o mapeamento. Não alterar IDs históricos apenas para uniformizar nomenclatura.
 
 ## Regras de identificação
 
 - O ID é estável, único e não reutilizável.
 - O ID não substitui o título, a versão nem o estado.
 - Referências devem apontar para artefactos existentes.
-- Documentos derivados devem referenciar a origem e a autoridade superior.
+- Documentos derivados devem referenciar origem e autoridade superior.
 - Documentos substituídos passam a `DEPRECADO` e apontam para o sucessor, quando exista.
 - Documentos rejeitados não devem ser usados como autoridade normativa.
