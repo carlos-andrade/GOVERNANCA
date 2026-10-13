@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.9 |
-| **SHA-256 (conteúdo canónico)** | 36809a5529a707cf62373bfafe3256180122d60661827195f6b9efee3db74786 |
+| **Versão** | 1.1.0 |
+| **SHA-256 (conteúdo canónico)** | e617092df0bee7d612683d960c0c0a8376cc60c8ba2f5d9bf671eb871ffe8ba0 |
 | **Commit de referência (versão anterior)** | [32d2e5fdc4756865366ec8e2074ff34caeb0dd5d](https://github.com/carlos-andrade/GOVERNANCA/commit/32d2e5fdc4756865366ec8e2074ff34caeb0dd5d) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -36,7 +36,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | Fase | Trabalho | Critério de conclusão | Estado |
 |---|---|---|---|
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
-| 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | EM VALIDAÇÃO |
+| 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | BLOQUEADA — aguarda ratificação explícita do padrão |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
@@ -61,7 +61,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 ## Próxima ação
 
-Verificar e corrigir os hashes canónicos dos documentos de controlo recentes e alinhar o roadmap com o inventário reconciliado. Em paralelo, aguardar ratificação explícita da versão 1.0.3 da norma. Só após evidência verificável da aprovação iniciar L1 com `CONSTITUICAO.md` e `README.md`, validando cada diff e hash.
+Próxima ação bloqueada por dependência de aprovação: obter ratificação formal explícita da versão 1.0.3 da norma e registar a autoridade aprovadora, a data e a evidência. Não iniciar L1 nem alterar retroativamente os 50 documentos antes desse gate.
 
 ## Histórico de alterações
 
@@ -77,3 +77,4 @@ Verificar e corrigir os hashes canónicos dos documentos de controlo recentes e 
 | 1.0.7 | 2026-10-13 | Reconciliação para 60 documentos e correção do estado de verificação dos hashes recentes | Inventário documental e auditoria da pasta CABEÇALHO |
 | 1.0.8 | 2026-10-13 | Registo da verificação independente de quatro hashes e isolamento do hash do inventário como pendência | Cálculo SHA-256 canónico dos documentos publicados |
 | 1.0.9 | 2026-10-13 | Fecho da verificação canónica dos dez documentos Markdown da pasta CABEÇALHO | Inventário v1.0.3 e hashes recalculados/conferidos |
+| 1.1.0 | 2026-10-13 | Conclusão da Fase 2 e explicitação do único gate imediato: ratificação formal da norma | Verificação canónica e regra de autorização |
