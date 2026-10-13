@@ -1,114 +1,102 @@
 # Norma — Cabeçalho documental padrão
 
-**ID:** GOV-CAB-NORMA-001  
-**Versão:** 1.0.0  
-**Estado:** PROPOSTA PARA VALIDAÇÃO  
-**Data de criação:** 2026-10-13  
-**Data de revisão:** 2026-10-13  
-**Responsável:** Proprietário do repositório GOVERNANCA  
-**Aprovador:** Pendente de aprovação formal  
-**Origem:** Convenção documental já utilizada nos projetos do utilizador  
-**Autoridade superior:** `CONSTITUICAO.md` e políticas documentais da GOVERNANCA  
-**Cadeia de autoridade:** `PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO`
+| Campo | Valor |
+|---|---|
+| **ID** | GOV-CAB-NORMA-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | NORMA |
+| **Fase** | Validação do padrão |
+| **Estado** | PROPOSTA PARA VALIDAÇÃO |
+| **Versão** | 1.0.1 |
+| **Data de criação** | 2026-10-13 |
+| **Data de atualização** | 2026-10-13 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente de aprovação formal |
+| **Origem** | Convenção documental já utilizada nos projetos |
+| **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e políticas da GOVERNANCA |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
 ## 1. Objetivo
 
-Uniformizar a identificação, o estado, a versão, a origem, a autoridade e a rastreabilidade de documentos em GOVERNANCA e, após validação, nos demais repositórios.
+Uniformizar identificação, estado, versão, origem, autoridade e rastreabilidade. O cabeçalho visível dos documentos Markdown deve usar Markdown nativo renderizado pelo GitHub.
 
-## 2. Regra de não duplicação
+## 2. Formato obrigatório para Markdown no GitHub
 
-Este documento consolida a convenção existente. Não devem ser criados padrões concorrentes com campos equivalentes sem decisão registada. Quando um repositório já possuir um cabeçalho compatível, adaptar por mapeamento dos campos e preservar a informação válida; não substituir por uma variante local incompatível.
+Cada ficheiro `.md` deve começar com:
+1. Um título Markdown de nível 1 (`#`).
+2. Uma tabela Markdown de metadados.
+3. O corpo organizado por títulos Markdown de nível 2 e 3.
 
-## 3. Metadados canónicos
+Exemplo canónico:
 
-Cada documento deve incluir, em YAML no início do ficheiro Markdown, os campos aplicáveis definidos no modelo:
+```markdown
+# Título do documento
 
-- `projeto`
-- `repositorio`
-- `tipo_documento`
-- `fase`
-- `id_documento`
-- `titulo`
-- `status`
-- `versao`
-- `data_criacao`
-- `data_atualizacao`
-- `origem`
-- `autoridade_documental`
-- `cadeia_autoridade`
-- `rastreabilidade`
-- `escopo`
-- `objetivo`
-- `dependencias`
+| Campo | Valor |
+|---|---|
+| **ID** | PROJ-TIPO-001 |
+| **Projeto** | Nome do projeto |
+| **Repositório** | [OWNER/REPOSITORY](https://github.com/OWNER/REPOSITORY) |
+| **Tipo documental** | RELATORIO |
+| **Fase** | FASE_XX |
+| **Estado** | RASCUNHO |
+| **Versão** | 1.0.0 |
+| **Data de criação** | AAAA-MM-DD |
+| **Data de atualização** | AAAA-MM-DD |
+| **Responsável** | Papel ou responsável |
+| **Aprovador** | Pendente ou identificação |
+| **Origem** | Referência verificável |
+| **Autoridade superior** | Caminho ou URL |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+```
 
-Os campos não aplicáveis devem ser explicitamente indicados como `"N/A — justificação"`; não devem ser removidos silenciosamente. Campos como aprovador, data de aprovação, vigência e próxima revisão são obrigatórios para documentos em estado `APROVADO`.
+Não usar YAML front matter como substituto do cabeçalho visual em documentos Markdown. YAML pode existir num ficheiro auxiliar ou numa integração específica, mas não substitui a tabela Markdown canónica.
+
+## 3. Metadados
+
+Incluir, quando aplicável: projeto, repositório, tipo, fase, ID, título, estado, versão, datas, responsável, aprovador, origem, autoridade, cadeia de autoridade e rastreabilidade. Escopo, objetivo e dependências podem integrar a tabela quando relevantes.
+
+Quando um campo não for aplicável, registar `N/A — justificação`; não o remover silenciosamente. Documentos `APROVADO` devem identificar a autoridade aprovadora e evidência da aprovação.
 
 ## 4. Identificação única
 
-O `id_documento` deve ser único no âmbito definido pelo registo documental. Recomenda-se um prefixo de projeto/domínio, tipo e sequência, por exemplo `GOV-CAB-NORMA-001`. Não reutilizar IDs de documentos eliminados, substituídos ou depreciados.
+O ID deve ser único e não reutilizável. Recomenda-se prefixo de projeto/domínio, tipo e sequência, por exemplo `GOV-CAB-NORMA-001`.
 
 ## 5. Estados documentais
 
-Usar os estados de conformidade documental já definidos em GOVERNANCA:
-
-- `RASCUNHO`
-- `EM_REVISAO`
-- `APROVADO`
-- `DEPRECADO`
-- `REJEITADO`
-
-Um documento não pode ser apresentado como norma ratificada quando estiver em `RASCUNHO` ou `EM_REVISAO`. Documentos de alto impacto não devem ser autoaprovados pelo autor. A aprovação deve identificar a versão exata e o aprovador autorizado.
+Usar `RASCUNHO`, `EM_REVISAO`, `APROVADO`, `DEPRECADO` ou `REJEITADO`. Não apresentar propostas como normas ratificadas. A aprovação identifica a versão exata e o aprovador autorizado.
 
 ## 6. Datas e versões
 
-- Datas em formato ISO `AAAA-MM-DD`.
-- Versões no formato `MAJOR.MINOR.PATCH` quando o documento exigir versionamento semântico.
-- `data_atualizacao` deve refletir a última alteração substantiva ao documento.
-- Uma alteração de conteúdo normativo exige revisão da versão e do histórico.
-- Não declarar aprovação, vigência ou revisão concluída sem evidência.
+- Datas no formato ISO `AAAA-MM-DD`.
+- Versão `MAJOR.MINOR.PATCH` quando aplicável.
+- Atualizar a data após alteração substantiva.
+- Rever a versão e o histórico quando houver alteração normativa.
+- Não declarar aprovação ou vigência sem evidência.
 
 ## 7. Corpo documental
 
-Após o cabeçalho, usar quando aplicável esta sequência de secções:
-
-1. Contexto Histórico
-2. Estado
-3. Evidências
-4. Validação
-5. Resultado
-6. Próxima Ação
-
-Podem ser acrescentadas secções técnicas específicas, mantendo rastreabilidade e sem omitir secções necessárias à natureza do documento. Para código-fonte, configurações e formatos que não aceitem front matter, usar o cabeçalho equivalente suportado pela linguagem e manter os mesmos metadados essenciais.
+Usar, quando aplicável: Contexto Histórico, Estado, Evidências, Validação, Resultado e Próxima Ação. Podem existir secções técnicas adicionais. Para código e formatos não Markdown, usar o formato de comentário suportado pela linguagem, preservando os metadados essenciais.
 
 ## 8. Autoridade e rastreabilidade
 
-O cabeçalho deve apontar para a fonte normativa superior, documento de origem, requisitos, decisões, issues, commits, testes ou evidências relevantes. A cadeia `PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO` deve ser preservada quando aplicável.
+Referenciar norma superior, origem, requisitos, decisões, issues, commits, testes e evidências relevantes. Preservar a cadeia `PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO` quando aplicável.
 
-## 9. Aplicação a documentos existentes
+## 9. Aplicação retroativa
 
-A normalização retroativa deve ser feita em lotes auditáveis:
-
-1. inventariar documentos;
-2. classificar tipo, estado e autoridade;
-3. mapear os metadados existentes;
-4. adicionar o cabeçalho sem eliminar conteúdo ou histórico;
-5. validar links, IDs, datas e estados;
-6. registar exceções e documentos não aplicáveis;
-7. publicar o resultado com evidência de revisão.
-
-Não marcar toda a documentação como conforme apenas por inserir um bloco YAML.
+Inventariar documentos, classificar tipo e estado, mapear metadados, inserir o cabeçalho sem apagar conteúdo ou histórico, validar links e IDs, registar exceções e publicar evidência de revisão. Não declarar conformidade apenas por inserir um cabeçalho.
 
 ## 10. Critérios de aceitação
 
-- O documento tem ID único e tipo definido.
-- O estado corresponde à aprovação real.
-- Versão e datas são válidas.
-- Responsável, origem e autoridade são identificáveis.
-- A rastreabilidade aponta para referências existentes quando declaradas.
-- O corpo tem as secções necessárias ao tipo documental.
-- Exceções são justificadas e aprovadas.
-- O histórico é preservado.
+- ID único e tipo definidos.
+- Cabeçalho Markdown renderizado corretamente no GitHub.
+- Estado, versão e datas corretos.
+- Responsável, origem e autoridade identificáveis.
+- Referências verificáveis.
+- Secções necessárias presentes.
+- Exceções justificadas e histórico preservado.
 
 ## 11. Limites
 
-A publicação desta norma em estado de proposta não significa ratificação formal nem adoção automática por outros repositórios. A adoção transversal requer aprovação do padrão e validação individual dos repositórios.
+Esta norma continua em estado de proposta. A adoção transversal depende de aprovação formal e validação individual dos repositórios.
