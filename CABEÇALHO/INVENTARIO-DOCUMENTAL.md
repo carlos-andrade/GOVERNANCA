@@ -9,7 +9,7 @@
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | a12c1afb1365c73832b2d91dd49317ba247a9e19fd610759c9f85ccdc51c6bf4 |
+| **SHA-256 (conteúdo canónico)** | 814426dd86e92240461ba98cf79f650afbd2d5344e33d3e8974a2c25915da811 |
 | **Commit de referência (versão anterior)** | [86f1bb90caea152a7d18af50e5f83e0ee305588a](https://github.com/carlos-andrade/GOVERNANCA/commit/86f1bb90caea152a7d18af50e5f83e0ee305588a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -27,7 +27,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 - Fonte: árvore Git recursiva do repositório `main`, inspecionada em 2026-10-13.
 - Total identificado após inclusão do registo de aprovação e aplicação do L1: **61 ficheiros Markdown**.
 - Critério de conformidade inicial: título Markdown, tabela de metadados `Campo | Valor`, linha SHA-256 canónico e linha de commit de referência.
-- Os documentos com campos canónicos foram verificados quanto à presença dos campos; os hashes canónicos dos 10 documentos Markdown da pasta `CABEÇALHO` foram recalculados ou conferidos nesta revisão.
+- Os documentos com campos canónicos foram verificados quanto à presença dos campos; os hashes canónicos dos 11 documentos Markdown da pasta `CABEÇALHO` foram recalculados ou conferidos nesta revisão.
 - A classificação é estrutural, não uma aprovação substantiva do conteúdo.
 - Ficheiros de modelo, como `CABEÇALHO/MODELO-DOCUMENTO.md`, podem conter marcadores de preenchimento; a conformidade do modelo não torna automaticamente conformes os documentos criados a partir dele.
 
