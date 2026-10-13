@@ -9,9 +9,9 @@
     "meio": 60,
     "fim": 0
   },
-  "next_milestone": "Confirmar a atualidade do BDI e completar a data de observação COTAHIST; depois calibrar os limiares e configurar supervisão independente do WATCHDOG.",
+  "next_milestone": "Confirmar o relatório de atualidade após a nova captura BDI de 2026-10-09; completar a data de observação COTAHIST e configurar supervisão independente.",
   "blockers": [
-    "O monitor de atualidade identificou B3 BDI DailyAverageStocks com observação de 2026-09-22, 21 dias de idade face ao limite configurado de 5 dias; requer validação e atualização da fonte/dataset.",
+    "A captura BDI encontrou registos válidos em 2026-10-09 e publicou o manifesto; a reavaliação automática está em execução antes de remover o alerta de desatualização.",
     "O manifesto COTAHIST 2026 não declara a última data de observação, mantendo a atualidade como UNKNOWN.",
     "A supervisão externa independente do próprio WATCHDOG ainda não está configurada.",
     "Os alertas do piloto B3 criam issues, mas ainda não têm confirmação de receção nem SLA de escalonamento.",
@@ -74,6 +74,14 @@
     {
       "label": "Roadmap WATCHDOG atualizado",
       "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/WATCHDOG/roadmap-de-implementacao.md"
+    },
+    {
+      "label": "Captura automática BDI — execução aprovada",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387168872"
+    },
+    {
+      "label": "Manifesto BDI DailyAverageStocks — 2026-10-09",
+      "url": "https://github.com/carlos-andrade/B3/blob/main/dados/bdi/manifests/DailyAverageStocks/2026-10-09_page_0001.json"
     }
   ],
   "closure_checks": {
