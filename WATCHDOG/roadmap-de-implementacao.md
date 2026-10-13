@@ -46,9 +46,10 @@ Critério de saída: o proprietário deve confirmar a semântica e aprovar cada 
 
 ## Fase 5 — Supervisão independente
 
-**Estado: pendente; bloqueador para alegações de monitorização 24×7.**
+**Estado: hooks de heartbeat preparados no piloto B3; ativação externa pendente. Bloqueador para alegações de monitorização 24×7.**
 
 - Escolher e configurar serviço externo independente do GitHub Actions monitorizado.
+- Configurar as secrets `WATCHDOG_HEARTBEAT_WORKFLOWS_URL` e `WATCHDOG_HEARTBEAT_DATA_URL` conforme o [guia B3](https://github.com/carlos-andrade/B3/blob/main/WATCHDOG/heartbeat-supervisor-externo.md).
 - Detetar falta de heartbeat e falha do pipeline de monitorização.
 - Testar o mecanismo com falhas simuladas e registar evidências.
 - Definir responsável e canal de contingência.
