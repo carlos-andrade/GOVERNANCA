@@ -108,6 +108,14 @@
     {
       "label": "Workflow de atualidade com heartbeat externo opcional",
       "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-data-freshness.yml"
+    },
+    {
+      "label": "Reavaliação B3 com heartbeat opcional — 8 PASS",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387916859"
+    },
+    {
+      "label": "Validação B3 dos hooks de heartbeat e inventários",
+      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387959995"
     }
   ],
   "closure_checks": {
