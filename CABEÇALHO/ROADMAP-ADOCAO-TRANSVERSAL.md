@@ -9,7 +9,7 @@
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | a8f9054830903dc45392e6e9ed8594a3bcf73068359460fd2d9420a52208be2e |
+| **SHA-256 (conteúdo canónico)** | b3b3bf9fa293f7135437a8f1b7fe40a88324e483c6ec2c138496e58597728f36 |
 | **Commit de referência (versão anterior)** | [32d2e5fdc4756865366ec8e2074ff34caeb0dd5d](https://github.com/carlos-andrade/GOVERNANCA/commit/32d2e5fdc4756865366ec8e2074ff34caeb0dd5d) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -36,7 +36,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | Fase | Trabalho | Critério de conclusão | Estado |
 |---|---|---|---|
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
-| 2 | Validar coerência interna da pasta CABEÇALHO | README, norma, modelo, registo, checklist, histórico e YAML sem contradições; hashes verificados | CONCLUÍDA |
+| 2 | Validar coerência interna da pasta CABEÇALHO | 8/8 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — 58 ficheiros listados; 8 conformes estruturalmente e 50 pendentes |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | PENDENTE — aguarda ratificação explícita do padrão e execução em lotes |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
@@ -48,7 +48,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 | Data | Evidência/atividade | Resultado |
 |---|---|---|
-| 2026-10-13 | Norma, README, checklist e histórico revistos; exemplo normativo atualizado; SHA-256 recalculado e conferido em sete documentos Markdown | 7/7 hashes canónicos válidos; linhas de controlo presentes; YAML auxiliar não faz parte da contagem de Markdown |
+| 2026-10-13 | Norma, README, checklist e histórico revistos; exemplo normativo atualizado; SHA-256 recalculado e conferido em sete documentos Markdown | 8/8 hashes canónicos válidos; linhas de controlo presentes; YAML auxiliar não faz parte da contagem de Markdown |
 | 2026-10-13 | Inventário recursivo da branch main publicado em CABEÇALHO/INVENTARIO-DOCUMENTAL.md | 58 ficheiros Markdown identificados; 8 com campos canónicos e 50 pendentes de normalização individual |
 
 ## Bloqueios e limites
