@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.1.0 |
-| **SHA-256 (conteúdo canónico)** | e617092df0bee7d612683d960c0c0a8376cc60c8ba2f5d9bf671eb871ffe8ba0 |
+| **Versão** | 1.1.1 |
+| **SHA-256 (conteúdo canónico)** | 347668d866c7c1153bff80a3f6f3987a8b36149638d0b0cbfaa381d2571296df |
 | **Commit de referência (versão anterior)** | [32d2e5fdc4756865366ec8e2074ff34caeb0dd5d](https://github.com/carlos-andrade/GOVERNANCA/commit/32d2e5fdc4756865366ec8e2074ff34caeb0dd5d) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
@@ -38,11 +38,11 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | 1 | Definir formato Markdown e campos de integridade | Norma e modelo descrevem o mesmo formato; SHA e commit definidos | CONCLUÍDA |
 | 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
-| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | BLOQUEADA — aguarda ratificação explícita do padrão |
+| 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | EM_EXECUÇÃO — L1 aplicado; reconciliar documentação de controlo antes de L2 |
 | 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | PENDENTE |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
 | 7 | Validar adoção transversal | Relatório de conformidade por repositório, pendências e exceções | PENDENTE |
-| 8 | Ratificar formalmente a norma | Aprovação explícita, autoridade, versão aprovada e data registadas | PENDENTE |
+| 8 | Ratificar formalmente a norma | Aprovação explícita, autoridade, versão aprovada e data registadas | CONCLUÍDA — v1.0.3 aprovada em 2026-10-13; registo publicado |
 
 ## Registo de execução
 
@@ -56,12 +56,12 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 
 - A classificação dos 50 documentos pendentes foi concluída sem alterar os documentos auditados; a normalização retroativa continua bloqueada até aprovação formal da norma.
 - Não se deve inferir conformidade de um documento apenas pela existência de um cabeçalho.
-- A norma permanece proposta até aprovação formal.
+- A Norma v1.0.3 está aprovada; a aprovação substantiva dos documentos individuais continua separada.
 - A normalização deve ser feita em lotes verificáveis, sem alterações em massa não auditadas.
 
 ## Próxima ação
 
-Próxima ação bloqueada por dependência de aprovação: obter ratificação formal explícita da versão 1.0.3 da norma e registar a autoridade aprovadora, a data e a evidência. Não iniciar L1 nem alterar retroativamente os 50 documentos antes desse gate.
+Fase 8 concluída. L1 publicado: cabeçalhos canónicos adicionados a `CONSTITUICAO.md` e `README.md`, preservando GOV-001, a versão e o estado de proposta da Constituição e os marcadores automáticos do README. Próxima ação: reconciliar inventário, README da pasta CABEÇALHO e plano de lotes antes de iniciar L2.
 
 ## Histórico de alterações
 
