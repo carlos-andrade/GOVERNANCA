@@ -8,8 +8,8 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.1.0 |
-| **SHA-256 (conteúdo canónico)** | 184211a9eb268ad3be5b45aea22717ff95ff2ff1d39ff0c3a9d859608235ae06 |
+| **Versão** | 1.1.1 |
+| **SHA-256 (conteúdo canónico)** | d0178e556977c93b6e5a1847c8c2040575e8efdd19ca825c4773c9d6b888cd97 |
 | **Commit de referência (versão anterior)** | [b55de1f609e33e8b7cd190507e23f0d183cd6622](https://github.com/carlos-andrade/GOVERNANCA/commit/b97fa1b4164270b782c1bb04e7023406335b797a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-14 |
@@ -25,7 +25,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 ## Método
 
 - Fonte: árvore Git recursiva do repositório `main`, inspecionada em 2026-10-13.
-- Total identificado após inclusão do registo de aprovação e aplicação do L1 e L2: **61 ficheiros Markdown**.
+- Total identificado após inclusão do registo de aprovação e aplicação do L1 e L2: **62 ficheiros Markdown**.
 - Critério de conformidade inicial: título Markdown, tabela de metadados `Campo | Valor`, linha SHA-256 canónico e linha de commit de referência.
 - Os documentos com campos canónicos foram verificados quanto à presença dos campos; os hashes canónicos dos 11 documentos Markdown da pasta `CABEÇALHO` foram recalculados ou conferidos nesta revisão.
 - A classificação é estrutural, não uma aprovação substantiva do conteúdo.
@@ -35,8 +35,8 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 | Resultado | Quantidade |
 |---|---:|
-| Ficheiros Markdown inventariados | 61 |
-| Com campos canónicos presentes | 61 |
+| Ficheiros Markdown inventariados | 62 |
+| Com campos canónicos presentes | 62 |
 | A normalizar ou avaliar individualmente | 0 |
 | Cobertura estrutural do padrão | 100,0% |
 
