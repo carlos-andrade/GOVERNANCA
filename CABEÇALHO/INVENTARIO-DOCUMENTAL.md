@@ -8,9 +8,9 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Auditoria documental |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 1d8b89220bcd494eb32d3b14613951f4750ec7ad057e05b4412d0c1e35ac9c13 |
-| **Commit de referência (versão anterior)** | [69ea5236b624ab735a68d4bf8cfa8d82a434938a](https://github.com/carlos-andrade/GOVERNANCA/commit/69ea5236b624ab735a68d4bf8cfa8d82a434938a) |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 1cb09a698bd3b6db3d4539d8c0e1796c5cd9ab091f1bb38192aa0e7e1b8e6a31 |
+| **Commit de referência (versão anterior)** | [efa0607254de03cb73f45e36a5a0df089ddb131f](https://github.com/carlos-andrade/GOVERNANCA/commit/efa0607254de03cb73f45e36a5a0df089ddb131f) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-13 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -25,7 +25,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 ## Método
 
 - Fonte: árvore Git recursiva do repositório `main`, inspecionada em 2026-10-13.
-- Total identificado: **57 ficheiros Markdown**.
+- Total identificado após inclusão deste inventário: **58 ficheiros Markdown**.
 - Critério de conformidade inicial: título Markdown, tabela de metadados `Campo | Valor`, linha SHA-256 canónico e linha de commit de referência.
 - Os ficheiros classificados como conformes foram também verificados quanto à presença dos campos; os sete hashes canónicos da pasta `CABEÇALHO` foram recalculados e coincidiram com os valores declarados.
 - A classificação é estrutural, não uma aprovação substantiva do conteúdo.
@@ -35,10 +35,10 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 | Resultado | Quantidade |
 |---|---:|
-| Ficheiros Markdown inventariados | 57 |
-| Com campos canónicos presentes | 7 |
+| Ficheiros Markdown inventariados | 58 |
+| Com campos canónicos presentes | 8 |
 | A normalizar ou avaliar individualmente | 50 |
-| Cobertura estrutural do padrão | 12,3% |
+| Cobertura estrutural do padrão | 13,8% |
 
 ## Inventário completo
 
@@ -51,6 +51,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 | `CABEÇALHO/README.md` | CONFORME — campos canónicos presentes |
 | `CABEÇALHO/REGISTO-TIPOS-DOCUMENTAIS.md` | CONFORME — campos canónicos presentes |
 | `CABEÇALHO/ROADMAP-ADOCAO-TRANSVERSAL.md` | CONFORME — campos canónicos presentes |
+| `CABEÇALHO/INVENTARIO-DOCUMENTAL.md` | CONFORME — campos canónicos presentes (este inventário) |
 | `CONSTITUICAO.md` | PENDENTE — normalização necessária |
 | `README.md` | PENDENTE — normalização necessária |
 | `WATCHDOG/CARTA-WATCHDOG.md` | PENDENTE — normalização necessária |
@@ -104,7 +105,7 @@ Inventariar todos os ficheiros Markdown presentes na árvore Git recursiva da br
 
 ## Achados e limitações
 
-1. Os sete ficheiros da pasta `CABEÇALHO` contêm os campos SHA-256 e commit de referência; os seus hashes canónicos foram recalculados e validados.
+1. Os sete documentos originais da pasta `CABEÇALHO`, anteriores à criação deste inventário, contêm os campos SHA-256 e commit de referência; os seus hashes canónicos foram recalculados e validados. Este inventário também contém os dois campos e é verificado separadamente.
 2. Os restantes 50 ficheiros não têm o conjunto de campos canónicos. Alguns contêm metadados antigos em texto corrido ou tabelas temáticas; esses elementos não equivalem ao cabeçalho normativo.
 3. `CONSTITUICAO.md` contém metadados em formato anterior e requer tratamento específico por ser documento de autoridade superior.
 4. Os documentos WATCHDOG incluem cartas, políticas, runbooks, documentação operacional e modelos; devem ser normalizados preservando o conteúdo técnico e os estados reais.
@@ -119,4 +120,4 @@ Rever e aprovar formalmente a norma e os critérios de normalização; depois ap
 
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
-| 1.0.0 | 2026-10-13 | Inventário inicial dos ficheiros Markdown e classificação estrutural | Árvore Git da branch `main` |
+| 1.0.1 | 2026-10-13 | Ajuste do inventário para incluir o próprio documento; total atualizado para 58 ficheiros | Árvore Git da branch `main` e histórico Git |
