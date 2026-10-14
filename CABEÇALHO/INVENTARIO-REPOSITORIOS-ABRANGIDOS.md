@@ -8,8 +8,8 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Fase 5 — inventário transversal de repositórios |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 8dfddf873a0b6fb9cbc3f9589c7f75406a3aed698ed9f0d50d668f63f2aca437 |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | 24fc4ad3e0b14824b2e355e4ab7b96d9be04102a28c04705811be2edbb291c17 |
 | **Commit de referência (versão anterior)** | N/A — documento criado nesta execução |
 | **Data de criação** | 2026-10-14 |
 | **Data de atualização** | 2026-10-14 |
