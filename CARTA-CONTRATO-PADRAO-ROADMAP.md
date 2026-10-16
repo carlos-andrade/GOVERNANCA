@@ -8,7 +8,7 @@
 | **Tipo documental** | CARTA_CONTRATO |
 | **Fase** | Governação transversal |
 | **Estado** | APROVADO |
-| **Versão** | 1.0.0 |
+| **Versão** | 1.1.0 |
 | **SHA-256 (conteúdo canónico)** | 7c88bfccdf15a56e3a8d60cbff4abdb2583117422d0c01b5abfa9f82542d3faf |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-17 |
@@ -30,6 +30,8 @@ O padrão exige painel executivo, fases/gates, ações prioritárias, evidência
 Respeitar a lei aplicável, contratos vinculativos, políticas formalmente aprovadas, esta Carta/Contrato, padrões e procedimentos. Conflitos devem ser registados e escalados, nunca resolvidos silenciosamente. Esta Carta não substitui a Constituição, a norma de cabeçalho, a norma de estados/percentuais ou contratos específicos.
 
 ## 3. Obrigações
+
+O roadmap deve apresentar a barra visual de status definida na [Norma de estado e percentual de conclusão](standards/status-e-percentual-de-conclusao.md). A pontuação deve ser baseada em critérios com evidências; o painel Markdown e o SVG devem ser gerados a partir da mesma fonte canónica.
 
 Cada repositório abrangido deve:
 - manter roadmap publicado e ligado no README ou índice principal;
@@ -84,3 +86,4 @@ Esta versão foi aprovada em 2026-10-17 para a GOVERNANCA. Repositórios já abr
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-17 | Instituição do padrão obrigatório de roadmap | Aprovação expressa do proprietário |
+| 1.1.0 | 2026-10-17 | Tornada obrigatória a barra de status baseada em critérios e evidências | Norma GOV-STD-STATUS-001 v1.1.0 |
