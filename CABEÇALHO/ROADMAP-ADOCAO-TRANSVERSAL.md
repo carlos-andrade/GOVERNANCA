@@ -8,17 +8,21 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.2.8 |
+| **Versão** | 1.2.9 |
 | **SHA-256 (conteúdo canónico)** | 835d6f6a82ff323b728c112ae1b408bbcd196f6c17a75ab4227e9d36bcf49f6a |
 | **Commit de referência (versão anterior)** | [35fe55b347df986f88a0a9951482c68eb32d028a](https://github.com/carlos-andrade/GOVERNANCA/commit/35fe55b347df986f88a0a9951482c68eb32d028a) |
 | **Data de criação** | 2026-10-13 |
-| **Data de atualização** | 2026-10-16 |
+| **Data de atualização** | 2026-10-17 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
 | **Aprovador** | Pendente de aprovação formal |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](NORMA-CABECALHO-PADRAO.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
 ## Objetivo
+
+![Painel visual do estado global da GOVERNANCA](../assets/status-dashboard.svg)
+
+> Este painel apresenta o estado global do repositório GOVERNANCA; não substitui os estados, critérios e evidências individuais da adoção transversal. A pontuação é calculada segundo a [Norma de estado e percentual de conclusão](../standards/status-e-percentual-de-conclusao.md).
 
 Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 canónica e a rastreabilidade por commit, sem declarar conformidade antes da inspeção e validação de cada repositório.
 
@@ -102,3 +106,10 @@ Fases 4 e 8 concluídas. L1–L7 aplicados e verificados; inventário reconcilia
 
 | 2026-10-14 | Auditoria individual inicial dos repositórios P1 | STOCKS: 32/32 ficheiros Markdown sem cabeçalho canónico; DECIO-BAZIN: 18/18 sem cabeçalho canónico. B3: auditoria individual fechada em fotografia fixa: 284/284 caminhos inspecionados; nenhum cabeçalho canónico completo; um cabeçalho parcial com SHA pendente; commit `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`. BLOOMBERG_MAIL: 123/123 ficheiros Markdown inspecionados individualmente sem cabeçalho canónico completo; commit `6a2e9622d05945de490477be5ea6eedf659937ba`. TURISTURIS: auditoria individual iniciada sobre 660 ficheiros Markdown na fotografia fixa do commit `10c653f010e9ddf0abbe6a5c18f363a058afb03d`; 56 examinados, sem cabeçalho canónico completo nos 56. | Inventário de repositórios e leituras individuais da branch main |
 | 2026-10-14 | Reconciliação de progresso B3 | Inventário transversal atualizado para não declarar percentagem até reconciliar os caminhos únicos; total observado mais recente: 283 ficheiros Markdown | CABEÇALHO/INVENTARIO-REPOSITORIOS-ABRANGIDOS.md v1.0.6; commit `afd84d2304a166e5ea132774abc6e500e3c7c9f1` |
+
+
+## Histórico de alterações — 1.2.9
+
+| Versão | Data | Alteração | Evidência |
+|---|---|---|---|
+| 1.2.9 | 2026-10-17 | Ligação ao painel visual global e à norma de pontuação baseada em evidências | `assets/status-dashboard.svg` e `standards/status-e-percentual-de-conclusao.md` |
