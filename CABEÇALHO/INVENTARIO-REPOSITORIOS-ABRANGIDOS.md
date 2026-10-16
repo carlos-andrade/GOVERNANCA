@@ -8,8 +8,8 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Fase 5 — inventário transversal de repositórios |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | cb3ccbec13e53ee12fc3a73eeba171fa5711831eb01007a2f70fe5a4648968c9 |
+| **Versão** | 1.0.8 |
+| **SHA-256 (conteúdo canónico)** | 394cbf650f75bfb6f3eb5678134594b54321cc1d54afdcac258700d712da0ac5 |
 | **Commit de referência (versão anterior)** | [afd84d2304a166e5ea132774abc6e500e3c7c9f1](https://github.com/carlos-andrade/GOVERNANCA/commit/afd84d2304a166e5ea132774abc6e500e3c7c9f1) |
 | **Data de criação** | 2026-10-14 |
 | **Data de atualização** | 2026-10-16 |
