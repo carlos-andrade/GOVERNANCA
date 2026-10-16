@@ -8,11 +8,11 @@
 | **Tipo documental** | CONSTITUICAO |
 | **Fase** | Governação fundacional |
 | **Estado** | PROPOSTA PARA REVISÃO |
-| **Versão** | 1.0.0 |
+| **Versão** | 1.0.1 |
 | **SHA-256 (conteúdo canónico)** | dc31fdb577e6facb1dc70f99932f3867eafdfa23df08bd5bd4a8fac7dcbeb074 |
 | **Commit de referência (versão anterior)** | [62a2354c6372417a36c4df256fff267e691d8495](https://github.com/carlos-andrade/GOVERNANCA/commit/62a2354c6372417a36c4df256fff267e691d8495) |
 | **Data de criação** | N/A — data histórica de criação não verificada |
-| **Data de atualização** | 2026-10-13 |
+| **Data de atualização** | 2026-10-17 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
 | **Aprovador** | Pendente de aprovação formal da Constituição |
 | **Autoridade superior** | Lei aplicável, contratos vinculativos e políticas formalmente aprovadas; ver secção 3 |
@@ -89,3 +89,8 @@ Rever anualmente e perante alterações materiais. Até aprovação formal, esta
 ## 9. Padrão transversal de roadmap
 
 O repositório GOVERNANCA e os repositórios que adotem formalmente as suas regras devem cumprir a [Carta/Contrato — padrão obrigatório de roadmap](CARTA-CONTRATO-PADRAO-ROADMAP.md) e o [Roadmap padrão — Governança](ROADMAP-PADRAO-GOVERNANCA.md). A adoção exige roadmap local, evidências verificáveis, critérios de aceitação, estado atualizado e inspeção individual. A publicação da norma não implica conformidade automática dos demais repositórios.
+
+
+## 10. Barra de status e progresso comprovado
+
+O estado e o percentual dos projetos abrangidos devem cumprir a [Norma de estado e percentual de conclusão](standards/status-e-percentual-de-conclusao.md). A pontuação deriva de critérios explícitos e evidências verificáveis; o painel Markdown e a representação visual são gerados da mesma fonte canónica. A data de atualização do registo não substitui a validação dos controlos operacionais nem a aprovação formal de encerramento. A adoção pelos demais repositórios exige implementação e validação individual.
