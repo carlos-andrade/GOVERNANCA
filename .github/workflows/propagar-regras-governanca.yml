@@ -44,7 +44,8 @@ jobs:
       - name: Validar registo e sintaxe
         run: |
           python -m json.tool registry/repositorios-consumidores.json >/dev/null
-          python -m py_compile automation/propagar_governanca.py
+          python -m py_compile automation/propagar_governanca.py tests/test_propagate_governance.py
+          python -m unittest discover -s tests -p 'test_propagate_governance.py' -v
           python automation/propagar_governanca.py --help
 
   propagar:
