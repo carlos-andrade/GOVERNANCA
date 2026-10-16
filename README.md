@@ -36,18 +36,19 @@
 | **Meio** | 60/60 | 60% | Concluído |
 | **Fim** | 0/20 | 20% | Pendente |
 
-**Próximo marco:** Concluir a verificação transversal da publicação concorrente no main; depois obter evidência externa de heartbeat, aprovar os limiares e testar alertas, ACK, escalonamento e SLA no gate WATCHDOG/B3.
+**Próximo marco:** Configurar GOVERNANCA_SYNC_TOKEN com privilégio mínimo; executar dry-run autenticado e validar a criação/atualização de PRs nos repositórios consumidores; depois confirmar adoção individual.
 
-**Bloqueios ativos (5):**
+**Bloqueios ativos (6):**
 - A correção transversal de publicação concorrente dos 42 workflows ainda precisa de verificação conclusiva na branch main; não retirar o bloqueio sem evidência atual.
 - Os limiares de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) continuam PROVISIONAL, sem aprovação dos proprietários registada.
 - A supervisão externa independente ainda não foi comprovada como operacional: faltam confirmar configuração dos secrets, ausência de heartbeat e recuperação.
 - Responsáveis, canais de alerta, confirmação de receção, ACK/escalonamento e SLA ainda precisam de aprovação e teste com evidência.
 - A adoção transversal do padrão de roadmap e das regras de governança continua sujeita a inspeção, integração e aceitação individual por repositório.
+- A distribuição automática por Pull Request foi implementada inicialmente, mas a operação ainda não está comprovada: falta validar o secret GOVERNANCA_SYNC_TOKEN, executar dry-run e confirmar PRs/idempotência em todos os destinos.
 
 **Última revisão:** 2026-10-17 · **Atualização do registo:** 2026-10-17
 
-> **Limite da revisão:** Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final nos runs 38981823399 e 38981877103. Os 10 pontos de testes da barra v2 foram atribuídos com evidência de CI. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório.
+> **Limite da revisão:** Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final nos runs 38981823399 e 38981877103. Os 10 pontos de testes da barra v2 foram atribuídos com evidência de CI. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório. Implementação inicial da distribuição transversal publicada em 2026-10-17 (script, workflow, registo de consumidores e testes de validação); não considerar operacional até autenticação, dry-run e PRs reais serem verificados.
 
 **Evidências:** [Validação CI do scorecard e painel visual a 80% — SUCCESS](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/38981877103) · [Norma de percentual e estados](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md) · [Testes automatizados da barra](https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py) · [Workflow de sincronização](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml) · [WATCHDOG — validação técnica](https://github.com/carlos-andrade/GOVERNANCA/actions/workflows/watchdog-validation.yml) · [Gate de aceitação WATCHDOG/B3](https://github.com/carlos-andrade/B3/issues/9) · [Issue de atualidade de dados B3](https://github.com/carlos-andrade/B3/issues/8)
 
