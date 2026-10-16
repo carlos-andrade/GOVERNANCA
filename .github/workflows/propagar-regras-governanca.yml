@@ -1,0 +1,86 @@
+name: Propagar regras canónicas da GOVERNANCA
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "CONSTITUICAO.md"
+      - "ROADMAP-PADRAO-GOVERNANCA.md"
+      - "CARTA-CONTRATO-PADRAO-ROADMAP.md"
+      - "standards/status-e-percentual-de-conclusao.md"
+      - "CABEÇALHO/NORMA-CABECALHO-PADRAO.md"
+      - "registry/repositorios-consumidores.json"
+      - "automation/propagar_governanca.py"
+      - ".github/workflows/propagar-regras-governanca.yml"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Simular sem criar/atualizar Pull Requests"
+        required: true
+        type: boolean
+        default: true
+      repository:
+        description: "Repositório específico (opcional, owner/name)"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: propagar-governanca-main
+  cancel-in-progress: false
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar registo e sintaxe
+        run: |
+          python -m json.tool registry/repositorios-consumidores.json >/dev/null
+          python -m py_compile automation/propagar_governanca.py
+          python automation/propagar_governanca.py --help
+
+  propagar:
+    needs: validar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar credencial de distribuição
+        env:
+          GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Configure o secret GOVERNANCA_SYNC_TOKEN com acesso aos repositórios consumidores."
+            exit 1
+          fi
+          gh auth status
+      - name: Distribuir por Pull Request
+        env:
+          GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          TARGET_REPO: ${{ inputs.repository }}
+        run: |
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ -n "$TARGET_REPO" ]; then args+=(--repo "$TARGET_REPO"); fi
+          python automation/propagar_governanca.py "${args[@]}" | tee governanca-propagacao.json
+      - name: Guardar relatório de distribuição
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: relatorio-propagacao-governanca
+          path: governanca-propagacao.json
+          if-no-files-found: warn
+          retention-days: 90
