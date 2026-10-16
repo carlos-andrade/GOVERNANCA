@@ -9,7 +9,7 @@
 | **Fase** | Entrada e orientação do repositório |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 92f3c765f899b62312c426c62d4bb3a11536a4c7560ba3fd1bd9eac4db0bc0f9 |
+| **SHA-256 (conteúdo canónico)** | d82477491f18a740caad5e84da33abfb503a3e3c6b57e8c31701bed7ba02cb26 |
 | **Commit de referência (versão anterior)** | [62a2354c6372417a36c4df256fff267e691d8495](https://github.com/carlos-andrade/GOVERNANCA/commit/62a2354c6372417a36c4df256fff267e691d8495) |
 | **Data de criação** | N/A — data histórica de criação não verificada |
 | **Data de atualização** | 2026-10-13 |
