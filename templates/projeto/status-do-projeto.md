@@ -9,7 +9,7 @@
 | **Fase** | Templates de projeto |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.1.0 |
-| **SHA-256 (conteúdo canónico)** | 1a594a870dfc38ac876ccbbe73fa91794e130a8985dedaec703c348ed459fa5c |
+| **SHA-256 (conteúdo canónico)** | e2540ef3cac6ee2f10d097f1c78c6694127f8f9c90fbae7dc4d4e4daaebe639a |
 | **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
 | **Data de criação** | N/A — data histórica de criação não verificada |
 | **Data de atualização** | 2026-10-17 |
