@@ -9,7 +9,7 @@
 | **Fase** | Standards e métricas de projeto |
 | **Estado** | APROVADO |
 | **Versão** | 1.1.0 |
-| **SHA-256 (conteúdo canónico)** | 8355fa901e65d87b5ed36e7a4d657a7d012dee479acae325c8c7b9207d77e2a0 |
+| **SHA-256 (conteúdo canónico)** | 4469267eca0e42d1c0d6e28b38bff3c72ee10797956d9f27237772b27baaa992 |
 | **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
 | **Data de criação** | N/A — data histórica de criação não verificada |
 | **Data de atualização** | 2026-10-17 |
