@@ -26,17 +26,17 @@
 <!-- GOVERNANCA_STATUS_START -->
 ## Painel executivo de status — GOVERNANCA
 
-![Painel visual de status: 70% comprovados](assets/status-dashboard.svg)
+![Painel visual de status: 80% comprovados](assets/status-dashboard.svg)
 
-**70% comprovados** · `[██████████████░░░░░░] 70%` · **Estado:** Em execução · **Fase:** Meio
+**80% comprovados** · `[████████████████░░░░] 80%` · **Estado:** Em finalização · **Fase:** Fim
 
 | Fase | Pontos comprovados | Peso máximo | Estado |
 |---|---:|---:|---|
 | **Início** | 20/20 | 20% | Concluído |
-| **Meio** | 50/60 | 60% | Em curso |
+| **Meio** | 60/60 | 60% | Concluído |
 | **Fim** | 0/20 | 20% | Pendente |
 
-**Próximo marco:** Executar e aprovar os testes da nova barra de status e do SVG no GitHub Actions; em seguida, revalidar no main a correção transversal de publicação concorrente e o gate WATCHDOG/B3.
+**Próximo marco:** Concluir a verificação transversal da publicação concorrente no main; depois obter evidência externa de heartbeat, aprovar os limiares e testar alertas, ACK, escalonamento e SLA no gate WATCHDOG/B3.
 
 **Bloqueios ativos (5):**
 - A correção transversal de publicação concorrente dos 42 workflows ainda precisa de verificação conclusiva na branch main; não retirar o bloqueio sem evidência atual.
@@ -47,9 +47,9 @@
 
 **Última revisão:** 2026-10-17 · **Atualização do registo:** 2026-10-17
 
-> **Limite da revisão:** Revisão documental efetuada em 2026-10-17. A pontuação foi rebaselined de forma conservadora: a barra anterior mostrava 80% agregado, mas os 10 pontos de testes da nova implementação só serão atribuídos após a execução bem-sucedida do conjunto atualizado. A issue B3 #9 está fechada no GitHub, mas o corpo publicado mantém a checklist de aceitação externa por concluir; o encerramento da issue, isoladamente, não prova aceitação operacional.
+> **Limite da revisão:** Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final (run 38981823399). Os 10 pontos de testes da barra v2 foram atribuídos com essa evidência. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório.
 
-**Evidências:** [Norma de percentual e estados](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md) · [Testes automatizados da barra](https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py) · [Workflow de sincronização](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml) · [WATCHDOG — validação técnica](https://github.com/carlos-andrade/GOVERNANCA/actions/workflows/watchdog-validation.yml) · [Gate de aceitação WATCHDOG/B3](https://github.com/carlos-andrade/B3/issues/9) · [Issue de atualidade de dados B3](https://github.com/carlos-andrade/B3/issues/8)
+**Evidências:** [Validação CI da barra v2, testes e sincronização README/SVG — SUCCESS](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/38981823399) · [Norma de percentual e estados](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md) · [Testes automatizados da barra](https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py) · [Workflow de sincronização](https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml) · [WATCHDOG — validação técnica](https://github.com/carlos-andrade/GOVERNANCA/actions/workflows/watchdog-validation.yml) · [Gate de aceitação WATCHDOG/B3](https://github.com/carlos-andrade/B3/issues/9) · [Issue de atualidade de dados B3](https://github.com/carlos-andrade/B3/issues/8)
 
 > **Fonte de verdade:** `registry/status-do-projeto.json`. O script valida os critérios pontuados e gera este painel Markdown e o SVG. Não editar manualmente este bloco. Uma fase só recebe pontos se tiver evidência; 100% exige aprovação explícita de todos os controlos de encerramento.
 <!-- GOVERNANCA_STATUS_END -->
