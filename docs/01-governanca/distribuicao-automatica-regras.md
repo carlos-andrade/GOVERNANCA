@@ -18,7 +18,7 @@ Quando um documento canónico de distribuição é alterado e publicado em `main
 
 1. O workflow `propagar-regras-governanca.yml` é acionado por alterações aos ficheiros canónicos ou manualmente.
 2. O script valida o registo e a allowlist de ficheiros.
-3. Para cada repositório ativo, copia os documentos canónicos para `.governanca/upstream/`.
+3. Descobre automaticamente os ficheiros de texto dos diretórios normativos registados (`standards/`, `docs/`, `templates/`, `CABEÇALHO/`, `WATCHDOG/`) e os três documentos canónicos da raiz; copia-os para `.governanca/upstream/`.
 4. Gera `UPSTREAM-MANIFEST.json` com commit de origem e SHA-256 de cada ficheiro.
 5. Cria ou atualiza a branch `bot/sincronizar-regras-governanca` e abre uma Pull Request.
 6. O repositório consumidor revê e aprova a PR segundo as regras locais.
@@ -59,4 +59,4 @@ python automation/propagar_governanca.py
 
 ## Limites conhecidos
 
-A automação distribui cópias isoladas dos documentos definidos na allowlist. Não altera automaticamente documentos de projeto, não aprova decisões locais e não força adoção substantiva. Aumentar a allowlist exige atualizar o registo, o validador e os filtros do workflow, com testes correspondentes.
+A automação distribui cópias isoladas de todos os ficheiros de texto elegíveis dentro das raízes normativas explicitamente registadas. Não replica automaticamente o código de aplicação nem ficheiros fora dessas raízes; não altera documentos locais, não aprova decisões e não força adoção substantiva. Uma nova raiz normativa exige alteração explícita do registo, do validador, dos filtros do workflow e dos testes.
