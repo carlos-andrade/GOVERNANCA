@@ -7,14 +7,14 @@
 | **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Tipo documental** | NORMA |
 | **Fase** | Standards e métricas de projeto |
-| **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
+| **Estado** | APROVADO |
+| **Versão** | 1.1.0 |
 | **SHA-256 (conteúdo canónico)** | 8355fa901e65d87b5ed36e7a4d657a7d012dee479acae325c8c7b9207d77e2a0 |
 | **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
 | **Data de criação** | N/A — data histórica de criação não verificada |
-| **Data de atualização** | 2026-10-14 |
+| **Data de atualização** | 2026-10-17 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
-| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Aprovador** | Carlos Andrade — aprovação expressa do modelo visual e dos critérios em 2026-10-17 |
 | **Origem** | Conteúdo existente em `standards/status-e-percentual-de-conclusao.md`; corpo substantivo preservado |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
@@ -82,3 +82,25 @@ O workflow `.github/workflows/sync-project-status.yml` é acionado por alteraç�
 **Procedimento para mudar o status:** editar `registry/status-do-projeto.json` na branch `main`, atualizar `updated_at`, ajustar os pontos apenas com evidências, indicar próximo marco/bloqueios e anexar evidências verificáveis. Depois, confirmar a execução do workflow e a atualização do README. Uma execução falhada significa que a sincronização não foi confirmada; corrigir a causa antes de comunicar o novo status como publicado.
 
 **Limites:** o mecanismo mantém sincronizado o painel deste repositório. Não altera automaticamente os README de outros repositórios. A adoção noutros projetos exige instalação e teste do mecanismo em cada repositório, com permissões e regras de branch compatíveis.
+
+
+## 13. Scorecard por critério e barra visual moderna
+
+A versão 1.1.0 exige que a pontuação seja demonstrável por critério, não apenas declarada como total de fase. O registo canónico deve manter, para cada critério: ID único, descrição, pontos máximos, pontos atribuídos e lista de evidências HTTP(S). Critério com pontos atribuídos sem evidência é inválido.
+
+- A soma dos pontos máximos dos critérios deve ser exatamente 20 para Início, 60 para Meio e 20 para Fim.
+- Os pontos atribuídos por fase devem ser iguais à soma de `earned_points` dos seus critérios.
+- Os pontos atribuídos a cada critério devem ser inteiros entre zero e o máximo definido.
+- Critérios parcialmente cumpridos podem receber pontos parciais apenas quando o critério e o método de avaliação o justificarem; a justificação deve constar da evidência ou do registo.
+- O total é a soma dos pontos comprovados. A barra de 20 segmentos continua a representar 5 pontos percentuais por segmento, arredondada para baixo.
+- A barra visual SVG é um artefacto gerado a partir do mesmo registo canónico que gera o painel Markdown. Não manter números independentes dentro do SVG.
+- A validação automatizada deve falhar quando o registo, a barra Markdown e o SVG divergirem.
+- O painel deve mostrar o percentual comprovado, estado, fase, pontos por fase, número de bloqueios, data da revisão, próximo marco e links de evidência.
+- A data de atualização do registo não prova, por si só, que todos os controlos externos foram revalidados. A nota de revisão deve delimitar o que foi efetivamente verificado e quais dependências continuam pendentes.
+- Alterações de metodologia ou correções de pontuação exigem registo da razão e da evidência que sustenta a alteração. Uma queda percentual nunca deve ser ocultada; deve ser explicada no histórico.
+
+## 14. Histórico de alterações
+
+| Versão | Data | Alteração | Evidência |
+|---|---|---|---|
+| 1.1.0 | 2026-10-17 | Scorecard por critério com evidências, validação da soma e geração sincronizada de painel Markdown e SVG | `registry/status-do-projeto.json`, `automation/sync_project_status.py` e `tests/test_sync_project_status.py` |
