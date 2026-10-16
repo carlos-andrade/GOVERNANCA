@@ -47,7 +47,7 @@
 - [ ] Requisitos e decisões rastreáveis — [0–10]
 - [ ] Testes/revisões proporcionais ao risco — [0–10]
 - [ ] Documentação e evidências atualizadas — [0–5]
-- [ ] Desvios e riscos tratados ou formalmente aceites — [0–5]
+- [ ] Desvios e riscos identificados, acompanhados e com tratamento ou aceitação documentados — [0–5]
 
 **Subtotal Meio:** [0–60]/60
 
