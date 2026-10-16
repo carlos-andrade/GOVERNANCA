@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source_repository": "carlos-andrade/GOVERNANCA",
+  "source_branch": "main",
+  "destination_root": ".governanca/upstream",
+  "policy": "pull_request_only",
+  "repositories": [
+    {"name": "carlos-andrade/B3", "enabled": true, "owner": "Carlos Andrade"},
+    {"name": "carlos-andrade/DECIO-BAZIN", "enabled": true, "owner": "Carlos Andrade"},
+    {"name": "carlos-andrade/XFI", "enabled": true, "owner": "Carlos Andrade"},
+    {"name": "carlos-andrade/CONSORCIO", "enabled": true, "owner": "Carlos Andrade"},
+    {"name": "carlos-andrade/STOCKS", "enabled": true, "owner": "Carlos Andrade"},
+    {"name": "carlos-andrade/TURISTURIS", "enabled": true, "owner": "Carlos Andrade"},
+    {"name": "carlos-andrade/BLOOMBERG_MAIL", "enabled": true, "owner": "Carlos Andrade"},
+    {"name": "carlos-andrade/BRICKMASTER-CLAUDE", "enabled": true, "owner": "Carlos Andrade"}
+  ],
+  "published_files": [
+    "CONSTITUICAO.md",
+    "ROADMAP-PADRAO-GOVERNANCA.md",
+    "CARTA-CONTRATO-PADRAO-ROADMAP.md",
+    "standards/status-e-percentual-de-conclusao.md",
+    "CABEÇALHO/NORMA-CABECALHO-PADRAO.md"
+  ],
+  "notes": [
+    "Os ficheiros são publicados em .governanca/upstream/ para não sobrescrever documentos locais.",
+    "A publicação é proposta por Pull Request; nunca faz merge automático.",
+    "Cada repositório pode desativar a receção alterando enabled para false após decisão registada.",
+    "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório."
+  ]
+}
