@@ -36,7 +36,7 @@ def publish(name,files,destroot,source_sha,dry):
   if changed.returncode==0:return {"repository":name,"status":"NO_CHANGE"}
   if dry:return {"repository":name,"status":"WOULD_OPEN_PR"}
   run(["git","config","user.name","github-actions[bot]"],cwd=repo);run(["git","config","user.email","41898282+github-actions[bot]@users.noreply.github.com"],cwd=repo);run(["git","commit","-m","chore(governanca): atualizar espelho de regras canónicas"],cwd=repo)
-  p=run(["git","push","--force-with-lease","origin","HEAD:refs/heads/"+BRANCH],cwd=repo,check=False)
+  p=run(["git","push","--force","origin","HEAD:refs/heads/"+BRANCH],cwd=repo,check=False)
   if p.returncode:return {"repository":name,"status":"ERROR","detail":(p.stderr or p.stdout).strip()}
   q=run(["gh","pr","list","--repo",name,"--head",BRANCH,"--state","open","--json","url","--limit","1"],check=False)
   if q.returncode:return {"repository":name,"status":"ERROR","detail":(q.stderr or q.stdout).strip()}
