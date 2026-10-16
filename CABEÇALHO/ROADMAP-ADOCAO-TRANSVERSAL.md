@@ -8,11 +8,11 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.2.4 |
-| **SHA-256 (conteúdo canónico)** | f1da1833e054137a24d8ed4827955d7033bb3be6cbf31d4e004c0ce8e13c2ded |
-| **Commit de referência (versão anterior)** | [36f597aae2ae0344784e772c49e5fb283c4160c8](https://github.com/carlos-andrade/GOVERNANCA/commit/36f597aae2ae0344784e772c49e5fb283c4160c8) |
+| **Versão** | 1.2.5 |
+| **SHA-256 (conteúdo canónico)** | 23c37a261638487f427bcff27e14ab2f394eda3375c2ebcd8d8adfdfb824d124 |
+| **Commit de referência (versão anterior)** | [35fe55b347df986f88a0a9951482c68eb32d028a](https://github.com/carlos-andrade/GOVERNANCA/commit/35fe55b347df986f88a0a9951482c68eb32d028a) |
 | **Data de criação** | 2026-10-13 |
-| **Data de atualização** | 2026-10-14 |
+| **Data de atualização** | 2026-10-16 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
 | **Aprovador** | Pendente de aprovação formal |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](NORMA-CABECALHO-PADRAO.md) |
@@ -39,7 +39,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | CONCLUÍDA — L1–L7 aplicados; 62/62 documentos com cabeçalho canónico |
-| 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | EM_EXECUÇÃO — inventário inicial criado; 14 repositórios acessíveis com linha de base de README e árvore; auditoria individual concluída em STOCKS (32/32) e DECIO-BAZIN (18/18); B3 em auditoria individual, com 283 leituras executadas e cobertura única por caminho em reconciliação; 1 candidato com 404 por confirmar |
+| 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | EM_EXECUÇÃO — inventário inicial criado; 14 repositórios acessíveis com linha de base de README e árvore; auditoria individual concluída em STOCKS (32/32), DECIO-BAZIN (18/18) e B3 (284/284, fotografia fixa do commit 6f156a2ea726b6f07a0c323cb1109e43a6c934e0; nenhum cabeçalho canónico completo; um cabeçalho parcial com SHA pendente); 1 candidato com 404 por confirmar |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
 | 7 | Validar adoção transversal | Relatório de conformidade por repositório, pendências e exceções | PENDENTE |
 | 8 | Ratificar formalmente a norma | Aprovação explícita, autoridade, versão aprovada e data registadas | CONCLUÍDA — v1.0.3 aprovada em 2026-10-13; registo publicado |
@@ -87,6 +87,7 @@ Fases 4 e 8 concluídas. L1–L7 aplicados e verificados; inventário reconcilia
 | 1.2.1 | 2026-10-14 | Registo do progresso de auditoria B3 e ressalva sobre cobertura única devido à alteração da árvore durante a execução | Inventário transversal v1.0.3 e leituras individuais da branch main |
 | 1.2.3 | 2026-10-14 | Atualização do progresso de B3 para 224 leituras individuais e manutenção da ressalva de reconciliação de caminhos | Inventário transversal v1.0.5 e leituras individuais da branch main |
 | 1.2.4 | 2026-10-14 | Registo de 283 leituras individuais de B3; cobertura única por caminho permanece em reconciliação | Inventário transversal v1.0.6 e leituras individuais da branch main |
+| 1.2.5 | 2026-10-16 | Fecho da auditoria individual B3 em fotografia fixa: 284/284 caminhos inspecionados; nenhum cabeçalho canónico completo e um cabeçalho parcial com SHA pendente | Commit B3 `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`; inventário transversal v1.0.7 |
 
 | 2026-10-14 | Aplicação L5 | Quatro documentos de operações, standards e templates normalizados; inventário reconciliado para 35 canónicos e 26 pendentes | Inventário v1.0.8 e validação SHA-256 pós-publicação |
 
@@ -96,5 +97,5 @@ Fases 4 e 8 concluídas. L1–L7 aplicados e verificados; inventário reconcilia
 
 | 2026-10-14 | Reconciliado o inventário após criação do inventário transversal | 62 ficheiros Markdown no GOVERNANCA; 62 com cabeçalho canónico; Fase 5 em execução | Inventário documental v1.1.1 e inventário de repositórios |
 
-| 2026-10-14 | Auditoria individual inicial dos repositórios P1 | STOCKS: 32/32 ficheiros Markdown sem cabeçalho canónico; DECIO-BAZIN: 18/18 sem cabeçalho canónico. B3: 283 leituras individuais realizadas, todas sem cabeçalho canónico completo; a árvore mudou durante a execução e a cobertura única por caminho ficou em reconciliação | Inventário de repositórios e leituras individuais da branch main |
+| 2026-10-14 | Auditoria individual inicial dos repositórios P1 | STOCKS: 32/32 ficheiros Markdown sem cabeçalho canónico; DECIO-BAZIN: 18/18 sem cabeçalho canónico. B3: auditoria individual fechada em fotografia fixa: 284/284 caminhos inspecionados; nenhum cabeçalho canónico completo; um cabeçalho parcial com SHA pendente; commit `6f156a2ea726b6f07a0c323cb1109e43a6c934e0` | Inventário de repositórios e leituras individuais da branch main |
 | 2026-10-14 | Reconciliação de progresso B3 | Inventário transversal atualizado para não declarar percentagem até reconciliar os caminhos únicos; total observado mais recente: 283 ficheiros Markdown | CABEÇALHO/INVENTARIO-REPOSITORIOS-ABRANGIDOS.md v1.0.6; commit `afd84d2304a166e5ea132774abc6e500e3c7c9f1` |
