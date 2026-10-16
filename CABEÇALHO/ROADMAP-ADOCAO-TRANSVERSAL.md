@@ -9,7 +9,7 @@
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.2.9 |
-| **SHA-256 (conteúdo canónico)** | 835d6f6a82ff323b728c112ae1b408bbcd196f6c17a75ab4227e9d36bcf49f6a |
+| **SHA-256 (conteúdo canónico)** | ec4355b58b0f02bed6bbc2ef81d69e98e2403dcbb5e61b91f07dfc2b35f911d1 |
 | **Commit de referência (versão anterior)** | [35fe55b347df986f88a0a9951482c68eb32d028a](https://github.com/carlos-andrade/GOVERNANCA/commit/35fe55b347df986f88a0a9951482c68eb32d028a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-17 |
