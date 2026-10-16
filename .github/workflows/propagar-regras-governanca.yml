@@ -7,10 +7,14 @@ on:
       - "CONSTITUICAO.md"
       - "ROADMAP-PADRAO-GOVERNANCA.md"
       - "CARTA-CONTRATO-PADRAO-ROADMAP.md"
-      - "standards/status-e-percentual-de-conclusao.md"
-      - "CABEÇALHO/NORMA-CABECALHO-PADRAO.md"
+      - "standards/**"
+      - "docs/**"
+      - "templates/**"
+      - "CABEÇALHO/**"
+      - "WATCHDOG/**"
       - "registry/repositorios-consumidores.json"
       - "automation/propagar_governanca.py"
+      - "tests/test_propagate_governance.py"
       - ".github/workflows/propagar-regras-governanca.yml"
   workflow_dispatch:
     inputs:
