@@ -8,9 +8,9 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Fase 5 — inventário transversal de repositórios |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.8 |
-| **SHA-256 (conteúdo canónico)** | 394cbf650f75bfb6f3eb5678134594b54321cc1d54afdcac258700d712da0ac5 |
-| **Commit de referência (versão anterior)** | [afd84d2304a166e5ea132774abc6e500e3c7c9f1](https://github.com/carlos-andrade/GOVERNANCA/commit/afd84d2304a166e5ea132774abc6e500e3c7c9f1) |
+| **Versão** | 1.0.9 |
+| **SHA-256 (conteúdo canónico)** | dd6aca473477760d76ce337796731061ffcd44072082496b80e5f3633fde1580 |
+| **Commit de referência (versão anterior)** | [df59979230835d4fcc8e25775a3e9f96ed553f5a](https://github.com/carlos-andrade/GOVERNANCA/commit/df59979230835d4fcc8e25775a3e9f96ed553f5a) |
 | **Data de criação** | 2026-10-14 |
 | **Data de atualização** | 2026-10-16 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -32,8 +32,8 @@ A prioridade é operacional e provisória, não uma aprovação de escopo. A ado
 | [STOCKS](https://github.com/carlos-andrade/STOCKS) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — 32/32 ficheiros Markdown sem cabeçalho canónico | Preparar lote de normalização STOCKS após concluir a linha de base dos restantes P1 |
 | [DECIO-BAZIN](https://github.com/carlos-andrade/DECIO-BAZIN) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — 18/18 ficheiros Markdown sem cabeçalho canónico | Preparar lote de normalização DECIO-BAZIN após concluir a linha de base dos restantes P1 |
 | [B3](https://github.com/carlos-andrade/B3) | P1 — dados e mercado | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — fotografia fixa do commit `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`; 284/284 ficheiros Markdown inspecionados individualmente; 284/284 sem cabeçalho canónico completo. Um ficheiro contém cabeçalho parcial com SHA-256 pendente. | Preparar lote de normalização B3 após rever IDs, estados e metadados preexistentes; corrigir o cabeçalho parcial em lote próprio, sem alterar conteúdo substantivo. |
-| [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | P1 — ingestão de dados | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 123 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
-| [TURISTURIS](https://github.com/carlos-andrade/TURISTURIS) | P1 — dados e publicação | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 660 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
+| [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | P1 — ingestão de dados | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — fotografia fixa do commit `6a2e9622d05945de490477be5ea6eedf659937ba`; 123/123 ficheiros Markdown inspecionados individualmente sem cabeçalho canónico completo | Preparar lote de normalização após rever IDs, estados e metadados preexistentes. |
+| [TURISTURIS](https://github.com/carlos-andrade/TURISTURIS) | P1 — dados e publicação | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL EM CURSO — fotografia fixa do commit `10c653f010e9ddf0abbe6a5c18f363a058afb03d`; 24/660 ficheiros Markdown inspecionados individualmente, sem cabeçalho canónico completo nos 24 examinados | Continuar a partir do caminho 25 da fotografia fixa; reconciliar a cobertura antes de fechar. |
 | [XFI](https://github.com/carlos-andrade/XFI) | P1 — infraestrutura e operações | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 45 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
 | [PROMPT_CHATGPT_CLAUDE](https://github.com/carlos-andrade/PROMPT_CHATGPT_CLAUDE) | P1 — cadeia de prompts | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 23 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
 | [BRICKMASTER_GERAL](https://github.com/carlos-andrade/BRICKMASTER_GERAL) | P1 — estratégia de trading | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 41 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
