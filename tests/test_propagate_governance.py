@@ -45,7 +45,7 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
                 "repositories": []
             }
             path.write_text(json.dumps(data), encoding="utf-8")
-            with patch.object(sync, "REGISTRY", path):
+            with patch.object(sync, "REGISTRY", path), patch.object(sync, "REQUIRED_ROOTS", {"../README.md"}):
                 with self.assertRaises(ValueError):
                     sync.load_registry()
 
