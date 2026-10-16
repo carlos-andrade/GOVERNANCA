@@ -51,6 +51,8 @@ def main():
  except Exception as e: print(json.dumps({"status":"FAIL","error":str(e)},ensure_ascii=False));return 2
  if not (os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")): print("GH_TOKEN/GITHUB_TOKEN obrigatório",file=sys.stderr);return 2
  if run(["gh","auth","status"],check=False).returncode: print("Autenticação GitHub CLI inválida",file=sys.stderr);return 2
+ setup=run(["gh","auth","setup-git"],check=False)
+ if setup.returncode: print("Não foi possível configurar autenticação Git para push/clone",file=sys.stderr);return 2
  targets=[r for r in d["repositories"] if r["enabled"]]
  if a.repo:
   targets=[r for r in targets if r["name"].lower()==a.repo.lower()]
