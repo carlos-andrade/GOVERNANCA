@@ -8,11 +8,11 @@
 | **Tipo documental** | INVENTARIO |
 | **Fase** | Fase 5 — inventário transversal de repositórios |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.6 |
-| **SHA-256 (conteúdo canónico)** | aa5aa5cd07369fe16cf4e76bb0edc970bf68ca266653519b95660e6bfd6943d3 |
-| **Commit de referência (versão anterior)** | [cf2f6f59c5da8fc5134194e371fcf20ecdd3b1bf](https://github.com/carlos-andrade/GOVERNANCA/commit/cf2f6f59c5da8fc5134194e371fcf20ecdd3b1bf) |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | cb3ccbec13e53ee12fc3a73eeba171fa5711831eb01007a2f70fe5a4648968c9 |
+| **Commit de referência (versão anterior)** | [afd84d2304a166e5ea132774abc6e500e3c7c9f1](https://github.com/carlos-andrade/GOVERNANCA/commit/afd84d2304a166e5ea132774abc6e500e3c7c9f1) |
 | **Data de criação** | 2026-10-14 |
-| **Data de atualização** | 2026-10-14 |
+| **Data de atualização** | 2026-10-16 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
 | **Aprovador** | Pendente de aprovação formal deste inventário |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](NORMA-CABECALHO-PADRAO.md) |
@@ -31,7 +31,7 @@ A prioridade é operacional e provisória, não uma aprovação de escopo. A ado
 | [GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) | P0 — norma central | Confirmada; branch `main` | Proprietário do repositório | Norma aprovada; 62 ficheiros Markdown inventariados após inclusão deste registo | Executar auditoria final e manter controlos sincronizados |
 | [STOCKS](https://github.com/carlos-andrade/STOCKS) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — 32/32 ficheiros Markdown sem cabeçalho canónico | Preparar lote de normalização STOCKS após concluir a linha de base dos restantes P1 |
 | [DECIO-BAZIN](https://github.com/carlos-andrade/DECIO-BAZIN) | P1 — projeto ativo | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — 18/18 ficheiros Markdown sem cabeçalho canónico | Preparar lote de normalização DECIO-BAZIN após concluir a linha de base dos restantes P1 |
-| [B3](https://github.com/carlos-andrade/B3) | P1 — dados e mercado | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL EM CURSO — 283 leituras individuais realizadas; cobertura única por caminho em reconciliação devido a alteração da árvore durante a execução | Continuar auditoria individual a partir do ficheiro 113; confirmar exceções antes de normalizar |
+| [B3](https://github.com/carlos-andrade/B3) | P1 — dados e mercado | Confirmada; branch `main` | Proprietário do repositório | AUDITORIA INDIVIDUAL CONCLUÍDA — fotografia fixa do commit `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`; 284/284 ficheiros Markdown inspecionados individualmente; 284/284 sem cabeçalho canónico completo. Um ficheiro contém cabeçalho parcial com SHA-256 pendente. | Preparar lote de normalização B3 após rever IDs, estados e metadados preexistentes; corrigir o cabeçalho parcial em lote próprio, sem alterar conteúdo substantivo. |
 | [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | P1 — ingestão de dados | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 123 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
 | [TURISTURIS](https://github.com/carlos-andrade/TURISTURIS) | P1 — dados e publicação | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 660 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
 | [XFI](https://github.com/carlos-andrade/XFI) | P1 — infraestrutura e operações | Confirmada; branch `main` | Proprietário do repositório | BASELINE INICIAL — README sem cabeçalho canónico; 45 ficheiros Markdown no repositório | Auditoria individual dos ficheiros Markdown e validação de exceções pendentes |
@@ -62,6 +62,6 @@ Foram executadas 112 leituras individuais da branch `main`; os conteúdos devolv
 ## Próxima sequência
 
 1. Linha de base inicial concluída para 14 repositórios acessíveis: árvore recursiva e README principal inspecionados; os 14 READMEs consultados não contêm o cabeçalho canónico. Os números de Markdown são contagens de ficheiros, não declarações de conformidade individual.
-2. STOCKS auditado individualmente: 32/32 ficheiros Markdown sem cabeçalho canónico. DECIO-BAZIN auditado individualmente: 18/18 sem cabeçalho canónico. B3: 283 leituras individuais foram executadas e todos os ficheiros devolvidos nessas leituras não apresentaram cabeçalho canónico completo. Como a árvore mudou durante a execução, a cobertura única por caminho será reconciliada a partir de uma fotografia fixa antes de declarar percentagem.
+2. STOCKS auditado individualmente: 32/32 ficheiros Markdown sem cabeçalho canónico. DECIO-BAZIN auditado individualmente: 18/18 sem cabeçalho canónico. B3: auditoria concluída numa fotografia fixa do commit `6f156a2ea726b6f07a0c323cb1109e43a6c934e0` (árvore `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`): 284/284 ficheiros Markdown inspecionados por caminho, sem cabeçalho canónico completo. O ficheiro `docs/governanca/PLANO_NORMALIZACAO_DOCUMENTAL_GOVERNANCA_V1.md` tem um cabeçalho parcial, mas o campo SHA-256 está pendente; por isso não conta como conforme. A auditoria confirma presença estrutural, não valida conteúdo, IDs, aprovações ou hashes individuais.
 3. Registar resultados e exceções por caminho; só depois planear lotes de normalização por repositório.
 4. Auditar os candidatos P2 após a primeira ronda P1. O repositório BRICKMASTER-CLAUDE permanece fora da contagem confirmada até resolução do 404.
