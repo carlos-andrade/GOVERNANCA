@@ -72,6 +72,7 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
           TARGET_REPO: ${{ inputs.repository }}
         run: |
+          set -o pipefail
           args=()
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ -n "$TARGET_REPO" ]; then args+=(--repo "$TARGET_REPO"); fi
