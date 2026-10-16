@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | Auditoria e adoção transversal |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.2.7 |
-| **SHA-256 (conteúdo canónico)** | cadedf90b348276a94d9b4f7d5f2e49e3a17fadf5a3cfdd1b0aa33e07c2f8ebf |
+| **Versão** | 1.2.8 |
+| **SHA-256 (conteúdo canónico)** | 835d6f6a82ff323b728c112ae1b408bbcd196f6c17a75ab4227e9d36bcf49f6a |
 | **Commit de referência (versão anterior)** | [35fe55b347df986f88a0a9951482c68eb32d028a](https://github.com/carlos-andrade/GOVERNANCA/commit/35fe55b347df986f88a0a9951482c68eb32d028a) |
 | **Data de criação** | 2026-10-13 |
 | **Data de atualização** | 2026-10-16 |
@@ -39,7 +39,7 @@ Conduzir a validação do padrão Markdown para GitHub, a integridade SHA-256 ca
 | 2 | Validar coerência interna da pasta CABEÇALHO | 10/10 documentos Markdown da pasta CABEÇALHO com hashes canónicos verificados; YAML auxiliar excluído da contagem | CONCLUÍDA |
 | 3 | Inventariar os documentos Markdown do repositório GOVERNANCA | Inventário com caminho, tipo, estado, presença de cabeçalho, SHA e exceções | CONCLUÍDA — inventário reconciliado para 60 ficheiros: 10 com campos canónicos e 50 pendentes |
 | 4 | Normalizar documentos elegíveis de GOVERNANCA | Cabeçalhos aplicados sem perda de conteúdo; exceções documentadas | CONCLUÍDA — L1–L7 aplicados; 62/62 documentos com cabeçalho canónico |
-| 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | EM_EXECUÇÃO — inventário inicial criado; 14 repositórios acessíveis com linha de base de README e árvore; auditoria individual concluída em STOCKS (32/32), DECIO-BAZIN (18/18) e B3 (284/284, fotografia fixa do commit 6f156a2ea726b6f07a0c323cb1109e43a6c934e0; nenhum cabeçalho canónico completo; um cabeçalho parcial com SHA pendente), BLOOMBERG_MAIL (123/123, fotografia fixa do commit 6a2e9622d05945de490477be5ea6eedf659937ba; nenhum cabeçalho canónico completo), TURISTURIS (660 ficheiros na fotografia fixa do commit 10c653f010e9ddf0abbe6a5c18f363a058afb03d; auditoria iniciada, 24/660 examinados); 1 candidato com 404 por confirmar |
+| 5 | Inventariar repositórios de projetos abrangidos | Lista de repositórios, responsáveis, prioridades e evidências de inspeção | EM_EXECUÇÃO — inventário inicial criado; 14 repositórios acessíveis com linha de base de README e árvore; auditoria individual concluída em STOCKS (32/32), DECIO-BAZIN (18/18) e B3 (284/284, fotografia fixa do commit 6f156a2ea726b6f07a0c323cb1109e43a6c934e0; nenhum cabeçalho canónico completo; um cabeçalho parcial com SHA pendente), BLOOMBERG_MAIL (123/123, fotografia fixa do commit 6a2e9622d05945de490477be5ea6eedf659937ba; nenhum cabeçalho canónico completo), TURISTURIS (660 ficheiros na fotografia fixa do commit 10c653f010e9ddf0abbe6a5c18f363a058afb03d; auditoria iniciada, 56/660 examinados); 1 candidato com 404 por confirmar |
 | 6 | Normalizar por repositório | Alterações publicadas e verificadas individualmente; links e hashes validados | PENDENTE |
 | 7 | Validar adoção transversal | Relatório de conformidade por repositório, pendências e exceções | PENDENTE |
 | 8 | Ratificar formalmente a norma | Aprovação explícita, autoridade, versão aprovada e data registadas | CONCLUÍDA — v1.0.3 aprovada em 2026-10-13; registo publicado |
@@ -90,6 +90,7 @@ Fases 4 e 8 concluídas. L1–L7 aplicados e verificados; inventário reconcilia
 | 1.2.5 | 2026-10-16 | Fecho da auditoria individual B3 em fotografia fixa: 284/284 caminhos inspecionados; nenhum cabeçalho canónico completo e um cabeçalho parcial com SHA pendente | Commit B3 `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`; inventário transversal v1.0.7 |
 | 1.2.6 | 2026-10-16 | Auditoria individual BLOOMBERG_MAIL concluída: 123/123 ficheiros Markdown sem cabeçalho canónico completo | Commit `6a2e9622d05945de490477be5ea6eedf659937ba`; inventário transversal v1.0.8 |
 | 1.2.7 | 2026-10-16 | Registo do início da auditoria TURISTURIS sobre fotografia fixa de 660 ficheiros Markdown; 24 examinados sem cabeçalho canónico completo | Commit TURISTURIS `10c653f010e9ddf0abbe6a5c18f363a058afb03d`; inventário transversal v1.0.9 |
+| 1.2.8 | 2026-10-16 | Progresso TURISTURIS: 56/660 ficheiros inspecionados individualmente na fotografia fixa; nenhum dos 56 tem cabeçalho canónico completo | Commit TURISTURIS `10c653f010e9ddf0abbe6a5c18f363a058afb03d`; inventário transversal v1.1.0 |
 
 | 2026-10-14 | Aplicação L5 | Quatro documentos de operações, standards e templates normalizados; inventário reconciliado para 35 canónicos e 26 pendentes | Inventário v1.0.8 e validação SHA-256 pós-publicação |
 
@@ -99,5 +100,5 @@ Fases 4 e 8 concluídas. L1–L7 aplicados e verificados; inventário reconcilia
 
 | 2026-10-14 | Reconciliado o inventário após criação do inventário transversal | 62 ficheiros Markdown no GOVERNANCA; 62 com cabeçalho canónico; Fase 5 em execução | Inventário documental v1.1.1 e inventário de repositórios |
 
-| 2026-10-14 | Auditoria individual inicial dos repositórios P1 | STOCKS: 32/32 ficheiros Markdown sem cabeçalho canónico; DECIO-BAZIN: 18/18 sem cabeçalho canónico. B3: auditoria individual fechada em fotografia fixa: 284/284 caminhos inspecionados; nenhum cabeçalho canónico completo; um cabeçalho parcial com SHA pendente; commit `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`. BLOOMBERG_MAIL: 123/123 ficheiros Markdown inspecionados individualmente sem cabeçalho canónico completo; commit `6a2e9622d05945de490477be5ea6eedf659937ba`. TURISTURIS: auditoria individual iniciada sobre 660 ficheiros Markdown na fotografia fixa do commit `10c653f010e9ddf0abbe6a5c18f363a058afb03d`; 24 examinados, sem cabeçalho canónico completo nos 24. | Inventário de repositórios e leituras individuais da branch main |
+| 2026-10-14 | Auditoria individual inicial dos repositórios P1 | STOCKS: 32/32 ficheiros Markdown sem cabeçalho canónico; DECIO-BAZIN: 18/18 sem cabeçalho canónico. B3: auditoria individual fechada em fotografia fixa: 284/284 caminhos inspecionados; nenhum cabeçalho canónico completo; um cabeçalho parcial com SHA pendente; commit `6f156a2ea726b6f07a0c323cb1109e43a6c934e0`. BLOOMBERG_MAIL: 123/123 ficheiros Markdown inspecionados individualmente sem cabeçalho canónico completo; commit `6a2e9622d05945de490477be5ea6eedf659937ba`. TURISTURIS: auditoria individual iniciada sobre 660 ficheiros Markdown na fotografia fixa do commit `10c653f010e9ddf0abbe6a5c18f363a058afb03d`; 56 examinados, sem cabeçalho canónico completo nos 56. | Inventário de repositórios e leituras individuais da branch main |
 | 2026-10-14 | Reconciliação de progresso B3 | Inventário transversal atualizado para não declarar percentagem até reconciliar os caminhos únicos; total observado mais recente: 283 ficheiros Markdown | CABEÇALHO/INVENTARIO-REPOSITORIOS-ABRANGIDOS.md v1.0.6; commit `afd84d2304a166e5ea132774abc6e500e3c7c9f1` |
