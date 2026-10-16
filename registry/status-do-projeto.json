@@ -155,15 +155,16 @@
       }
     ]
   },
-  "next_milestone": "Concluir a verificação transversal da publicação concorrente no main; depois obter evidência externa de heartbeat, aprovar os limiares e testar alertas, ACK, escalonamento e SLA no gate WATCHDOG/B3.",
+  "next_milestone": "Configurar GOVERNANCA_SYNC_TOKEN com privilégio mínimo; executar dry-run autenticado e validar a criação/atualização de PRs nos repositórios consumidores; depois confirmar adoção individual.",
   "blockers": [
     "A correção transversal de publicação concorrente dos 42 workflows ainda precisa de verificação conclusiva na branch main; não retirar o bloqueio sem evidência atual.",
     "Os limiares de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) continuam PROVISIONAL, sem aprovação dos proprietários registada.",
     "A supervisão externa independente ainda não foi comprovada como operacional: faltam confirmar configuração dos secrets, ausência de heartbeat e recuperação.",
     "Responsáveis, canais de alerta, confirmação de receção, ACK/escalonamento e SLA ainda precisam de aprovação e teste com evidência.",
-    "A adoção transversal do padrão de roadmap e das regras de governança continua sujeita a inspeção, integração e aceitação individual por repositório."
+    "A adoção transversal do padrão de roadmap e das regras de governança continua sujeita a inspeção, integração e aceitação individual por repositório.",
+    "A distribuição automática por Pull Request foi implementada inicialmente, mas a operação ainda não está comprovada: falta validar o secret GOVERNANCA_SYNC_TOKEN, executar dry-run e confirmar PRs/idempotência em todos os destinos."
   ],
-  "review_note": "Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final nos runs 38981823399 e 38981877103. Os 10 pontos de testes da barra v2 foram atribuídos com evidência de CI. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório.",
+  "review_note": "Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final nos runs 38981823399 e 38981877103. Os 10 pontos de testes da barra v2 foram atribuídos com evidência de CI. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório. Implementação inicial da distribuição transversal publicada em 2026-10-17 (script, workflow, registo de consumidores e testes de validação); não considerar operacional até autenticação, dry-run e PRs reais serem verificados.",
   "evidence": [
     {
       "label": "Validação CI do scorecard e painel visual a 80% — SUCCESS",
