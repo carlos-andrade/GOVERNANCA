@@ -8,7 +8,6 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -78,6 +77,8 @@ def publish_to_repo(name, files, destination_root, source_sha, dry_run):
             if step.returncode:
                 return {"repository": name, "status": "ERROR", "detail": (step.stderr or step.stdout).strip()}
         destination = repo / destination_root
+        if destination.exists():
+            shutil.rmtree(destination)
         destination.mkdir(parents=True, exist_ok=True)
         manifest_files = []
         for relative in files:
@@ -95,7 +96,6 @@ def publish_to_repo(name, files, destination_root, source_sha, dry_run):
             "source_repository": "carlos-andrade/GOVERNANCA",
             "source_branch": "main",
             "source_commit": source_sha,
-            "generated_at_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "distribution_policy": "pull_request_only",
             "files": manifest_files,
             "warning": "Espelho de regras canónicas; adoção local exige revisão e aprovação."
