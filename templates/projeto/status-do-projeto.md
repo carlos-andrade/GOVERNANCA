@@ -8,13 +8,13 @@
 | **Tipo documental** | TEMPLATE |
 | **Fase** | Templates de projeto |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
+| **Versão** | 1.1.0 |
 | **SHA-256 (conteúdo canónico)** | 286a7d00aad611b0b958c84af013c2fb361852a366305d4b2ad241f33ab33fa2 |
 | **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
 | **Data de criação** | N/A — data histórica de criação não verificada |
-| **Data de atualização** | 2026-10-14 |
+| **Data de atualização** | 2026-10-17 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
-| **Aprovador** | Pendente de aprovação formal deste documento |
+| **Aprovador** | Proprietário do repositório GOVERNANCA — aprovação do padrão de status 1.1.0 |
 | **Origem** | Conteúdo existente em `templates/projeto/status-do-projeto.md`; corpo substantivo preservado |
 | **Autoridade superior** | [CONSTITUICAO.md](../CONSTITUICAO.md) e [Norma de cabeçalho](../CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
@@ -70,3 +70,39 @@
 
 ## Regra de conclusão
 Só marcar **100% — Concluído** depois de todos os critérios finais estarem demonstrados e o encerramento ter sido aprovado. Se o projeto for cancelado, registar **Cancelado** e manter o percentual efetivamente comprovado; não forçar 100%.
+
+
+## Painel visual obrigatório
+
+Quando o projeto estiver no GitHub, incluir a barra textual e o painel visual gerado a partir do registo canónico:
+
+```markdown
+![Painel visual de status](assets/status-dashboard.svg)
+```
+
+O SVG deve ser gerado automaticamente a partir dos mesmos dados que alimentam a barra do README. Não editar manualmente a imagem nem manter uma percentagem duplicada.
+
+## Registo canónico — esquema v2
+
+O registo de status deve conter `schema_version: 2`, datas `updated_at` e `last_reviewed_at`, `points`, `criteria`, `next_milestone`, `blockers`, `evidence`, `review_note` e `closure_checks`.
+
+Cada critério inclui:
+- `id`: identificador único;
+- `label`: descrição objetiva;
+- `max_points`: pontos máximos;
+- `earned_points`: pontos comprovados;
+- `evidence`: uma ou mais URLs verificáveis quando `earned_points > 0`.
+
+A soma de `max_points` dos critérios deve ser 20/60/20 por fase; `points` deve ser calculado como a soma de `earned_points`. O validador deve rejeitar discrepâncias, critérios pontuados sem evidência e 100% sem todos os controlos de encerramento aprovados.
+
+## Regra de atualização e auditoria
+
+Ao alterar o estado:
+1. Atualizar os critérios, as evidências e as datas no registo canónico.
+2. Executar os testes automatizados.
+3. Gerar o README e o SVG através do script do projeto.
+4. Executar a validação em modo `--check`.
+5. Confirmar que o workflow terminou com sucesso e que os artefactos foram publicados.
+6. Registar qualquer descida percentual e a respetiva justificação; não a ocultar.
+
+A data de revisão significa apenas que o registo foi revisto; não prova que segredos, alertas, heartbeats, SLAs ou aprovações externas estejam operacionais.
