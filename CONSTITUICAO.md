@@ -85,3 +85,7 @@ O padrão, os registos e os testes estão em [`WATCHDOG/`](WATCHDOG/README.md). 
 ## 9. Revisão
 
 Rever anualmente e perante alterações materiais. Até aprovação formal, esta versão é uma proposta de base e não uma política corporativa ratificada.
+
+## 9. Padrão transversal de roadmap
+
+O repositório GOVERNANCA e os repositórios que adotem formalmente as suas regras devem cumprir a [Carta/Contrato — padrão obrigatório de roadmap](CARTA-CONTRATO-PADRAO-ROADMAP.md) e o [Roadmap padrão — Governança](ROADMAP-PADRAO-GOVERNANCA.md). A adoção exige roadmap local, evidências verificáveis, critérios de aceitação, estado atualizado e inspeção individual. A publicação da norma não implica conformidade automática dos demais repositórios.
