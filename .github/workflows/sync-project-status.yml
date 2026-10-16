@@ -7,6 +7,7 @@ on:
       - "registry/status-do-projeto.json"
       - "automation/sync_project_status.py"
       - ".github/workflows/sync-project-status.yml"
+      - "tests/test_sync_project_status.py"
   workflow_dispatch:
 
 permissions:
@@ -33,24 +34,24 @@ jobs:
       - name: Executar testes automatizados
         run: python -m unittest discover -s tests -v
 
-      - name: Validar e sincronizar README
+      - name: Validar e sincronizar README e SVG
         run: python automation/sync_project_status.py
 
       - name: Validar sincronização final
         run: python automation/sync_project_status.py --check
 
-      - name: Publicar atualização do README
+      - name: Publicar atualização do painel
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if git diff --quiet -- README.md; then
-            echo "README já está sincronizado."
+          if git diff --quiet -- README.md assets/status-dashboard.svg; then
+            echo "README e SVG já estão sincronizados."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
-          git commit -m "chore(status): sincronizar barra de status"
+          git add README.md assets/status-dashboard.svg
+          git commit -m "chore(status): sincronizar painel visual"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
