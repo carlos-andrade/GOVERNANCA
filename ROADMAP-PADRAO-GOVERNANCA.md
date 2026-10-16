@@ -8,7 +8,7 @@
 | **Tipo documental** | PADRAO |
 | **Fase** | Governação transversal |
 | **Estado** | APROVADO |
-| **Versão** | 1.0.0 |
+| **Versão** | 1.1.0 |
 | **SHA-256 (conteúdo canónico)** | fa636bfa0fa1e698d8835be495b5795845ed94a7d31a4f1d8e375fbef2b8e41f |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-17 |
@@ -24,6 +24,8 @@
 Este é o modelo visual e operacional obrigatório para o roadmap da GOVERNANCA e dos repositórios que adotem formalmente as suas regras. O roadmap é instrumento de execução, decisão e auditoria, não uma lista informal de tarefas.
 
 ## 2. Vistas obrigatórias
+
+O painel executivo deve apresentar uma barra de status visual, calculada por critérios com evidência, segundo a [Norma de estado e percentual de conclusão](standards/status-e-percentual-de-conclusao.md). A barra textual e o SVG devem derivar da mesma fonte canónica; percentuais não podem ser editados manualmente.
 
 ### Painel executivo
 Nome do projeto, versão/data, estado global, fase atual, marcos prioritários, riscos e bloqueios, próximo marco verificável e progresso apenas quando calculado segundo a norma aplicável.
@@ -78,3 +80,4 @@ Os repositórios abrangidos adotam esta estrutura ou um mapeamento equivalente d
 | Versão | Data | Alteração | Evidência |
 |---|---|---|---|
 | 1.0.0 | 2026-10-17 | Criação do padrão visual e operacional transversal | Aprovação expressa do proprietário |
+| 1.1.0 | 2026-10-17 | Inclusão da barra de status baseada em critérios e evidências | Norma GOV-STD-STATUS-001 v1.1.0 |
