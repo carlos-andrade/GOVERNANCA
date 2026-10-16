@@ -1,194 +1,191 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "project": "GOVERNANCA",
-  "status": "Em finalização",
-  "updated_at": "2026-10-13",
-  "phase": "fim",
+  "status": "Em execução",
+  "updated_at": "2026-10-17",
+  "last_reviewed_at": "2026-10-17",
+  "phase": "meio",
   "points": {
     "inicio": 20,
-    "meio": 60,
+    "meio": 50,
     "fim": 0
   },
-  "next_milestone": "Concluir a correção transversal de publicação concorrente no piloto B3, validar a redução das falhas REC-001/auditoria e depois executar a aceitação externa (heartbeat, limiares e SLA).",
+  "criteria": {
+    "inicio": [
+      {
+        "id": "INI-01",
+        "label": "Objetivo e problema definidos",
+        "max_points": 5,
+        "earned_points": 5,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/CONSTITUICAO.md",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/README.md"
+        ]
+      },
+      {
+        "id": "INI-02",
+        "label": "Responsável e partes interessadas identificados",
+        "max_points": 3,
+        "earned_points": 3,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/CONSTITUICAO.md",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/CARTA-CONTRATO-PADRAO-ROADMAP.md"
+        ]
+      },
+      {
+        "id": "INI-03",
+        "label": "Escopo e exclusões registados",
+        "max_points": 4,
+        "earned_points": 4,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/ROADMAP-PADRAO-GOVERNANCA.md",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/CARTA-CONTRATO-PADRAO-ROADMAP.md"
+        ]
+      },
+      {
+        "id": "INI-04",
+        "label": "Riscos e dependências iniciais avaliados",
+        "max_points": 4,
+        "earned_points": 4,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/WATCHDOG/runbooks/operacao-de-alertas-e-sla.md",
+          "https://github.com/carlos-andrade/B3/issues/9"
+        ]
+      },
+      {
+        "id": "INI-05",
+        "label": "Critérios de aceitação e plano aprovados",
+        "max_points": 4,
+        "earned_points": 4,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/ROADMAP-PADRAO-GOVERNANCA.md"
+        ]
+      }
+    ],
+    "meio": [
+      {
+        "id": "MEI-01",
+        "label": "Núcleo de entregáveis executado contra o plano",
+        "max_points": 30,
+        "earned_points": 30,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/tree/main/WATCHDOG",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/watchdog-validation.yml",
+          "https://github.com/carlos-andrade/B3/actions/runs/38391243359"
+        ]
+      },
+      {
+        "id": "MEI-02",
+        "label": "Requisitos e decisões rastreáveis",
+        "max_points": 10,
+        "earned_points": 10,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/ROADMAP-PADRAO-GOVERNANCA.md",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/CARTA-CONTRATO-PADRAO-ROADMAP.md"
+        ]
+      },
+      {
+        "id": "MEI-03",
+        "label": "Testes e revisões proporcionais ao risco — versão atual da barra",
+        "max_points": 10,
+        "earned_points": 0,
+        "evidence": []
+      },
+      {
+        "id": "MEI-04",
+        "label": "Documentação e evidências atualizadas",
+        "max_points": 5,
+        "earned_points": 5,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/README.md",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/registry/status-do-projeto.json",
+          "https://github.com/carlos-andrade/GOVERNANCA/blob/main/ROADMAP-PADRAO-GOVERNANCA.md"
+        ]
+      },
+      {
+        "id": "MEI-05",
+        "label": "Desvios e riscos identificados, acompanhados e com tratamento documentado",
+        "max_points": 5,
+        "earned_points": 5,
+        "evidence": [
+          "https://github.com/carlos-andrade/B3/issues/7",
+          "https://github.com/carlos-andrade/B3/issues/8",
+          "https://github.com/carlos-andrade/B3/issues/9"
+        ]
+      }
+    ],
+    "fim": [
+      {
+        "id": "FIM-01",
+        "label": "Critérios de aceitação demonstrados",
+        "max_points": 8,
+        "earned_points": 0,
+        "evidence": []
+      },
+      {
+        "id": "FIM-02",
+        "label": "Validação e revisão final aprovadas",
+        "max_points": 4,
+        "earned_points": 0,
+        "evidence": []
+      },
+      {
+        "id": "FIM-03",
+        "label": "Entrega/publicação e operação confirmadas",
+        "max_points": 3,
+        "earned_points": 0,
+        "evidence": []
+      },
+      {
+        "id": "FIM-04",
+        "label": "Documentação e transferência de conhecimento concluídas",
+        "max_points": 2,
+        "earned_points": 0,
+        "evidence": []
+      },
+      {
+        "id": "FIM-05",
+        "label": "Aprovação de encerramento e lições aprendidas registadas",
+        "max_points": 3,
+        "earned_points": 0,
+        "evidence": []
+      }
+    ]
+  },
+  "next_milestone": "Executar e aprovar os testes da nova barra de status e do SVG no GitHub Actions; em seguida, revalidar no main a correção transversal de publicação concorrente e o gate WATCHDOG/B3.",
   "blockers": [
-    "Os limites de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) permanecem PROVISIONAL e carecem de aprovação dos proprietários. Matriz de decisão preparada; aprovação humana ainda não registada",
-    "A supervisão externa independente ainda não está configurada; após estabilizar a publicação, faltam secrets, teste de ausência de heartbeat e recuperação",
-    "O runbook de alertas está documentado, mas os responsáveis, os canais reais, a confirmação de receção e o SLA ainda não foram aprovados/testados; a issue #7 exige triagem das execuções desfavoráveis",
-    "A adoção transversal tem inventário inicial; faltam inspeção, integração e aceitação por repositório",
-    "O monitor identificou falhas históricas de publicação concorrente (REC-001 e auditoria); a correção transversal de 42 workflows está em execução e ainda não foi confirmada no main."
+    "A correção transversal de publicação concorrente dos 42 workflows ainda precisa de verificação conclusiva na branch main; não retirar o bloqueio sem evidência atual.",
+    "Os limiares de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) continuam PROVISIONAL, sem aprovação dos proprietários registada.",
+    "A supervisão externa independente ainda não foi comprovada como operacional: faltam confirmar configuração dos secrets, ausência de heartbeat e recuperação.",
+    "Responsáveis, canais de alerta, confirmação de receção, ACK/escalonamento e SLA ainda precisam de aprovação e teste com evidência.",
+    "A adoção transversal do padrão de roadmap e das regras de governança continua sujeita a inspeção, integração e aceitação individual por repositório."
   ],
+  "review_note": "Revisão documental efetuada em 2026-10-17. A pontuação foi rebaselined de forma conservadora: a barra anterior mostrava 80% agregado, mas os 10 pontos de testes da nova implementação só serão atribuídos após a execução bem-sucedida do conjunto atualizado. A issue B3 #9 está fechada no GitHub, mas o corpo publicado mantém a checklist de aceitação externa por concluir; o encerramento da issue, isoladamente, não prova aceitação operacional.",
   "evidence": [
     {
-      "label": "Pull Request #1 integrado",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/pull/1"
+      "label": "Norma de percentual e estados",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md"
     },
     {
-      "label": "Norma de percentual",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md"
+      "label": "Testes automatizados da barra",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py"
     },
     {
       "label": "Workflow de sincronização",
       "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/sync-project-status.yml"
     },
     {
-      "label": "Testes automatizados",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/tests/test_sync_project_status.py"
+      "label": "WATCHDOG — validação técnica",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/actions/workflows/watchdog-validation.yml"
     },
     {
-      "label": "WATCHDOG — arquitetura, normas e motor MVP",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/tree/main/WATCHDOG"
-    },
-    {
-      "label": "Workflow de validação WATCHDOG",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/.github/workflows/watchdog-validation.yml"
-    },
-    {
-      "label": "Piloto WATCHDOG no repositório B3",
-      "url": "https://github.com/carlos-andrade/B3/tree/main/WATCHDOG"
-    },
-    {
-      "label": "Validação do piloto WATCHDOG B3",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-b3-validation.yml"
-    },
-    {
-      "label": "Monitor B3 — evidência JSON/Markdown e alerta rastreável",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38386363791"
-    },
-    {
-      "label": "WATCHDOG B3 — monitorização da atualidade dos dados",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-data-freshness.yml"
-    },
-    {
-      "label": "Issue de alerta WATCHDOG B3",
-      "url": "https://github.com/carlos-andrade/B3/issues/7"
-    },
-    {
-      "label": "Primeira avaliação de atualidade B3 — 5 PASS, 1 STALE, 1 UNKNOWN",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38386633810"
-    },
-    {
-      "label": "Issue B3 — atualidade dos dados",
-      "url": "https://github.com/carlos-andrade/B3/issues/8"
-    },
-    {
-      "label": "Roadmap WATCHDOG atualizado",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/WATCHDOG/roadmap-de-implementacao.md"
-    },
-    {
-      "label": "Captura automática BDI — execução aprovada",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387168872"
-    },
-    {
-      "label": "Manifesto BDI DailyAverageStocks — 2026-10-09",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/dados/bdi/manifests/DailyAverageStocks/2026-10-09_page_0001.json"
-    },
-    {
-      "label": "Reavaliação B3 após captura — 8 PASS, 0 STALE, 0 UNKNOWN",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387593511"
-    },
-    {
-      "label": "Issue B3 — recuperação validada; revisão humana pendente",
-      "url": "https://github.com/carlos-andrade/B3/issues/8"
-    },
-    {
-      "label": "Manifesto COTAHIST anual com data de observação documentada",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/dados/cotahist/manifests/COTAHIST_A2026.json"
-    },
-    {
-      "label": "Relatório final de atualidade B3 — 8 PASS, 0 STALE, 0 UNKNOWN",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387593511"
-    },
-    {
-      "label": "Guia de ativação do heartbeat externo B3",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/WATCHDOG/heartbeat-supervisor-externo.md"
-    },
-    {
-      "label": "Workflow B3 com heartbeat externo opcional",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/b3-monitor-execucoes-v1.yml"
-    },
-    {
-      "label": "Workflow de atualidade com heartbeat externo opcional",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/.github/workflows/watchdog-data-freshness.yml"
-    },
-    {
-      "label": "Reavaliação B3 com heartbeat opcional — 8 PASS",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387916859"
-    },
-    {
-      "label": "Validação B3 dos hooks de heartbeat e inventários",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38387959995"
-    },
-    {
-      "label": "Validação WATCHDOG B3 — inventários e workflows aprovados",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38388720827"
-    },
-    {
-      "label": "Monitor independente B3 — execução e artefacto publicados",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38388728634"
-    },
-    {
-      "label": "Issue B3 — 8 controlos PASS; aprovação dos limiares pendente",
-      "url": "https://github.com/carlos-andrade/B3/issues/8"
-    },
-    {
-      "label": "WATCHDOG B3 — matriz de revisão e aprovação dos oito limiares",
-      "url": "https://github.com/carlos-andrade/B3/blob/main/WATCHDOG/limiares-provisorios-revisao.md"
-    },
-    {
-      "label": "WATCHDOG — runbook de operação de alertas, ACK e SLA proposto",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/WATCHDOG/runbooks/operacao-de-alertas-e-sla.md"
-    },
-    {
-      "label": "B3 WATCHDOG — correção para reavaliar COTAHIST diário e falhar em UNKNOWN",
-      "url": "https://github.com/carlos-andrade/B3/commit/466b3271455425c3927bbeda78e0e98609fb2e84"
-    },
-    {
-      "label": "WATCHDOG — registo inicial de adoção transversal",
-      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/WATCHDOG/registry/adocao-transversal.md"
-    },
-    {
-      "label": "BLOOMBERG_MAIL — supervisor WATCHDOG sem cancelamento da execução ativa",
-      "url": "https://github.com/carlos-andrade/BLOOMBERG_MAIL/commit/a67c3a71661e5e0643d8dd61894ffbfb06c1eaa4"
-    },
-    {
-      "label": "B3 WATCHDOG — gate único de aceitação final do piloto",
+      "label": "Gate de aceitação WATCHDOG/B3",
       "url": "https://github.com/carlos-andrade/B3/issues/9"
     },
     {
-      "label": "B3 COTAHIST — FASE02 2015 recuperada após conflito de publicação",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391766652"
-    },
-    {
-      "label": "B3 COTAHIST — FASE03 2015 recuperada após conflito de publicação",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391639534"
-    },
-    {
-      "label": "B3 COTAHIST — FASE09 2014 revalidada e liberada para FASE10",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391778953"
-    },
-    {
-      "label": "B3 COTAHIST — FASE10 2014 recuperada após conflito de publicação",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391772384"
-    },
-    {
-      "label": "B3 COTAHIST — FASE11 2014 certificada após atualização do gate",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38391659783"
-    },
-    {
-      "label": "BLOOMBERG_MAIL — validação do supervisor WATCHDOG após ajuste de concorrência",
-      "url": "https://github.com/carlos-andrade/BLOOMBERG_MAIL/actions/runs/38391557718"
-    },
-    {
-      "label": "B3 COTAHIST — FASE01 2015 recuperada após correção de persistência",
-      "url": "https://github.com/carlos-andrade/B3/actions/runs/38392006654"
-    },
-    {
-      "label": "B3 WATCHDOG — monitor de execuções com paginação integral da janela móvel",
-      "url": "https://github.com/carlos-andrade/B3/commit/d3c5c620b8e653630815a0dd57782b1c95ecf8eb"
-    },
-    {
-      "label": "B3 WATCHDOG — README atualizado com paginação, UNKNOWN e evidência BDI correta",
-      "url": "https://github.com/carlos-andrade/B3/commit/868f3ef2457efd57875aa42eebedf4f33adbb3c8"
+      "label": "Issue de atualidade de dados B3",
+      "url": "https://github.com/carlos-andrade/B3/issues/8"
     }
   ],
   "closure_checks": {
@@ -198,6 +195,6 @@
     "knowledge_transfer_done": false,
     "closure_approved": false
   },
-  "last_automation_test_requested_at": "2026-10-12T16:00:00Z",
-  "last_automation_test_purpose": "Teste operacional solicitado pelo utilizador: confirmar trigger, validação, sincronização e commit automático do README."
+  "last_automation_test_requested_at": "2026-10-17",
+  "last_automation_test_purpose": "Validar pontuação por critério com evidência, geração do painel Markdown e SVG, e bloqueio de 100% sem aprovação formal de encerramento."
 }
