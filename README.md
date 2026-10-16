@@ -54,6 +54,10 @@
 > **Fonte de verdade:** `registry/status-do-projeto.json`. O script valida os critérios pontuados e gera este painel Markdown e o SVG. Não editar manualmente este bloco. Uma fase só recebe pontos se tiver evidência; 100% exige aprovação explícita de todos os controlos de encerramento.
 <!-- GOVERNANCA_STATUS_END -->
 
+## Distribuição transversal das regras
+
+A distribuição das regras canónicas é orquestrada por [`propagar-regras-governanca.yml`](.github/workflows/propagar-regras-governanca.yml), com registo explícito em [`registry/repositorios-consumidores.json`](registry/repositorios-consumidores.json), script [`automation/propagar_governanca.py`](automation/propagar_governanca.py) e procedimento [`docs/01-governanca/distribuicao-automatica-regras.md`](docs/01-governanca/distribuicao-automatica-regras.md). As atualizações são propostas por Pull Request para revisão local; não existe merge automático. A execução operacional depende do secret `GOVERNANCA_SYNC_TOKEN` e da validação bem-sucedida do workflow.
+
 ## Começar por aqui
 
 **Monitorização transversal obrigatória:** consulte o [WATCHDOG](WATCHDOG/README.md), o [registo de sistemas monitorizados](WATCHDOG/registry/sistemas-monitorizados.json) e o [workflow de validação](.github/workflows/watchdog-validation.yml). O MVP valida configurações e ficheiros locais; integrações externas e monitorização contínua ainda exigem implementação e testes próprios.
