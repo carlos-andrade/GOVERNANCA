@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
   "project": "GOVERNANCA",
-  "status": "Em execução",
+  "status": "Em finalização",
   "updated_at": "2026-10-17",
   "last_reviewed_at": "2026-10-17",
-  "phase": "meio",
+  "phase": "fim",
   "points": {
     "inicio": 20,
-    "meio": 50,
+    "meio": 60,
     "fim": 0
   },
   "criteria": {
@@ -89,8 +89,10 @@
         "id": "MEI-03",
         "label": "Testes e revisões proporcionais ao risco — versão atual da barra",
         "max_points": 10,
-        "earned_points": 0,
-        "evidence": []
+        "earned_points": 10,
+        "evidence": [
+          "https://github.com/carlos-andrade/GOVERNANCA/actions/runs/38981823399"
+        ]
       },
       {
         "id": "MEI-04",
@@ -153,7 +155,7 @@
       }
     ]
   },
-  "next_milestone": "Executar e aprovar os testes da nova barra de status e do SVG no GitHub Actions; em seguida, revalidar no main a correção transversal de publicação concorrente e o gate WATCHDOG/B3.",
+  "next_milestone": "Concluir a verificação transversal da publicação concorrente no main; depois obter evidência externa de heartbeat, aprovar os limiares e testar alertas, ACK, escalonamento e SLA no gate WATCHDOG/B3.",
   "blockers": [
     "A correção transversal de publicação concorrente dos 42 workflows ainda precisa de verificação conclusiva na branch main; não retirar o bloqueio sem evidência atual.",
     "Os limiares de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) continuam PROVISIONAL, sem aprovação dos proprietários registada.",
@@ -161,8 +163,12 @@
     "Responsáveis, canais de alerta, confirmação de receção, ACK/escalonamento e SLA ainda precisam de aprovação e teste com evidência.",
     "A adoção transversal do padrão de roadmap e das regras de governança continua sujeita a inspeção, integração e aceitação individual por repositório."
   ],
-  "review_note": "Revisão documental efetuada em 2026-10-17. A pontuação foi rebaselined de forma conservadora: a barra anterior mostrava 80% agregado, mas os 10 pontos de testes da nova implementação só serão atribuídos após a execução bem-sucedida do conjunto atualizado. A issue B3 #9 está fechada no GitHub, mas o corpo publicado mantém a checklist de aceitação externa por concluir; o encerramento da issue, isoladamente, não prova aceitação operacional.",
+  "review_note": "Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final (run 38981823399). Os 10 pontos de testes da barra v2 foram atribuídos com essa evidência. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório.",
   "evidence": [
+    {
+      "label": "Validação CI da barra v2, testes e sincronização README/SVG — SUCCESS",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/actions/runs/38981823399"
+    },
     {
       "label": "Norma de percentual e estados",
       "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/status-e-percentual-de-conclusao.md"
@@ -195,6 +201,6 @@
     "knowledge_transfer_done": false,
     "closure_approved": false
   },
-  "last_automation_test_requested_at": "2026-10-17",
-  "last_automation_test_purpose": "Validar pontuação por critério com evidência, geração do painel Markdown e SVG, e bloqueio de 100% sem aprovação formal de encerramento."
+  "last_automation_test_requested_at": "2026-10-17T23:30:45Z",
+  "last_automation_test_purpose": "Teste automatizado concluído com sucesso: critérios e pontuação, geração do painel SVG/Markdown, validação --check e publicação dos artefactos."
 }
