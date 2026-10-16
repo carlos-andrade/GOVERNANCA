@@ -9,7 +9,7 @@
 | **Fase** | Governação transversal |
 | **Estado** | APROVADO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | PENDENTE — recalcular após publicação |
+| **SHA-256 (conteúdo canónico)** | 7c88bfccdf15a56e3a8d60cbff4abdb2583117422d0c01b5abfa9f82542d3faf |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-17 |
 | **Data de atualização** | 2026-10-17 |
