@@ -67,10 +67,15 @@ jobs:
           GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
         run: |
           if [ -z "$GH_TOKEN" ]; then
+            echo '{"status":"FAIL","stage":"authentication","error":"Secret GOVERNANCA_SYNC_TOKEN não configurado."}' > governanca-propagacao.json
             echo "::error::Configure o secret GOVERNANCA_SYNC_TOKEN com acesso aos repositórios consumidores."
             exit 1
           fi
-          gh auth status
+          if ! gh auth status; then
+            echo '{"status":"FAIL","stage":"authentication","error":"GOVERNANCA_SYNC_TOKEN inválido ou não autenticado."}' > governanca-propagacao.json
+            echo "::error::GOVERNANCA_SYNC_TOKEN inválido ou não autenticado."
+            exit 1
+          fi
       - name: Distribuir por Pull Request
         env:
           GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
