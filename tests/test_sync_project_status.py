@@ -117,6 +117,26 @@ class StatusSyncTests(unittest.TestCase):
             with self.assertRaises(module.StatusError):
                 module.load_status(path)
 
+    def test_canonical_hash_is_updated_and_checked(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            readme = root / "README.md"
+            text = (
+                "# Documento\\n"
+                "| Campo | Valor |\\n"
+                "|---|---|\\n"
+                "| **SHA-256 (conteúdo canónico)** | stale |\\n"
+                "| **Commit de referência (versão anterior)** | abc |\\n"
+                "\\nCorpo original.\\n"
+            )
+            readme.write_text(text, encoding="utf-8")
+            updated = module.update_canonical_hash(text)
+            self.assertNotEqual(updated, text)
+            digest = updated.split("**SHA-256 (conteúdo canónico)** | ", 1)[1].split(" |", 1)[0]
+            self.assertEqual(len(digest), 64)
+            self.assertEqual(digest, module.canonical_sha256(updated))
+            self.assertEqual(module.update_canonical_hash(updated), updated)
+
     def test_sync_readme_and_svg_and_check(self):
         data = sample_status()
         with tempfile.TemporaryDirectory() as tmp:
