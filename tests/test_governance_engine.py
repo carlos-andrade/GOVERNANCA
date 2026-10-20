@@ -154,13 +154,13 @@ class GovernanceEngineTests(unittest.TestCase):
             self.assertEqual(report["status"], "DESCONHECIDO")
             self.assertTrue(any("inseguro" in b for b in report["blockers"]))
 
-    def test_unknown_profile_is_not_certified(self):
+    def test_profile_missing_from_catalog_is_not_certified(self):
         temp, root = self.make_target(profile="dados")
         with temp:
-            config_path = root / ".governanca/config.yml"
-            config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
-            config["governanca"]["perfil"] = "perfil-nao-existente"
-            config_path.write_text(yaml.safe_dump(config), encoding="utf-8")
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+            del catalog["profiles"]["dados"]
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             report = self.report(root)
             self.assertEqual(report["status"], "DESCONHECIDO")
             self.assertTrue(any("Perfil sem definição" in b for b in report["blockers"]))
