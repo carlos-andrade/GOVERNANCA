@@ -47,7 +47,7 @@
     },
     {
       "name": "carlos-andrade/LICITACAO",
-      "enabled": true,
+      "enabled": false,
       "owner": "Carlos Andrade"
     }
   ],
@@ -55,7 +55,8 @@
     "Distribuir todos os ficheiros de texto nos diretórios normativos indicados em published_roots, além dos três documentos canónicos na raiz.",
     "Os ficheiros são publicados em .governanca/upstream/ para não sobrescrever documentos locais.",
     "A publicação é proposta por Pull Request; nunca faz merge automático.",
-    "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório."
+    "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório.",
+    "LICITACAO permanece disabled até aprovação individual da adoção e validação operacional de distribuição por PR."
   ],
   "published_roots": [
     "CONSTITUICAO.md",
