@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Fail-closed diagnostic core for the GOVERNANCA Integration Framework (F2).
+"""Fail-closed diagnostic core for the GOVERNANCA Integration Framework.
 
 Diagnostic and audit modes are read-only with respect to the target repository.
-The apply mode is deliberately blocked until the PR-based adapter is delivered in F3.
+The apply mode remains blocked until the PR-based adapter is explicitly delivered.
 """
 from __future__ import annotations
 
@@ -22,6 +22,7 @@ from jsonschema import Draft202012Validator
 
 OFFICIAL_SOURCE = "carlos-andrade/GOVERNANCA"
 SCHEMA_RELATIVE = Path("schemas/governanca-config.schema.json")
+CATALOG_RELATIVE = Path("catalogs/governance-profile-catalog.json")
 CONFIG_RELATIVE = Path(".governanca/config.yml")
 VALID_MODES = {"diagnostico", "aplicar", "auditar"}
 
@@ -57,16 +58,74 @@ def load_yaml(path: Path) -> Any:
         raise GovernanceError(f"Não foi possível ler YAML de forma segura: {exc}") from exc
 
 
-def validate_config(config: Any, schema_path: Path) -> list[str]:
+def load_json_object(path: Path, label: str) -> dict[str, Any]:
     try:
-        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        value = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
-        raise GovernanceError(f"Esquema oficial ausente ou inválido: {exc}") from exc
+        raise GovernanceError(f"{label} ausente ou inválido: {exc}") from exc
+    if not isinstance(value, dict):
+        raise GovernanceError(f"{label} tem de ser um objeto JSON.")
+    return value
+
+
+def validate_config(config: Any, schema_path: Path) -> list[str]:
+    schema = load_json_object(schema_path, "Esquema oficial")
     Draft202012Validator.check_schema(schema)
     return sorted(error.message for error in Draft202012Validator(schema).iter_errors(config))
 
 
-def build_report(root: Path, config_path: Path, schema_path: Path) -> dict[str, Any]:
+def validate_catalog(catalog: dict[str, Any]) -> None:
+    if catalog.get("schema_version") != 1 or not isinstance(catalog.get("profiles"), dict):
+        raise GovernanceError("Catálogo de perfis inválido: schema_version/profiles.")
+    for profile, definition in catalog["profiles"].items():
+        if not isinstance(definition, dict) or not isinstance(definition.get("complete"), bool):
+            raise GovernanceError(f"Definição inválida para o perfil: {profile}")
+        requirements = definition.get("requirements")
+        if not isinstance(requirements, list):
+            raise GovernanceError(f"requirements inválido para o perfil: {profile}")
+        seen: set[str] = set()
+        for requirement in requirements:
+            if not isinstance(requirement, dict):
+                raise GovernanceError(f"Requisito inválido no perfil: {profile}")
+            rid, kind, relative = requirement.get("id"), requirement.get("kind"), requirement.get("path")
+            if not isinstance(rid, str) or not rid or rid in seen:
+                raise GovernanceError(f"ID de requisito ausente/duplicado no perfil: {profile}")
+            seen.add(rid)
+            if kind != "file_exists" or not isinstance(relative, str) or not relative:
+                raise GovernanceError(f"Tipo/caminho de requisito não suportado: {profile}/{rid}")
+            path = Path(relative)
+            if path.is_absolute() or ".." in path.parts:
+                raise GovernanceError(f"Caminho de requisito inseguro: {profile}/{rid}")
+
+
+def evaluate_profile(root: Path, profile: str, catalog_path: Path) -> tuple[list[dict[str, Any]], bool, str]:
+    catalog = load_json_object(catalog_path, "Catálogo de requisitos por perfil")
+    validate_catalog(catalog)
+    definition = catalog["profiles"].get(profile)
+    if definition is None:
+        raise GovernanceError(f"Perfil sem definição no catálogo: {profile}")
+    checks: list[dict[str, Any]] = []
+    missing: list[str] = []
+    for requirement in definition["requirements"]:
+        target = root / requirement["path"]
+        passed = target.is_file()
+        check = {
+            "id": requirement["id"],
+            "result": "PASS" if passed else "FAIL",
+            "kind": requirement["kind"],
+            "evidence": requirement["path"],
+            "description": requirement.get("description", ""),
+        }
+        checks.append(check)
+        if not passed:
+            missing.append(requirement["path"])
+    return checks, bool(definition["complete"]), ", ".join(missing)
+
+
+def build_report(
+    root: Path, config_path: Path, schema_path: Path, catalog_path: Path | None = None
+) -> dict[str, Any]:
+    catalog_path = catalog_path or (Path(__file__).resolve().parents[1] / CATALOG_RELATIVE)
     now = datetime.now(timezone.utc).isoformat()
     report: dict[str, Any] = {
         "report_schema_version": 1,
@@ -85,8 +144,8 @@ def build_report(root: Path, config_path: Path, schema_path: Path) -> dict[str, 
         "blockers": [],
         "status": "DESCONHECIDO",
         "limitations": [
-            "O catálogo normativo executável por perfil ainda não está implementado; não é possível certificar conformidade global.",
-            "A aplicação por Pull Request pertence à F3 e está bloqueada neste motor F2.",
+            "O catálogo por perfil cobre verificações estruturais iniciais; não certifica conformidade semântica ou global.",
+            "A aplicação por Pull Request não é executada por este motor de diagnóstico.",
         ],
     }
     if not config_path.is_file():
@@ -109,34 +168,53 @@ def build_report(root: Path, config_path: Path, schema_path: Path) -> dict[str, 
     if errors:
         report["status"] = "NAO_CONFORME"
         report["blockers"].append("Configuração inválida segundo o contrato F1.")
-        report["checks"].append({
-            "id": "CFG-002", "result": "FAIL", "evidence": errors,
-        })
+        report["checks"].append({"id": "CFG-002", "result": "FAIL", "evidence": errors})
         return report
 
     gov = config["governanca"]
+    profile = gov["perfil"]
     report["execution"]["mode"] = gov["modo"]
-    report["execution"]["profile"] = gov["perfil"]
+    report["execution"]["profile"] = profile
     report["execution"]["configured_source"] = gov["fonte"]
     report["execution"]["pinned_ref"] = gov.get("ref")
     report["checks"].append({
         "id": "CFG-002", "result": "PASS",
         "evidence": "Configuração válida pelo JSON Schema Draft 2020-12.",
     })
+    source_ok = gov["fonte"] == OFFICIAL_SOURCE
     report["checks"].append({
-        "id": "SRC-001",
-        "result": "PASS" if gov["fonte"] == OFFICIAL_SOURCE else "FAIL",
+        "id": "SRC-001", "result": "PASS" if source_ok else "FAIL",
         "evidence": gov["fonte"],
     })
-    if gov["modo"] == "aplicar":
+    report["integrity"]["catalog_path"] = str(catalog_path)
+    report["integrity"]["catalog_sha256"] = sha256_file(catalog_path)
+    try:
+        profile_checks, complete, missing = evaluate_profile(root, profile, catalog_path)
+    except GovernanceError as exc:
+        report["status"] = "DESCONHECIDO"
+        report["blockers"].append(str(exc))
+        return report
+    report["checks"].extend(profile_checks)
+    if not source_ok or any(item["result"] == "FAIL" for item in profile_checks):
+        report["status"] = "NAO_CONFORME"
+        if not source_ok:
+            report["blockers"].append("A fonte configurada não corresponde à fonte oficial.")
+        if missing:
+            report["blockers"].append("Ficheiros estruturais obrigatórios ausentes: " + missing)
+    elif gov["modo"] == "aplicar":
         report["status"] = "NAO_CONFORME"
         report["blockers"].append(
-            "Modo aplicar bloqueado: o adaptador de Pull Request ainda não foi entregue (F3). Nenhum ficheiro foi alterado."
+            "Modo aplicar bloqueado: este motor não altera ficheiros nem abre Pull Requests."
+        )
+    elif not complete:
+        report["status"] = "DESCONHECIDO"
+        report["blockers"].append(
+            f"O catálogo do perfil '{profile}' está incompleto; os controlos estruturais aprovados não certificam conformidade global."
         )
     else:
         report["status"] = "DESCONHECIDO"
         report["blockers"].append(
-            "Não existe ainda catálogo de requisitos executáveis para este perfil; a ausência impede certificar conformidade."
+            "A conformidade global exige controlos semânticos e evidências adicionais não cobertos pelo catálogo estrutural."
         )
     return report
 
@@ -144,20 +222,22 @@ def build_report(root: Path, config_path: Path, schema_path: Path) -> dict[str, 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="Raiz do repositório alvo.")
-    parser.add_argument("--config", type=Path, default=None, help="Caminho da configuração (por defeito .governanca/config.yml).")
+    parser.add_argument("--config", type=Path, default=None, help="Caminho da configuração.")
     parser.add_argument("--schema", type=Path, default=None, help="Caminho do JSON Schema F1.")
+    parser.add_argument("--catalog", type=Path, default=None, help="Caminho do catálogo executável por perfil.")
     parser.add_argument("--mode", choices=sorted(VALID_MODES), default=None, help="Sobrepõe o modo apenas para a execução.")
     args = parser.parse_args(argv)
 
     root = args.root.resolve()
     config_path = (args.config or root / CONFIG_RELATIVE).resolve()
-    schema_path = (args.schema or root / SCHEMA_RELATIVE).resolve()
+    schema_path = (args.schema or Path(__file__).resolve().parents[1] / SCHEMA_RELATIVE).resolve()
+    catalog_path = (args.catalog or Path(__file__).resolve().parents[1] / CATALOG_RELATIVE).resolve()
     try:
-        report = build_report(root, config_path, schema_path)
+        report = build_report(root, config_path, schema_path, catalog_path)
         if args.mode:
             if args.mode == "aplicar":
                 report["status"] = "NAO_CONFORME"
-                report["blockers"].append("Modo aplicar não disponível em F2; nenhuma escrita foi efetuada.")
+                report["blockers"].append("Modo aplicar não disponível no motor de diagnóstico; nenhuma escrita foi efetuada.")
             report["execution"]["mode"] = args.mode
         print(json.dumps(report, ensure_ascii=False, indent=2, sort_keys=True))
         return 0 if report["status"] in {"CONFORME", "CONFORME_COM_PENDENCIAS"} else 2
