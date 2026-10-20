@@ -76,11 +76,17 @@ def discover_files(data):
 def publish_to_repo(name, files, destination_root, source_sha, dry_run):
     with tempfile.TemporaryDirectory(prefix="governanca-sync-") as tmp:
         repo = Path(tmp) / "consumer"
-        clone = run(["gh", "repo", "clone", name, str(repo), "--", "--filter=blob:none"], check=False)
+        clone = run(["gh", "repo", "clone", name, str(repo), "--", "--filter=blob:none", "--no-checkout"], check=False)
         if clone.returncode:
             return {"repository": name, "status": "ERROR", "stage": "clone", "detail": safe_detail(clone)}
         head = run(["git", "symbolic-ref", "refs/remotes/origin/HEAD"], cwd=repo, check=False)
         base = head.stdout.strip().split("/")[-1] if head.returncode == 0 else "main"
+        sparse_init = run(["git", "sparse-checkout", "init", "--cone"], cwd=repo, check=False)
+        if sparse_init.returncode:
+            return {"repository": name, "status": "ERROR", "stage": "sparse_checkout_init", "detail": safe_detail(sparse_init)}
+        sparse_set = run(["git", "sparse-checkout", "set", destination_root], cwd=repo, check=False)
+        if sparse_set.returncode:
+            return {"repository": name, "status": "ERROR", "stage": "sparse_checkout_set", "detail": safe_detail(sparse_set)}
         for args in [("checkout", base), ("pull", "--ff-only", "origin", base), ("checkout", "-B", BRANCH, base)]:
             step = run(["git", *args], cwd=repo, check=False)
             if step.returncode:
