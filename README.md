@@ -59,6 +59,12 @@
 
 A distribuição das regras canónicas é orquestrada por [`propagar-regras-governanca.yml`](.github/workflows/propagar-regras-governanca.yml), com registo explícito em [`registry/repositorios-consumidores.json`](registry/repositorios-consumidores.json), script [`automation/propagar_governanca.py`](automation/propagar_governanca.py) e procedimento [`docs/01-governanca/distribuicao-automatica-regras.md`](docs/01-governanca/distribuicao-automatica-regras.md). As atualizações são propostas por Pull Request para revisão local; não existe merge automático. A execução operacional depende do secret `GOVERNANCA_SYNC_TOKEN` e da validação bem-sucedida do workflow.
 
+## Governance Integration Framework
+
+A arquitetura foi formalmente aprovada e integrada através da decisão [DEC-GOV-INT-001 — Governance Integration Framework](docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md), commit [`7003bd9`](https://github.com/carlos-andrade/GOVERNANCA/commit/7003bd9848983c211aca588e68e5281a5babc39a). O roadmap aprovado contém seis fases (F1–F6), critérios de aceitação, controlo por Pull Request, preservação dos ficheiros locais, auditoria e validação individual por repositório.
+
+**Estado:** arquitetura integrada; implementação do framework ainda pendente. A distribuição transversal existente continua sem validação operacional enquanto não forem confirmados `GOVERNANCA_SYNC_TOKEN`, dry-run autenticado e Pull Requests reais nos destinos.
+
 ## Começar por aqui
 
 **Monitorização transversal obrigatória:** consulte o [WATCHDOG](WATCHDOG/README.md), o [registo de sistemas monitorizados](WATCHDOG/registry/sistemas-monitorizados.json) e o [workflow de validação](.github/workflows/watchdog-validation.yml). O MVP valida configurações e ficheiros locais; integrações externas e monitorização contínua ainda exigem implementação e testes próprios.
