@@ -80,7 +80,7 @@ jobs:
             # Do not print auth_output: error messages may contain sensitive context.
             printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_INVALID","error":"GOVERNANCA_SYNC_TOKEN foi rejeitado pelo GitHub CLI. Substitua-o por um token ativo."}' > governanca-propagacao.json
             echo "::error::GOVERNANCA_SYNC_TOKEN foi rejeitado. Gere um token ativo, atualize o secret e volte a executar em dry-run."
-            echo "::error::Não cole o token nos logs ou na conversa."
+            echo "::notice::Nunca coloque o token em logs ou mensagens."
             exit 1
           fi
 
@@ -91,7 +91,7 @@ jobs:
             echo "::error::O token foi aceite pelo CLI, mas a identidade não pôde ser confirmada."
             exit 1
           fi
-          printf '{"status":"PASS","stage":"authentication","identity":"%s","note":"Consumer permissions are verified per destination during dry-run/PR execution."}\n' "$identity" > governanca-propagacao.json
+          printf '{"status":"PASS","stage":"authentication","identity":"%s","note":"dry-run verifies authentication and read access only; write permissions require a controlled PR execution after the dry-run."}\n' "$identity" > governanca-propagacao.json
           echo "Autenticação validada para a conta: $identity"
 
       - name: Distribuir por Pull Request
