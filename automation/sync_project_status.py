@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import html
 import json
 import re
@@ -184,6 +185,35 @@ def render_svg(data: dict) -> str:
 '''
 
 
+
+def canonical_sha256(text: str) -> str:
+    """Hash UTF-8/LF document content excluding the two control metadata rows."""
+    normalized = text.replace("\\r\\n", "\\n").replace("\\r", "\\n").lstrip("\\ufeff")
+    canonical = "".join(
+        line for line in normalized.splitlines(keepends=True)
+        if not line.startswith("| **SHA-256 (conteúdo canónico)**")
+        and not line.startswith("| **Commit de referência (versão anterior)**")
+    )
+    return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def update_canonical_hash(text: str) -> str:
+    """Update the canonical checksum when a document has the standard metadata row."""
+    lines = text.splitlines(keepends=True)
+    indices = [
+        index for index, line in enumerate(lines)
+        if line.startswith("| **SHA-256 (conteúdo canónico)**")
+    ]
+    if not indices:
+        return text
+    if len(indices) != 1:
+        raise StatusError("README deve conter no máximo uma linha SHA-256 canónico.")
+    index = indices[0]
+    ending = "\\r\\n" if lines[index].endswith("\\r\\n") else "\\n" if lines[index].endswith("\\n") else ""
+    lines[index] = f"| **SHA-256 (conteúdo canónico)** | {canonical_sha256(text)} |{ending}"
+    return "".join(lines)
+
+
 def sync(readme_path: Path = README, registry_path: Path = REGISTRY, svg_path: Path = SVG, check_only: bool = False) -> bool:
     data = load_status(registry_path)
     text = readme_path.read_text(encoding="utf-8")
@@ -196,6 +226,7 @@ def sync(readme_path: Path = README, registry_path: Path = REGISTRY, svg_path: P
     new_text, count = re.subn(pattern, lambda _: block, text, count=1)
     if count != 1:
         raise StatusError("Não foi possível substituir o painel de status.")
+    new_text = update_canonical_hash(new_text)
     svg_text = render_svg(data)
     old_svg = svg_path.read_text(encoding="utf-8") if svg_path.exists() else ""
     if check_only:
