@@ -47,3 +47,24 @@ Referências ao RGPD são pontos de triagem, não conclusão jurídica. Base leg
 ## Documento-base fornecido
 
 O ficheiro “Os modelos de governança de dados mais utilizados.docx” identifica governança centralizada, descentralizada/autónoma, federada/híbrida e orientada a domínio/Data Mesh; destaca pessoas, políticas, processos e tecnologia como pilares. Este documento usa esses conceitos como referência inicial e acrescenta controlos operacionais.
+
+## Política transversal de aquisição de dados públicos gratuitos — adenda v1.1.0
+
+**Diretriz operacional adotada para o projeto B3:** identificar e adquirir sistematicamente os dados e metadados que estejam gratuitamente disponíveis ao público em fontes públicas, priorizando fontes primárias e oficiais. A disponibilidade pública deve ser convertida em inventário, captura reprodutível, proveniência, validação e monitorização, em vez de ser descartada por falhas técnicas isoladas ou bloqueios genéricos sem evidência.
+
+### Regras de execução
+
+1. Priorizar APIs, endpoints próprios, feeds e ficheiros de download oficiais.
+2. Investigar erros e procurar canais oficiais alternativos antes de declarar indisponibilidade.
+3. Distinguir quatro dimensões: disponibilidade técnica, permissão de aquisição automatizada, permissão de uso/redistribuição e qualidade/certificação do conteúdo.
+4. Só aplicar bloqueio quando existir fundamento específico documentado, como termos aplicáveis, licença, autenticação não disponível, obrigação legal ou restrição técnica explícita.
+5. Não contornar autenticação, CAPTCHA, controlos de acesso ou proibições explícitas. Se uma interface proibir recolha automatizada, procurar um canal oficial apropriado ou obter autorização; não presumir que a restrição abrange automaticamente todos os canais do fornecedor.
+6. Preservar RAW, fonte/canal, data/hora, parâmetros não secretos, status, checksum SHA-256, manifesto, logs, validações e histórico de falhas, conforme permitido pelos termos.
+7. Não inferir que a captura técnica autoriza redistribuição irrestrita; registar separadamente as condições de utilização.
+8. Usar estados específicos e reavaliáveis. Uma falha HTTP isolada não justifica um bloqueio geral permanente.
+
+### Aplicação B3 — BVBG.028.02
+
+O projeto B3 mantém a política operacional detalhada em [Política de aquisição de dados públicos e gratuitos](https://github.com/carlos-andrade/B3/blob/main/WIKI/01-GOVERNANCA/POLITICA_AQUISICAO_DADOS_PUBLICOS_GRATUITOS_V1.md). Para BVBG.028.02 / InstrumentsConsolidated, a execução bem-sucedida demonstra funcionamento técnico do canal testado, mas não resolve por si só os termos específicos de automatização e redistribuição. O aviso da página “Pesquisa por pregão” deve ser respeitado para essa interface; a próxima ação é verificar o canal próprio de download/API e documentar os termos aplicáveis, sem declarar o catálogo inteiro tecnicamente bloqueado.
+
+Esta adenda estabelece a orientação operacional de aquisição; não é parecer jurídico nem revoga licenças, contratos ou legislação aplicável. Quando houver conflito ou ambiguidade material, documentar a restrição específica e escalar para validação competente.
