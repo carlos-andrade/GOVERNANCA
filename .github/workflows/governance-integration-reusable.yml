@@ -41,6 +41,9 @@ jobs:
           ref: ${{ inputs.source_ref }}
           path: .governanca-framework-source
           persist-credentials: false
+      - name: Registar commit exato da fonte oficial
+        id: source
+        run: echo "commit=$(git -C .governanca-framework-source rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Configurar Python
         uses: actions/setup-python@v5
         with:
@@ -52,6 +55,7 @@ jobs:
         env:
           REQUESTED_MODE: ${{ inputs.mode }}
           CONFIG_PATH: ${{ inputs.config_path }}
+          GOVERNANCA_SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
         run: |
           set +e
           python .governanca-framework-source/automation/governance_engine.py \
