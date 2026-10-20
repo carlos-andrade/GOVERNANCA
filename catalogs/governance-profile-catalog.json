@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "catalog_id": "GOVERNANCA-PROFILE-CATALOG",
-  "catalog_version": "1.0.0",
-  "scope": "Verificações estruturais iniciais; não certifica conformidade semântica ou global.",
+  "catalog_version": "1.1.0",
+  "scope": "Baseline estrutural de integração para todos os perfis; não substitui requisitos funcionais/semânticos específicos do domínio nem certifica conformidade global.",
   "profiles": {
     "automatico": {
       "complete": false,
@@ -11,6 +11,24 @@
     "generico": {
       "complete": false,
       "requirements": [
+        {
+          "id": "GOV-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve ter uma página principal de orientação."
+        },
+        {
+          "id": "GOV-STR-002",
+          "kind": "file_exists",
+          "path": ".governanca/config.yml",
+          "description": "A configuração da integração deve existir no repositório consumidor."
+        },
+        {
+          "id": "GOV-STR-003",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        },
         {
           "id": "GEN-STR-001",
           "kind": "file_exists",
@@ -22,6 +40,24 @@
     "dados": {
       "complete": false,
       "requirements": [
+        {
+          "id": "GOV-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve ter uma página principal de orientação."
+        },
+        {
+          "id": "GOV-STR-002",
+          "kind": "file_exists",
+          "path": ".governanca/config.yml",
+          "description": "A configuração da integração deve existir no repositório consumidor."
+        },
+        {
+          "id": "GOV-STR-003",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        },
         {
           "id": "DAD-STR-001",
           "kind": "file_exists",
@@ -38,23 +74,118 @@
     },
     "trading": {
       "complete": false,
-      "requirements": []
+      "requirements": [
+        {
+          "id": "GOV-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve ter uma página principal de orientação."
+        },
+        {
+          "id": "GOV-STR-002",
+          "kind": "file_exists",
+          "path": ".governanca/config.yml",
+          "description": "A configuração da integração deve existir no repositório consumidor."
+        },
+        {
+          "id": "GOV-STR-003",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        }
+      ]
     },
     "aplicacao": {
       "complete": false,
-      "requirements": []
+      "requirements": [
+        {
+          "id": "GOV-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve ter uma página principal de orientação."
+        },
+        {
+          "id": "GOV-STR-002",
+          "kind": "file_exists",
+          "path": ".governanca/config.yml",
+          "description": "A configuração da integração deve existir no repositório consumidor."
+        },
+        {
+          "id": "GOV-STR-003",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        }
+      ]
     },
     "documentacao": {
       "complete": false,
-      "requirements": []
+      "requirements": [
+        {
+          "id": "GOV-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve ter uma página principal de orientação."
+        },
+        {
+          "id": "GOV-STR-002",
+          "kind": "file_exists",
+          "path": ".governanca/config.yml",
+          "description": "A configuração da integração deve existir no repositório consumidor."
+        },
+        {
+          "id": "GOV-STR-003",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        }
+      ]
     },
     "turismo": {
       "complete": false,
-      "requirements": []
+      "requirements": [
+        {
+          "id": "GOV-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve ter uma página principal de orientação."
+        },
+        {
+          "id": "GOV-STR-002",
+          "kind": "file_exists",
+          "path": ".governanca/config.yml",
+          "description": "A configuração da integração deve existir no repositório consumidor."
+        },
+        {
+          "id": "GOV-STR-003",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        }
+      ]
     },
     "watchdog": {
       "complete": false,
-      "requirements": []
+      "requirements": [
+        {
+          "id": "GOV-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve ter uma página principal de orientação."
+        },
+        {
+          "id": "GOV-STR-002",
+          "kind": "file_exists",
+          "path": ".governanca/config.yml",
+          "description": "A configuração da integração deve existir no repositório consumidor."
+        },
+        {
+          "id": "GOV-STR-003",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        }
+      ]
     }
   }
 }
