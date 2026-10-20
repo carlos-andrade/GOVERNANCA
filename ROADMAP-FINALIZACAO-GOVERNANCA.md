@@ -9,7 +9,7 @@
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 5880222a0ee96712aa60ebc08d967a704155f229cf2797e263d0cfebecac2b77 |
+| **SHA-256 (conteúdo canónico)** | 718edec0146bbe8f556b2a71fb095221cca488c3a95b107b8f18f2c3c36473ac |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-20 |
@@ -88,6 +88,16 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 | Versão | Data | Alteração |
 |---|---|---|
 | 1.0.0 | 2026-10-20 | Criação do roadmap de finalização a partir da revisão do estado de `main`, workflows, scorecard e pendências publicadas. |
+
+## 8.1. Registo de execução — 2026-10-21
+
+- O scorecard canónico foi reconciliado para remover um bloqueio duplicado de distribuição; os bloqueios ativos passaram de 10 para 9, sem alteração dos pontos comprovados.
+- O workflow de sincronização do status voltou a passar após a alteração: [run #51](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39515702729). O README e o SVG foram regenerados a partir do registo canónico.
+- Estado após a verificação: 80/100; início 20/20, meio 60/60, fim 0/20; os cinco controlos de encerramento continuam falsos.
+- A verificação da árvore atual encontrou cinco workflows no repositório-mestre; quatro definem controlo de concorrência. O workflow reutilizável não declara concorrência própria. Este resultado não resolve o bloqueio separado sobre os 42 workflows transversais.
+- O catálogo de perfis continua estrutural, com todos os perfis em `complete: false`; o motor só suporta `file_exists` como tipo de requisito. Não é seguro marcar perfis completos sem ampliar os tipos de controlo, acrescentar testes e definir critérios semânticos aprovados.
+- A distribuição por PR real não pode ser marcada como concluída com a evidência disponível: os runs #45/#46 foram dry-runs e retornaram `WOULD_OPEN_PR`. A ferramenta de integração disponível nesta sessão não permite iniciar um workflow manual com `dry_run=false`; o teste real permanece uma ação operacional pendente.
+- A limpeza do scorecard foi publicada no commit `c1617b7fb7724d511bb06a9495cfa3f6d28570c4`; a sincronização subsequente passou no run #51.
 
 ## 8. Regra de encerramento
 
