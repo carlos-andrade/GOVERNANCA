@@ -44,6 +44,11 @@
       "name": "carlos-andrade/BRICKMASTER_GERAL",
       "enabled": true,
       "owner": "Carlos Andrade"
+    },
+    {
+      "name": "carlos-andrade/LICITACAO",
+      "enabled": true,
+      "owner": "Carlos Andrade"
     }
   ],
   "notes": [
