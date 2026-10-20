@@ -93,7 +93,7 @@ jobs:
       - name: Distribuir por Pull Request
         env:
           GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          DRY_RUN: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run }}
           TARGET_REPO: ${{ inputs.repository }}
         run: |
           set -o pipefail
