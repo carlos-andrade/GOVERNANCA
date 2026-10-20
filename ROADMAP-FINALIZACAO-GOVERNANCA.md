@@ -30,7 +30,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 - **Estado global:** EM_EXECUCAO — finalização bloqueada por dependências críticas.
 - **Último estado scorecard publicado:** 80% comprovados, conforme `registry/status-do-projeto.json`; este roadmap não recalcula nem aumenta o percentual.
 - **Fonte de estado:** `registry/status-do-projeto.json`; o README e o SVG devem ser gerados pela automação existente.
-- **Bloqueios centrais conhecidos:** distribuição real por PR ainda não demonstrada; credencial de sincronização historicamente rejeitada; catálogo de perfis incompleto; adoção transversal pendente; aceitação operacional WATCHDOG incompleta; documentos fundacionais/políticas em revisão; divergência no estado do consumidor LICITACAO entre `main` e a PR #4.
+- **Bloqueios centrais conhecidos:** distribuição real por PR ainda não demonstrada; credencial de sincronização validada no último dry-run, mas distribuição real por PR ainda não demonstrada; catálogo de perfis incompleto; adoção transversal pendente; aceitação operacional WATCHDOG incompleta; documentos fundacionais/políticas em revisão; divergência no estado do consumidor LICITACAO entre `main` e a PR #4.
 - **Regra fail-closed:** não habilitar distribuição nem declarar conformidade global sem provas adequadas.
 
 ## 3. Roadmap de gates
@@ -38,8 +38,8 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 | Gate | Entregáveis e trabalho | Critério objetivo de saída | Estado |
 |---|---|---|---|
 | G0 — Baseline e autoridade normativa | Rever Constituição, hierarquia normativa, decisões, políticas, responsáveis e aprovações. Classificar cada documento como proposta, em revisão, aprovado ou obsoleto. | Núcleo normativo coerente; aprovação formal da versão exata dos documentos que constituem autoridade; inventário de decisões e exceções atualizado. | BLOQUEADA — Constituição e várias políticas continuam em revisão. |
-| G1 — Distribuição segura | Validar `GOVERNANCA_SYNC_TOKEN` no workflow; executar dry-run autenticado; testar acesso de leitura/escrita por destino; criar/atualizar PRs reais apenas para destinos autorizados; verificar idempotência, isolamento de ficheiros, hashes, relatórios e redação de segredos. | Evidência de workflow real concluído, relatório inspecionado, PRs esperadas criadas/atualizadas, zero destinos indevidos e repetição sem diffs desnecessários. | BLOQUEADA — run #44 foi dry-run; histórico recente inclui falhas de autenticação e distribuição. |
-| G2 — Registo de consumidores e adoção | Reconciliar `registry/repositorios-consumidores.json`, PR #4 e critérios de adoção; inspecionar cada espelho, manifestos, hashes, configurações, workflows e evidência individual. | Para cada destino, estado enabled coerente com decisão formal e critérios comprovados; nenhum estado de registo interpretado como certificação. | EM EXECUÇÃO — LICITACAO apresenta divergência entre main e PR #4; demais destinos exigem revisão individual. |
+| G1 — Distribuição segura | Validar `GOVERNANCA_SYNC_TOKEN` no workflow; executar dry-run autenticado; testar acesso de leitura/escrita por destino; criar/atualizar PRs reais apenas para destinos autorizados; verificar idempotência, isolamento de ficheiros, hashes, relatórios e redação de segredos. | Evidência de workflow real concluído, relatório inspecionado, PRs esperadas criadas/atualizadas, zero destinos indevidos e repetição sem diffs desnecessários. | BLOQUEADA — runs #45 e #46 validaram autenticação e dry-run sem erros; a credencial foi aceite, mas nenhum dos runs criou PRs reais. |
+| G2 — Registo de consumidores e adoção | Reconciliar `registry/repositorios-consumidores.json`, PR #4 e critérios de adoção; inspecionar cada espelho, manifestos, hashes, configurações, workflows e evidência individual. | Para cada destino, estado enabled coerente com decisão formal e critérios comprovados; nenhum estado de registo interpretado como certificação. | EM EXECUÇÃO — LICITACAO está agora disabled em main até adoção validada; PR #4 continua aberta e desatualizada face ao estado atual, devendo ser reconciliada/fechada sem reativar o destino; demais destinos exigem revisão individual. |
 | G3 — Governance Integration Framework | Completar catálogo executável para todos os perfis; definir requisitos semânticos, evidências, severidade, regras de applicability, políticas de modo aplicar, versionamento/ref imutável, relatórios e testes adversariais. | Catálogo com completude demonstrada por perfil; testes unitários, negativos e integração aprovados; relatório correto para PASS/FAIL/UNKNOWN; alteração só por PR; nenhuma certificação implícita. | EM EXECUÇÃO — F1/F2 e baseline estrutural F4 têm validações parciais; catálogo permanece `complete: false`; F5/F6 não concluídas. |
 | G4 — Integridade documental | Reconciliar árvore atual de `main` com inventários; verificar cabeçalhos, IDs, links, versões e SHA-256 canónico segundo a norma; corrigir inconsistências sem perda de conteúdo histórico. | Inventário completo e reconciliado com o commit auditado; hashes recalculados; exceções justificadas, aprovadas e rastreáveis. | EM EXECUÇÃO — inventário interno e inventário transversal têm âmbito/fotografias históricas que requerem atualização. |
 | G5 — WATCHDOG e operação | Resolver publicação concorrente de workflows; aprovar limites de atualidade por proprietários; configurar monitorização independente, heartbeat, canais de alerta, ACK, escalonamento, responsáveis e SLA; testar falha, recuperação e ausência de monitor. | Execuções atuais demonstram deteção e recuperação; limites aprovados; alertas recebidos e reconhecidos; dependências operacionais sem UNKNOWN crítico ou com exceção formal válida. | BLOQUEADA — aceitação operacional e supervisão independente não comprovadas. |
@@ -49,7 +49,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 ## 4. Ações prioritárias imediatas
 
 1. **A1 — Reconciliar LICITACAO:** verificar o conteúdo de `main` e da PR #4; preservar o princípio fail-closed; só ativar depois da adoção local e da distribuição por PR serem comprovadas.
-2. **A2 — Resolver autenticação da distribuição:** o proprietário deve substituir o secret `GOVERNANCA_SYNC_TOKEN` nas definições do repositório por uma credencial válida com privilégios mínimos e acesso explícito a cada destino. Não registar nem expor o valor do secret.
+2. **A2 — Validar escrita e executar PR piloto:** a credencial `GOVERNANCA_SYNC_TOKEN` foi aceite nos dry-runs #45/#46 para a identidade `carlos-andrade`. O próximo passo é executar manualmente o workflow com `dry_run=false` para um único consumidor de teste autorizado, confirmar permissões de escrita nesse destino e verificar a PR resultante. Não registar nem expor o valor do secret.
 3. **A3 — Executar dry-run explícito e inspecionar artefacto:** confirmar identidade, quantidade de ficheiros, destinos e resultado esperado; parar em qualquer erro.
 4. **A4 — Executar teste controlado de PR real:** começar por um consumidor autorizado e de baixo risco; confirmar branch, diff, manifesto, hashes, PR e reexecução idempotente antes de expandir.
 5. **A5 — Completar catálogo de perfis:** definir e testar critérios funcionais/semânticos por domínio; manter `complete: false` enquanto faltar qualquer perfil ou critério obrigatório.
@@ -60,7 +60,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 
 ## 5. Bloqueios, dependências e política de exceções
 
-- **Credencial de sincronização:** dependência manual do proprietário do repositório; o assistente não consegue ler, recuperar ou substituir o valor secreto. A credencial não deve ser enviada no chat nem incluída em logs.
+- **Distribuição por PR real:** os dry-runs #45 e #46 provaram autenticação e leitura, com 0 erros, mas continuam a retornar `WOULD_OPEN_PR`. Falta uma execução manual controlada com `dry_run=false` e confirmação das permissões de escrita no consumidor escolhido.
 - **Permissões nos consumidores:** a autenticação da fonte não prova permissões de escrita nos destinos. Testar separadamente, sem ampliar desnecessariamente os privilégios.
 - **Aprovações normativas:** a criação/revisão de textos não equivale a ratificação. Registar decisor, versão aprovada e data.
 - **Aceitação operacional:** workflow verde é apenas uma evidência; não substitui confirmação de entrega de alertas, supervisão externa ou recuperação.
@@ -73,7 +73,9 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 - [Branch principal e árvore do repositório](https://github.com/carlos-andrade/GOVERNANCA/tree/main)
 - [Scorecard de estado](registry/status-do-projeto.json)
 - [Workflow de propagação](.github/workflows/propagar-regras-governanca.yml)
-- [Execução #44 — dry-run concluído](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39506967606)
+- [Execução #45 — dry-run autenticado, 78 ficheiros, 9 destinos no registo/8 ativos, 0 erros](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39510683461)
+- [Execução #46 — dry-run após desativar LICITACAO, 78 ficheiros, 8 destinos ativos, 0 erros](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39510865206)
+- [Execução #44 — dry-run anterior](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39506967606)
 - [Pull Request #4 — registo pendente do LICITACAO](https://github.com/carlos-andrade/GOVERNANCA/pull/4)
 - [Framework — decisão de arquitetura](docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md)
 - [Catálogo de perfis](catalogs/governance-profile-catalog.json)
