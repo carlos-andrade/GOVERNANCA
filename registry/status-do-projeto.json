@@ -2,8 +2,8 @@
   "schema_version": 2,
   "project": "GOVERNANCA",
   "status": "Em finalização",
-  "updated_at": "2026-10-17",
-  "last_reviewed_at": "2026-10-17",
+  "updated_at": "2026-10-20",
+  "last_reviewed_at": "2026-10-20",
   "phase": "fim",
   "points": {
     "inicio": 20,
@@ -155,17 +155,22 @@
       }
     ]
   },
-  "next_milestone": "Configurar GOVERNANCA_SYNC_TOKEN com privilégio mínimo; executar dry-run autenticado e validar a criação/atualização de PRs nos repositórios consumidores; depois confirmar adoção individual.",
+  "next_milestone": "Executar F1 — Especificação do Governance Integration Framework; em paralelo, resolver GOVERNANCA_SYNC_TOKEN e validar dry-run/PRs reais da distribuição transversal.",
   "blockers": [
     "A correção transversal de publicação concorrente dos 42 workflows ainda precisa de verificação conclusiva na branch main; não retirar o bloqueio sem evidência atual.",
     "Os limiares de atualidade BCB SGS, BDI, COTAHIST anual (30 dias) e COTAHIST diário (5 dias) continuam PROVISIONAL, sem aprovação dos proprietários registada.",
     "A supervisão externa independente ainda não foi comprovada como operacional: faltam confirmar configuração dos secrets, ausência de heartbeat e recuperação.",
     "Responsáveis, canais de alerta, confirmação de receção, ACK/escalonamento e SLA ainda precisam de aprovação e teste com evidência.",
     "A adoção transversal do padrão de roadmap e das regras de governança continua sujeita a inspeção, integração e aceitação individual por repositório.",
-    "A distribuição automática por Pull Request foi implementada inicialmente, mas a operação ainda não está comprovada: falta validar o secret GOVERNANCA_SYNC_TOKEN, executar dry-run e confirmar PRs/idempotência em todos os destinos."
+    "A distribuição automática por Pull Request foi implementada inicialmente, mas a operação ainda não está comprovada: falta validar o secret GOVERNANCA_SYNC_TOKEN, executar dry-run e confirmar PRs/idempotência em todos os destinos.",
+    "Governance Integration Framework: arquitetura DEC-GOV-INT-001 integrada em main; implementação F1–F6 ainda pendente e não declarar operacional antes dos critérios de aceitação."
   ],
-  "review_note": "Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final nos runs 38981823399 e 38981877103. Os 10 pontos de testes da barra v2 foram atribuídos com evidência de CI. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório. Implementação inicial da distribuição transversal publicada em 2026-10-17 (script, workflow, registo de consumidores e testes de validação); não considerar operacional até autenticação, dry-run e PRs reais serem verificados. Verificação técnica adicional em 2026-10-17: no workflow [run 38995449792](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/38995449792), o job `validar` passou e o job `propagar` falhou na autenticação porque o secret `GOVERNANCA_SYNC_TOKEN` contém um token inválido. Não houve tentativa de distribuição nem Pull Requests criadas nessa execução. O workflow foi ajustado para guardar um relatório de diagnóstico também quando a autenticação falha; essa correção ainda aguarda execução CI posterior.",
+  "review_note": "Revisão documental em 2026-10-17. O workflow de sincronização executou com sucesso os testes automatizados, gerou o README e o SVG e confirmou a sincronização final nos runs 38981823399 e 38981877103. Os 10 pontos de testes da barra v2 foram atribuídos com evidência de CI. A aceitação externa do WATCHDOG continua pendente: a issue B3 #9 está fechada no GitHub, mas a checklist publicada não tem evidência de conclusão; fechar a issue isoladamente não prova aceitação operacional. A adoção transversal ainda exige validação individual por repositório. Implementação inicial da distribuição transversal publicada em 2026-10-17 (script, workflow, registo de consumidores e testes de validação); não considerar operacional até autenticação, dry-run e PRs reais serem verificados. Verificação técnica adicional em 2026-10-17: no workflow [run 38995449792](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/38995449792), o job `validar` passou e o job `propagar` falhou na autenticação porque o secret `GOVERNANCA_SYNC_TOKEN` contém um token inválido. Não houve tentativa de distribuição nem Pull Requests criadas nessa execução. O workflow foi ajustado para guardar um relatório de diagnóstico também quando a autenticação falha; essa correção ainda aguarda execução CI posterior. Formalização da arquitetura em 2026-10-20: a decisão DEC-GOV-INT-001 foi integrada em main pela PR #3, commit 7003bd9848983c211aca588e68e5281a5babc39a. O documento define arquitetura, controlos, roadmap F1–F6 e critérios de aceitação; a implementação integral permanece pendente. A integração não altera o estado operacional da distribuição transversal, que continua bloqueada até validação do GOVERNANCA_SYNC_TOKEN, dry-run autenticado e PRs reais.",
   "evidence": [
+    {
+      "label": "DEC-GOV-INT-001 — Governance Integration Framework (merged)",
+      "url": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md"
+    },
     {
       "label": "Validação CI do scorecard e painel visual a 80% — SUCCESS",
       "url": "https://github.com/carlos-andrade/GOVERNANCA/actions/runs/38981877103"
