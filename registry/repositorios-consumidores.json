@@ -44,13 +44,21 @@
       "name": "carlos-andrade/BRICKMASTER-CLAUDE",
       "enabled": true,
       "owner": "Carlos Andrade"
+    },
+    {
+      "name": "carlos-andrade/LICITACAO",
+      "enabled": false,
+      "owner": "Carlos Andrade",
+      "status": "EM_REVISAO",
+      "note": "Cadastro pendente: não habilitar distribuição automática até a adoção local ser revista, o espelho publicado ser validado e o mecanismo de sincronização por PR estar comprovado."
     }
   ],
   "notes": [
     "Distribuir todos os ficheiros de texto nos diretórios normativos indicados em published_roots, além dos três documentos canónicos na raiz.",
     "Os ficheiros são publicados em .governanca/upstream/ para não sobrescrever documentos locais.",
     "A publicação é proposta por Pull Request; nunca faz merge automático.",
-    "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório."
+    "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório.",
+    "LICITACAO foi registado como consumidor pendente e disabled; a ativação da distribuição requer aprovação individual e verificação operacional, incluindo credencial de sincronização válida."
   ],
   "published_roots": [
     "CONSTITUICAO.md",
