@@ -127,8 +127,9 @@ class GovernanceEngineTests(unittest.TestCase):
         with temp:
             catalog = root / "catalogs/governance-profile-catalog.json"
             catalog.write_text("{not json", encoding="utf-8")
-            with self.assertRaises(GovernanceError):
-                self.report(root)
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("Catálogo" in b or "catálogo" in b for b in report["blockers"]))
 
     def test_unknown_properties_and_secrets_are_rejected(self):
         temp, root = self.make_target()
