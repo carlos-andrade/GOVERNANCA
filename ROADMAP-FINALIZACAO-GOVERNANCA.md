@@ -9,7 +9,7 @@
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 4c0aa9f0d6680eb05c3f85ce881913cfe7f8e4d62ad4d6901a2ea26dcd41b3d7 |
+| **SHA-256 (conteúdo canónico)** | PENDENTE — recalcular pelo procedimento da norma antes da aprovação |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-20 |
