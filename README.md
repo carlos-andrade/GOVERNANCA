@@ -21,7 +21,7 @@
 
 > Repositório-mestre para definir como projetos são propostos, priorizados, desenhados, executados, controlados, auditados e encerrados.
 
-**Estado:** V1, proposta inicial em revisão. A existência de documentos não significa que políticas foram formalmente ratificadas ou que controlos técnicos estejam ativos.
+**Estado operacional:** Sistema-mestre em finalização, com 80% comprovados no scorecard canónico. A adoção global ainda não está aprovada: permanecem bloqueios de distribuição real por PR, completude semântica dos perfis, ratificação normativa e aceitação operacional do WATCHDOG. A existência de documentos ou workflows não equivale a conformidade.
 
 <!-- GOVERNANCA_STATUS_START -->
 ## Painel executivo de status — GOVERNANCA
