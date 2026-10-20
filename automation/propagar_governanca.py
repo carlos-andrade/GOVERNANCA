@@ -161,11 +161,13 @@ def main():
             "error": "GH_TOKEN/GITHUB_TOKEN obrigatório; configure GOVERNANCA_SYNC_TOKEN no repositório de origem."
         }, ensure_ascii=False))
         return 2
-    auth = run(["gh", "auth", "status"], check=False)
-    if auth.returncode:
+    # Validate the token supplied by Actions itself, not only stored CLI login state.
+    auth = run(["gh", "api", "user", "--jq", ".login"], check=False)
+    identity = (auth.stdout or "").strip()
+    if auth.returncode or not identity:
         print(json.dumps({
-            "status": "FAIL", "stage": "authentication", "code": "TOKEN_INVALID",
-            "error": "GitHub CLI rejeitou a credencial. Confirme validade, expiração, revogação e conta do token.",
+            "status": "FAIL", "stage": "authentication", "code": "TOKEN_REJECTED",
+            "error": "O GitHub não aceitou GH_TOKEN/GITHUB_TOKEN ou não conseguiu validar a identidade. Confirme validade, expiração, revogação e acesso da credencial.",
             "detail": safe_detail(auth)
         }, ensure_ascii=False))
         return 2

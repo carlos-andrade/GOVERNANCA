@@ -73,7 +73,7 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
                 code = sync.main()
             self.assertEqual(code, 2)
             payload = json.loads(output.call_args.args[0])
-            self.assertEqual(payload["code"], "TOKEN_INVALID")
+            self.assertEqual(payload["code"], "TOKEN_REJECTED")
             self.assertNotIn("fake-test-token", payload["detail"])
 
 if __name__ == "__main__":
