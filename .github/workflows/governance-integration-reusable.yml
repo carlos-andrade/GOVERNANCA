@@ -50,7 +50,6 @@ jobs:
       - name: Executar diagnóstico sem escrita
         id: report
         env:
-          GOVERNANCA_SOURCE_COMMIT: ${{ github.sha }}
           REQUESTED_MODE: ${{ inputs.mode }}
           CONFIG_PATH: ${{ inputs.config_path }}
         run: |
