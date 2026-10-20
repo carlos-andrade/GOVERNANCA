@@ -66,16 +66,34 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
         run: |
+          set +e
           if [ -z "$GH_TOKEN" ]; then
-            echo '{"status":"FAIL","stage":"authentication","error":"Secret GOVERNANCA_SYNC_TOKEN não configurado."}' > governanca-propagacao.json
-            echo "::error::Configure o secret GOVERNANCA_SYNC_TOKEN com acesso aos repositórios consumidores."
+            printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_MISSING","error":"Secret GOVERNANCA_SYNC_TOKEN não configurado."}' > governanca-propagacao.json
+            echo "::error::O secret GOVERNANCA_SYNC_TOKEN está ausente. Configure-o em Settings > Secrets and variables > Actions."
             exit 1
           fi
-          if ! gh auth status; then
-            echo '{"status":"FAIL","stage":"authentication","error":"GOVERNANCA_SYNC_TOKEN inválido ou não autenticado."}' > governanca-propagacao.json
-            echo "::error::GOVERNANCA_SYNC_TOKEN inválido ou não autenticado."
+
+          auth_output="$(gh auth status 2>&1)"
+          auth_rc=$?
+          set -e
+          if [ "$auth_rc" -ne 0 ]; then
+            # Do not print auth_output: error messages may contain sensitive context.
+            printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_INVALID","error":"GOVERNANCA_SYNC_TOKEN foi rejeitado pelo GitHub CLI. Substitua-o por um token ativo."}' > governanca-propagacao.json
+            echo "::error::GOVERNANCA_SYNC_TOKEN foi rejeitado. Gere um token ativo, atualize o secret e volte a executar em dry-run."
+            echo "::error::Não cole o token nos logs ou na conversa."
             exit 1
           fi
+
+          # Authentication to the source repo alone does not prove consumer write permissions.
+          identity="$(gh api user --jq .login 2>/dev/null || true)"
+          if [ -z "$identity" ]; then
+            printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"IDENTITY_UNAVAILABLE","error":"Token aceite pelo CLI, mas não foi possível confirmar a identidade autenticada."}' > governanca-propagacao.json
+            echo "::error::O token foi aceite pelo CLI, mas a identidade não pôde ser confirmada."
+            exit 1
+          fi
+          printf '{"status":"PASS","stage":"authentication","identity":"%s","note":"Consumer permissions are verified per destination during dry-run/PR execution."}\n' "$identity" > governanca-propagacao.json
+          echo "Autenticação validada para a conta: $identity"
+
       - name: Distribuir por Pull Request
         env:
           GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
@@ -87,6 +105,7 @@ jobs:
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ -n "$TARGET_REPO" ]; then args+=(--repo "$TARGET_REPO"); fi
           python automation/propagar_governanca.py "${args[@]}" | tee governanca-propagacao.json
+
       - name: Guardar relatório de distribuição
         if: always()
         uses: actions/upload-artifact@v4
