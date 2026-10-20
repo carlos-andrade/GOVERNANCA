@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "catalog_id": "GOVERNANCA-PROFILE-CATALOG",
+  "catalog_version": "1.0.0",
+  "scope": "Verificações estruturais iniciais; não certifica conformidade semântica ou global.",
+  "profiles": {
+    "automatico": {
+      "complete": false,
+      "requirements": []
+    },
+    "generico": {
+      "complete": false,
+      "requirements": [
+        {
+          "id": "GEN-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve apresentar uma descrição principal."
+        }
+      ]
+    },
+    "dados": {
+      "complete": false,
+      "requirements": [
+        {
+          "id": "DAD-STR-001",
+          "kind": "file_exists",
+          "path": "README.md",
+          "description": "O repositório deve documentar o objetivo e o âmbito dos dados."
+        },
+        {
+          "id": "DAD-STR-002",
+          "kind": "file_exists",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O repositório deve declarar o workflow de diagnóstico da GOVERNANCA."
+        }
+      ]
+    },
+    "trading": {
+      "complete": false,
+      "requirements": []
+    },
+    "aplicacao": {
+      "complete": false,
+      "requirements": []
+    },
+    "documentacao": {
+      "complete": false,
+      "requirements": []
+    },
+    "turismo": {
+      "complete": false,
+      "requirements": []
+    },
+    "watchdog": {
+      "complete": false,
+      "requirements": []
+    }
+  }
+}
