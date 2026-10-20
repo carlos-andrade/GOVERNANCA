@@ -1,6 +1,7 @@
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 import yaml
@@ -109,6 +110,14 @@ class GovernanceEngineTests(unittest.TestCase):
             report = build_report(root, root / ".governanca/config.yml",
                                   root / "schemas/governanca-config.schema.json")
             self.assertIsNone(report["execution"]["source_commit"])
+
+
+    def test_source_commit_is_reported_when_explicitly_resolved(self):
+        temp, root = self.make_target()
+        with temp, patch.dict("os.environ", {"GOVERNANCA_SOURCE_COMMIT": "a" * 40}):
+            report = build_report(root, root / ".governanca/config.yml",
+                                  root / "schemas/governanca-config.schema.json")
+            self.assertEqual(report["execution"]["source_commit"], "a" * 40)
 
 
 if __name__ == "__main__":
