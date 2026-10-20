@@ -70,8 +70,14 @@ def load_json_object(path: Path, label: str) -> dict[str, Any]:
 
 def validate_config(config: Any, schema_path: Path) -> list[str]:
     schema = load_json_object(schema_path, "Esquema oficial")
-    Draft202012Validator.check_schema(schema)
-    return sorted(error.message for error in Draft202012Validator(schema).iter_errors(config))
+    try:
+        Draft202012Validator.check_schema(schema)
+        return sorted(error.message for error in Draft202012Validator(schema).iter_errors(config))
+    except Exception as exc:
+        from jsonschema.exceptions import SchemaError
+        if isinstance(exc, SchemaError):
+            raise GovernanceError(f"Esquema oficial estruturalmente inválido: {exc.message}") from exc
+        raise
 
 
 def validate_catalog(catalog: dict[str, Any]) -> None:
@@ -187,6 +193,10 @@ def build_report(
         "evidence": gov["fonte"],
     })
     report["integrity"]["catalog_path"] = str(catalog_path)
+    if not catalog_path.is_file():
+        report["status"] = "DESCONHECIDO"
+        report["blockers"].append(f"Catálogo por perfil ausente: {catalog_path}")
+        return report
     report["integrity"]["catalog_sha256"] = sha256_file(catalog_path)
     try:
         profile_checks, complete, missing = evaluate_profile(root, profile, catalog_path)

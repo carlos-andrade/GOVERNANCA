@@ -131,6 +131,40 @@ class GovernanceEngineTests(unittest.TestCase):
             self.assertEqual(report["status"], "DESCONHECIDO")
             self.assertTrue(any("Catálogo" in b or "catálogo" in b for b in report["blockers"]))
 
+    def test_missing_catalog_returns_unknown_without_traceback(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog = root / "catalogs/governance-profile-catalog.json"
+            catalog.unlink()
+            report = build_report(
+                root, root / ".governanca/config.yml",
+                root / "schemas/governanca-config.schema.json", catalog,
+            )
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("ausente" in b for b in report["blockers"]))
+
+    def test_catalog_rejects_path_traversal(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+            catalog["profiles"]["dados"]["requirements"][0]["path"] = "../outside.txt"
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("inseguro" in b for b in report["blockers"]))
+
+    def test_profile_missing_from_catalog_is_not_certified(self):
+        temp, root = self.make_target(profile="dados")
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+            del catalog["profiles"]["dados"]
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("Perfil sem definição" in b for b in report["blockers"]))
+
     def test_unknown_properties_and_secrets_are_rejected(self):
         temp, root = self.make_target()
         with temp:
