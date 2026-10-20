@@ -188,7 +188,7 @@ def render_svg(data: dict) -> str:
 
 def canonical_sha256(text: str) -> str:
     """Hash UTF-8/LF document content excluding the two control metadata rows."""
-    normalized = text.replace("\\r\\n", "\\n").replace("\\r", "\\n").lstrip("\\ufeff")
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n").lstrip("\ufeff")
     canonical = "".join(
         line for line in normalized.splitlines(keepends=True)
         if not line.startswith("| **SHA-256 (conteúdo canónico)**")
@@ -209,7 +209,7 @@ def update_canonical_hash(text: str) -> str:
     if len(indices) != 1:
         raise StatusError("README deve conter no máximo uma linha SHA-256 canónico.")
     index = indices[0]
-    ending = "\\r\\n" if lines[index].endswith("\\r\\n") else "\\n" if lines[index].endswith("\\n") else ""
+    ending = "\r\n" if lines[index].endswith("\r\n") else "\n" if lines[index].endswith("\n") else ""
     lines[index] = f"| **SHA-256 (conteúdo canónico)** | {canonical_sha256(text)} |{ending}"
     return "".join(lines)
 
