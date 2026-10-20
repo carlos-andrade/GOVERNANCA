@@ -76,7 +76,7 @@ def discover_files(data):
 def publish_to_repo(name, files, destination_root, source_sha, dry_run):
     with tempfile.TemporaryDirectory(prefix="governanca-sync-") as tmp:
         repo = Path(tmp) / "consumer"
-        clone = run(["gh", "repo", "clone", name, str(repo)], check=False)
+        clone = run(["gh", "repo", "clone", name, str(repo), "--", "--filter=blob:none"], check=False)
         if clone.returncode:
             return {"repository": name, "status": "ERROR", "stage": "clone", "detail": safe_detail(clone)}
         head = run(["git", "symbolic-ref", "refs/remotes/origin/HEAD"], cwd=repo, check=False)
