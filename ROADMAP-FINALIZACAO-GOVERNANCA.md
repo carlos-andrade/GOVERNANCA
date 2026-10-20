@@ -9,7 +9,7 @@
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
 | **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 718edec0146bbe8f556b2a71fb095221cca488c3a95b107b8f18f2c3c36473ac |
+| **SHA-256 (conteúdo canónico)** | 1bb8a67028db068182be0f9b5633a54e1bfdd775c2a5f0c413284209b4408a82 |
 | **Commit de referência (versão anterior)** | N/A — documento inicial |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-20 |
@@ -88,6 +88,14 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 | Versão | Data | Alteração |
 |---|---|---|
 | 1.0.0 | 2026-10-20 | Criação do roadmap de finalização a partir da revisão do estado de `main`, workflows, scorecard e pendências publicadas. |
+
+## 8.2. Integridade do painel — 2026-10-21
+
+- Foi corrigida a automação `automation/sync_project_status.py` para atualizar o SHA-256 canónico do README segundo a norma: UTF-8/LF e exclusão das duas linhas de controlo.
+- Foi acrescentado teste específico de checksum em `tests/test_sync_project_status.py`.
+- A CI [run #56](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39516044531) passou com **39 testes**; o passo `automation/sync_project_status.py --check` confirmou o painel Markdown e o SVG sincronizados.
+- Os runs #53–#55 falharam durante a introdução inicial da mudança e do teste; a falha do teste foi corrigida antes do run #56. O histórico é preservado e o último resultado é PASS.
+- O SHA-256 do README é agora recalculado automaticamente sempre que o bloco de status muda; o cabeçalho mantém as restantes decisões de versão e aprovação sob controlo documental separado.
 
 ## 8.1. Registo de execução — 2026-10-21
 
