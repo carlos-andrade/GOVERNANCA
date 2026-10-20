@@ -154,6 +154,30 @@ class GovernanceEngineTests(unittest.TestCase):
             self.assertEqual(report["status"], "DESCONHECIDO")
             self.assertTrue(any("inseguro" in b for b in report["blockers"]))
 
+    def test_empty_automatic_profile_is_explicitly_unknown(self):
+        temp, root = self.make_target(profile="automatico")
+        with temp:
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("não tem requisitos executáveis" in b for b in report["blockers"]))
+
+    def test_symlink_escape_is_rejected(self):
+        temp, root = self.make_target(profile="dados")
+        with temp:
+            outside = root.parent / (root.name + "-outside.txt")
+            outside.write_text("outside", encoding="utf-8")
+            link = root / "README.md"
+            link.unlink()
+            try:
+                link.symlink_to(outside)
+            except (OSError, NotImplementedError):
+                outside.unlink(missing_ok=True)
+                self.skipTest("O sistema de ficheiros não permite criar symlinks.")
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("sai da raiz" in b for b in report["blockers"]))
+            outside.unlink(missing_ok=True)
+
     def test_profile_missing_from_catalog_is_not_certified(self):
         temp, root = self.make_target(profile="dados")
         with temp:
