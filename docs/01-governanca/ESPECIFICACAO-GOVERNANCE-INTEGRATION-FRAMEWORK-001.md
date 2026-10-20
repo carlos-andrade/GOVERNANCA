@@ -5,7 +5,7 @@
 | **ID** | GOV-INT-SPEC-001 |
 | **Projeto** | GOVERNANÇA |
 | **Tipo documental** | ESPECIFICAÇÃO TÉCNICA |
-| **Estado** | F1 — ESPECIFICAÇÃO DEFINIDA; validação CI pendente |
+| **Estado** | F1 — ESPECIFICAÇÃO CONCLUÍDA; CI aprovada |
 | **Versão** | 1.0.0 |
 | **Data** | 2026-10-20 |
 | **Decisão de origem** | [DEC-GOV-INT-001](DEC-GOV-INTEGRATION-FRAMEWORK-001.md) |
@@ -87,8 +87,8 @@ Estados globais de conformidade: `CONFORME`, `CONFORME_COM_PENDENCIAS`, `NAO_CON
 - [x] Fonte oficial, perfis, estados e controlos de segurança definidos.
 - [x] Esquema JSON Schema versionado.
 - [x] Exemplo canónico consistente com o esquema.
-- [ ] Testes do esquema e exemplos aprovados na CI.
-- [ ] Pull Request da F1 integrada em `main`.
+- [x] Testes do esquema e exemplos aprovados na CI ([run 39459837269](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39459837269)).
+- [x] Pull Request da F1 integrada em `main` ([PR #5](https://github.com/carlos-andrade/GOVERNANCA/pull/5), commit `3904c00bd80786d3e8a64d2beab1d076b70410a8`).
 
 A F1 só deve ser declarada concluída depois de os dois últimos critérios serem confirmados por evidência. F2 começa depois disso e implementa o motor, não apenas a configuração.
 
