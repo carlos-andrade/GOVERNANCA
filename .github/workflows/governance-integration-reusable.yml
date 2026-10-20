@@ -1,0 +1,80 @@
+name: Governance Integration — workflow reutilizável
+
+on:
+  workflow_call:
+    inputs:
+      config_path:
+        description: Caminho da configuração no repositório chamador
+        required: false
+        type: string
+        default: .governanca/config.yml
+      mode:
+        description: Modo solicitado para a execução
+        required: false
+        type: string
+        default: diagnostico
+      source_ref:
+        description: Ref da GOVERNANCA a usar (preferir SHA imutável em produção)
+        required: false
+        type: string
+        default: main
+    outputs:
+      report_status:
+        description: Estado conservador do relatório
+        value: ${{ jobs.diagnose.outputs.report_status }}
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    outputs:
+      report_status: ${{ steps.report.outputs.status }}
+    steps:
+      - name: Obter repositório chamador
+        uses: actions/checkout@v4
+      - name: Obter fonte oficial GOVERNANCA
+        uses: actions/checkout@v4
+        with:
+          repository: carlos-andrade/GOVERNANCA
+          ref: ${{ inputs.source_ref }}
+          path: .governanca-framework-source
+          persist-credentials: false
+      - name: Registar commit exato da fonte oficial
+        id: source
+        run: echo "commit=$(git -C .governanca-framework-source rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar dependências
+        run: python -m pip install --disable-pip-version-check jsonschema PyYAML
+      - name: Executar diagnóstico sem escrita
+        id: report
+        env:
+          REQUESTED_MODE: ${{ inputs.mode }}
+          CONFIG_PATH: ${{ inputs.config_path }}
+          GOVERNANCA_SOURCE_COMMIT: ${{ steps.source.outputs.commit }}
+        run: |
+          set +e
+          python .governanca-framework-source/automation/governance_engine.py \
+            --root "$GITHUB_WORKSPACE" \
+            --config "$GITHUB_WORKSPACE/$CONFIG_PATH" \
+            --schema "$GITHUB_WORKSPACE/.governanca-framework-source/schemas/governanca-config.schema.json" \
+            --catalog "$GITHUB_WORKSPACE/.governanca-framework-source/catalogs/governance-profile-catalog.json" \
+            --mode "$REQUESTED_MODE" > governance-integration-report.json
+          rc=$?
+          set -e
+          python -m json.tool governance-integration-report.json > /dev/null
+          status="$(python -c 'import json; print(json.load(open("governance-integration-report.json", encoding="utf-8")).get("status", "NAO_CONFORME"))')"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "Engine exit code: $rc; report status: $status"
+      - name: Publicar relatório de diagnóstico
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: governance-integration-report
+          path: governance-integration-report.json
+          if-no-files-found: error
+          retention-days: 90

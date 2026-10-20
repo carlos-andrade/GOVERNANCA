@@ -49,5 +49,32 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     sync.load_registry()
 
+
+    def test_credencial_ausente_produz_erro_estruturado(self):
+        with patch.object(sync, "load_registry", return_value={
+            "repositories": [], "destination_root": ".governanca/upstream"
+        }), patch.object(sync, "discover_files", return_value=["CONSTITUICAO.md"]), \
+             patch.dict("os.environ", {"GH_TOKEN": "", "GITHUB_TOKEN": ""}), patch("sys.argv", ["test_propagate_governance.py"]):
+            with patch("builtins.print") as output:
+                code = sync.main()
+            self.assertEqual(code, 2)
+            payload = json.loads(output.call_args.args[0])
+            self.assertEqual(payload["code"], "TOKEN_MISSING")
+
+    def test_credencial_invalida_produz_erro_estruturado_sem_expor_token(self):
+        with patch.object(sync, "load_registry", return_value={
+            "repositories": [], "destination_root": ".governanca/upstream"
+        }), patch.object(sync, "discover_files", return_value=["CONSTITUICAO.md"]), \
+             patch.dict("os.environ", {"GH_TOKEN": "fake-test-token", "GITHUB_TOKEN": ""}), \
+             patch("sys.argv", ["test_propagate_governance.py"]), patch.object(sync, "run", return_value=type("Result", (), {
+                 "returncode": 1, "stdout": "", "stderr": "token fake-test-token rejected"
+             })()):
+            with patch("builtins.print") as output:
+                code = sync.main()
+            self.assertEqual(code, 2)
+            payload = json.loads(output.call_args.args[0])
+            self.assertEqual(payload["code"], "TOKEN_REJECTED")
+            self.assertNotIn("fake-test-token", payload["detail"])
+
 if __name__ == "__main__":
     unittest.main()

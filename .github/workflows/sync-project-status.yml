@@ -8,6 +8,8 @@ on:
       - "automation/sync_project_status.py"
       - ".github/workflows/sync-project-status.yml"
       - "tests/test_sync_project_status.py"
+      - "automation/governance_engine.py"
+      - "tests/test_governance_engine.py"
   workflow_dispatch:
 
 permissions:
@@ -30,6 +32,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Instalar dependências de validação dos testes
+        run: python -m pip install --disable-pip-version-check jsonschema PyYAML
 
       - name: Executar testes automatizados
         run: python -m unittest discover -s tests -v

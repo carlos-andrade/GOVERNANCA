@@ -21,7 +21,16 @@ REQUIRED_ROOTS = {
 }
 
 def run(args, cwd=None, check=True):
+    """Execute a subprocess and capture output for safe reporting."""
     return subprocess.run(args, cwd=cwd, text=True, capture_output=True, check=check)
+
+def safe_detail(result):
+    """Redact credentials before including subprocess diagnostics in reports."""
+    detail = (result.stderr or result.stdout or "").strip()
+    for secret in (os.getenv("GH_TOKEN"), os.getenv("GITHUB_TOKEN")):
+        if secret:
+            detail = detail.replace(secret, "[REDACTED]")
+    return detail[:1500]
 
 def load_registry():
     data = json.loads(REGISTRY.read_text(encoding="utf-8"))
@@ -67,15 +76,21 @@ def discover_files(data):
 def publish_to_repo(name, files, destination_root, source_sha, dry_run):
     with tempfile.TemporaryDirectory(prefix="governanca-sync-") as tmp:
         repo = Path(tmp) / "consumer"
-        clone = run(["gh", "repo", "clone", name, str(repo)], check=False)
+        clone = run(["gh", "repo", "clone", name, str(repo), "--", "--filter=blob:none", "--no-checkout"], check=False)
         if clone.returncode:
-            return {"repository": name, "status": "ERROR", "detail": (clone.stderr or clone.stdout).strip()}
+            return {"repository": name, "status": "ERROR", "stage": "clone", "detail": safe_detail(clone)}
         head = run(["git", "symbolic-ref", "refs/remotes/origin/HEAD"], cwd=repo, check=False)
         base = head.stdout.strip().split("/")[-1] if head.returncode == 0 else "main"
+        sparse_init = run(["git", "sparse-checkout", "init", "--cone"], cwd=repo, check=False)
+        if sparse_init.returncode:
+            return {"repository": name, "status": "ERROR", "stage": "sparse_checkout_init", "detail": safe_detail(sparse_init)}
+        sparse_set = run(["git", "sparse-checkout", "set", destination_root], cwd=repo, check=False)
+        if sparse_set.returncode:
+            return {"repository": name, "status": "ERROR", "stage": "sparse_checkout_set", "detail": safe_detail(sparse_set)}
         for args in [("checkout", base), ("pull", "--ff-only", "origin", base), ("checkout", "-B", BRANCH, base)]:
             step = run(["git", *args], cwd=repo, check=False)
             if step.returncode:
-                return {"repository": name, "status": "ERROR", "detail": (step.stderr or step.stdout).strip()}
+                return {"repository": name, "status": "ERROR", "stage": "git_checkout", "detail": safe_detail(step)}
         destination = repo / destination_root
         if destination.exists():
             shutil.rmtree(destination)
@@ -114,10 +129,10 @@ def publish_to_repo(name, files, destination_root, source_sha, dry_run):
         run(["git", "commit", "-m", "chore(governanca): atualizar espelho de regras canónicas"], cwd=repo)
         pushed = run(["git", "push", "--force", "origin", "HEAD:refs/heads/" + BRANCH], cwd=repo, check=False)
         if pushed.returncode:
-            return {"repository": name, "status": "ERROR", "detail": (pushed.stderr or pushed.stdout).strip()}
+            return {"repository": name, "status": "ERROR", "stage": "git_push", "detail": safe_detail(pushed)}
         listed = run(["gh", "pr", "list", "--repo", name, "--head", BRANCH, "--state", "open", "--json", "url", "--limit", "1"], check=False)
         if listed.returncode:
-            return {"repository": name, "status": "ERROR", "detail": (listed.stderr or listed.stdout).strip()}
+            return {"repository": name, "status": "ERROR", "stage": "list_prs", "detail": safe_detail(listed)}
         prs = json.loads(listed.stdout or "[]")
         if prs:
             return {"repository": name, "status": "PR_UPDATED", "url": prs[0]["url"]}
@@ -131,7 +146,7 @@ def publish_to_repo(name, files, destination_root, source_sha, dry_run):
         created = run(["gh", "pr", "create", "--repo", name, "--base", base, "--head", BRANCH,
                        "--title", "chore(governanca): sincronizar regras canónicas", "--body", body], check=False)
         if created.returncode:
-            return {"repository": name, "status": "ERROR", "detail": (created.stderr or created.stdout).strip()}
+            return {"repository": name, "status": "ERROR", "stage": "create_pr", "detail": safe_detail(created)}
         return {"repository": name, "status": "PR_CREATED", "url": created.stdout.strip()}
 
 def main():
@@ -145,14 +160,30 @@ def main():
     except Exception as exc:
         print(json.dumps({"status": "FAIL", "error": str(exc)}, ensure_ascii=False))
         return 2
-    if not (os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")):
-        print("GH_TOKEN/GITHUB_TOKEN obrigatório", file=sys.stderr)
+    token = os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")
+    if not token:
+        print(json.dumps({
+            "status": "FAIL", "stage": "authentication", "code": "TOKEN_MISSING",
+            "error": "GH_TOKEN/GITHUB_TOKEN obrigatório; configure GOVERNANCA_SYNC_TOKEN no repositório de origem."
+        }, ensure_ascii=False))
         return 2
-    if run(["gh", "auth", "status"], check=False).returncode:
-        print("Autenticação GitHub CLI inválida", file=sys.stderr)
+    # Validate the token supplied by Actions itself, not only stored CLI login state.
+    auth = run(["gh", "api", "user", "--jq", ".login"], check=False)
+    identity = (auth.stdout or "").strip()
+    if auth.returncode or not identity:
+        print(json.dumps({
+            "status": "FAIL", "stage": "authentication", "code": "TOKEN_REJECTED",
+            "error": "O GitHub não aceitou GH_TOKEN/GITHUB_TOKEN ou não conseguiu validar a identidade. Confirme validade, expiração, revogação e acesso da credencial.",
+            "detail": safe_detail(auth)
+        }, ensure_ascii=False))
         return 2
-    if run(["gh", "auth", "setup-git"], check=False).returncode:
-        print("Não foi possível configurar autenticação Git para clone/push", file=sys.stderr)
+    setup = run(["gh", "auth", "setup-git"], check=False)
+    if setup.returncode:
+        print(json.dumps({
+            "status": "FAIL", "stage": "authentication", "code": "GIT_AUTH_SETUP_FAILED",
+            "error": "Não foi possível configurar autenticação Git para clone/push.",
+            "detail": safe_detail(setup)
+        }, ensure_ascii=False))
         return 2
     targets = [item for item in data["repositories"] if item["enabled"]]
     if args.repo:

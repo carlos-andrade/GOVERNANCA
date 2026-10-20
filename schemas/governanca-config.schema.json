@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/carlos-andrade/GOVERNANCA/blob/main/schemas/governanca-config.schema.json",
+  "title": "Configuração do Governance Integration Framework",
+  "description": "Contrato declarativo mínimo para invocar a GOVERNANCA num repositório consumidor.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["governanca"],
+  "properties": {
+    "governanca": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fonte",
+        "modo",
+        "perfil",
+        "exigir_pull_request",
+        "preservar_ficheiros_existentes",
+        "auditoria"
+      ],
+      "properties": {
+        "fonte": {
+          "type": "string",
+          "const": "carlos-andrade/GOVERNANCA",
+          "description": "Repositório oficial e único de regras."
+        },
+        "modo": {
+          "type": "string",
+          "enum": ["diagnostico", "aplicar", "auditar"],
+          "default": "diagnostico",
+          "description": "diagnostico é somente leitura; aplicar propõe alterações; auditar verifica evidências."
+        },
+        "perfil": {
+          "type": "string",
+          "enum": [
+            "automatico",
+            "generico",
+            "dados",
+            "trading",
+            "aplicacao",
+            "documentacao",
+            "turismo",
+            "watchdog"
+          ],
+          "default": "automatico",
+          "description": "Perfil de requisitos aplicáveis ao repositório."
+        },
+        "exigir_pull_request": {
+          "type": "boolean",
+          "const": true,
+          "description": "As alterações devem ser submetidas por Pull Request; merge automático não é permitido por esta configuração."
+        },
+        "preservar_ficheiros_existentes": {
+          "type": "boolean",
+          "const": true,
+          "description": "Não substituir ficheiros do projeto sem proposta específica e revisão."
+        },
+        "auditoria": {
+          "type": "string",
+          "enum": ["obrigatoria"],
+          "const": "obrigatoria",
+          "description": "A geração de evidências de auditoria é obrigatória."
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Opcional: tag, branch ou commit oficial fixado para uma execução reproduzível."
+        }
+      }
+    }
+  }
+}
