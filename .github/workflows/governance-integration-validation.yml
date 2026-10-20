@@ -27,6 +27,9 @@ on:
       - "automation/__init__.py"
       - "tests/test_governance_config_schema.py"
       - "tests/test_governance_engine.py"
+      - "automation/propagar_governanca.py"
+      - "tests/test_propagate_governance.py"
+      - ".github/workflows/propagar-regras-governanca.yml"
       - ".github/workflows/governance-integration-validation.yml"
   workflow_dispatch:
 
