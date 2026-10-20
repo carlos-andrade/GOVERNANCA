@@ -112,9 +112,15 @@ def evaluate_profile(root: Path, profile: str, catalog_path: Path) -> tuple[list
         raise GovernanceError(f"Perfil sem definição no catálogo: {profile}")
     checks: list[dict[str, Any]] = []
     missing: list[str] = []
+    root_resolved = root.resolve()
     for requirement in definition["requirements"]:
         target = root / requirement["path"]
-        passed = target.is_file()
+        try:
+            target_resolved = target.resolve(strict=False)
+            target_resolved.relative_to(root_resolved)
+        except (OSError, ValueError):
+            raise GovernanceError(f"Caminho de requisito sai da raiz do repositório: {profile}/{requirement['id']}")
+        passed = target_resolved.is_file()
         check = {
             "id": requirement["id"],
             "result": "PASS" if passed else "FAIL",
@@ -205,6 +211,12 @@ def build_report(
         report["blockers"].append(str(exc))
         return report
     report["checks"].extend(profile_checks)
+    if not profile_checks:
+        report["status"] = "DESCONHECIDO"
+        report["blockers"].append(
+            f"O perfil '{profile}' não tem requisitos executáveis definidos; não é possível avaliar conformidade."
+        )
+        return report
     if not source_ok or any(item["result"] == "FAIL" for item in profile_checks):
         report["status"] = "NAO_CONFORME"
         if not source_ok:
