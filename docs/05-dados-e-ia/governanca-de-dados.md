@@ -7,11 +7,11 @@
 | **Tipo documental** | POLITICA |
 | **Fase** | Dados e IA |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 4db9e4fe1f09eb6798743206a476ba9bc9c6c116c7e7ddb728edcf9ed080dc96 |
+| **Versão** | 1.1.0 |
+| **SHA-256 (conteúdo canónico)** | 4417d92f0d807c6b9d7b6daef023f363e4e073aca593e00553f98fb997e41308 |
 | **Commit de referência (versão anterior)** | N/A — referência de commit anterior não localizada nesta execução |
 | **Data de criação** | N/A — data histórica de criação não verificada |
-| **Data de atualização** | 2026-10-13 |
+| **Data de atualização** | 2026-10-20 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
 | **Aprovador** | Pendente de aprovação formal deste documento |
 | **Origem** | Conteúdo existente em `docs/05-dados-e-ia/governanca-de-dados.md`; corpo substantivo preservado |
