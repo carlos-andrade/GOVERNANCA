@@ -12,6 +12,9 @@ on:
       - "automation/__init__.py"
       - "tests/test_governance_config_schema.py"
       - "tests/test_governance_engine.py"
+      - "automation/propagar_governanca.py"
+      - "tests/test_propagate_governance.py"
+      - ".github/workflows/propagar-regras-governanca.yml"
       - ".github/workflows/governance-integration-validation.yml"
       - ".github/workflows/governance-integration-reusable.yml"
   pull_request:
@@ -49,7 +52,7 @@ jobs:
       - name: Validar sintaxe JSON do esquema
         run: python -m json.tool schemas/governanca-config.schema.json > /dev/null
       - name: Executar testes F1/F2
-        run: python -m unittest discover -s tests -p "test_governance_config_schema.py" -v && python -m unittest discover -s tests -p "test_governance_engine.py" -v
+        run: python -m unittest discover -s tests -p "test_governance_config_schema.py" -v && python -m unittest discover -s tests -p "test_governance_engine.py" -v && python -m unittest discover -s tests -p "test_propagate_governance.py" -v
       - name: Smoke test — relatório JSON
         run: |
           python automation/governance_engine.py --root . > /tmp/governance-report.json || test "$?" -eq 2
