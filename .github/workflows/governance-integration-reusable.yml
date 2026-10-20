@@ -62,6 +62,7 @@ jobs:
             --root "$GITHUB_WORKSPACE" \
             --config "$GITHUB_WORKSPACE/$CONFIG_PATH" \
             --schema "$GITHUB_WORKSPACE/.governanca-framework-source/schemas/governanca-config.schema.json" \
+            --catalog "$GITHUB_WORKSPACE/.governanca-framework-source/catalogs/governance-profile-catalog.json" \
             --mode "$REQUESTED_MODE" > governance-integration-report.json
           rc=$?
           set -e
@@ -69,8 +70,6 @@ jobs:
           status="$(python -c 'import json; print(json.load(open("governance-integration-report.json", encoding="utf-8")).get("status", "NAO_CONFORME"))')"
           echo "status=$status" >> "$GITHUB_OUTPUT"
           echo "Engine exit code: $rc; report status: $status"
-          # Report generation is the purpose of this workflow. The report status
-          # remains explicit and is not converted into a compliance assertion.
       - name: Publicar relatório de diagnóstico
         if: always()
         uses: actions/upload-artifact@v4
