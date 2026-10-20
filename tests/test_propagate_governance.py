@@ -54,7 +54,7 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
         with patch.object(sync, "load_registry", return_value={
             "repositories": [], "destination_root": ".governanca/upstream"
         }), patch.object(sync, "discover_files", return_value=["CONSTITUICAO.md"]), \
-             patch.dict("os.environ", {"GH_TOKEN": "", "GITHUB_TOKEN": ""}):
+             patch.dict("os.environ", {"GH_TOKEN": "", "GITHUB_TOKEN": ""}), patch("sys.argv", ["test_propagate_governance.py"]):
             with patch("builtins.print") as output:
                 code = sync.main()
             self.assertEqual(code, 2)
@@ -66,7 +66,7 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
             "repositories": [], "destination_root": ".governanca/upstream"
         }), patch.object(sync, "discover_files", return_value=["CONSTITUICAO.md"]), \
              patch.dict("os.environ", {"GH_TOKEN": "fake-test-token", "GITHUB_TOKEN": ""}), \
-             patch.object(sync, "run", return_value=type("Result", (), {
+             patch("sys.argv", ["test_propagate_governance.py"]), patch.object(sync, "run", return_value=type("Result", (), {
                  "returncode": 1, "stdout": "", "stderr": "token fake-test-token rejected"
              })()):
             with patch("builtins.print") as output:
