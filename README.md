@@ -8,11 +8,11 @@
 | **Tipo documental** | README |
 | **Fase** | Entrada e orientação do repositório |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.1.0 |
+| **Versão** | 1.2.0 |
 | **SHA-256 (conteúdo canónico)** | ca192c0d3d805ef104a4a6c8be9e33318e45cfdd4d1b8f2d957d430bd9f0ff74 |
-| **Commit de referência (versão anterior)** | [62a2354c6372417a36c4df256fff267e691d8495](https://github.com/carlos-andrade/GOVERNANCA/commit/62a2354c6372417a36c4df256fff267e691d8495) |
+| **Commit de referência (versão anterior)** | [fc1ebf06323d65c919f9a7dd2c741f37a49560e7](https://github.com/carlos-andrade/GOVERNANCA/commit/fc1ebf06323d65c919f9a7dd2c741f37a49560e7) |
 | **Data de criação** | N/A — data histórica de criação não verificada |
-| **Data de atualização** | 2026-10-17 |
+| **Data de atualização** | 2026-10-21 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
 | **Aprovador** | Pendente de aprovação formal do README |
 | **Autoridade superior** | [CONSTITUICAO.md](CONSTITUICAO.md) e [Norma de cabeçalho](CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
