@@ -62,9 +62,9 @@ A distribuição das regras canónicas é orquestrada por [`propagar-regras-gove
 
 ## Governance Integration Framework
 
-A arquitetura foi formalmente aprovada e integrada através da decisão [DEC-GOV-INT-001 — Governance Integration Framework](docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md), commit [`7003bd9`](https://github.com/carlos-andrade/GOVERNANCA/commit/7003bd9848983c211aca588e68e5281a5babc39a). O roadmap aprovado contém seis fases (F1–F6), critérios de aceitação, controlo por Pull Request, preservação dos ficheiros locais, auditoria e validação individual por repositório.
+A arquitetura foi formalmente aprovada e integrada através da decisão [DEC-GOV-INT-001 — Governance Integration Framework](docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md), commit [`7003bd9`](https://github.com/carlos-andrade/GOVERNANCA/commit/7003bd9848983c211aca588e68e5281a5babc39a). A [especificação F1](docs/01-governanca/ESPECIFICACAO-GOVERNANCE-INTEGRATION-FRAMEWORK-001.md), o [JSON Schema](schemas/governanca-config.schema.json), os testes de contrato e o [workflow de validação](.github/workflows/governance-integration-validation.yml) foram integrados após CI aprovada ([run 39459837269](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39459837269)).
 
-**Estado:** arquitetura integrada; implementação do framework ainda pendente. A distribuição transversal existente continua sem validação operacional enquanto não forem confirmados `GOVERNANCA_SYNC_TOKEN`, dry-run autenticado e Pull Requests reais nos destinos.
+**Estado:** arquitetura e F1 integradas; F2–F6 ainda pendentes. A distribuição transversal existente continua sem validação operacional enquanto não forem confirmados `GOVERNANCA_SYNC_TOKEN`, dry-run autenticado e Pull Requests reais nos destinos.
 
 ## Começar por aqui
 
