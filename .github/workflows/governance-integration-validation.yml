@@ -1,0 +1,43 @@
+name: Governance Integration — validação F1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "schemas/governanca-config.schema.json"
+      - "docs/01-governanca/ESPECIFICACAO-GOVERNANCE-INTEGRATION-FRAMEWORK-001.md"
+      - "docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md"
+      - "tests/test_governance_config_schema.py"
+      - ".github/workflows/governance-integration-validation.yml"
+  pull_request:
+    paths:
+      - "schemas/governanca-config.schema.json"
+      - "docs/01-governanca/ESPECIFICACAO-GOVERNANCE-INTEGRATION-FRAMEWORK-001.md"
+      - "docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md"
+      - "tests/test_governance_config_schema.py"
+      - ".github/workflows/governance-integration-validation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: governance-integration-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-f1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar validador JSON Schema
+        run: python -m pip install --disable-pip-version-check jsonschema
+      - name: Validar sintaxe JSON do esquema
+        run: python -m json.tool schemas/governanca-config.schema.json > /dev/null
+      - name: Executar testes do contrato F1
+        run: python -m unittest discover -s tests -p "test_governance_config_schema.py" -v
