@@ -3,7 +3,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from automation.governance_engine import build_report, main
+import yaml
+
+from automation.governance_engine import GovernanceError, build_report
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +32,7 @@ class GovernanceEngineTests(unittest.TestCase):
             }
         }
         (root / ".governanca" / "config.yml").write_text(
-            __import__("yaml").safe_dump(config, sort_keys=False), encoding="utf-8"
+            yaml.safe_dump(config, sort_keys=False), encoding="utf-8"
         )
         return temp, root
 
@@ -45,12 +47,12 @@ class GovernanceEngineTests(unittest.TestCase):
     def test_apply_mode_fails_closed_without_writes(self):
         temp, root = self.make_target("aplicar")
         with temp:
-            before = (root / ".governanca/config.yml").read_bytes()
-            report = build_report(root, root / ".governanca/config.yml",
-                                  root / "schemas/governanca-config.schema.json")
+            path = root / ".governanca/config.yml"
+            before = path.read_bytes()
+            report = build_report(root, path, root / "schemas/governanca-config.schema.json")
             self.assertEqual(report["status"], "NAO_CONFORME")
             self.assertTrue(any("F3" in b for b in report["blockers"]))
-            self.assertEqual(before, (root / ".governanca/config.yml").read_bytes())
+            self.assertEqual(before, path.read_bytes())
 
     def test_missing_config_is_nonconformant(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -67,13 +69,46 @@ class GovernanceEngineTests(unittest.TestCase):
             self.assertEqual(report["status"], "NAO_CONFORME")
             self.assertTrue(any(c["result"] == "FAIL" for c in report["checks"]))
 
-    def test_cli_emits_json_and_returns_nonzero_for_unknown(self):
+    def test_malformed_yaml_fails_closed(self):
         temp, root = self.make_target()
         with temp:
-            # Directly test the engine's contract without changing process-global streams.
+            path = root / ".governanca/config.yml"
+            path.write_text("governanca: [unterminated", encoding="utf-8")
+            with self.assertRaises(GovernanceError):
+                build_report(root, path, root / "schemas/governanca-config.schema.json")
+
+    def test_invalid_schema_fails_closed(self):
+        temp, root = self.make_target()
+        with temp:
+            schema = root / "schemas/governanca-config.schema.json"
+            schema.write_text("{not json", encoding="utf-8")
+            with self.assertRaises(GovernanceError):
+                build_report(root, root / ".governanca/config.yml", schema)
+
+    def test_unknown_properties_and_secrets_are_rejected(self):
+        temp, root = self.make_target()
+        with temp:
+            path = root / ".governanca/config.yml"
+            config = yaml.safe_load(path.read_text(encoding="utf-8"))
+            config["governanca"]["token"] = "never-store-secrets"
+            path.write_text(yaml.safe_dump(config), encoding="utf-8")
+            report = build_report(root, path, root / "schemas/governanca-config.schema.json")
+            self.assertEqual(report["status"], "NAO_CONFORME")
+
+    def test_report_has_config_and_schema_hashes(self):
+        temp, root = self.make_target()
+        with temp:
             report = build_report(root, root / ".governanca/config.yml",
                                   root / "schemas/governanca-config.schema.json")
-            self.assertEqual(json.loads(json.dumps(report))["status"], "DESCONHECIDO")
+            self.assertEqual(len(report["integrity"]["config_sha256"]), 64)
+            self.assertEqual(len(report["integrity"]["schema_sha256"]), 64)
+
+    def test_source_commit_is_unknown_without_explicit_source_evidence(self):
+        temp, root = self.make_target()
+        with temp:
+            report = build_report(root, root / ".governanca/config.yml",
+                                  root / "schemas/governanca-config.schema.json")
+            self.assertIsNone(report["execution"]["source_commit"])
 
 
 if __name__ == "__main__":
