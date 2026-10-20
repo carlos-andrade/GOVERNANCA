@@ -122,12 +122,12 @@ class StatusSyncTests(unittest.TestCase):
             root = Path(tmp)
             readme = root / "README.md"
             text = (
-                "# Documento\\n"
-                "| Campo | Valor |\\n"
-                "|---|---|\\n"
-                "| **SHA-256 (conteúdo canónico)** | stale |\\n"
-                "| **Commit de referência (versão anterior)** | abc |\\n"
-                "\\nCorpo original.\\n"
+                "# Documento\n"
+                "| Campo | Valor |\n"
+                "|---|---|\n"
+                "| **SHA-256 (conteúdo canónico)** | stale |\n"
+                "| **Commit de referência (versão anterior)** | abc |\n"
+                "\nCorpo original.\n"
             )
             readme.write_text(text, encoding="utf-8")
             updated = module.update_canonical_hash(text)
