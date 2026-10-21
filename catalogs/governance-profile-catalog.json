@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "catalog_id": "GOVERNANCA-PROFILE-CATALOG",
-  "catalog_version": "1.1.0",
-  "scope": "Baseline estrutural de integração para todos os perfis; não substitui requisitos funcionais/semânticos específicos do domínio nem certifica conformidade global.",
+  "catalog_version": "1.2.0",
+  "scope": "Baseline estrutural e semântico inicial; não substitui requisitos funcionais específicos de cada domínio nem certifica conformidade global.",
   "profiles": {
     "automatico": {
       "complete": false,
@@ -34,6 +34,20 @@
           "kind": "file_exists",
           "path": "README.md",
           "description": "O repositório deve apresentar uma descrição principal."
+        },
+        {
+          "id": "GOV-SEM-001",
+          "kind": "yaml_field_equals",
+          "path": ".governanca/config.yml",
+          "field": "governanca.fonte",
+          "value": "carlos-andrade/GOVERNANCA",
+          "description": "A configuração declara a fonte oficial de governança."
+        },
+        {
+          "id": "GOV-SEM-002",
+          "kind": "yaml_valid",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de integração é YAML sintaticamente válido."
         }
       ]
     },
@@ -69,6 +83,20 @@
           "kind": "file_exists",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O repositório deve declarar o workflow de diagnóstico da GOVERNANCA."
+        },
+        {
+          "id": "GOV-SEM-001",
+          "kind": "yaml_field_equals",
+          "path": ".governanca/config.yml",
+          "field": "governanca.fonte",
+          "value": "carlos-andrade/GOVERNANCA",
+          "description": "A configuração declara a fonte oficial de governança."
+        },
+        {
+          "id": "GOV-SEM-002",
+          "kind": "yaml_valid",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de integração é YAML sintaticamente válido."
         }
       ]
     },
@@ -92,6 +120,20 @@
           "kind": "file_exists",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        },
+        {
+          "id": "GOV-SEM-001",
+          "kind": "yaml_field_equals",
+          "path": ".governanca/config.yml",
+          "field": "governanca.fonte",
+          "value": "carlos-andrade/GOVERNANCA",
+          "description": "A configuração declara a fonte oficial de governança."
+        },
+        {
+          "id": "GOV-SEM-002",
+          "kind": "yaml_valid",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de integração é YAML sintaticamente válido."
         }
       ]
     },
@@ -115,6 +157,20 @@
           "kind": "file_exists",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        },
+        {
+          "id": "GOV-SEM-001",
+          "kind": "yaml_field_equals",
+          "path": ".governanca/config.yml",
+          "field": "governanca.fonte",
+          "value": "carlos-andrade/GOVERNANCA",
+          "description": "A configuração declara a fonte oficial de governança."
+        },
+        {
+          "id": "GOV-SEM-002",
+          "kind": "yaml_valid",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de integração é YAML sintaticamente válido."
         }
       ]
     },
@@ -138,6 +194,20 @@
           "kind": "file_exists",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        },
+        {
+          "id": "GOV-SEM-001",
+          "kind": "yaml_field_equals",
+          "path": ".governanca/config.yml",
+          "field": "governanca.fonte",
+          "value": "carlos-andrade/GOVERNANCA",
+          "description": "A configuração declara a fonte oficial de governança."
+        },
+        {
+          "id": "GOV-SEM-002",
+          "kind": "yaml_valid",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de integração é YAML sintaticamente válido."
         }
       ]
     },
@@ -161,6 +231,20 @@
           "kind": "file_exists",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        },
+        {
+          "id": "GOV-SEM-001",
+          "kind": "yaml_field_equals",
+          "path": ".governanca/config.yml",
+          "field": "governanca.fonte",
+          "value": "carlos-andrade/GOVERNANCA",
+          "description": "A configuração declara a fonte oficial de governança."
+        },
+        {
+          "id": "GOV-SEM-002",
+          "kind": "yaml_valid",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de integração é YAML sintaticamente válido."
         }
       ]
     },
@@ -184,6 +268,20 @@
           "kind": "file_exists",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de diagnóstico deve estar declarado no repositório consumidor."
+        },
+        {
+          "id": "GOV-SEM-001",
+          "kind": "yaml_field_equals",
+          "path": ".governanca/config.yml",
+          "field": "governanca.fonte",
+          "value": "carlos-andrade/GOVERNANCA",
+          "description": "A configuração declara a fonte oficial de governança."
+        },
+        {
+          "id": "GOV-SEM-002",
+          "kind": "yaml_valid",
+          "path": ".github/workflows/governance-integration.yml",
+          "description": "O workflow de integração é YAML sintaticamente válido."
         }
       ]
     }
