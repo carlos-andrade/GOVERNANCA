@@ -84,9 +84,9 @@ Os três workflows publicadores agora partilham `bloomberg-mail-005n-publish-${{
 
 Os testes validam parse YAML, grupo partilhado, `cancel-in-progress: false`, idempotência de ficheiro sintético e recuperação de `non-fast-forward` por rebase num repositório Git temporário. Não invocam ingestão, APIs externas, segredos ou dados de produção. **Não** simulam o scheduler real do GitHub Actions nem garantem FIFO; esses limites permanecem explícitos.
 
-### C4 — TURISTURIS / tabela-mestra — ALTA
+### C4 — TURISTURIS / tabela-mestra — MITIGAÇÃO INTEGRADA; teste pendente
 
-O workflow `turisturis-gerar-tabela-mestra-rnal-peso-da-regua.yml` publica CSV/JSON por push e não tem grupo de concorrência. Definir grupo de publicação da tabela-mestra e validar interação com os workflows que geram/normalizam a mesma saída.
+A PR [TURISTURIS #87](https://github.com/carlos-andrade/TURISTURIS/pull/87) foi integrada no commit `c0dae020358b8c7156e2b9e417c83f19dc5bc3e6`. O workflow agora usa `turisturis-rnal-master-publish-${{ github.ref }}`, `cancel-in-progress: false`, e repetição limitada de `fetch + rebase + push` sem force push. A alteração foi revista estaticamente; o workflow de produção não foi executado para evitar regeneração/publicação de dados apenas para teste. C4 está mitigado no código, mas requer verificação CI/execução controlada antes de fechar o gate.
 
 ### C5 — Semântica de cancelamento — ALTA
 
