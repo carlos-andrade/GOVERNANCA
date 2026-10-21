@@ -47,7 +47,7 @@
     },
     {
       "name": "carlos-andrade/LICITACAO",
-      "enabled": false,
+      "enabled": true,
       "owner": "Carlos Andrade"
     }
   ],
@@ -56,7 +56,8 @@
     "Os ficheiros são publicados em .governanca/upstream/ para não sobrescrever documentos locais.",
     "A publicação é proposta por Pull Request; nunca faz merge automático.",
     "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório.",
-    "LICITACAO permanece disabled até aprovação individual da adoção e validação operacional de distribuição por PR."
+    "LICITACAO permanece disabled até aprovação individual da adoção e validação operacional de distribuição por PR.",
+    "LICITACAO: enabled=true is proposed in a draft activation PR only; do not merge until LICITACAO PR #24 is merged, its post-merge validation confirms all 79 upstream Git blob SHA, and the individual adoption decision is recorded. WATCHDOG controls still UNKNOWN must remain explicit; enabled indicates distribution scope, not operational certification."
   ],
   "published_roots": [
     "CONSTITUICAO.md",
