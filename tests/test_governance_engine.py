@@ -218,7 +218,7 @@ class GovernanceEngineTests(unittest.TestCase):
         temp, root = self.make_target()
         with temp:
             probe = root / "semantic-probe.yml"
-            probe.write_text("policy:\\n  source: someone/else\\n", encoding="utf-8")
+            probe.write_text("policy:\n  source: someone/else\n", encoding="utf-8")
             catalog_path = root / "catalogs/governance-profile-catalog.json"
             catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
             catalog["profiles"]["generico"]["requirements"].append({
