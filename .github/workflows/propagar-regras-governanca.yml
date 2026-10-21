@@ -27,6 +27,11 @@ on:
         description: "Repositório específico (opcional, owner/name)"
         required: false
         type: string
+      allow_disabled_test:
+        description: "Teste controlado de LICITACAO ainda desativado; usar apenas com repository= c arlos-andrade/LICITACAO"
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -68,26 +73,22 @@ jobs:
         run: |
           set +e
           if [ -z "$GH_TOKEN" ]; then
-            printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_MISSING","error":"Secret GOVERNANCA_SYNC_TOKEN não configurado."}' > governanca-propagacao.json
+            printf '%s\\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_MISSING","error":"Secret GOVERNANCA_SYNC_TOKEN não configurado."}' > governanca-propagacao.json
             echo "::error::O secret GOVERNANCA_SYNC_TOKEN está ausente. Configure-o em Settings > Secrets and variables > Actions."
             exit 1
           fi
 
-          # Validate the actual environment token with an authenticated API request.
-          # This proves that the GH_TOKEN injected by Actions is accepted by GitHub.
-          set +e
           identity="$(gh api user --jq .login 2>/dev/null)"
           auth_rc=$?
           set -e
           if [ "$auth_rc" -ne 0 ] || [ -z "$identity" ]; then
-            printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_REJECTED","error":"O GitHub não aceitou GOVERNANCA_SYNC_TOKEN ou não conseguiu validar a identidade. Verifique validade, expiração, revogação e acesso do token."}' > governanca-propagacao.json
+            printf '%s\\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_REJECTED","error":"O GitHub não aceitou GOVERNANCA_SYNC_TOKEN ou não conseguiu validar a identidade. Verifique validade, expiração, revogação e acesso do token."}' > governanca-propagacao.json
             echo "::error::O GitHub não aceitou GOVERNANCA_SYNC_TOKEN. Substitua o secret por um token ativo e execute novamente em dry-run."
             echo "::notice::Nunca coloque o token em logs ou mensagens."
             exit 1
           fi
 
-          # Authentication to the source repo alone does not prove consumer write permissions.
-          printf '{"status":"PASS","stage":"authentication","identity":"%s","note":"dry-run verifies authentication and read access only; write permissions require a controlled PR execution after the dry-run."}\n' "$identity" > governanca-propagacao.json
+          printf '{"status":"PASS","stage":"authentication","identity":"%s","note":"dry-run verifica autenticação e leitura; a escrita exige execução controlada após simulação."}\\n' "$identity" > governanca-propagacao.json
           echo "Autenticação validada para a conta: $identity"
 
       - name: Distribuir por Pull Request
@@ -95,11 +96,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GOVERNANCA_SYNC_TOKEN }}
           DRY_RUN: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run }}
           TARGET_REPO: ${{ inputs.repository }}
+          ALLOW_DISABLED_TEST: ${{ inputs.allow_disabled_test }}
         run: |
           set -o pipefail
           args=()
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           if [ -n "$TARGET_REPO" ]; then args+=(--repo "$TARGET_REPO"); fi
+          if [ "$ALLOW_DISABLED_TEST" = "true" ]; then args+=(--allow-disabled-test); fi
           python automation/propagar_governanca.py "${args[@]}" | tee governanca-propagacao.json
 
       - name: Guardar relatório de distribuição
