@@ -39,9 +39,14 @@ Nenhum gate pode ser marcado como concluído sem evidência ligada ao commit/exe
 ## G2 — Ratificação normativa (P0)
 
 Documentos sob revisão identificados nesta auditoria:
-- Constituição: `CONSTITUICAO.md`, versão 1.0.1, estado PROPOSTA PARA REVISÃO.
-- Runbook WATCHDOG: `WATCHDOG/runbooks/operacao-de-alertas-e-sla.md`, versão 1.0.0, estado EM_REVISAO.
-- Roadmap WATCHDOG: `WATCHDOG/roadmap-de-implementacao.md`, versão 1.0.0, estado EM_REVISAO.
+
+| Documento | Versão | Estado atual | SHA-256 canónico publicado | Decisão |
+|---|---:|---|---|---|
+| `CONSTITUICAO.md` | 1.0.1 | PROPOSTA PARA REVISÃO | `fcdf39acc56d53b886815967080f0d183960e1ccbd2d0cca023181da9f80834d` | PENDENTE |
+| `WATCHDOG/runbooks/operacao-de-alertas-e-sla.md` | 1.0.0 | EM_REVISAO | `5b38c23d743b1254707c812e63e6d6a5b5bac8e2dacb95f5539afdc3f7cd230d` | PENDENTE |
+| `WATCHDOG/roadmap-de-implementacao.md` | 1.0.0 | EM_REVISAO | `2a5f3c53a20d7cec74e494e658a85c12980880fdd6748f2396998599ba0e7842` | PENDENTE |
+
+Esta é uma lista inicial dos documentos verificados, não uma declaração de que todas as políticas fundamentais foram inventariadas. Antes da ratificação, completar o inventário de políticas e confirmar que os hashes canónicos continuam a corresponder ao conteúdo exato submetido à decisão.
 
 - [ ] Fazer revisão de conflitos legais, contratuais e internos.
 - [ ] Congelar o conteúdo e calcular o hash canónico de cada versão candidata.
