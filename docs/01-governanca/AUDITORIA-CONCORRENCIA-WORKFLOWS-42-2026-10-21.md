@@ -112,7 +112,20 @@ A leitura dos runs recentes identificou falhas operacionais que não devem ser c
 - [Run 39590685070 — Certificação anual](https://github.com/carlos-andrade/B3/actions/runs/39590685070): **CANCELLED**.
 - [Run 39592151814 — Importação diária COTAHIST](https://github.com/carlos-andrade/B3/actions/runs/39592151814): **FAIL** no gate de autorização, em `test_cotahist_direct_file_allows_only_limited_internal_validation`, com `KeyError: 'operation_scope'`; o job de importação foi ignorado. O mesmo erro foi observado no [run 39592143030](https://github.com/carlos-andrade/B3/actions/runs/39592143030).
 
-Os runs de V1/V2/certificação foram disparados no contexto do mesmo commit `50fc8d12...`; os estados CANCELLED confirmam que é necessário examinar os detalhes de agendamento e as políticas de concorrência, mas **não bastam, isoladamente, para provar a causa exata do cancelamento**. `cancel-in-progress: false` protege a execução ativa contra substituição, mas não é uma prova de FIFO nem de que todas as execuções pendentes serão preservadas. Estes resultados não validam o scheduler e acrescentam bloqueios de execução a resolver antes de aceitar a publicação COTAHIST.
+Os runs de V1/V2/certificação foram disparados no contexto do mesmo commit `50fc8d12...`; os estados CANCELLED confirmam que é necessário examinar os detalhes de agendamento e as políticas de concorrência, mas **não bastam, isoladamente, para provar a causa exata do cancelamento**. `cancel-in-progress: false` protege a execução ativa contra substituição, mas não é uma prova de FIFO nem de que todas as execuções pendentes serão preservadas. Estes resultados acrescentam bloqueios de execução a resolver antes de aceitar a publicação COTAHIST.
+
+### Teste isolado do scheduler — evidência real 2026-10-21
+
+O harness sem permissões de escrita foi executado numa branch dedicada de teste, sem dados de produção nem publicação:
+
+- [Run 39594340734](https://github.com/carlos-andrade/B3/actions/runs/39594340734): início UTC `2026-10-21T11:45:43.190123905Z`; fim UTC `2026-10-21T11:46:08.252340858Z`; conclusão SUCCESS; [artefacto de logs](https://github.com/carlos-andrade/B3/actions/runs/39594340734/artifacts/12344070685).
+- [Run 39594370310](https://github.com/carlos-andrade/B3/actions/runs/39594370310): início UTC `2026-10-21T11:46:14.681605678Z`; fim UTC `2026-10-21T11:46:39.738394171Z`; conclusão SUCCESS; [artefacto de logs](https://github.com/carlos-andrade/B3/actions/runs/39594370310/artifacts/12344325246).
+
+Os intervalos não se sobrepõem; a segunda execução começou cerca de 6,43 segundos após o fim da primeira. Num ensaio separado com três eventos rápidos, [run 39594183327](https://github.com/carlos-andrade/B3/actions/runs/39594183327) terminou CANCELLED enquanto [39594177078](https://github.com/carlos-andrade/B3/actions/runs/39594177078) e [39594206007](https://github.com/carlos-andrade/B3/actions/runs/39594206007) terminaram SUCCESS. O teste confirma a exclusão mútua para duas execuções e também demonstra que execuções pendentes podem ser substituídas por eventos mais recentes; não prova FIFO nem preservação de todas as execuções.
+
+### Correções técnicas preparadas, ainda não integradas
+
+A branch `carlos-andrade/B3:fix/cotahist-gates-scheduler-harness-2026-10-21` contém alterações para: classificar o manifesto de 2026 como bloqueio de autorização (sem o desbloquear); testar que `--allow-blocked` não altera a decisão; criar o temporário no mesmo filesystem do destino; limitar o trigger push da importação diária a `main`; remover autorreferências de três publicadores; e acrescentar inventário estático e harness isolado. Estas alterações ainda não estão em `main`; não contar como correções integradas.
 
 ## 5. Limites e decisão
 
