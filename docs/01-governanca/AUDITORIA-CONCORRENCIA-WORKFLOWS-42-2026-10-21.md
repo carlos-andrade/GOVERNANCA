@@ -74,9 +74,9 @@ Os três workflows `classificar-bvbg028.yml`, `processar-inventario-bvbg028.yml`
 
 Isto comprova a execução de classificação/publicação e a configuração estática, mas **não** comprova serialização real do scheduler GitHub Actions sob disparos concorrentes, FIFO, nem recuperação de colisões entre estes workflows. Manter o gate dinâmico aberto.
 
-### C2 — B3 / escritores COTAHIST — ALTA
+### C2 — B3 / escritores COTAHIST — ALTA; PARCIAL
 
-Vários workflows têm grupos individuais e fazem commits/pushes em `main`. Grupos com nomes distintos não serializam entre si. Definir um grupo partilhado para todos os escritores que publicam no mesmo branch/recurso, mantendo grupos por ano apenas para dry-runs que não escrevem. Confirmar que o workflow de importação diária não é concorrente com materialização, normalização, manifestos e relatórios.
+A PR [B3 #19](https://github.com/carlos-andrade/B3/pull/19) propõe o grupo partilhado `b3-cotahist-main-publish-${{ github.ref }}` no workflow de certificação anual. Os outros escritores COTAHIST ainda não usam esse grupo, pelo que importação diária, normalização, materialização LFS, reconciliação de manifestos e geração de datasets podem continuar a competir. **C2 permanece ABERTO; a alteração parcial não é suficiente para fechar o gap.**
 
 ### C3 — BLOOMBERG_MAIL / normalização 005N — MITIGADO; scheduler real pendente
 
