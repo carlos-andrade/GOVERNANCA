@@ -4,7 +4,7 @@
 |---|---|
 | ID | GOV-CLOSEOUT-001 |
 | Estado | EM_EXECUCAO |
-| Versão | 1.0.1 |
+| Versão | 1.0.2 |
 | Data | 2026-10-21 |
 | Aprovador | Pendente de aprovação explícita |
 | Âmbito | P0 distribuição, GIF, ratificação normativa, WATCHDOG; P1 concorrência e adoção transversal |
@@ -112,7 +112,16 @@ Para cada repositório consumidor autorizado, registar: commit/ref, perfil, conf
 - O roadmap WATCHDOG declara pendente a supervisão externa independente e a adoção transversal.
 - A auditoria dos 42 workflows e a aceitação individual dos consumidores continuam por comprovar.
 
+## Evidência adicional — auditoria de 2026-10-21
+
+- Inventário estático de 42 workflows e respetivos SHAs publicado em [AUDITORIA-CONCORRENCIA-WORKFLOWS-42-2026-10-21.md](../docs/01-governanca/AUDITORIA-CONCORRENCIA-WORKFLOWS-42-2026-10-21.md). Foram identificados oito workflows com sinais de escrita/publicação sem grupo explícito e riscos de colisão entre escritores que usam grupos diferentes. O inventário é evidência estática; testes dinâmicos, correções por PR e recuperação continuam pendentes. Gate de concorrência permanece BLOQUEADO.
+- Matriz de adoção reconciliada em [MATRIZ-ADOPCAO-CONSUMIDORES-2026-10-21.md](../docs/01-governanca/MATRIZ-ADOPCAO-CONSUMIDORES-2026-10-21.md): 8 consumidores enabled, 0 adoções globais demonstradas, STOCKS limitado a piloto diagnóstico e LICITACAO disabled. Adoção transversal permanece PENDENTE/UNKNOWN por consumidor.
+- Runbook do piloto real de distribuição publicado em [EXECUCAO-CONTROLADA-DISTRIBUICAO.md](../docs/01-governanca/EXECUCAO-CONTROLADA-DISTRIBUICAO.md). A execução real ainda requer `workflow_dispatch` com `dry_run=false`, `repository=carlos-andrade/STOCKS`, `allow_disabled_test=false`, seguida de verificação da PR e idempotência.
+- O gate operacional [B3 issue #9](https://github.com/carlos-andrade/B3/issues/9) foi reaberto porque estava fechado sem evidência da checklist; os testes de heartbeat externo, alertas, ACK, escalonamento, canal alternativo, recuperação e aprovação dos limiares continuam pendentes.
+- As PRs documentais #26, #27 e #28 foram integradas em main; essas integrações corrigem documentação e consolidam inventários, mas não substituem a execução do piloto, correções de concorrência, aceitação operacional ou ratificação normativa.
+
 ## Histórico
 
 - 1.0.0 — 2026-10-21 — Consolidação dos critérios de aceitação e das dependências de fecho, sem promover estados não comprovados.
 - 1.0.1 — 2026-10-21 — Atualização das evidências CI F1/F2 e sincronização do painel após correção do teste semântico; gates de aceitação operacional e ratificação mantidos pendentes.
+- 1.0.2 — 2026-10-21 — Anexadas evidências do inventário estático dos 42 workflows, matriz de adoção reconciliada, runbook do piloto real e reabertura do gate WATCHDOG; nenhum gate foi promovido a PASS.
