@@ -30,7 +30,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 - **Estado global:** EM_EXECUCAO — finalização bloqueada por dependências críticas.
 - **Último estado scorecard publicado:** 80% comprovados, conforme `registry/status-do-projeto.json`; este roadmap não recalcula nem aumenta o percentual.
 - **Fonte de estado:** `registry/status-do-projeto.json`; o README e o SVG devem ser gerados pela automação existente.
-- **Bloqueios centrais conhecidos:** distribuição real por PR ainda não demonstrada; credencial de sincronização validada no dry-run, mas permissões de escrita e abertura de PR ainda não testadas; catálogo de perfis incompleto; adoção transversal pendente; aceitação operacional WATCHDOG incompleta; documentos fundacionais/políticas em revisão; a PR #4 está desatualizada e continua aberta apesar de LICITACAO estar `enabled: false` em `main`.
+- **Bloqueios centrais conhecidos:** distribuição real por PR ainda não demonstrada; credencial de sincronização validada no dry-run, mas permissões de escrita e abertura de PR ainda não testadas; catálogo de perfis incompleto; adoção transversal pendente; aceitação operacional WATCHDOG incompleta; documentos fundacionais/políticas em revisão; a PR #4 foi integrada em 2026-10-20 (commit `a212d6bf8e26c0b26b7035926a01d2300a1c76b3`) e LICITACAO permanece `enabled: false` em `main`.
 - **Regra fail-closed:** não habilitar distribuição nem declarar conformidade global sem provas adequadas.
 
 ## 3. Roadmap de gates
