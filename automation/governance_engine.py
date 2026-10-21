@@ -97,11 +97,21 @@ def validate_catalog(catalog: dict[str, Any]) -> None:
             if not isinstance(rid, str) or not rid or rid in seen:
                 raise GovernanceError(f"ID de requisito ausente/duplicado no perfil: {profile}")
             seen.add(rid)
-            if kind != "file_exists" or not isinstance(relative, str) or not relative:
+            supported_kinds = {"file_exists", "json_valid", "yaml_valid", "yaml_field_equals", "file_contains"}
+            if kind not in supported_kinds or not isinstance(relative, str) or not relative:
                 raise GovernanceError(f"Tipo/caminho de requisito não suportado: {profile}/{rid}")
             path = Path(relative)
             if path.is_absolute() or ".." in path.parts:
                 raise GovernanceError(f"Caminho de requisito inseguro: {profile}/{rid}")
+            if kind == "yaml_field_equals" and (
+                not isinstance(requirement.get("field"), str) or not requirement["field"]
+                or "value" not in requirement
+            ):
+                raise GovernanceError(f"Parâmetros field/value obrigatórios: {profile}/{rid}")
+            if kind == "file_contains" and (
+                not isinstance(requirement.get("value"), str) or not requirement["value"]
+            ):
+                raise GovernanceError(f"Parâmetro value obrigatório: {profile}/{rid}")
 
 
 def evaluate_profile(root: Path, profile: str, catalog_path: Path) -> tuple[list[dict[str, Any]], bool, str]:
@@ -120,14 +130,53 @@ def evaluate_profile(root: Path, profile: str, catalog_path: Path) -> tuple[list
             target_resolved.relative_to(root_resolved)
         except (OSError, ValueError):
             raise GovernanceError(f"Caminho de requisito sai da raiz do repositório: {profile}/{requirement['id']}")
+        kind = requirement["kind"]
         passed = target_resolved.is_file()
+        evidence: Any = requirement["path"]
+        detail = ""
+        if passed and kind == "json_valid":
+            try:
+                json.loads(target_resolved.read_text(encoding="utf-8"))
+            except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+                passed, detail = False, f"JSON inválido: {exc}"
+        elif passed and kind in {"yaml_valid", "yaml_field_equals"}:
+            try:
+                parsed = yaml.safe_load(target_resolved.read_text(encoding="utf-8"))
+                if kind == "yaml_field_equals":
+                    value: Any = parsed
+                    found = True
+                    for segment in requirement["field"].split("."):
+                        if not isinstance(value, dict) or segment not in value:
+                            found = False
+                            value = None
+                            break
+                        value = value[segment]
+                    expected = requirement["value"]
+                    passed = found and value == expected
+                    evidence = {"path": requirement["path"], "field": requirement["field"],
+                                "expected": expected, "actual": value}
+                    if not passed:
+                        detail = "Campo YAML ausente ou diferente do valor esperado."
+            except (OSError, UnicodeError, yaml.YAMLError) as exc:
+                passed, detail = False, f"YAML inválido: {exc}"
+        elif passed and kind == "file_contains":
+            try:
+                content = target_resolved.read_text(encoding="utf-8")
+                passed = requirement["value"] in content
+                evidence = {"path": requirement["path"], "contains": requirement["value"]}
+                if not passed:
+                    detail = "Texto obrigatório não encontrado."
+            except (OSError, UnicodeError) as exc:
+                passed, detail = False, f"Ficheiro não pode ser lido: {exc}"
         check = {
             "id": requirement["id"],
             "result": "PASS" if passed else "FAIL",
-            "kind": requirement["kind"],
-            "evidence": requirement["path"],
+            "kind": kind,
+            "evidence": evidence,
             "description": requirement.get("description", ""),
         }
+        if detail:
+            check["detail"] = detail
         checks.append(check)
         if not passed:
             missing.append(requirement["path"])

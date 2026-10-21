@@ -206,6 +206,99 @@ class GovernanceEngineTests(unittest.TestCase):
             self.assertEqual(len(report["integrity"]["schema_sha256"]), 64)
             self.assertEqual(len(report["integrity"]["catalog_sha256"]), 64)
 
+    def test_semantic_yaml_requirements_pass_for_valid_consumer_files(self):
+        temp, root = self.make_target()
+        with temp:
+            report = self.report(root)
+            checks = {c["id"]: c for c in report["checks"]}
+            self.assertEqual(checks["GOV-SEM-001"]["result"], "PASS")
+            self.assertEqual(checks["GOV-SEM-002"]["result"], "PASS")
+
+    def test_semantic_yaml_field_mismatch_fails_closed(self):
+        temp, root = self.make_target()
+        with temp:
+            path = root / ".governanca/config.yml"
+            config = yaml.safe_load(path.read_text(encoding="utf-8"))
+            config["governanca"]["fonte"] = "someone/else"
+            path.write_text(yaml.safe_dump(config), encoding="utf-8")
+            report = self.report(root)
+            self.assertEqual(report["status"], "NAO_CONFORME")
+            check = next(c for c in report["checks"] if c["id"] == "GOV-SEM-001")
+            self.assertEqual(check["result"], "FAIL")
+
+    def test_semantic_yaml_syntax_error_is_reported_as_failure(self):
+        temp, root = self.make_target()
+        with temp:
+            (root / ".github/workflows/governance-integration.yml").write_text(
+                "name: [unterminated", encoding="utf-8"
+            )
+            report = self.report(root)
+            check = next(c for c in report["checks"] if c["id"] == "GOV-SEM-002")
+            self.assertEqual(check["result"], "FAIL")
+            self.assertIn("YAML inválido", check.get("detail", ""))
+
+    def test_catalog_rejects_semantic_requirement_without_parameters(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+            catalog["profiles"]["generico"]["requirements"].append({
+                "id": "BROKEN-SEM", "kind": "yaml_field_equals",
+                "path": ".governanca/config.yml"
+            })
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("Parâmetros field/value" in b for b in report["blockers"]))
+
+    def test_json_valid_requirement_rejects_malformed_json(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+            catalog["profiles"]["generico"]["requirements"].append({
+                "id": "JSON-VALID-001", "kind": "json_valid",
+                "path": "probe.json"
+            })
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            (root / "probe.json").write_text("{not-json", encoding="utf-8")
+            report = self.report(root)
+            check = next(c for c in report["checks"] if c["id"] == "JSON-VALID-001")
+            self.assertEqual(check["result"], "FAIL")
+            self.assertIn("JSON inválido", check.get("detail", ""))
+
+    def test_file_contains_requirement_passes_and_fails(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+            catalog["profiles"]["generico"]["requirements"].append({
+                "id": "CONTAINS-001", "kind": "file_contains",
+                "path": "README.md", "value": "Target"
+            })
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            report = self.report(root)
+            check = next(c for c in report["checks"] if c["id"] == "CONTAINS-001")
+            self.assertEqual(check["result"], "PASS")
+            (root / "README.md").write_text("# Other\n", encoding="utf-8")
+            report = self.report(root)
+            check = next(c for c in report["checks"] if c["id"] == "CONTAINS-001")
+            self.assertEqual(check["result"], "FAIL")
+            self.assertIn("não encontrado", check.get("detail", ""))
+
+    def test_catalog_rejects_file_contains_without_value(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+            catalog["profiles"]["generico"]["requirements"].append({
+                "id": "BROKEN-CONTAINS", "kind": "file_contains", "path": "README.md"
+            })
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("Parâmetro value obrigatório" in b for b in report["blockers"]))
+
     def test_source_commit_is_unknown_without_explicit_source_evidence(self):
         temp, root = self.make_target()
         with temp:
