@@ -32,7 +32,7 @@ Legenda: `grupo/cancel` = concurrency group e `cancel-in-progress`; `GAP` = sina
 | 7 | B3 | `.github/workflows/classificar-bvbg028.yml` | `f5131ce0a709b5c97c47873f0b7d5158786fbad0` | — | GAP CRÍTICO: escrita em `ativos/catalogo/classificacao/` e push a main |
 | 8 | B3 | `.github/workflows/cotahist-certificacao-anual-v1.yml` | `b7c981b09251f8b31a5bcfa8d72121085fb6e43c` | `cotahist-certificacao-anual-v1 / false` | REVER: grupo isolado |
 | 9 | B3 | `.github/workflows/cotahist-dataset-oficial-v1.yml` | `7a9092f98400876f77b3bb3277a3f9b0078114c7` | `cotahist-dataset-oficial-v1 / false` | REVER: grupo isolado |
-| 10 | B3 | `.github/workflows/cotahist-dataset-oficial-v2.yml` | `c47b385a6f949c16292b1b0c52def6c9c09a0a` | `cotahist-dataset-oficial-v2 / false` | REVER: grupo isolado |
+| 10 | B3 | `.github/workflows/cotahist-dataset-oficial-v2.yml` | `c47b385a6f9497725d99b86b0c52def6c9c09a0a` | `cotahist-dataset-oficial-v2 / false` | REVER: grupo isolado |
 | 11 | B3 | `.github/workflows/cotahist-fase08h-recurrencia-k4-multianos-v1.yml` | `4e45fc9c8160e825801d6b80911c4086657d14e6` | — | GAP: escreve evidência em `dados/cotahist/quality/` e faz push |
 | 12 | B3 | `.github/workflows/cotahist-importacao-diaria-v1.yml` | `296942c78a89ef54202c9d6064a7aeb46b0c019d` | `cotahist-importacao-diaria-v1 / false` | REVER: escritor serializado só consigo próprio |
 | 13 | B3 | `.github/workflows/cotahist-m3-0-gate-capacidade-2026.yml` | `a20aaca38c0c2bff3ec41612e9221378b2ec3970` | `cotahist-m3-0-capacidade-2026 / false` | REVER: grupo isolado |
