@@ -48,6 +48,13 @@
           "kind": "yaml_valid",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de integração é YAML sintaticamente válido."
+        },
+        {
+          "id": "GOV-SEM-003",
+          "kind": "file_contains",
+          "path": "README.md",
+          "value": "#",
+          "description": "O README deve conter pelo menos um cabeçalho Markdown."
         }
       ]
     },
@@ -97,6 +104,13 @@
           "kind": "yaml_valid",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de integração é YAML sintaticamente válido."
+        },
+        {
+          "id": "GOV-SEM-003",
+          "kind": "file_contains",
+          "path": "README.md",
+          "value": "#",
+          "description": "O README deve conter pelo menos um cabeçalho Markdown."
         }
       ]
     },
@@ -134,6 +148,13 @@
           "kind": "yaml_valid",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de integração é YAML sintaticamente válido."
+        },
+        {
+          "id": "GOV-SEM-003",
+          "kind": "file_contains",
+          "path": "README.md",
+          "value": "#",
+          "description": "O README deve conter pelo menos um cabeçalho Markdown."
         }
       ]
     },
@@ -171,6 +192,13 @@
           "kind": "yaml_valid",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de integração é YAML sintaticamente válido."
+        },
+        {
+          "id": "GOV-SEM-003",
+          "kind": "file_contains",
+          "path": "README.md",
+          "value": "#",
+          "description": "O README deve conter pelo menos um cabeçalho Markdown."
         }
       ]
     },
@@ -208,6 +236,13 @@
           "kind": "yaml_valid",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de integração é YAML sintaticamente válido."
+        },
+        {
+          "id": "GOV-SEM-003",
+          "kind": "file_contains",
+          "path": "README.md",
+          "value": "#",
+          "description": "O README deve conter pelo menos um cabeçalho Markdown."
         }
       ]
     },
@@ -245,6 +280,13 @@
           "kind": "yaml_valid",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de integração é YAML sintaticamente válido."
+        },
+        {
+          "id": "GOV-SEM-003",
+          "kind": "file_contains",
+          "path": "README.md",
+          "value": "#",
+          "description": "O README deve conter pelo menos um cabeçalho Markdown."
         }
       ]
     },
@@ -282,6 +324,13 @@
           "kind": "yaml_valid",
           "path": ".github/workflows/governance-integration.yml",
           "description": "O workflow de integração é YAML sintaticamente válido."
+        },
+        {
+          "id": "GOV-SEM-003",
+          "kind": "file_contains",
+          "path": "README.md",
+          "value": "#",
+          "description": "O README deve conter pelo menos um cabeçalho Markdown."
         }
       ]
     }
