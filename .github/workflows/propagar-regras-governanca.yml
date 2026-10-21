@@ -28,7 +28,7 @@ on:
         required: false
         type: string
       allow_disabled_test:
-        description: "Teste controlado de LICITACAO ainda desativado; usar apenas com repository= c arlos-andrade/LICITACAO"
+        description: "Teste controlado de LICITACAO ainda desativado; usar apenas com repository=carlos-andrade/LICITACAO"
         required: true
         type: boolean
         default: false
@@ -73,7 +73,7 @@ jobs:
         run: |
           set +e
           if [ -z "$GH_TOKEN" ]; then
-            printf '%s\\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_MISSING","error":"Secret GOVERNANCA_SYNC_TOKEN não configurado."}' > governanca-propagacao.json
+            printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_MISSING","error":"Secret GOVERNANCA_SYNC_TOKEN não configurado."}' > governanca-propagacao.json
             echo "::error::O secret GOVERNANCA_SYNC_TOKEN está ausente. Configure-o em Settings > Secrets and variables > Actions."
             exit 1
           fi
@@ -82,13 +82,13 @@ jobs:
           auth_rc=$?
           set -e
           if [ "$auth_rc" -ne 0 ] || [ -z "$identity" ]; then
-            printf '%s\\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_REJECTED","error":"O GitHub não aceitou GOVERNANCA_SYNC_TOKEN ou não conseguiu validar a identidade. Verifique validade, expiração, revogação e acesso do token."}' > governanca-propagacao.json
+            printf '%s\n' '{"status":"FAIL","stage":"authentication","code":"TOKEN_REJECTED","error":"O GitHub não aceitou GOVERNANCA_SYNC_TOKEN ou não conseguiu validar a identidade. Verifique validade, expiração, revogação e acesso do token."}' > governanca-propagacao.json
             echo "::error::O GitHub não aceitou GOVERNANCA_SYNC_TOKEN. Substitua o secret por um token ativo e execute novamente em dry-run."
             echo "::notice::Nunca coloque o token em logs ou mensagens."
             exit 1
           fi
 
-          printf '{"status":"PASS","stage":"authentication","identity":"%s","note":"dry-run verifica autenticação e leitura; a escrita exige execução controlada após simulação."}\\n' "$identity" > governanca-propagacao.json
+          printf '{"status":"PASS","stage":"authentication","identity":"%s","note":"dry-run verifica autenticação e leitura; a escrita exige execução controlada após simulação."}\n' "$identity" > governanca-propagacao.json
           echo "Autenticação validada para a conta: $identity"
 
       - name: Distribuir por Pull Request
