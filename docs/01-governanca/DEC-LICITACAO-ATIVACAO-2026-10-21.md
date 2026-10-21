@@ -4,22 +4,22 @@
 |---|---|
 | **ID** | DEC-LICITACAO-ACT-2026-10-21 |
 | **Data** | 2026-10-21 |
-| **Estado** | PROPOSTA EM RASCUNHO — NÃO EFETIVA |
+| **Estado** | APROVADA E EFETIVA |
 | **Projeto** | [carlos-andrade/LICITACAO](https://github.com/carlos-andrade/LICITACAO) |
 | **Autoridade de registo** | [Registo-mestre de consumidores](../../registry/repositorios-consumidores.json) |
 | **Autorização do titular** | Instrução explícita recebida em 2026-10-21 para resolver G0 e colocar `LICITACAO.enabled=true` |
 
-## Decisão proposta
+## Decisão aprovada e efetiva
 
-Alterar o registo-mestre para `LICITACAO.enabled=true`, para incluir o repositório no âmbito de distribuição das normas GOVERNANCA. Esta ativação não certifica conformidade integral, não declara o WATCHDOG operacional e não autoriza ignorar os gates funcionais posteriores.
+Alteração efetivada: `LICITACAO.enabled=true` no registo-mestre após a integração da [GOVERNANCA PR #32](https://github.com/carlos-andrade/GOVERNANCA/pull/32), commit `cedba71292a107b1f4b5733987c6262d50c46673`. A ativação inclui o repositório no âmbito de distribuição das normas GOVERNANCA. Não certifica conformidade integral, não declara o WATCHDOG operacional e não autoriza ignorar os gates funcionais posteriores.
 
-## Pré-condições obrigatórias para efetivar
+## Evidências que fundamentam a decisão
 
-1. [PR #24 do LICITACAO](https://github.com/carlos-andrade/LICITACAO/pull/24) integrada em `main` com check obrigatório `validate` concluído com sucesso.
-2. Verificação pós-merge comprova 79/79 ficheiros normativos com Git blob SHA coincidente com a origem.
-3. Avaliação de G0 e scorecard atualizados em `main`.
-4. Inspeção individual da adoção atualizada para `APROVADO_COM_LIMITACOES`, explicitando os controlos WATCHDOG ainda `UNKNOWN`.
-5. Nenhum estado `UNKNOWN` é apresentado como `PASS`; WATCHDOG continua declarado não operacional enquanto faltarem os testes correspondentes.
+1. [LICITACAO PR #24](https://github.com/carlos-andrade/LICITACAO/pull/24) integrada; CI pós-merge PASS.
+2. Verificação pós-merge confirmou 79/79 Git blob SHA coincidentes com a origem.
+3. [Avaliação G0 e scorecard](https://github.com/carlos-andrade/LICITACAO/blob/main/docs/governanca/GATE-G0-AVALIACAO.md) atualizados.
+4. [Inspeção individual](https://github.com/carlos-andrade/LICITACAO/blob/main/docs/governanca/INSPECAO-DE-ADOCAO.md) atualizada para `APROVADO_COM_LIMITACOES`.
+5. A checklist WATCHDOG foi executada: 1 PASS e 7 UNKNOWN; os UNKNOWN não foram convertidos em PASS.
 
 ## Limitações operacionais
 
@@ -27,4 +27,4 @@ A checklist local WATCHDOG registou 1 controlo `PASS` por evidência direta e 7 
 
 ## Estado efetivo
 
-**Até todas as pré-condições estarem comprovadas e esta decisão ser aprovada e integrada por PR, o registo em `main` continua `enabled=false`.** Esta proposta permanece em rascunho e não deve ser integrada antecipadamente.
+**Estado efetivo:** `LICITACAO.enabled=true` em `main` desde o merge da PR #32. A ativação é exclusivamente de âmbito de distribuição. Os sete controlos WATCHDOG UNKNOWN continuam limitações abertas; o WATCHDOG não é declarado operacional. A implementação funcional continua sujeita a G1 e aos gates seguintes.

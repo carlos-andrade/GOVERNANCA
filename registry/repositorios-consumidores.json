@@ -56,8 +56,8 @@
     "Os ficheiros são publicados em .governanca/upstream/ para não sobrescrever documentos locais.",
     "A publicação é proposta por Pull Request; nunca faz merge automático.",
     "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório.",
-    "LICITACAO permanece disabled até aprovação individual da adoção e validação operacional de distribuição por PR.",
-    "LICITACAO: enabled=true is proposed in a draft activation PR only; do not merge until LICITACAO PR #24 is merged, its post-merge validation confirms all 79 upstream Git blob SHA, and the individual adoption decision is recorded. WATCHDOG controls still UNKNOWN must remain explicit; enabled indicates distribution scope, not operational certification."
+    "LICITACAO está enabled=true desde a integração da PR #32 (commit cedba71292a107b1f4b5733987c6262d50c46673), após aprovação G0, distribuição upstream validada e adoção documental APROVADO_COM_LIMITACOES. Isto define âmbito de distribuição; não certifica conformidade nem torna o WATCHDOG operacional.",
+    "LICITACAO: enabled=true efetivo após merge da GOVERNANCA PR #32; 79/79 Git blob SHA foram verificados após a LICITACAO PR #24, a inspeção foi aprovada com limitações na LICITACAO PR #25 e a CI pós-merge de LICITACAO concluiu com sucesso. Sete controlos WATCHDOG permanecem UNKNOWN; enabled indica âmbito de distribuição, não certificação operacional."
   ],
   "published_roots": [
     "CONSTITUICAO.md",
