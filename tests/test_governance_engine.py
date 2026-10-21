@@ -254,16 +254,14 @@ class GovernanceEngineTests(unittest.TestCase):
     def test_json_valid_requirement_rejects_malformed_json(self):
         temp, root = self.make_target()
         with temp:
-            target = root / "catalogs/governance-profile-catalog.json"
-            target.write_text("{not-json", encoding="utf-8")
             catalog_path = root / "catalogs/governance-profile-catalog.json"
             catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
             catalog["profiles"]["generico"]["requirements"].append({
                 "id": "JSON-VALID-001", "kind": "json_valid",
-                "path": "schemas/governanca-config.schema.json"
+                "path": "probe.json"
             })
             catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
-            (root / "schemas/governanca-config.schema.json").write_text("{not-json", encoding="utf-8")
+            (root / "probe.json").write_text("{not-json", encoding="utf-8")
             report = self.report(root)
             check = next(c for c in report["checks"] if c["id"] == "JSON-VALID-001")
             self.assertEqual(check["result"], "FAIL")
