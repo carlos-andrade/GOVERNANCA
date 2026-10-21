@@ -68,17 +68,21 @@ Legenda: `grupo/cancel` = concurrency group e `cancel-in-progress`; `GAP` = sina
 
 ## 3. Colisões e correções necessárias
 
-### C1 — B3 / publicação de catálogo BVBG.028.02 — CRÍTICA
+### C1 — B3 / publicação de catálogo BVBG.028.02 — MITIGADO; teste dinâmico pendente
 
-Os workflows `classificar-bvbg028.yml`, `processar-inventario-bvbg028.yml` e `validar-bvbg02802.yml` não declaram `concurrency`, têm permissões `contents: write` e publicam resultados por `git push` para `main`. Os dois primeiros escrevem em `ativos/catalogo/`; o terceiro publica ZIP e manifesto em `ativos/catalogo/raw/` e `ativos/catalogo/fontes/`. Corrigir com um grupo comum de publicação por repositório (por exemplo, `b3-catalogo-publish`) e `cancel-in-progress: false`, ou migrar para PRs. Não reexecutar até o grupo ser testado.
+Os três workflows `classificar-bvbg028.yml`, `processar-inventario-bvbg028.yml` e `validar-bvbg02802.yml` agora declaram o grupo comum `b3-bvbg028-catalog-publish-${{ github.ref }}` e `cancel-in-progress: false`. A alteração foi integrada pela PR [B3 #18](https://github.com/carlos-andrade/B3/pull/18), commit `6d29578cc6b6b5155b874fd043269b0cbecae89c`. O workflow de classificação terminou com sucesso no [run 39525805546](https://github.com/carlos-andrade/B3/actions/runs/39525805546), com as etapas de classificação e `Commit classificação` concluídas; a auditoria estática pós-merge passou no [run 39525805547](https://github.com/carlos-andrade/B3/actions/runs/39525805547).
+
+Isto comprova a execução de classificação/publicação e a configuração estática, mas **não** comprova serialização real do scheduler GitHub Actions sob disparos concorrentes, FIFO, nem recuperação de colisões entre estes workflows. Manter o gate dinâmico aberto.
 
 ### C2 — B3 / escritores COTAHIST — ALTA
 
 Vários workflows têm grupos individuais e fazem commits/pushes em `main`. Grupos com nomes distintos não serializam entre si. Definir um grupo partilhado para todos os escritores que publicam no mesmo branch/recurso, mantendo grupos por ano apenas para dry-runs que não escrevem. Confirmar que o workflow de importação diária não é concorrente com materialização, normalização, manifestos e relatórios.
 
-### C3 — BLOOMBERG_MAIL / normalização 005N — CRÍTICA
+### C3 — BLOOMBERG_MAIL / normalização 005N — MITIGADO; scheduler real pendente
 
-Os workflows de normalização, validação conjunta e REC001 publicam evidência por `git push` e não têm grupo de concorrência. A normalização e a validação usam a árvore `EMAILS_RECEBIDOS/INGESTAO/005/NORMALIZADO/`; podem competir pelo avanço de `main` mesmo quando alteram ficheiros diferentes. Adicionar grupo comum de publicação para os três escritores, `cancel-in-progress: false`, e manter validação idempotente.
+Os três workflows publicadores agora partilham `bloomberg-mail-005n-publish-${{ github.ref }}` e `cancel-in-progress: false`. A correção está integrada pela PR [BLOOMBERG_MAIL #7](https://github.com/carlos-andrade/BLOOMBERG_MAIL/pull/7), commit `53526887807455493cf024a6524abba8c53cd688`. A PR [#8](https://github.com/carlos-andrade/BLOOMBERG_MAIL/pull/8) adicionou testes isolados e não destrutivos; o [run 39526649987](https://github.com/carlos-andrade/BLOOMBERG_MAIL/actions/runs/39526649987) passou.
+
+Os testes validam parse YAML, grupo partilhado, `cancel-in-progress: false`, idempotência de ficheiro sintético e recuperação de `non-fast-forward` por rebase num repositório Git temporário. Não invocam ingestão, APIs externas, segredos ou dados de produção. **Não** simulam o scheduler real do GitHub Actions nem garantem FIFO; esses limites permanecem explícitos.
 
 ### C4 — TURISTURIS / tabela-mestra — ALTA
 
@@ -88,18 +92,20 @@ O workflow `turisturis-gerar-tabela-mestra-rnal-peso-da-regua.yml` publica CSV/J
 
 `sincronizar-wiki-b3.yml` e `watchdog-validation.yml` têm `cancel-in-progress: true`. Para deploys/publicação, cancelamento de uma execução ativa pode interromper a publicação; manter `true` apenas se o workflow for validado como substituível e sem escrita parcial. O auditor deve confirmar o contrato real antes de alterar o valor.
 
-## 4. Testes de concorrência e recuperação ainda necessários
+## 4. Testes de concorrência e recuperação — estado atualizado em 2026-10-21
 
-- [ ] Executar dois workflows de catálogo BVBG em simultâneo num branch de teste; comprovar que só um escritor publica por vez e não há perda de ficheiros.
+- [x] B3: inspeção estática dos três workflows confirma grupo comum e `cancel-in-progress: false`; classificação e etapa de commit/push concluídas no [run 39525805546](https://github.com/carlos-andrade/B3/actions/runs/39525805546); auditoria estática pós-merge PASS no [run 39525805547](https://github.com/carlos-andrade/B3/actions/runs/39525805547).
+- [x] BLOOMBERG_MAIL: parse YAML e configuração comum dos três workflows testados em CI; idempotência sintética e recuperação de non-fast-forward/rebase em repositório temporário aprovadas no [run 39526649987](https://github.com/carlos-andrade/BLOOMBERG_MAIL/actions/runs/39526649987), PR [#8](https://github.com/carlos-andrade/BLOOMBERG_MAIL/pull/8).
+- [ ] Testar o comportamento do scheduler GitHub Actions com execuções concorrentes num ambiente isolado; não presumir FIFO. Não usar workflows que leem ou publicam dados reais como mecanismo de teste.
+- [ ] B3: repetir teste sintético de idempotência e recuperação para os padrões de escrita dos três workflows; confirmar preservação de artefactos.
 - [ ] Executar duas publicações COTAHIST que alterem recursos partilhados; comprovar serialização e integridade dos manifestos.
-- [ ] Executar normalização 005N e validação conjunta simultaneamente; comprovar ausência de non-fast-forward, perda de evidência e duplicação.
-- [ ] Repetir a execução após sucesso e confirmar idempotência.
-- [ ] Simular falha depois de commit e antes de push; comprovar recuperação sem reset/force push destrutivo.
 - [ ] Testar cancelamento e rollback da publicação Pages/Wiki.
-- [ ] Arquivar run URLs, commit SHAs, diffs, hashes e resultado de recuperação.
+- [ ] Arquivar logs relevantes, URLs de runs, SHAs, diffs e hashes; atualizar este relatório apenas após observar os resultados.
 
 ## 5. Limites e decisão
 
-Esta auditoria regista os 42 caminhos e os SHAs observados, mas não executa mudanças nos workflows. As alterações aos ficheiros de workflow não foram aplicadas nesta sessão; exigem alteração por PR, CI e testes dinâmicos. Não marcar o gate de concorrência como PASS até C1–C5 estarem corrigidos e os testes acima terem evidência reproduzível.
+As correções C1 (B3) e C3 (BLOOMBERG_MAIL) estão integradas e possuem evidência de CI/testes sintéticos conforme descrito acima. O resultado é **mitigação verificada**, não certificação do comportamento concorrente real do scheduler GitHub Actions. Os testes sintéticos usam dados e repositórios temporários; nenhuma ingestão de produção foi executada para os validar.
+
+C2, C4 e C5 e os testes dinâmicos listados continuam pendentes. Não declarar o gate transversal de concorrência como PASS até os restantes gaps relevantes serem corrigidos e validados com evidência reproduzível.
 
 A adoção transversal, o piloto real de distribuição, a aceitação operacional WATCHDOG e a ratificação normativa são gates separados; este relatório não os aprova nem os encerra.
