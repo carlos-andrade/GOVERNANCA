@@ -88,9 +88,9 @@ Os testes validam parse YAML, grupo partilhado, `cancel-in-progress: false`, ide
 
 A PR [TURISTURIS #87](https://github.com/carlos-andrade/TURISTURIS/pull/87) foi integrada no commit `c0dae020358b8c7156e2b9e417c83f19dc5bc3e6`. O workflow agora usa `turisturis-rnal-master-publish-${{ github.ref }}`, `cancel-in-progress: false`, e repetição limitada de `fetch + rebase + push` sem force push. A alteração foi revista estaticamente; o workflow de produção não foi executado para evitar regeneração/publicação de dados apenas para teste. C4 está mitigado no código, mas requer verificação CI/execução controlada antes de fechar o gate.
 
-### C5 — Semântica de cancelamento — ALTA
+### C5 — Semântica de cancelamento — MITIGAÇÃO PROPOSTA; revisão pendente
 
-`sincronizar-wiki-b3.yml` e `watchdog-validation.yml` têm `cancel-in-progress: true`. Para deploys/publicação, cancelamento de uma execução ativa pode interromper a publicação; manter `true` apenas se o workflow for validado como substituível e sem escrita parcial. O auditor deve confirmar o contrato real antes de alterar o valor.
+A PR [B3 #19](https://github.com/carlos-andrade/B3/pull/19) altera `sincronizar-wiki-b3.yml` para `cancel-in-progress: false`, evitando interromper uma publicação ativa; a PR ainda não foi integrada. O workflow `watchdog-validation.yml` do GOVERNANCA tem `permissions: contents: read` e executa testes e `watchdog.py --check`, sem passos de commit/push observados; o cancelamento ativo é aceitável para esta validação read-only. C5 só pode ser fechado após integração da alteração B3 e nova verificação do contrato do WATCHDOG.
 
 ## 4. Testes de concorrência e recuperação — estado atualizado em 2026-10-21
 
