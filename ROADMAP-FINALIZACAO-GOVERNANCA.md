@@ -118,3 +118,12 @@ A GOVERNANCA só pode ser declarada FINALIZADA quando todos os critérios de sa�
 - Os testes BLOOMBERG_MAIL não executaram ingestões, APIs externas, segredos ou dados de produção. Os testes demonstram o padrão Git de recuperação, não o comportamento do scheduler GitHub Actions nem uma garantia FIFO.
 - A auditoria [AUDITORIA-CONCORRENCIA-WORKFLOWS-42-2026-10-21.md](docs/01-governanca/AUDITORIA-CONCORRENCIA-WORKFLOWS-42-2026-10-21.md) foi atualizada para distinguir gaps mitigados de testes dinâmicos pendentes.
 - **Scorecard:** manter 80/100 (início 20/20, meio 60/60, fim 0/20); não atribuir pontos de encerramento. Os cinco `closure_checks` permanecem `false`. C2/C4/C5, testes reais do scheduler, distribuição real por PR, aceitação WATCHDOG e gates normativos/operacionais continuam pendentes.
+
+
+## 8.4. Mitigações adicionais de concorrência — 2026-10-21
+
+- **TURISTURIS C4:** PR [#87](https://github.com/carlos-andrade/TURISTURIS/pull/87) integrada no commit `c0dae020358b8c7156e2b9e417c83f19dc5bc3e6`. A tabela-mestra RNAL agora usa `turisturis-rnal-master-publish-${{ github.ref }}`, `cancel-in-progress: false` e recuperação limitada de `git push` por `fetch + rebase`, sem force push. O workflow de produção não foi executado para testar concorrência; validação operacional pendente.
+- **B3 C2/C5:** PR [#19](https://github.com/carlos-andrade/B3/pull/19) permanece em draft. Foi proposto `cancel-in-progress: false` para publicação Wiki e grupo comum COTAHIST apenas no workflow de certificação anual. Isto é insuficiente para C2: todos os outros escritores COTAHIST ainda precisam de grupo comum. Não integrar a PR como resolução completa sem expandir a correção e validar.
+- **WATCHDOG:** `watchdog-validation.yml` tem permissões apenas de leitura e executa testes e `watchdog.py --check`; não foram observados passos de publicação. O cancelamento ativo pode ser mantido para esta validação read-only, sujeito a confirmação futura se o contrato mudar.
+- **Scheduler real:** permanece sem evidência. Os testes Git sintéticos não demonstram o comportamento do scheduler GitHub Actions. Não foi iniciada execução de produção para fabricar concorrência; é necessário um harness isolado aprovado, com duas execuções de teste e logs de início/fim que comprovem ausência de sobreposição.
+- **Scorecard:** 80/100, início 20/20, meio 60/60, fim 0/20; 9 bloqueios; os cinco `closure_checks` continuam `false`. Nenhum ponto de encerramento atribuído, pois C2, teste real do scheduler, C5 e outros gates globais permanecem abertos.
