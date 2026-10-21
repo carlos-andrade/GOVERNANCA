@@ -267,6 +267,38 @@ class GovernanceEngineTests(unittest.TestCase):
             self.assertEqual(check["result"], "FAIL")
             self.assertIn("JSON inválido", check.get("detail", ""))
 
+    def test_file_contains_requirement_passes_and_fails(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+            catalog["profiles"]["generico"]["requirements"].append({
+                "id": "CONTAINS-001", "kind": "file_contains",
+                "path": "README.md", "value": "Target"
+            })
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            report = self.report(root)
+            check = next(c for c in report["checks"] if c["id"] == "CONTAINS-001")
+            self.assertEqual(check["result"], "PASS")
+            (root / "README.md").write_text("# Other\n", encoding="utf-8")
+            report = self.report(root)
+            check = next(c for c in report["checks"] if c["id"] == "CONTAINS-001")
+            self.assertEqual(check["result"], "FAIL")
+            self.assertIn("não encontrado", check.get("detail", ""))
+
+    def test_catalog_rejects_file_contains_without_value(self):
+        temp, root = self.make_target()
+        with temp:
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
+            catalog["profiles"]["generico"]["requirements"].append({
+                "id": "BROKEN-CONTAINS", "kind": "file_contains", "path": "README.md"
+            })
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+            report = self.report(root)
+            self.assertEqual(report["status"], "DESCONHECIDO")
+            self.assertTrue(any("Parâmetro value obrigatório" in b for b in report["blockers"]))
+
     def test_source_commit_is_unknown_without_explicit_source_evidence(self):
         temp, root = self.make_target()
         with temp:
