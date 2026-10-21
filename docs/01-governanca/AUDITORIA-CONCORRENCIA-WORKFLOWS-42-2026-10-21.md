@@ -46,7 +46,7 @@ Legenda: `grupo/cancel` = concurrency group e `cancel-in-progress`; `GAP` = sina
 | 21 | B3 | `.github/workflows/cotahist-orquestrador-anual-dryrun-v2.yml` | `735a8c0c5c4320e761076cde914b2ccc8e734942` | `cotahist-orquestrador-anual-dryrun-v2-${{ inputs.ano }} / false` | REVER: dry-run; grupo por ano |
 | 22 | B3 | `.github/workflows/indices-b3-composicao-v1.yml` | `4ece91cb525d7215cabef4b91d068b45e0e2e3fe` | `indices-b3-composicao-v1 / false` | REVER: escritor serializado só consigo próprio |
 | 23 | B3 | `.github/workflows/processar-inventario-bvbg028.yml` | `a0eeb3eb5a731ab3d0f59a2ba41854cb920fad63` | — | GAP CRÍTICO: escreve `ativos/catalogo/` e faz push |
-| 24 | B3 | `.github/workflows/sincronizar-wiki-b3.yml` | `5c7a960f83410b6863c97c3d1708b324c257399a` | `b3-wiki-sync / true` | CANCEL: publicação Wiki; confirmar cancelamento durante deploy |
+| 24 | B3 | `.github/workflows/sincronizar-wiki-b3.yml` | `8f90b8fb9c52cc65fea9a08bc087935fe6c8df07` | `b3-wiki-sync / false` | MITIGADO: PR #20 integrada; execução de publicação ainda não testada |
 | 25 | B3 | `.github/workflows/validar-bvbg02802.yml` | `84c9084bbb1bcce02d34120b6582efd7d9f8b8a8` | — | GAP CRÍTICO: escreve manifesto e push; partilha superfície de catálogo |
 | 26 | GOVERNANCA | `.github/workflows/propagar-regras-governanca.yml` | `de2a091f9b04ede2f2c6afe8b6e9431a1cf4612f` | `propagar-governanca-main / false` | REVER: grupo não serializa os consumidores entre si |
 | 27 | GOVERNANCA | `.github/workflows/sync-project-status.yml` | `bee49951ff93ce202f5cb312fc750d475db0197f` | `sync-project-status-main / false` | SERIAL local; push com rebase/retry |
@@ -74,9 +74,9 @@ Os três workflows `classificar-bvbg028.yml`, `processar-inventario-bvbg028.yml`
 
 Isto comprova a execução de classificação/publicação e a configuração estática, mas **não** comprova serialização real do scheduler GitHub Actions sob disparos concorrentes, FIFO, nem recuperação de colisões entre estes workflows. Manter o gate dinâmico aberto.
 
-### C2 — B3 / escritores COTAHIST — ALTA; PARCIAL
+### C2 — B3 / escritores COTAHIST — ALTA; ABERTO
 
-A PR [B3 #19](https://github.com/carlos-andrade/B3/pull/19) propõe o grupo partilhado `b3-cotahist-main-publish-${{ github.ref }}` no workflow de certificação anual. Os outros escritores COTAHIST ainda não usam esse grupo, pelo que importação diária, normalização, materialização LFS, reconciliação de manifestos e geração de datasets podem continuar a competir. **C2 permanece ABERTO; a alteração parcial não é suficiente para fechar o gap.**
+A PR [B3 #19](https://github.com/carlos-andrade/B3/pull/19) continua aberta/em rascunho e propõe o grupo `b3-cotahist-main-publish-${{ github.ref }}` para certificação anual e os datasets oficiais V1/V2. A inspeção estática adicional confirmou outros escritores com `contents: write`, `git commit` e `git push`, incluindo `cotahist-importacao-diaria-v1.yml`, `cotahist-normalizacao-controlada-v7.yml`, `cotahist-m3-1b-reconciliar-manifest-2026.yml`, `cotahist-lfs-migracao-controlada-a1987-v1.yml`, `cotahist-gate-historico-1986.yml` e workflows de fases históricas. Estes mantêm grupos próprios ou grupos ausentes. Workflows `contents: read` e dry-run sem escrita não devem ser incluídos apenas por terem COTAHIST no nome. **A cobertura de todos os escritores ainda não foi reconciliada; C2 permanece ABERTO e a PR #19 não deve ser tratada como resolução integral.**
 
 ### C3 — BLOOMBERG_MAIL / normalização 005N — MITIGADO; scheduler real pendente
 
@@ -88,15 +88,16 @@ Os testes validam parse YAML, grupo partilhado, `cancel-in-progress: false`, ide
 
 A PR [TURISTURIS #87](https://github.com/carlos-andrade/TURISTURIS/pull/87) foi integrada no commit `c0dae020358b8c7156e2b9e417c83f19dc5bc3e6`. O workflow agora usa `turisturis-rnal-master-publish-${{ github.ref }}`, `cancel-in-progress: false`, e repetição limitada de `fetch + rebase + push` sem force push. A alteração foi revista estaticamente; o workflow de produção não foi executado para evitar regeneração/publicação de dados apenas para teste. C4 está mitigado no código, mas requer verificação CI/execução controlada antes de fechar o gate.
 
-### C5 — Semântica de cancelamento — MITIGAÇÃO PROPOSTA; revisão pendente
+### C5 — Semântica de cancelamento — MITIGADO NO CÓDIGO; teste pendente
 
-A PR [B3 #19](https://github.com/carlos-andrade/B3/pull/19) altera `sincronizar-wiki-b3.yml` para `cancel-in-progress: false`, evitando interromper uma publicação ativa; a PR ainda não foi integrada. O workflow `watchdog-validation.yml` do GOVERNANCA tem `permissions: contents: read` e executa testes e `watchdog.py --check`, sem passos de commit/push observados; o cancelamento ativo é aceitável para esta validação read-only. C5 só pode ser fechado após integração da alteração B3 e nova verificação do contrato do WATCHDOG.
+A [PR B3 #20](https://github.com/carlos-andrade/B3/pull/20) foi integrada no commit `e5caa295cfea627ad63cfb62b0898481cfa32750`. O ficheiro atual `.github/workflows/sincronizar-wiki-b3.yml` declara `group: b3-wiki-sync` e `cancel-in-progress: false`, verificado no `main` (blob `8f90b8fb9c52cc65fea9a08bc087935fe6c8df07`). Isto impede que uma nova execução cancele a execução ativa, mas não garante FIFO e não prova uma publicação concluída. O workflow `watchdog-validation.yml` do GOVERNANCA mantém `permissions: contents: read` e executa testes e `watchdog.py --check`, sem passos de commit/push observados; o cancelamento ativo é aceitável enquanto o contrato permanecer read-only. C5 fica mitigado no código, com validação operacional ainda pendente.
 
 ## 4. Testes de concorrência e recuperação — estado atualizado em 2026-10-21
 
 - [x] B3: inspeção estática dos três workflows confirma grupo comum e `cancel-in-progress: false`; classificação e etapa de commit/push concluídas no [run 39525805546](https://github.com/carlos-andrade/B3/actions/runs/39525805546); auditoria estática pós-merge PASS no [run 39525805547](https://github.com/carlos-andrade/B3/actions/runs/39525805547).
 - [x] BLOOMBERG_MAIL: parse YAML e configuração comum dos três workflows testados em CI; idempotência sintética e recuperação de non-fast-forward/rebase em repositório temporário aprovadas no [run 39526649987](https://github.com/carlos-andrade/BLOOMBERG_MAIL/actions/runs/39526649987), PR [#8](https://github.com/carlos-andrade/BLOOMBERG_MAIL/pull/8).
-- [ ] Testar o comportamento do scheduler GitHub Actions com execuções concorrentes num ambiente isolado; não presumir FIFO. Não usar workflows que leem ou publicam dados reais como mecanismo de teste.
+- [ ] Testar o comportamento do scheduler GitHub Actions com duas execuções concorrentes num workflow isolado, recolher logs/timestamps de início e fim e comprovar que os intervalos de execução não se sobrepõem; não presumir FIFO. A evidência atual não contém esse teste. Não usar workflows que leem ou publicam dados reais como mecanismo de teste.
+- [x] B3 Wiki: PR #20 integrada; configuração `b3-wiki-sync / cancel-in-progress: false` confirmada no `main`. Não foi localizada evidência de execução concorrente real nem de publicação operacional após o merge.
 - [ ] B3: repetir teste sintético de idempotência e recuperação para os padrões de escrita dos três workflows; confirmar preservação de artefactos.
 - [ ] Executar duas publicações COTAHIST que alterem recursos partilhados; comprovar serialização e integridade dos manifestos.
 - [ ] Testar cancelamento e rollback da publicação Pages/Wiki.
