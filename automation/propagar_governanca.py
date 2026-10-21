@@ -58,6 +58,25 @@ def load_registry():
             raise ValueError("enabled tem de ser booleano: " + name)
     return data
 
+def select_targets(data, repo=None, allow_disabled_test=False):
+    """Select active consumers, or one explicitly named disabled consumer for a controlled test."""
+    if allow_disabled_test and not repo:
+        raise ValueError("--allow-disabled-test exige --repo com um destino explícito")
+    if allow_disabled_test and repo.lower() != "carlos-andrade/licitacao":
+        raise ValueError("--allow-disabled-test só pode selecionar carlos-andrade/LICITACAO")
+    if allow_disabled_test:
+        targets = [item for item in data["repositories"]
+                   if item["name"].lower() == repo.lower() and item["enabled"] is False]
+        if len(targets) != 1:
+            raise ValueError("O teste exige um único destino registado e desativado")
+        return targets
+    targets = [item for item in data["repositories"] if item["enabled"]]
+    if repo:
+        targets = [item for item in targets if item["name"].lower() == repo.lower()]
+        if not targets:
+            raise ValueError("Repositório não registado/ativo: " + repo)
+    return targets
+
 def discover_files(data):
     files = set()
     for relative in data["published_roots"]:
@@ -153,10 +172,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true", help="simular sem publicar branches/PRs")
     parser.add_argument("--repo", help="processar apenas um consumidor ativo (owner/name)")
+    parser.add_argument("--allow-disabled-test", action="store_true",
+                        help="permitir teste de PR apenas para LICITACAO ainda desativado; exige --repo explícito")
     args = parser.parse_args()
     try:
         data = load_registry()
         files = discover_files(data)
+        targets = select_targets(data, args.repo, args.allow_disabled_test)
     except Exception as exc:
         print(json.dumps({"status": "FAIL", "error": str(exc)}, ensure_ascii=False))
         return 2
@@ -167,7 +189,6 @@ def main():
             "error": "GH_TOKEN/GITHUB_TOKEN obrigatório; configure GOVERNANCA_SYNC_TOKEN no repositório de origem."
         }, ensure_ascii=False))
         return 2
-    # Validate the token supplied by Actions itself, not only stored CLI login state.
     auth = run(["gh", "api", "user", "--jq", ".login"], check=False)
     identity = (auth.stdout or "").strip()
     if auth.returncode or not identity:
@@ -185,18 +206,13 @@ def main():
             "detail": safe_detail(setup)
         }, ensure_ascii=False))
         return 2
-    targets = [item for item in data["repositories"] if item["enabled"]]
-    if args.repo:
-        targets = [item for item in targets if item["name"].lower() == args.repo.lower()]
-        if not targets:
-            print("Repositório não registado/ativo: " + args.repo, file=sys.stderr)
-            return 2
     source_sha = run(["git", "rev-parse", "HEAD"], cwd=ROOT).stdout.strip()
     results = [publish_to_repo(item["name"], files, data["destination_root"], source_sha, args.dry_run) for item in targets]
     report = {
         "source_repository": "carlos-andrade/GOVERNANCA",
         "source_commit": source_sha,
         "mode": "dry-run" if args.dry_run else "pull-request",
+        "controlled_disabled_test": bool(args.allow_disabled_test),
         "files_discovered": len(files),
         "total_repositories": len(results),
         "errors": sum(item["status"] == "ERROR" for item in results),
