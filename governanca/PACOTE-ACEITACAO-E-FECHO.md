@@ -4,7 +4,7 @@
 |---|---|
 | ID | GOV-CLOSEOUT-001 |
 | Estado | EM_EXECUCAO |
-| Versão | 1.0.0 |
+| Versão | 1.0.1 |
 | Data | 2026-10-21 |
 | Aprovador | Pendente de aprovação explícita |
 | Âmbito | P0 distribuição, GIF, ratificação normativa, WATCHDOG; P1 concorrência e adoção transversal |
@@ -101,6 +101,10 @@ Para cada repositório consumidor autorizado, registar: commit/ref, perfil, conf
 
 ## Evidência atual
 
+- CI F1/F2 pós-correção: PASS — [run 39521820489](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39521820489), commit de merge da correção `c447c85c82e095ababaaf0030a733f2561cfc960`.
+- Sincronização do scorecard, README/SVG e validação final: PASS — [run 39521820440](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39521820440); publicação do painel no commit [3bfdf2f01fc49804b9ebf7aab6172b82a851d592](https://github.com/carlos-andrade/GOVERNANCA/commit/3bfdf2f01fc49804b9ebf7aab6172b82a851d592).
+- As falhas dos runs 39521270191 e 39521269962 foram corrigidas e os novos runs passam; manter os runs falhados no histórico de auditoria.
+- O scorecard permanece em 80/100 e os cinco `closure_checks` permanecem false. A CI verde e o painel sincronizado não substituem a aceitação dos gates G0/G2/G3/G4/G5 nem a aprovação formal G6.
 - A distribuição real por PR não está demonstrada pelos dry-runs existentes.
 - O catálogo de perfis permanece estrutural/incompleto; o motor não deve certificar conformidade global.
 - A Constituição está em proposta de revisão; o runbook e roadmap WATCHDOG estão em revisão.
@@ -111,3 +115,4 @@ Para cada repositório consumidor autorizado, registar: commit/ref, perfil, conf
 ## Histórico
 
 - 1.0.0 — 2026-10-21 — Consolidação dos critérios de aceitação e das dependências de fecho, sem promover estados não comprovados.
+- 1.0.1 — 2026-10-21 — Atualização das evidências CI F1/F2 e sincronização do painel após correção do teste semântico; gates de aceitação operacional e ratificação mantidos pendentes.
