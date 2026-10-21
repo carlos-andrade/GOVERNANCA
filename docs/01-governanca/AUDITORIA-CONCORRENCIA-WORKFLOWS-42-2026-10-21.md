@@ -103,6 +103,17 @@ A [PR B3 #20](https://github.com/carlos-andrade/B3/pull/20) foi integrada no com
 - [ ] Testar cancelamento e rollback da publicação Pages/Wiki.
 - [ ] Arquivar logs relevantes, URLs de runs, SHAs, diffs e hashes; atualizar este relatório apenas após observar os resultados.
 
+### Revalidação de execução após o merge B3 #19 — 2026-10-21
+
+A leitura dos runs recentes identificou falhas operacionais que não devem ser confundidas com o estado da configuração de concorrência:
+
+- [Run 39590685303 — Dataset Oficial V2](https://github.com/carlos-andrade/B3/actions/runs/39590685303): **FAIL** em `Gerar Dataset Oficial V2`; log explícito: `2026: QUALITY_MANIFEST_INVALIDO`. A publicação não foi concluída.
+- [Run 39590685161 — Dataset Oficial V1](https://github.com/carlos-andrade/B3/actions/runs/39590685161): **CANCELLED**.
+- [Run 39590685070 — Certificação anual](https://github.com/carlos-andrade/B3/actions/runs/39590685070): **CANCELLED**.
+- [Run 39592151814 — Importação diária COTAHIST](https://github.com/carlos-andrade/B3/actions/runs/39592151814): **FAIL** no gate de autorização, em `test_cotahist_direct_file_allows_only_limited_internal_validation`, com `KeyError: 'operation_scope'`; o job de importação foi ignorado. O mesmo erro foi observado no [run 39592143030](https://github.com/carlos-andrade/B3/actions/runs/39592143030).
+
+Os runs de V1/V2/certificação foram disparados no contexto do mesmo commit `50fc8d12...`; os estados CANCELLED confirmam que é necessário examinar os detalhes de agendamento e as políticas de concorrência, mas **não bastam, isoladamente, para provar a causa exata do cancelamento**. `cancel-in-progress: false` protege a execução ativa contra substituição, mas não é uma prova de FIFO nem de que todas as execuções pendentes serão preservadas. Estes resultados não validam o scheduler e acrescentam bloqueios de execução a resolver antes de aceitar a publicação COTAHIST.
+
 ## 5. Limites e decisão
 
 As correções C1 (B3) e C3 (BLOOMBERG_MAIL) estão integradas e possuem evidência de CI/testes sintéticos conforme descrito acima. O resultado é **mitigação verificada**, não certificação do comportamento concorrente real do scheduler GitHub Actions. Os testes sintéticos usam dados e repositórios temporários; nenhuma ingestão de produção foi executada para os validar.
