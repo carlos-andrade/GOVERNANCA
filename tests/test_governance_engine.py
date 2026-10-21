@@ -217,14 +217,24 @@ class GovernanceEngineTests(unittest.TestCase):
     def test_semantic_yaml_field_mismatch_fails_closed(self):
         temp, root = self.make_target()
         with temp:
-            path = root / ".governanca/config.yml"
-            config = yaml.safe_load(path.read_text(encoding="utf-8"))
-            config["governanca"]["fonte"] = "someone/else"
-            path.write_text(yaml.safe_dump(config), encoding="utf-8")
+            probe = root / "semantic-probe.yml"
+            probe.write_text("policy:\\n  source: someone/else\\n", encoding="utf-8")
+            catalog_path = root / "catalogs/governance-profile-catalog.json"
+            catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+            catalog["profiles"]["generico"]["requirements"].append({
+                "id": "TEST-SEMANTIC-FIELD",
+                "kind": "yaml_field_equals",
+                "path": "semantic-probe.yml",
+                "field": "policy.source",
+                "value": "carlos-andrade/GOVERNANCA",
+                "description": "Teste isolado da comparação semântica de campos YAML."
+            })
+            catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
             report = self.report(root)
             self.assertEqual(report["status"], "NAO_CONFORME")
-            check = next(c for c in report["checks"] if c["id"] == "GOV-SEM-001")
+            check = next(c for c in report["checks"] if c["id"] == "TEST-SEMANTIC-FIELD")
             self.assertEqual(check["result"], "FAIL")
+            self.assertEqual(check["evidence"]["actual"], "someone/else")
 
     def test_semantic_yaml_syntax_error_is_reported_as_failure(self):
         temp, root = self.make_target()
