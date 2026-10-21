@@ -19,6 +19,32 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
         self.assertTrue(any(path.startswith("standards/") for path in first))
         self.assertTrue(any(path.startswith("WATCHDOG/") for path in first))
 
+    def test_selecao_normal_exclui_destinos_desativados(self):
+        data = {
+            "repositories": [
+                {"name": "carlos-andrade/B3", "enabled": True},
+                {"name": "carlos-andrade/LICITACAO", "enabled": False},
+            ]
+        }
+        self.assertEqual([r["name"] for r in sync.select_targets(data)], ["carlos-andrade/B3"])
+        with self.assertRaisesRegex(ValueError, "não registado/ativo"):
+            sync.select_targets(data, "carlos-andrade/LICITACAO")
+
+    def test_teste_desativado_exige_destino_explicito_e_unico(self):
+        data = {
+            "repositories": [
+                {"name": "carlos-andrade/B3", "enabled": True},
+                {"name": "carlos-andrade/LICITACAO", "enabled": False},
+            ]
+        }
+        with self.assertRaisesRegex(ValueError, "exige --repo"):
+            sync.select_targets(data, allow_disabled_test=True)
+        selected = sync.select_targets(data, "carlos-andrade/LICITACAO", allow_disabled_test=True)
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(selected[0]["name"], "carlos-andrade/LICITACAO")
+        with self.assertRaisesRegex(ValueError, "só pode selecionar"):
+            sync.select_targets(data, "carlos-andrade/B3", allow_disabled_test=True)
+
     def test_bloqueia_politica_insegura(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "registry.json"
@@ -49,11 +75,11 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     sync.load_registry()
 
-
     def test_credencial_ausente_produz_erro_estruturado(self):
         with patch.object(sync, "load_registry", return_value={
             "repositories": [], "destination_root": ".governanca/upstream"
         }), patch.object(sync, "discover_files", return_value=["CONSTITUICAO.md"]), \
+             patch.object(sync, "select_targets", return_value=[]), \
              patch.dict("os.environ", {"GH_TOKEN": "", "GITHUB_TOKEN": ""}), patch("sys.argv", ["test_propagate_governance.py"]):
             with patch("builtins.print") as output:
                 code = sync.main()
@@ -65,6 +91,7 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
         with patch.object(sync, "load_registry", return_value={
             "repositories": [], "destination_root": ".governanca/upstream"
         }), patch.object(sync, "discover_files", return_value=["CONSTITUICAO.md"]), \
+             patch.object(sync, "select_targets", return_value=[]), \
              patch.dict("os.environ", {"GH_TOKEN": "fake-test-token", "GITHUB_TOKEN": ""}), \
              patch("sys.argv", ["test_propagate_governance.py"]), patch.object(sync, "run", return_value=type("Result", (), {
                  "returncode": 1, "stdout": "", "stderr": "token fake-test-token rejected"
