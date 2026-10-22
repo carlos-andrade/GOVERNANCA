@@ -32,6 +32,10 @@ def safe_detail(result):
             detail = detail.replace(secret, "[REDACTED]")
     return detail[:1500]
 
+def same_tree(desired_tree, remote_tree):
+    """Return True only when a non-empty desired tree exactly matches the remote branch."""
+    return bool(desired_tree and remote_tree and desired_tree == remote_tree)
+
 def load_registry():
     data = json.loads(REGISTRY.read_text(encoding="utf-8"))
     if data.get("schema_version") != 1 or data.get("source_repository") != "carlos-andrade/GOVERNANCA":
@@ -106,10 +110,29 @@ def publish_to_repo(name, files, destination_root, source_sha, dry_run):
         sparse_set = run(["git", "sparse-checkout", "set", destination_root], cwd=repo, check=False)
         if sparse_set.returncode:
             return {"repository": name, "status": "ERROR", "stage": "sparse_checkout_set", "detail": safe_detail(sparse_set)}
-        for args in [("checkout", base), ("pull", "--ff-only", "origin", base), ("checkout", "-B", BRANCH, base)]:
+        for args in [("checkout", base), ("pull", "--ff-only", "origin", base)]:
             step = run(["git", *args], cwd=repo, check=False)
             if step.returncode:
                 return {"repository": name, "status": "ERROR", "stage": "git_checkout", "detail": safe_detail(step)}
+        remote_branch_ref = "refs/remotes/origin/" + BRANCH
+        fetched_branch = run(
+            ["git", "fetch", "origin", "refs/heads/" + BRANCH + ":" + remote_branch_ref],
+            cwd=repo, check=False
+        )
+        branch_exists = fetched_branch.returncode == 0
+        remote_branch_sha = ""
+        remote_tree = ""
+        if branch_exists:
+            remote_sha_result = run(["git", "rev-parse", remote_branch_ref], cwd=repo, check=False)
+            remote_tree_result = run(["git", "rev-parse", remote_branch_ref + "^{tree}"], cwd=repo, check=False)
+            if remote_sha_result.returncode or remote_tree_result.returncode:
+                return {"repository": name, "status": "ERROR", "stage": "inspect_remote_branch",
+                        "detail": safe_detail(remote_sha_result if remote_sha_result.returncode else remote_tree_result)}
+            remote_branch_sha = remote_sha_result.stdout.strip()
+            remote_tree = remote_tree_result.stdout.strip()
+        step = run(["git", "checkout", "-B", BRANCH, base], cwd=repo, check=False)
+        if step.returncode:
+            return {"repository": name, "status": "ERROR", "stage": "git_checkout", "detail": safe_detail(step)}
         destination = repo / destination_root
         if destination.exists():
             shutil.rmtree(destination)
@@ -141,20 +164,36 @@ def publish_to_repo(name, files, destination_root, source_sha, dry_run):
         changed = run(["git", "diff", "--cached", "--quiet"], cwd=repo, check=False)
         if changed.returncode == 0:
             return {"repository": name, "status": "NO_CHANGE"}
+        if changed.returncode not in (0, 1):
+            return {"repository": name, "status": "ERROR", "stage": "inspect_staged_diff", "detail": safe_detail(changed)}
+        desired_tree_result = run(["git", "write-tree"], cwd=repo, check=False)
+        if desired_tree_result.returncode:
+            return {"repository": name, "status": "ERROR", "stage": "write_tree", "detail": safe_detail(desired_tree_result)}
+        desired_tree = desired_tree_result.stdout.strip()
+        tree_unchanged = branch_exists and same_tree(desired_tree, remote_tree)
         if dry_run:
-            return {"repository": name, "status": "WOULD_OPEN_PR", "files": len(files)}
-        run(["git", "config", "user.name", "github-actions[bot]"], cwd=repo)
-        run(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"], cwd=repo)
-        run(["git", "commit", "-m", "chore(governanca): atualizar espelho de regras canónicas"], cwd=repo)
-        pushed = run(["git", "push", "--force", "origin", "HEAD:refs/heads/" + BRANCH], cwd=repo, check=False)
-        if pushed.returncode:
-            return {"repository": name, "status": "ERROR", "stage": "git_push", "detail": safe_detail(pushed)}
+            return {"repository": name, "status": "NO_CHANGE" if tree_unchanged else "WOULD_OPEN_PR",
+                    "files": len(files)}
+        if not tree_unchanged:
+            run(["git", "config", "user.name", "github-actions[bot]"], cwd=repo)
+            run(["git", "config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com"], cwd=repo)
+            run(["git", "commit", "-m", "chore(governanca): atualizar espelho de regras canónicas"], cwd=repo)
+            if branch_exists:
+                push_args = ["git", "push", "--force-with-lease=refs/heads/" + BRANCH + ":" + remote_branch_sha,
+                             "origin", "HEAD:refs/heads/" + BRANCH]
+            else:
+                push_args = ["git", "push", "origin", "HEAD:refs/heads/" + BRANCH]
+            pushed = run(push_args, cwd=repo, check=False)
+            if pushed.returncode:
+                return {"repository": name, "status": "ERROR", "stage": "git_push",
+                        "detail": safe_detail(pushed)}
         listed = run(["gh", "pr", "list", "--repo", name, "--head", BRANCH, "--state", "open", "--json", "url", "--limit", "1"], check=False)
         if listed.returncode:
             return {"repository": name, "status": "ERROR", "stage": "list_prs", "detail": safe_detail(listed)}
         prs = json.loads(listed.stdout or "[]")
         if prs:
-            return {"repository": name, "status": "PR_UPDATED", "url": prs[0]["url"]}
+            return {"repository": name, "status": "PR_NO_CHANGE" if tree_unchanged else "PR_UPDATED",
+                    "url": prs[0]["url"]}
         body = (
             "Esta PR sincroniza uma cópia isolada das regras canónicas da GOVERNANCA.\n\n"
             + "Commit de origem: " + source_sha + "\n"
