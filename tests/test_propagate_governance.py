@@ -7,6 +7,14 @@ from unittest.mock import patch
 from automation import propagar_governanca as sync
 
 class TestPropagarGovernancaRegistry(unittest.TestCase):
+    def test_idempotencia_reutiliza_arvore_remota_inalterada(self):
+        # A árvore calculada deve ser comparada com a branch remota antes de criar
+        # um novo commit; igualdade significa não reescrever a branch nem fazer push.
+        desired_tree = "tree-sha-123"
+        remote_tree = "tree-sha-123"
+        self.assertTrue(sync.same_tree(desired_tree, remote_tree))
+        self.assertFalse(sync.same_tree(desired_tree, "tree-sha-456"))
+        self.assertFalse(sync.same_tree("", remote_tree))
     def test_registo_canonico_valido_e_descoberta_deterministica(self):
         data = sync.load_registry()
         self.assertEqual(data["policy"], "pull_request_only")
