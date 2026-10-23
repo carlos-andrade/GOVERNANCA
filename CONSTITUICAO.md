@@ -7,14 +7,14 @@
 | **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
 | **Tipo documental** | CONSTITUICAO |
 | **Fase** | Governação fundacional |
-| **Estado** | PROPOSTA PARA REVISÃO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | fcdf39acc56d53b886815967080f0d183960e1ccbd2d0cca023181da9f80834d |
-| **Commit de referência (versão anterior)** | [62a2354c6372417a36c4df256fff267e691d8495](https://github.com/carlos-andrade/GOVERNANCA/commit/62a2354c6372417a36c4df256fff267e691d8495) |
+| **Estado** | APROVADO |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | ee3c80a56bcb59dc73d3e8a8ca687bcc86d687d79f9af941641dccb2db5bb154 |
+| **Commit de referência (versão anterior)** | [9885035b80114dd11cb6a486d8b662bd3aa533a9](https://github.com/carlos-andrade/GOVERNANCA/commit/9885035b80114dd11cb6a486d8b662bd3aa533a9) |
 | **Data de criação** | N/A — data histórica de criação não verificada |
-| **Data de atualização** | 2026-10-17 |
+| **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
-| **Aprovador** | Pendente de aprovação formal da Constituição |
+| **Aprovador** | Carlos Andrade — proprietário do repositório GOVERNANCA; aprovação expressa em 2026-10-23 |
 | **Autoridade superior** | Lei aplicável, contratos vinculativos e políticas formalmente aprovadas; ver secção 3 |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
 
@@ -84,7 +84,7 @@ O padrão, os registos e os testes estão em [`WATCHDOG/`](WATCHDOG/README.md). 
 
 ## 9. Revisão
 
-Rever anualmente e perante alterações materiais. Até aprovação formal, esta versão é uma proposta de base e não uma política corporativa ratificada.
+Rever anualmente e perante alterações materiais. A versão 1.0.2 foi ratificada formalmente em 2026-10-23 pelo proprietário do repositório GOVERNANCA. A aprovação aplica-se a este repositório e aos projetos que adotem expressamente o sistema; não substitui lei, contrato, aprovação de terceiros nem validação de adoção por cada repositório.
 
 ## 9. Padrão transversal de roadmap
 
@@ -94,3 +94,8 @@ O repositório GOVERNANCA e os repositórios que adotem formalmente as suas regr
 ## 10. Barra de status e progresso comprovado
 
 O estado e o percentual dos projetos abrangidos devem cumprir a [Norma de estado e percentual de conclusão](standards/status-e-percentual-de-conclusao.md). A pontuação deriva de critérios explícitos e evidências verificáveis; o painel Markdown e a representação visual são gerados da mesma fonte canónica. A data de atualização do registo não substitui a validação dos controlos operacionais nem a aprovação formal de encerramento. A adoção pelos demais repositórios exige implementação e validação individual.
+
+
+## 11. Ratificação
+
+A Constituição v1.0.2 foi aprovada em 2026-10-23 por Carlos Andrade, proprietário do repositório GOVERNANCA, por instrução expressa nesta conversa. Evidência: [Registo de aprovação G0](CABEÇALHO/REGISTO-APROVACAO-G0-2026-10-23.md).
