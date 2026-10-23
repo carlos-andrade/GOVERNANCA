@@ -27,6 +27,15 @@ class TestPropagarGovernancaRegistry(unittest.TestCase):
         self.assertTrue(any(path.startswith("standards/") for path in first))
         self.assertTrue(any(path.startswith("WATCHDOG/") for path in first))
 
+    def test_registo_canonico_mantem_licitacao_desativado(self):
+        data = sync.load_registry()
+        targets = {item["name"].lower(): item["enabled"] for item in data["repositories"]}
+        self.assertIn("carlos-andrade/licitacao", targets)
+        self.assertFalse(
+            targets["carlos-andrade/licitacao"],
+            "LICITACAO deve permanecer desativado até reconciliação e aceitação individual."
+        )
+
     def test_selecao_normal_exclui_destinos_desativados(self):
         data = {
             "repositories": [
