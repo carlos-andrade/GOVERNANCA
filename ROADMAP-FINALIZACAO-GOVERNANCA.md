@@ -9,7 +9,7 @@
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 319789793f912430a0cf8e724ef86fc34cd0c12e078d1992c9de650ecc165efd |
+| **SHA-256 (conteúdo canónico)** | 99ddb9fce4b50609b102a40ec6e36151ced075e77cdfe8a8e709ce3ea1b11a79 |
 | **Commit de referência (versão anterior)** | [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2) |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-23 |
