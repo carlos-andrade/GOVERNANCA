@@ -9,7 +9,7 @@
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 4c6386ee22a3139857921449aa8876de8b5a18767f6545a31b5f5e2191f372e0 |
+| **SHA-256 (conteúdo canónico)** | 53144f7a9e58378e10672c847067e55d933857e0cd7b0757536ee1cd9ce82fd4 |
 | **Commit de referência (versão anterior)** | [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2) |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-23 |
@@ -37,7 +37,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 
 | Gate | Entregáveis e trabalho | Critério objetivo de saída | Estado |
 |---|---|---|---|
-| G0 — Baseline e autoridade normativa | Rever Constituição, hierarquia normativa, decisões, políticas, responsáveis e aprovações. Classificar cada documento como proposta, em revisão, aprovado ou obsoleto. | Núcleo normativo coerente; aprovação formal da versão exata dos documentos que constituem autoridade; inventário de decisões e exceções atualizado. | BLOQUEADA — G0 ratificado e validado; outros documentos e políticas não incluídos no registo G0 mantêm o estado individual. |
+| G0 — Baseline e autoridade normativa | Constituição v1.0.2, política de decisões v1.0.1, matriz de responsabilidades v1.0.1 e registo formal G0 integrados; hashes canónicos verificados e CI aprovada. | Constituição, hierarquia, política e responsabilidades ratificadas; versões exatas e evidência ligadas; CI verde. | CONCLUÍDA — PR #35 integrada no commit `fe56b96c427dadf9a2774a8976aab35222fd76d2`; CI #43 passou, incluindo testes F1/F2 e validação dos quatro hashes canónicos. |
 | G1 — Distribuição segura | Autenticação do `GOVERNANCA_SYNC_TOKEN` validada nos runs #45/#46; executar o modo real por PR num único consumidor autorizado e testar acesso de escrita; criar/atualizar PRs reais apenas para destinos autorizados; verificar idempotência, isolamento de ficheiros, hashes, relatórios e redação de segredos. | Evidência de workflow real concluído, relatório inspecionado, PRs esperadas criadas/atualizadas, zero destinos indevidos e repetição sem diffs desnecessários. | BLOQUEADA — runs #45 e #46 validaram autenticação e dry-run sem erros; a credencial foi aceite, mas nenhum dos runs criou PRs reais. |
 | G2 — Registo de consumidores e adoção | Reconciliar `registry/repositorios-consumidores.json`, PR #4 e critérios de adoção; inspecionar cada espelho, manifestos, hashes, configurações, workflows e evidência individual. | Para cada destino, estado enabled coerente com decisão formal e critérios comprovados; nenhum estado de registo interpretado como certificação. | EM EXECUÇÃO — LICITACAO está agora disabled em main até adoção validada; PR #4 continua aberta e desatualizada face ao estado atual, devendo ser reconciliada/fechada sem reativar o destino; demais destinos exigem revisão individual. |
 | G3 — Governance Integration Framework | Completar catálogo executável para todos os perfis; definir requisitos semânticos, evidências, severidade, regras de applicability, políticas de modo aplicar, versionamento/ref imutável, relatórios e testes adversariais. | Catálogo com completude demonstrada por perfil; testes unitários, negativos e integração aprovados; relatório correto para PASS/FAIL/UNKNOWN; alteração só por PR; nenhuma certificação implícita. | EM EXECUÇÃO — F1/F2 e baseline estrutural F4 têm validações parciais; catálogo permanece `complete: false`; F5/F6 não concluídas. |
