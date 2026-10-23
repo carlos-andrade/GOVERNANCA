@@ -22,6 +22,7 @@ on:
       - "CONSTITUICAO.md"
       - "ROADMAP-FINALIZACAO-GOVERNANCA.md"
       - "registry/status-do-projeto.json"
+      - "docs/01-governanca/MATRIZ-ADOPCAO-CONSUMIDORES-2026-10-21.md"
       - "CABEÇALHO/REGISTO-APROVACAO-G0-2026-10-23.md"
       - "docs/01-governanca/papeis-e-responsabilidades.md"
       - "docs/01-governanca/politica-de-decisoes.md"
@@ -71,6 +72,7 @@ jobs:
           files = [
               "CONSTITUICAO.md",
               "ROADMAP-FINALIZACAO-GOVERNANCA.md",
+              "docs/01-governanca/MATRIZ-ADOPCAO-CONSUMIDORES-2026-10-21.md",
               "docs/01-governanca/papeis-e-responsabilidades.md",
               "docs/01-governanca/politica-de-decisoes.md",
               "CABEÇALHO/REGISTO-APROVACAO-G0-2026-10-23.md",

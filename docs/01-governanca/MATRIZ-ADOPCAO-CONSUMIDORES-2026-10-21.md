@@ -2,11 +2,26 @@
 
 | Campo | Valor |
 |---|---|
-| ID | GOV-ADOPTION-MATRIX-001 |
-| Data da inspeção | 2026-10-21 |
-| Fonte canónica de âmbito | `registry/repositorios-consumidores.json` |
-| Política de distribuição | `pull_request_only` |
-| Estado | INVENTÁRIO RECONCILIADO; ACEITAÇÕES INDIVIDUAIS PENDENTES |
+| **ID** | GOV-ADOPTION-MATRIX-001 |
+| **Projeto** | GOVERNANÇA |
+| **Repositório** | [carlos-andrade/GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA) |
+| **Tipo documental** | MATRIZ_ADOCAO_CONSUMIDORES |
+| **Fase** | G2 — Registo de consumidores e adoção |
+| **Estado** | INVENTÁRIO RECONCILIADO; ACEITAÇÕES INDIVIDUAIS PENDENTES |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 86e469132d2e98703265eff50c0ccecacd31ee704e0da4fb670aace809b1593e |
+| **Commit de referência (versão anterior)** | [e54c3ca24b04971f39a5c804beedc21ff1aff355](https://github.com/carlos-andrade/GOVERNANCA/commit/e54c3ca24b04971f39a5c804beedc21ff1aff355) |
+| **Data de criação** | 2026-10-21 |
+| **Data de atualização** | 2026-10-23 |
+| **Responsável** | Proprietário do repositório GOVERNANCA |
+| **Aprovador** | Pendente — atualização de inventário; adoção global não aprovada |
+| **Origem** | Inspeção do workflow #76 e da STOCKS PR #10 |
+| **Autoridade superior** | [CONSTITUICAO.md](../../CONSTITUICAO.md); [DEC-GOV-INT-001](DEC-GOV-INTEGRATION-FRAMEWORK-001.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Registo central de consumidores, run #76, STOCKS PR #10 e UPSTREAM-MANIFEST.json |
+| **Escopo** | Oito consumidores ativos e LICITACAO desativado |
+| **Objetivo** | Registar estado real de distribuição e adoção, sem inferir conformidade a partir do registo |
+| **Dependências** | Idempotência real, revisão humana da PR #10 e aceitação individual dos consumidores |
 
 ## 1. Critério de classificação
 
@@ -23,7 +38,7 @@
 | [DECIO-BAZIN](https://github.com/carlos-andrade/DECIO-BAZIN) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [XFI](https://github.com/carlos-andrade/XFI) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [CONSORCIO](https://github.com/carlos-andrade/CONSORCIO) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
-| [STOCKS](https://github.com/carlos-andrade/STOCKS) | true | [`.governanca/config.yml`](https://github.com/carlos-andrade/STOCKS/blob/main/.governanca/config.yml), blob SHA `c4f1ea14e4d0f174f8130510a11b435ae1998e43`; `modo: diagnostico`, `perfil: dados`, `exigir_pull_request: true`, `ref: c9be6d5224c7b412aa78a2b1d417b8315e5730f1` | PILOTO_DIAGNOSTICO_PASS / CONFORMIDADE_UNKNOWN | Revalidar o ref/relatório atual, executar distribuição real por PR e obter aceitação do proprietário; não promover a PASS global |
+| [STOCKS](https://github.com/carlos-andrade/STOCKS) | true | [`.governanca/config.yml`](https://github.com/carlos-andrade/STOCKS/blob/main/.governanca/config.yml), blob SHA `c4f1ea14e4d0f174f8130510a11b435ae1998e43`; `modo: diagnostico`, `perfil: dados`, `exigir_pull_request: true`, `ref: c9be6d5224c7b412aa78a2b1d417b8315e5730f1`; distribuição real por [run #76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914), com [PR #10](https://github.com/carlos-andrade/STOCKS/pull/10) aberta, ainda fora de `main` | PR_REAL_CRIADA / ACEITAÇÃO_PENDENTE / CONFORMIDADE_UNKNOWN | Repetir run real para validar idempotência; rever manifesto/diff, aguardar revisão/aceitação do proprietário e manter conformidade global UNKNOWN |
 | [TURISTURIS](https://github.com/carlos-andrade/TURISTURIS) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [BRICKMASTER_GERAL](https://github.com/carlos-andrade/BRICKMASTER_GERAL) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
@@ -33,7 +48,7 @@
 
 - Consumidores ativos registados: 8.
 - Adoção global demonstrada: 0.
-- Piloto técnico de diagnóstico conhecido: STOCKS, sem certificação global.
+- Piloto técnico de diagnóstico conhecido: STOCKS; PR #10 aberta após distribuição real, sem certificação global.
 - Consumidor desativado: LICITACAO.
 - Resultados UNKNOWN: B3, DECIO-BAZIN, XFI, CONSORCIO, STOCKS (conformidade global), TURISTURIS, BLOOMBERG_MAIL e BRICKMASTER_GERAL.
 
@@ -45,3 +60,11 @@ A matriz de inventário fica reconciliada com o registo e com a presença/ausên
 - [Relatório do piloto F3 — STOCKS](https://github.com/carlos-andrade/GOVERNANCA/blob/main/docs/01-governanca/RELATORIO-PILOTO-F3-STOCKS.md)
 - [Pacote de aceitação e fecho](https://github.com/carlos-andrade/GOVERNANCA/blob/main/governanca/PACOTE-ACEITACAO-E-FECHO.md)
 - [PR #4 — LICITACAO desativado no registo](https://github.com/carlos-andrade/GOVERNANCA/pull/4)
+- [Run #76 — distribuição real no STOCKS](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914)
+- [STOCKS PR #10 — revisão/aceitação pendentes](https://github.com/carlos-andrade/STOCKS/pull/10)
+
+## 5. Histórico de alterações
+
+| Versão | Data | Alteração | Responsável | Evidência |
+|---|---|---|---|---|
+| 1.0.1 | 2026-10-23 | Inventário atualizado: distribuição real criou a PR #10, com aceitação global ainda pendente. | Proprietário do repositório GOVERNANCA | Run #76; STOCKS PR #10 |
