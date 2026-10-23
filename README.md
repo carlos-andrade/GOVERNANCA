@@ -8,9 +8,9 @@
 | **Tipo documental** | README |
 | **Fase** | Entrada e orientação do repositório |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.2.0 |
-| **SHA-256 (conteúdo canónico)** | 334a3f7cbab10d1731e5fe9ea334e44bcf9fb3b66f80a6881090fc901b29aebc |
-| **Commit de referência (versão anterior)** | [fc1ebf06323d65c919f9a7dd2c741f37a49560e7](https://github.com/carlos-andrade/GOVERNANCA/commit/fc1ebf06323d65c919f9a7dd2c741f37a49560e7) |
+| **Versão** | 1.2.1 |
+| **SHA-256 (conteúdo canónico)** | 9234f7359132f7faa88fbb8456886c63fc2e4066598256b7ce8f5e51d56dcf99 |
+| **Commit de referência (versão anterior)** | [941034f876d0e281ad8e8672e25ec5a052d8a01e](https://github.com/carlos-andrade/GOVERNANCA/commit/941034f876d0e281ad8e8672e25ec5a052d8a01e) |
 | **Data de criação** | N/A — data histórica de criação não verificada |
 | **Data de atualização** | 2026-10-21 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -150,6 +150,10 @@ A arquitetura foi formalmente aprovada e integrada através da decisão [DEC-GOV
 - `automation/` — especificações para controlos automatizáveis.
 - `.github/workflows/watchdog-validation.yml` — validação automatizada do motor WATCHDOG e dos registos locais.
 - `examples/` — exemplos não normativos.
+
+## Norma de sincronização integral da documentação
+
+Todos os projetos que adotem esta norma devem atualizar a documentação afetada sempre que uma funcionalidade, correção, decisão ou comportamento for implementado. O procedimento exige análise de impacto, sincronização dos requisitos, arquitetura, contratos de API, testes, segurança, operação, roadmap e README quando aplicável, recálculo dos hashes e releitura dos ficheiros gravados. O fecho documental requer evidência e coerência entre o sistema e os documentos; a norma não autoriza declarar testes ou implementação sem prova. Consulte [Norma — Sincronização Integral da Documentação](standards/sincronizacao-integral-documentacao.md). A publicação no repositório-mestre não prova adoção automática por todos os consumidores; a adoção deve ser validada em cada repositório.
 
 ## Regras fundamentais
 
