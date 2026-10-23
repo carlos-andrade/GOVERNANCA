@@ -9,7 +9,7 @@
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 236cc2d23e1295b7e237b86c5e7bf147678e4d40e225c54f3cb6b93482927989 |
+| **SHA-256 (conteúdo canónico)** | 319789793f912430a0cf8e724ef86fc34cd0c12e078d1992c9de650ecc165efd |
 | **Commit de referência (versão anterior)** | [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2) |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-23 |
@@ -48,9 +48,9 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 
 ## 4. Ações prioritárias imediatas
 
-1. **A1 — Reconciliar LICITACAO:** o registo foi corrigido em `main` para `enabled: false` no commit `31ec179bb267ece9ee92663110189d75821df2be`. A PR #4 deve ser encerrada ou atualizada de modo que não reintroduza um estado divergente; não ativar LICITACAO até adoção local validada.
+1. **A1 — Reconciliar LICITACAO:** PR #38 integrada no commit `6a7dc8d2ff817d1ce409842d097d4c82bb7c035d`; o registo canónico mantém `enabled: false` e o teste de regressão protege contra reativação inadvertida. A PR #4 deve ser reconciliada/encerrada sem reativar o destino.
 2. **A2 — Validar escrita e executar PR piloto:** a credencial `GOVERNANCA_SYNC_TOKEN` foi aceite nos dry-runs #45/#46 para a identidade `carlos-andrade`. O próximo passo é executar manualmente o workflow com `dry_run=false` para um único consumidor de teste autorizado, confirmar permissões de escrita nesse destino e verificar a PR resultante. Não registar nem expor o valor do secret.
-3. **A3 — Dry-run concluído:** runs #45 e #46 confirmam autenticação para `carlos-andrade`, 78 ficheiros descobertos, 8 consumidores ativos e zero erros; os resultados foram `WOULD_OPEN_PR`. Falta o teste real controlado.
+3. **A3 — Dry-run concluído:** runs #45/#46 confirmaram autenticação e leitura, com 78 ficheiros e zero erros. O run #75 (23-10-2026), após a reconciliação de LICITACAO, confirmou 84 ficheiros, 8 consumidores ativos, zero erros e `WOULD_OPEN_PR` nos oito destinos. Não foram criadas PRs reais.
 4. **A4 — Executar teste controlado de PR real:** começar por um consumidor autorizado e de baixo risco; confirmar branch, diff, manifesto, hashes, PR e reexecução idempotente antes de expandir.
 5. **A5 — Completar catálogo de perfis:** definir e testar critérios funcionais/semânticos por domínio; manter `complete: false` enquanto faltar qualquer perfil ou critério obrigatório.
 6. **A6 — Rever políticas fora do âmbito G0:** ratificar individualmente os documentos ainda em `EM_REVISAO`; a aprovação G0 não os aprova por extensão.
