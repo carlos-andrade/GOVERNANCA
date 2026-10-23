@@ -8,8 +8,8 @@
 | **Tipo documental** | ROADMAP |
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 538504535de44dc05df30957db903a944804105abb0c85102c40c35578db8579 |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | 9f55877e8f7de3218fc5928e909a2afb5cf8d27b836932c8c3ba89ed24796c5a |
 | **Commit de referência (versão anterior)** | [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2) |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-23 |
