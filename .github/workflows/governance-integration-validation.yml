@@ -19,6 +19,10 @@ on:
       - ".github/workflows/governance-integration-reusable.yml"
   pull_request:
     paths:
+      - "CONSTITUICAO.md"
+      - "CABEÇALHO/REGISTO-APROVACAO-G0-2026-10-23.md"
+      - "docs/01-governanca/papeis-e-responsabilidades.md"
+      - "docs/01-governanca/politica-de-decisoes.md"
       - "schemas/governanca-config.schema.json"
       - "docs/01-governanca/ESPECIFICACAO-GOVERNANCE-INTEGRATION-FRAMEWORK-001.md"
       - "docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md"
@@ -56,6 +60,27 @@ jobs:
         run: python -m json.tool schemas/governanca-config.schema.json > /dev/null
       - name: Executar testes F1/F2
         run: python -m unittest discover -s tests -p "test_governance_config_schema.py" -v && python -m unittest discover -s tests -p "test_governance_engine.py" -v && python -m unittest discover -s tests -p "test_propagate_governance.py" -v
+      - name: Validar SHA-256 canónico dos documentos G0
+        run: |
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+
+          files = [
+              "CONSTITUICAO.md",
+              "docs/01-governanca/papeis-e-responsabilidades.md",
+              "docs/01-governanca/politica-de-decisoes.md",
+              "CABEÇALHO/REGISTO-APROVACAO-G0-2026-10-23.md",
+          ]
+          for name in files:
+              text = Path(name).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").lstrip("\ufeff")
+              lines = [line for line in text.split("\n") if "**SHA-256 (conteúdo canónico)**" not in line and "**Commit de referência (versão anterior)**" not in line]
+              digest = hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest()
+              expected = next((line.split("|")[2].strip() for line in text.splitlines() if "**SHA-256 (conteúdo canónico)**" in line), "")
+              if digest != expected:
+                  raise SystemExit(f"FAIL {name}: expected={expected} calculated={digest}")
+              print(f"PASS {name}: {digest}")
+          PY
       - name: Smoke test — relatório JSON
         run: |
           python automation/governance_engine.py --root . > /tmp/governance-report.json || test "$?" -eq 2
