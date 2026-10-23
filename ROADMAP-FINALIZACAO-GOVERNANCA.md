@@ -8,13 +8,13 @@
 | **Tipo documental** | ROADMAP |
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
-| **Versão** | 1.0.0 |
-| **SHA-256 (conteúdo canónico)** | 1bb8a67028db068182be0f9b5633a54e1bfdd775c2a5f0c413284209b4408a82 |
-| **Commit de referência (versão anterior)** | N/A — documento inicial |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 4c6386ee22a3139857921449aa8876de8b5a18767f6545a31b5f5e2191f372e0 |
+| **Commit de referência (versão anterior)** | [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2) |
 | **Data de criação** | 2026-10-20 |
-| **Data de atualização** | 2026-10-21 |
+| **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
-| **Aprovador** | Pendente de aprovação formal deste roadmap |
+| **Aprovador** | Proprietário do repositório GOVERNANCA — atualização de estado baseada em evidência G0 |
 | **Autoridade superior** | [CONSTITUICAO.md](CONSTITUICAO.md), após ratificação |
 | **Padrão aplicável** | [Roadmap padrão](ROADMAP-PADRAO-GOVERNANCA.md); [Carta/Contrato do roadmap](CARTA-CONTRATO-PADRAO-ROADMAP.md); [Norma de estado e percentual](standards/status-e-percentual-de-conclusao.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
@@ -37,7 +37,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 
 | Gate | Entregáveis e trabalho | Critério objetivo de saída | Estado |
 |---|---|---|---|
-| G0 — Baseline e autoridade normativa | Rever Constituição, hierarquia normativa, decisões, políticas, responsáveis e aprovações. Classificar cada documento como proposta, em revisão, aprovado ou obsoleto. | Núcleo normativo coerente; aprovação formal da versão exata dos documentos que constituem autoridade; inventário de decisões e exceções atualizado. | BLOQUEADA — Constituição e várias políticas continuam em revisão. |
+| G0 — Baseline e autoridade normativa | Rever Constituição, hierarquia normativa, decisões, políticas, responsáveis e aprovações. Classificar cada documento como proposta, em revisão, aprovado ou obsoleto. | Núcleo normativo coerente; aprovação formal da versão exata dos documentos que constituem autoridade; inventário de decisões e exceções atualizado. | BLOQUEADA — G0 ratificado e validado; outros documentos e políticas não incluídos no registo G0 mantêm o estado individual. |
 | G1 — Distribuição segura | Autenticação do `GOVERNANCA_SYNC_TOKEN` validada nos runs #45/#46; executar o modo real por PR num único consumidor autorizado e testar acesso de escrita; criar/atualizar PRs reais apenas para destinos autorizados; verificar idempotência, isolamento de ficheiros, hashes, relatórios e redação de segredos. | Evidência de workflow real concluído, relatório inspecionado, PRs esperadas criadas/atualizadas, zero destinos indevidos e repetição sem diffs desnecessários. | BLOQUEADA — runs #45 e #46 validaram autenticação e dry-run sem erros; a credencial foi aceite, mas nenhum dos runs criou PRs reais. |
 | G2 — Registo de consumidores e adoção | Reconciliar `registry/repositorios-consumidores.json`, PR #4 e critérios de adoção; inspecionar cada espelho, manifestos, hashes, configurações, workflows e evidência individual. | Para cada destino, estado enabled coerente com decisão formal e critérios comprovados; nenhum estado de registo interpretado como certificação. | EM EXECUÇÃO — LICITACAO está agora disabled em main até adoção validada; PR #4 continua aberta e desatualizada face ao estado atual, devendo ser reconciliada/fechada sem reativar o destino; demais destinos exigem revisão individual. |
 | G3 — Governance Integration Framework | Completar catálogo executável para todos os perfis; definir requisitos semânticos, evidências, severidade, regras de applicability, políticas de modo aplicar, versionamento/ref imutável, relatórios e testes adversariais. | Catálogo com completude demonstrada por perfil; testes unitários, negativos e integração aprovados; relatório correto para PASS/FAIL/UNKNOWN; alteração só por PR; nenhuma certificação implícita. | EM EXECUÇÃO — F1/F2 e baseline estrutural F4 têm validações parciais; catálogo permanece `complete: false`; F5/F6 não concluídas. |
@@ -53,7 +53,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 3. **A3 — Dry-run concluído:** runs #45 e #46 confirmam autenticação para `carlos-andrade`, 78 ficheiros descobertos, 8 consumidores ativos e zero erros; os resultados foram `WOULD_OPEN_PR`. Falta o teste real controlado.
 4. **A4 — Executar teste controlado de PR real:** começar por um consumidor autorizado e de baixo risco; confirmar branch, diff, manifesto, hashes, PR e reexecução idempotente antes de expandir.
 5. **A5 — Completar catálogo de perfis:** definir e testar critérios funcionais/semânticos por domínio; manter `complete: false` enquanto faltar qualquer perfil ou critério obrigatório.
-6. **A6 — Ratificar documentos fundacionais e operacionais:** rever Constituição e políticas em `EM_REVISAO`; não alterar o estado para aprovado sem aprovação explícita da versão exata.
+6. **A6 — Rever políticas fora do âmbito G0:** ratificar individualmente os documentos ainda em `EM_REVISAO`; a aprovação G0 não os aprova por extensão.
 7. **A7 — Fechar WATCHDOG:** obter decisões dos proprietários sobre atualidade; testar supervisão independente, canais, ACK, escalonamento e recuperação.
 8. **A8 — Reconciliar inventários e auditoria de hashes:** auditar a árvore do commit atual, não apenas fotografias históricas; publicar a evidência.
 9. **A9 — Executar fecho formal:** atualizar scorecard e painel através da automação canónica, verificar a sincronização e registar revisão/aprovação final.
@@ -88,6 +88,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 | Versão | Data | Alteração |
 |---|---|---|
 | 1.0.0 | 2026-10-20 | Criação do roadmap de finalização a partir da revisão do estado de `main`, workflows, scorecard e pendências publicadas. |
+| 1.0.1 | 2026-10-23 | G0 concluído após ratificação formal, verificação dos hashes canónicos e CI verde na PR #35. |
 
 ## 8.2. Integridade do painel — 2026-10-21
 
@@ -128,3 +129,12 @@ A GOVERNANCA só pode ser declarada FINALIZADA quando todos os critérios de sa�
 - **Scheduler real — teste isolado concluído:** [run 39594340734](https://github.com/carlos-andrade/B3/actions/runs/39594340734) decorreu de 11:45:43.190Z a 11:46:08.252Z e [run 39594370310](https://github.com/carlos-andrade/B3/actions/runs/39594370310) de 11:46:14.681Z a 11:46:39.738Z; ambos SUCCESS e sem sobreposição. Artefactos de logs disponíveis em cada run. O teste adicional de três eventos [39594177078](https://github.com/carlos-andrade/B3/actions/runs/39594177078), [39594183327](https://github.com/carlos-andrade/B3/actions/runs/39594183327) e [39594206007](https://github.com/carlos-andrade/B3/actions/runs/39594206007) mostrou substituição de uma execução pendente (uma CANCELLED), confirmando que o mecanismo não garante FIFO nem preserva todas as execuções. Não usar o teste para certificar publicação de produção.
 - **Falhas operacionais observadas após a PR B3 #19 (2026-10-21):** [run 39590685303](https://github.com/carlos-andrade/B3/actions/runs/39590685303) falhou na geração do Dataset Oficial V2 por `2026: QUALITY_MANIFEST_INVALIDO`; os runs [39590685161](https://github.com/carlos-andrade/B3/actions/runs/39590685161) (Dataset V1) e [39590685070](https://github.com/carlos-andrade/B3/actions/runs/39590685070) (certificação) terminaram `cancelled`. O run [39592151814](https://github.com/carlos-andrade/B3/actions/runs/39592151814) falhou no teste de autorização por `KeyError: 'operation_scope'` e ignorou o job de importação; o mesmo erro surgiu no [run 39592143030](https://github.com/carlos-andrade/B3/actions/runs/39592143030). Estes resultados requerem correção e nova CI; não permitem atribuir com certeza os cancelamentos ao grupo de concorrência nem certificar a publicação.
 - **Scorecard:** manter 80/100, início 20/20, meio 60/60, fim 0/20; 9 bloqueios; os cinco `closure_checks` continuam `false`. Não recalcular ainda: as evidências são insuficientes para pontuar o fecho, pois C2 e o teste real do scheduler continuam abertos, C5 está mitigado no código mas não validado operacionalmente, e outros gates globais permanecem pendentes.
+
+
+## 8.3. Fecho do G0 — 2026-10-23
+
+- Constituição v1.0.2, política de decisões v1.0.1 e matriz de responsabilidades v1.0.1 ratificadas com âmbito e limites explícitos.
+- Registo formal: [CABEÇALHO/REGISTO-APROVACAO-G0-2026-10-23.md](CABE%C3%87ALHO/REGISTO-APROVACAO-G0-2026-10-23.md).
+- PR #35 integrada no commit [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2).
+- CI [run #43](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39952021834) passou: testes F1/F2 e validação de SHA-256 canónico para Constituição, matriz, política e registo de aprovação.
+- Âmbito limitado: G0 concluído para o baseline normativo enumerado; não significa adoção ou conformidade automática dos restantes repositórios, nem aprovação das políticas não enumeradas.
