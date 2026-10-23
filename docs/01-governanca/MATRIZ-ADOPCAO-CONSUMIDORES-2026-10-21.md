@@ -8,9 +8,9 @@
 | **Tipo documental** | MATRIZ_ADOCAO_CONSUMIDORES |
 | **Fase** | G2 — Registo de consumidores e adoção |
 | **Estado** | INVENTÁRIO RECONCILIADO; ACEITAÇÕES INDIVIDUAIS PENDENTES |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 86e469132d2e98703265eff50c0ccecacd31ee704e0da4fb670aace809b1593e |
-| **Commit de referência (versão anterior)** | [e54c3ca24b04971f39a5c804beedc21ff1aff355](https://github.com/carlos-andrade/GOVERNANCA/commit/e54c3ca24b04971f39a5c804beedc21ff1aff355) |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | 3e5b453e8a9152215663e3cd75625988ee848b05c23791b3a557bbb56f582a2f |
+| **Commit de referência (versão anterior)** | [86fbd285958c097bd52dfc31836214d0a15836a8](https://github.com/carlos-andrade/GOVERNANCA/commit/86fbd285958c097bd52dfc31836214d0a15836a8) |
 | **Data de criação** | 2026-10-21 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -38,7 +38,7 @@
 | [DECIO-BAZIN](https://github.com/carlos-andrade/DECIO-BAZIN) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [XFI](https://github.com/carlos-andrade/XFI) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [CONSORCIO](https://github.com/carlos-andrade/CONSORCIO) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
-| [STOCKS](https://github.com/carlos-andrade/STOCKS) | true | [`.governanca/config.yml`](https://github.com/carlos-andrade/STOCKS/blob/main/.governanca/config.yml), blob SHA `c4f1ea14e4d0f174f8130510a11b435ae1998e43`; `modo: diagnostico`, `perfil: dados`, `exigir_pull_request: true`, `ref: c9be6d5224c7b412aa78a2b1d417b8315e5730f1`; distribuição real por [run #76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914), com [PR #10](https://github.com/carlos-andrade/STOCKS/pull/10) aberta, ainda fora de `main` | PR_REAL_CRIADA / ACEITAÇÃO_PENDENTE / CONFORMIDADE_UNKNOWN | Repetir run real para validar idempotência; rever manifesto/diff, aguardar revisão/aceitação do proprietário e manter conformidade global UNKNOWN |
+| [STOCKS](https://github.com/carlos-andrade/STOCKS) | true | [`.governanca/config.yml`](https://github.com/carlos-andrade/STOCKS/blob/main/.governanca/config.yml), blob SHA `c4f1ea14e4d0f174f8130510a11b435ae1998e43`; `modo: diagnostico`, `perfil: dados`, `exigir_pull_request: true`, `ref: c9be6d5224c7b412aa78a2b1d417b8315e5730f1`; distribuição real por [run #76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914), com [PR #10](https://github.com/carlos-andrade/STOCKS/pull/10) aberta, ainda fora de `main` | PR_REAL_CRIADA / ACEITAÇÃO_PENDENTE / CONFORMIDADE_UNKNOWN | Sincronizar a origem atual na PR #10; em seguida, sem novo commit na origem, repetir o mesmo run real para confirmar `PR_NO_CHANGE`; rever hashes restantes e obter aceitação do proprietário. Manter conformidade global UNKNOWN |
 | [TURISTURIS](https://github.com/carlos-andrade/TURISTURIS) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [BLOOMBERG_MAIL](https://github.com/carlos-andrade/BLOOMBERG_MAIL) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
 | [BRICKMASTER_GERAL](https://github.com/carlos-andrade/BRICKMASTER_GERAL) | true | Não encontrado `.governanca/` na raiz | UNKNOWN — sem configuração local do GIF | Criar configuração local por PR e executar validação de perfil |
@@ -68,3 +68,4 @@ A matriz de inventário fica reconciliada com o registo e com a presença/ausên
 | Versão | Data | Alteração | Responsável | Evidência |
 |---|---|---|---|---|
 | 1.0.1 | 2026-10-23 | Inventário atualizado: distribuição real criou a PR #10, com aceitação global ainda pendente. | Proprietário do repositório GOVERNANCA | Run #76; STOCKS PR #10 |
+| 1.0.2 | 2026-10-23 | Sequência de execução atualizada para refletir a origem canónica pós-PR #41 e separar sincronização de prova de idempotência. | Proprietário do repositório GOVERNANCA | Run #77; PR #10 |
