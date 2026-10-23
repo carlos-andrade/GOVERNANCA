@@ -9,7 +9,7 @@
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 53144f7a9e58378e10672c847067e55d933857e0cd7b0757536ee1cd9ce82fd4 |
+| **SHA-256 (conteúdo canónico)** | 538504535de44dc05df30957db903a944804105abb0c85102c40c35578db8579 |
 | **Commit de referência (versão anterior)** | [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2) |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-23 |
@@ -48,9 +48,9 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 
 ## 4. Ações prioritárias imediatas
 
-1. **A1 — Reconciliar LICITACAO:** o registo foi corrigido em `main` para `enabled: false` no commit `31ec179bb267ece9ee92663110189d75821df2be`. A PR #4 deve ser encerrada ou atualizada de modo que não reintroduza um estado divergente; não ativar LICITACAO até adoção local validada.
+1. **A1 — Reconciliar LICITACAO:** PR #38 integrada no commit `6a7dc8d2ff817d1ce409842d097d4c82bb7c035d`; o registo canónico mantém `enabled: false` e o teste de regressão protege contra reativação inadvertida. A PR #4 deve ser reconciliada/encerrada sem reativar o destino.
 2. **A2 — Validar escrita e executar PR piloto:** a credencial `GOVERNANCA_SYNC_TOKEN` foi aceite nos dry-runs #45/#46 para a identidade `carlos-andrade`. O próximo passo é executar manualmente o workflow com `dry_run=false` para um único consumidor de teste autorizado, confirmar permissões de escrita nesse destino e verificar a PR resultante. Não registar nem expor o valor do secret.
-3. **A3 — Dry-run concluído:** runs #45 e #46 confirmam autenticação para `carlos-andrade`, 78 ficheiros descobertos, 8 consumidores ativos e zero erros; os resultados foram `WOULD_OPEN_PR`. Falta o teste real controlado.
+3. **A3 — Dry-run concluído:** runs #45/#46 confirmaram autenticação e leitura, com 78 ficheiros e zero erros. O run #75 (23-10-2026), após a reconciliação de LICITACAO, confirmou 84 ficheiros, 8 consumidores ativos, zero erros e `WOULD_OPEN_PR` nos oito destinos. Não foram criadas PRs reais.
 4. **A4 — Executar teste controlado de PR real:** começar por um consumidor autorizado e de baixo risco; confirmar branch, diff, manifesto, hashes, PR e reexecução idempotente antes de expandir.
 5. **A5 — Completar catálogo de perfis:** definir e testar critérios funcionais/semânticos por domínio; manter `complete: false` enquanto faltar qualquer perfil ou critério obrigatório.
 6. **A6 — Rever políticas fora do âmbito G0:** ratificar individualmente os documentos ainda em `EM_REVISAO`; a aprovação G0 não os aprova por extensão.
@@ -60,7 +60,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 
 ## 5. Bloqueios, dependências e política de exceções
 
-- **Distribuição por PR real:** os dry-runs #45 e #46 provaram autenticação e leitura, com 0 erros, mas continuam a retornar `WOULD_OPEN_PR`. Falta uma execução manual controlada com `dry_run=false` e confirmação das permissões de escrita no consumidor escolhido.
+- **Distribuição por PR real:** os dry-runs #45/#46 e o run #75 provaram autenticação e leitura; o run #75 processou 84 ficheiros e 8 consumidores ativos, com 0 erros, mas todos os resultados continuam `WOULD_OPEN_PR`. Falta uma execução manual controlada com `dry_run=false` e confirmação das permissões de escrita no consumidor escolhido. A sessão atual não dispõe de ação de dispatch manual do workflow; a distribuição real permanece bloqueada até essa execução ser feita no GitHub Actions.
 - **Permissões nos consumidores:** a autenticação da fonte não prova permissões de escrita nos destinos. Testar separadamente, sem ampliar desnecessariamente os privilégios.
 - **Aprovações normativas:** a criação/revisão de textos não equivale a ratificação. Registar decisor, versão aprovada e data.
 - **Aceitação operacional:** workflow verde é apenas uma evidência; não substitui confirmação de entrega de alertas, supervisão externa ou recuperação.
@@ -89,6 +89,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 |---|---|---|
 | 1.0.0 | 2026-10-20 | Criação do roadmap de finalização a partir da revisão do estado de `main`, workflows, scorecard e pendências publicadas. |
 | 1.0.1 | 2026-10-23 | G0 concluído após ratificação formal, verificação dos hashes canónicos e CI verde na PR #35. |
+| 1.0.2 | 2026-10-23 | G1 reavaliado: PR #38 reconcilia LICITACAO como desativado; run #75 confirma dry-run autenticado sem erros para oito consumidores, sem criação de PRs reais. |
 
 ## 8.2. Integridade do painel — 2026-10-21
 
