@@ -73,9 +73,9 @@ jobs:
               "CABEÇALHO/REGISTO-APROVACAO-G0-2026-10-23.md",
           ]
           for name in files:
-              text = Path(name).read_text(encoding="utf-8").replace("\\r\\n", "\\n").replace("\\r", "\\n").lstrip("\\ufeff")
-              lines = [line for line in text.split("\\n") if "**SHA-256 (conteúdo canónico)**" not in line and "**Commit de referência (versão anterior)**" not in line]
-              digest = hashlib.sha256("\\n".join(lines).encode("utf-8")).hexdigest()
+              text = Path(name).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").lstrip("\ufeff")
+              lines = [line for line in text.split("\n") if "**SHA-256 (conteúdo canónico)**" not in line and "**Commit de referência (versão anterior)**" not in line]
+              digest = hashlib.sha256("\n".join(lines).encode("utf-8")).hexdigest()
               expected = next((line.split("|", 2)[2].strip() for line in text.splitlines() if "**SHA-256 (conteúdo canónico)**" in line), "")
               if digest != expected:
                   raise SystemExit(f"FAIL {name}: expected={expected} calculated={digest}")
