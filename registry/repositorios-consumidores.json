@@ -47,7 +47,7 @@
     },
     {
       "name": "carlos-andrade/LICITACAO",
-      "enabled": true,
+      "enabled": false,
       "owner": "Carlos Andrade"
     }
   ],
@@ -56,8 +56,8 @@
     "Os ficheiros são publicados em .governanca/upstream/ para não sobrescrever documentos locais.",
     "A publicação é proposta por Pull Request; nunca faz merge automático.",
     "A existência no registo define o âmbito de distribuição, não prova adoção ou conformidade do repositório.",
-    "LICITACAO está enabled=true desde a integração da PR #32 (commit cedba71292a107b1f4b5733987c6262d50c46673), após aprovação G0, distribuição upstream validada e adoção documental APROVADO_COM_LIMITACOES. Isto define âmbito de distribuição; não certifica conformidade nem torna o WATCHDOG operacional.",
-    "LICITACAO: enabled=true efetivo após merge da GOVERNANCA PR #32; 79/79 Git blob SHA foram verificados após a LICITACAO PR #24, a inspeção foi aprovada com limitações na LICITACAO PR #25 e a CI pós-merge de LICITACAO concluiu com sucesso. Sete controlos WATCHDOG permanecem UNKNOWN; enabled indica âmbito de distribuição, não certificação operacional."
+    "LICITACAO permanece desativado até a adoção local e a aceitação individual serem reconciliadas e comprovadas. O histórico da PR #32 não substitui a decisão operacional mais recente nem certifica conformidade global.",
+    "A desativação impede a seleção por distribuição normal. Qualquer teste de destino desativado requer autorização explícita e permanece limitado ao modo de teste previsto no workflow."
   ],
   "published_roots": [
     "CONSTITUICAO.md",
