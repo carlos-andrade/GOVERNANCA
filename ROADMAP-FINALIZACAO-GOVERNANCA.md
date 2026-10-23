@@ -8,9 +8,9 @@
 | **Tipo documental** | ROADMAP |
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
-| **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | c6243a187223a9cc7278cd85507a332e62b870a3e93c7f45a12125a10fc3d63b |
-| **Commit de referência (versão anterior)** | [e54c3ca24b04971f39a5c804beedc21ff1aff355](https://github.com/carlos-andrade/GOVERNANCA/commit/e54c3ca24b04971f39a5c804beedc21ff1aff355) |
+| **Versão** | 1.0.4 |
+| **SHA-256 (conteúdo canónico)** | af8c6aeb2926103f65d44867b8bd988e61a1b4094b375a2270890ba3873fe059 |
+| **Commit de referência (versão anterior)** | [86fbd285958c097bd52dfc31836214d0a15836a8](https://github.com/carlos-andrade/GOVERNANCA/commit/86fbd285958c097bd52dfc31836214d0a15836a8) |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
@@ -51,7 +51,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 1. **A1 — Reconciliar LICITACAO:** PR #38 integrada no commit `6a7dc8d2ff817d1ce409842d097d4c82bb7c035d`; o registo canónico mantém `enabled: false` e o teste de regressão protege contra reativação inadvertida. A PR #4 deve ser reconciliada/encerrada sem reativar o destino.
 2. **A2 — Validar escrita e executar PR piloto:** run [#76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914) validou a credencial como `carlos-andrade` e criou a [PR STOCKS #10](https://github.com/carlos-andrade/STOCKS/pull/10), provando permissão de escrita e criação de PR nesse destino. Não registar nem expor o valor do secret.
 3. **A3 — Distribuição real por PR demonstrada num destino:** run #76 (`workflow_dispatch`, `dry_run=false`, `repository=carlos-andrade/STOCKS`) processou 84 ficheiros de origem, reportou 0 erros e criou a PR #10. O manifesto fixa o commit de origem `e54c3ca24b04971f39a5c804beedc21ff1aff355` e contém 84 entradas.
-4. **A4 — Validar idempotência e aceitação da PR:** repetir o mesmo dispatch real limitado a STOCKS, `dry_run=false`, `repository=carlos-andrade/STOCKS`, `allow_disabled_test=false`; confirmar que o relatório retorna `PR_NO_CHANGE` (ou comportamento idempotente equivalente), que não aparece diff adicional e que a PR #10 continua única. Inspecionar os hashes restantes do manifesto e obter revisão/aceitação humana antes de promover o piloto.
+4. **A4 — Validar atualização e idempotência da PR:** a origem `main` avançou após o run #76, porque a matriz de adoção e o scorecard foram atualizados; por isso, a primeira reexecução real pode devolver `PR_UPDATED` e atualizar a PR #10 para a versão canónica atual. Inspecionar essa atualização e o relatório. Depois, sem alterar novamente `main`, executar uma segunda vez os mesmos inputs (`dry_run=false`, `repository=carlos-andrade/STOCKS`, `allow_disabled_test=false`) e confirmar `PR_NO_CHANGE` (ou resultado idempotente equivalente), uma única PR aberta e nenhum diff adicional. Completar a revisão dos hashes restantes do manifesto e obter aceitação humana antes de promover o piloto.
 5. **A5 — Completar catálogo de perfis:** definir e testar critérios funcionais/semânticos por domínio; manter `complete: false` enquanto faltar qualquer perfil ou critério obrigatório.
 6. **A6 — Rever políticas fora do âmbito G0:** ratificar individualmente os documentos ainda em `EM_REVISAO`; a aprovação G0 não os aprova por extensão.
 7. **A7 — Fechar WATCHDOG:** obter decisões dos proprietários sobre atualidade; testar supervisão independente, canais, ACK, escalonamento e recuperação.
@@ -94,6 +94,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 | 1.0.1 | 2026-10-23 | G0 concluído após ratificação formal, verificação dos hashes canónicos e CI verde na PR #35. |
 | 1.0.2 | 2026-10-23 | G1 reavaliado após reconciliação de LICITACAO e dry-run autenticado. |
 | 1.0.3 | 2026-10-23 | Run #76 criou a PR STOCKS #10; quatro documentos alterados e os respetivos SHA-256 foram validados, ficando idempotência e aceitação pendentes. |
+| 1.0.4 | 2026-10-23 | Sequência de validação corrigida: primeira reexecução sincroniza a origem atual; segunda execução com origem estável comprova idempotência. |
 
 ## 8.2. Integridade do painel — 2026-10-21
 
