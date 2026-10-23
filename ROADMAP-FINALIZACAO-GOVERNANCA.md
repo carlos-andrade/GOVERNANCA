@@ -8,13 +8,13 @@
 | **Tipo documental** | ROADMAP |
 | **Fase** | Finalização do sistema-mestre |
 | **Estado** | EM_EXECUCAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 9f55877e8f7de3218fc5928e909a2afb5cf8d27b836932c8c3ba89ed24796c5a |
-| **Commit de referência (versão anterior)** | [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | c6243a187223a9cc7278cd85507a332e62b870a3e93c7f45a12125a10fc3d63b |
+| **Commit de referência (versão anterior)** | [e54c3ca24b04971f39a5c804beedc21ff1aff355](https://github.com/carlos-andrade/GOVERNANCA/commit/e54c3ca24b04971f39a5c804beedc21ff1aff355) |
 | **Data de criação** | 2026-10-20 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório GOVERNANCA |
-| **Aprovador** | Proprietário do repositório GOVERNANCA — atualização de estado baseada em evidência G0 |
+| **Aprovador** | Proprietário do repositório GOVERNANCA — atualização G1 baseada no run #76 e PR STOCKS #10 |
 | **Autoridade superior** | [CONSTITUICAO.md](CONSTITUICAO.md), após ratificação |
 | **Padrão aplicável** | [Roadmap padrão](ROADMAP-PADRAO-GOVERNANCA.md); [Carta/Contrato do roadmap](CARTA-CONTRATO-PADRAO-ROADMAP.md); [Norma de estado e percentual](standards/status-e-percentual-de-conclusao.md) |
 | **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
@@ -30,7 +30,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 - **Estado global:** EM_EXECUCAO — finalização bloqueada por dependências críticas.
 - **Último estado scorecard publicado:** 80% comprovados, conforme `registry/status-do-projeto.json`; este roadmap não recalcula nem aumenta o percentual.
 - **Fonte de estado:** `registry/status-do-projeto.json`; o README e o SVG devem ser gerados pela automação existente.
-- **Bloqueios centrais conhecidos:** distribuição real por PR ainda não demonstrada; credencial de sincronização validada no dry-run, mas permissões de escrita e abertura de PR ainda não testadas; catálogo de perfis incompleto; adoção transversal pendente; aceitação operacional WATCHDOG incompleta; documentos fundacionais/políticas em revisão; a PR #4 foi integrada em 2026-10-20 (commit `a212d6bf8e26c0b26b7035926a01d2300a1c76b3`) e LICITACAO permanece `enabled: false` em `main`.
+- **Bloqueios centrais conhecidos:** a distribuição real por PR foi demonstrada num consumidor de teste autorizado: run #76 criou STOCKS PR #10 com zero erros; a PR permanece aberta e a repetição idempotente/revisão humana ainda não estão comprovadas. O catálogo de perfis permanece incompleto; a adoção transversal e a aceitação operacional WATCHDOG continuam pendentes; LICITACAO permanece `enabled: false` em `main`.
 - **Regra fail-closed:** não habilitar distribuição nem declarar conformidade global sem provas adequadas.
 
 ## 3. Roadmap de gates
@@ -38,7 +38,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 | Gate | Entregáveis e trabalho | Critério objetivo de saída | Estado |
 |---|---|---|---|
 | G0 — Baseline e autoridade normativa | Constituição v1.0.2, política de decisões v1.0.1, matriz de responsabilidades v1.0.1 e registo formal G0 integrados; hashes canónicos verificados e CI aprovada. | Constituição, hierarquia, política e responsabilidades ratificadas; versões exatas e evidência ligadas; CI verde. | CONCLUÍDA — PR #35 integrada no commit `fe56b96c427dadf9a2774a8976aab35222fd76d2`; CI #43 passou, incluindo testes F1/F2 e validação dos quatro hashes canónicos. |
-| G1 — Distribuição segura | Autenticação do `GOVERNANCA_SYNC_TOKEN` validada nos runs #45/#46; executar o modo real por PR num único consumidor autorizado e testar acesso de escrita; criar/atualizar PRs reais apenas para destinos autorizados; verificar idempotência, isolamento de ficheiros, hashes, relatórios e redação de segredos. | Evidência de workflow real concluído, relatório inspecionado, PRs esperadas criadas/atualizadas, zero destinos indevidos e repetição sem diffs desnecessários. | BLOQUEADA — runs #45 e #46 validaram autenticação e dry-run sem erros; a credencial foi aceite, mas nenhum dos runs criou PRs reais. |
+| G1 — Distribuição segura | Autenticação do `GOVERNANCA_SYNC_TOKEN` validada nos runs #45/#46; executar o modo real por PR num único consumidor autorizado e testar acesso de escrita; criar/atualizar PRs reais apenas para destinos autorizados; verificar idempotência, isolamento de ficheiros, hashes, relatórios e redação de segredos. | Evidência de workflow real concluído, relatório inspecionado, PRs esperadas criadas/atualizadas, zero destinos indevidos e repetição sem diffs desnecessários. | EM VALIDAÇÃO — run #76 criou a [PR STOCKS #10](https://github.com/carlos-andrade/STOCKS/pull/10) em modo real, com 84 entradas no manifesto e 0 erros. Quatro documentos de conteúdo alterados foram comparados com o commit de origem: conteúdo e Git blob SHA coincidem; os quatro SHA-256 correspondem ao manifesto. A PR continua aberta, sem checks/revisão/aceitação registados; falta provar idempotência numa segunda execução e obter aceitação. |
 | G2 — Registo de consumidores e adoção | Reconciliar `registry/repositorios-consumidores.json`, PR #4 e critérios de adoção; inspecionar cada espelho, manifestos, hashes, configurações, workflows e evidência individual. | Para cada destino, estado enabled coerente com decisão formal e critérios comprovados; nenhum estado de registo interpretado como certificação. | EM EXECUÇÃO — LICITACAO está agora disabled em main até adoção validada; PR #4 continua aberta e desatualizada face ao estado atual, devendo ser reconciliada/fechada sem reativar o destino; demais destinos exigem revisão individual. |
 | G3 — Governance Integration Framework | Completar catálogo executável para todos os perfis; definir requisitos semânticos, evidências, severidade, regras de applicability, políticas de modo aplicar, versionamento/ref imutável, relatórios e testes adversariais. | Catálogo com completude demonstrada por perfil; testes unitários, negativos e integração aprovados; relatório correto para PASS/FAIL/UNKNOWN; alteração só por PR; nenhuma certificação implícita. | EM EXECUÇÃO — F1/F2 e baseline estrutural F4 têm validações parciais; catálogo permanece `complete: false`; F5/F6 não concluídas. |
 | G4 — Integridade documental | Reconciliar árvore atual de `main` com inventários; verificar cabeçalhos, IDs, links, versões e SHA-256 canónico segundo a norma; corrigir inconsistências sem perda de conteúdo histórico. | Inventário completo e reconciliado com o commit auditado; hashes recalculados; exceções justificadas, aprovadas e rastreáveis. | EM EXECUÇÃO — inventário interno e inventário transversal têm âmbito/fotografias históricas que requerem atualização. |
@@ -49,9 +49,9 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 ## 4. Ações prioritárias imediatas
 
 1. **A1 — Reconciliar LICITACAO:** PR #38 integrada no commit `6a7dc8d2ff817d1ce409842d097d4c82bb7c035d`; o registo canónico mantém `enabled: false` e o teste de regressão protege contra reativação inadvertida. A PR #4 deve ser reconciliada/encerrada sem reativar o destino.
-2. **A2 — Validar escrita e executar PR piloto:** a credencial `GOVERNANCA_SYNC_TOKEN` foi aceite nos dry-runs #45/#46 para a identidade `carlos-andrade`. O próximo passo é executar manualmente o workflow com `dry_run=false` para um único consumidor de teste autorizado, confirmar permissões de escrita nesse destino e verificar a PR resultante. Não registar nem expor o valor do secret.
-3. **A3 — Dry-run concluído:** runs #45/#46 confirmaram autenticação e leitura, com 78 ficheiros e zero erros. O run #75 (23-10-2026), após a reconciliação de LICITACAO, confirmou 84 ficheiros, 8 consumidores ativos, zero erros e `WOULD_OPEN_PR` nos oito destinos. Não foram criadas PRs reais.
-4. **A4 — Executar teste controlado de PR real:** começar por um consumidor autorizado e de baixo risco; confirmar branch, diff, manifesto, hashes, PR e reexecução idempotente antes de expandir.
+2. **A2 — Validar escrita e executar PR piloto:** run [#76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914) validou a credencial como `carlos-andrade` e criou a [PR STOCKS #10](https://github.com/carlos-andrade/STOCKS/pull/10), provando permissão de escrita e criação de PR nesse destino. Não registar nem expor o valor do secret.
+3. **A3 — Distribuição real por PR demonstrada num destino:** run #76 (`workflow_dispatch`, `dry_run=false`, `repository=carlos-andrade/STOCKS`) processou 84 ficheiros de origem, reportou 0 erros e criou a PR #10. O manifesto fixa o commit de origem `e54c3ca24b04971f39a5c804beedc21ff1aff355` e contém 84 entradas.
+4. **A4 — Validar idempotência e aceitação da PR:** repetir o mesmo dispatch real limitado a STOCKS, `dry_run=false`, `repository=carlos-andrade/STOCKS`, `allow_disabled_test=false`; confirmar que o relatório retorna `PR_NO_CHANGE` (ou comportamento idempotente equivalente), que não aparece diff adicional e que a PR #10 continua única. Inspecionar os hashes restantes do manifesto e obter revisão/aceitação humana antes de promover o piloto.
 5. **A5 — Completar catálogo de perfis:** definir e testar critérios funcionais/semânticos por domínio; manter `complete: false` enquanto faltar qualquer perfil ou critério obrigatório.
 6. **A6 — Rever políticas fora do âmbito G0:** ratificar individualmente os documentos ainda em `EM_REVISAO`; a aprovação G0 não os aprova por extensão.
 7. **A7 — Fechar WATCHDOG:** obter decisões dos proprietários sobre atualidade; testar supervisão independente, canais, ACK, escalonamento e recuperação.
@@ -60,7 +60,7 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 
 ## 5. Bloqueios, dependências e política de exceções
 
-- **Distribuição por PR real:** os dry-runs #45/#46 e o run #75 provaram autenticação e leitura; o run #75 processou 84 ficheiros e 8 consumidores ativos, com 0 erros, mas todos os resultados continuam `WOULD_OPEN_PR`. Falta uma execução manual controlada com `dry_run=false` e confirmação das permissões de escrita no consumidor escolhido. A sessão atual não dispõe de ação de dispatch manual do workflow; a distribuição real permanece bloqueada até essa execução ser feita no GitHub Actions.
+- **Distribuição por PR real:** demonstrada para um destino por [run #76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914), que criou a [PR STOCKS #10](https://github.com/carlos-andrade/STOCKS/pull/10) com 84 entradas de manifesto e 0 erros. Quatro ficheiros alterados foram comparados byte-a-byte com a origem e os respetivos Git blob SHAs coincidiram; os quatro SHA-256 do manifesto também coincidiram. Não estão verificados todos os 84 hashes de conteúdo nesta auditoria. Falta repetir o dispatch para provar idempotência, inspecionar o diff final e obter aceitação/revisão; a PR não tem checks ou aceitação registados.
 - **Permissões nos consumidores:** a autenticação da fonte não prova permissões de escrita nos destinos. Testar separadamente, sem ampliar desnecessariamente os privilégios.
 - **Aprovações normativas:** a criação/revisão de textos não equivale a ratificação. Registar decisor, versão aprovada e data.
 - **Aceitação operacional:** workflow verde é apenas uma evidência; não substitui confirmação de entrega de alertas, supervisão externa ou recuperação.
@@ -75,6 +75,9 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 - [Workflow de propagação](.github/workflows/propagar-regras-governanca.yml)
 - [Execução #45 — dry-run autenticado, 78 ficheiros, 9 destinos no registo/8 ativos, 0 erros](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39510683461)
 - [Execução #46 — dry-run após desativar LICITACAO, 78 ficheiros, 8 destinos ativos, 0 erros](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39510865206)
+- [Execução #76 — distribuição real por PR no STOCKS, 84 entradas de manifesto, 0 erros](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914)
+- [STOCKS PR #10 — espelho upstream aguardando revisão](https://github.com/carlos-andrade/STOCKS/pull/10)
+- [Artefacto do relatório de distribuição do run #76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914/artifacts/12505997272)
 - [Execução #44 — dry-run anterior](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39506967606)
 - [Pull Request #4 — registo pendente do LICITACAO](https://github.com/carlos-andrade/GOVERNANCA/pull/4)
 - [Framework — decisão de arquitetura](docs/01-governanca/DEC-GOV-INTEGRATION-FRAMEWORK-001.md)
@@ -89,7 +92,8 @@ A conclusão global exige evidência verificável para todos os gates abaixo, re
 |---|---|---|
 | 1.0.0 | 2026-10-20 | Criação do roadmap de finalização a partir da revisão do estado de `main`, workflows, scorecard e pendências publicadas. |
 | 1.0.1 | 2026-10-23 | G0 concluído após ratificação formal, verificação dos hashes canónicos e CI verde na PR #35. |
-| 1.0.2 | 2026-10-23 | G1 reavaliado: PR #38 reconcilia LICITACAO como desativado; run #75 confirma dry-run autenticado sem erros para oito consumidores, sem criação de PRs reais. |
+| 1.0.2 | 2026-10-23 | G1 reavaliado após reconciliação de LICITACAO e dry-run autenticado. |
+| 1.0.3 | 2026-10-23 | Run #76 criou a PR STOCKS #10; quatro documentos alterados e os respetivos SHA-256 foram validados, ficando idempotência e aceitação pendentes. |
 
 ## 8.2. Integridade do painel — 2026-10-21
 
@@ -139,3 +143,11 @@ A GOVERNANCA só pode ser declarada FINALIZADA quando todos os critérios de sa�
 - PR #35 integrada no commit [fe56b96c427dadf9a2774a8976aab35222fd76d2](https://github.com/carlos-andrade/GOVERNANCA/commit/fe56b96c427dadf9a2774a8976aab35222fd76d2).
 - CI [run #43](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39952021834) passou: testes F1/F2 e validação de SHA-256 canónico para Constituição, matriz, política e registo de aprovação.
 - Âmbito limitado: G0 concluído para o baseline normativo enumerado; não significa adoção ou conformidade automática dos restantes repositórios, nem aprovação das políticas não enumeradas.
+
+
+## 8.5. Distribuição real por PR — 2026-10-23
+
+- O workflow [Propagar regras canónicas da GOVERNANCA #76](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914) foi disparado manualmente com `dry_run=false`, destino `carlos-andrade/STOCKS` e `allow_disabled_test=false`. Os trabalhos `validar` e `propagar` terminaram SUCCESS; o relatório declara modo `pull-request`, commit-fonte `e54c3ca24b04971f39a5c804beedc21ff1aff355`, 84 ficheiros e 0 erros, com resultado `PR_CREATED` para [STOCKS PR #10](https://github.com/carlos-andrade/STOCKS/pull/10).
+- O artefacto [relatorio-propagacao-governanca](https://github.com/carlos-andrade/GOVERNANCA/actions/runs/39964100914/artifacts/12505997272) foi guardado; SHA-256 do ZIP reportado pelo GitHub: `0a4128ec17df1da086d198231bd7b049e3e68476f1bdcb0be51acd3f0b00e47a`.
+- O manifesto contém 84 entradas e identifica a mesma origem. Para os quatro documentos de conteúdo alterados, o conteúdo no branch da PR coincide exatamente com os ficheiros do commit-fonte e os Git blob SHAs coincidem; os respetivos SHA-256 do manifesto também foram recalculados e corresponderam.
+- A PR permanece aberta, não integrada, sem checks de CI ou revisão/aceitação registados no momento da inspeção. A criação bem-sucedida da PR demonstra permissão real de escrita no destino, mas não prova idempotência, adoção local ou conformidade global. G1 permanece EM VALIDAÇÃO até a repetição controlada não produzir alteração desnecessária e a PR ser revista/aceite.
